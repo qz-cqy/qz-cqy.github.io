@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-01-06T10:05:29.988Z</updated>
+    <updated>2020-01-06T10:31:21.720Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -782,6 +782,77 @@ int main()
 </code></pre>
 <p>@Linbom</p>
 <p>还有很多<s>毒瘤</s>搞笑解法，以后将不定期更新</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[骗分导论]]></title>
+        <id>https://qz-cqy.github.io/post/How-to-get-score</id>
+        <link href="https://qz-cqy.github.io/post/How-to-get-score">
+        </link>
+        <updated>2019-06-24T07:56:36.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="1-骗分是什么">1 骗分是什么？</h1>
+<p>总会有一天，蒟蒻与大佬同台竞技。大佬当然可以专心写程序AC，但是蒟蒻却不会那个算法。假如你是<s>李华</s>蒟蒻，请你帮忙想一个办法，让你可以得分。</p>
+<p>答案：<mark><em><strong>骗分</strong></em></mark></p>
+<p>骗分是一种竞赛技巧，可以帮你在不会的题上得分。骗分有很多种方法，将在下文详细介绍。</p>
+<h1 id="2-基础骗分方法难度系数1~3颗">2 基础骗分方法（难度系数1~3颗⭐）</h1>
+<h2 id="21-特判数据">2.1 特判数据⭐</h2>
+<p>有时，测试点中可能包含数据，特判一下可能可以帮你获得一个测试点的分。</p>
+<h2 id="22-输出随机数">2.2 输出随机数⭐</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+using namespace std;
+
+int main()
+{
+	srand((unsigned)time(NULL));
+	cout&lt;&lt;rand()%N&lt;&lt;endl;//0~N-1
+	return 0;
+}
+</code></pre>
+<p>听说有人用这个方法在某一届NOIp骗来了70+分！如果你觉得你人品够好你可以试试。</p>
+<h2 id="23-输出特殊答案">2.3 输出特殊答案⭐</h2>
+<p>如果题目中出现形如这个的话：</p>
+<blockquote>
+<p>如果无解，输出-1</p>
+</blockquote>
+<p>你应该暗自庆幸：输出-1应该可以骗来一些分！不过有些题可能利用这个来坑人，LUOGU P2874：如果没有可行路线的话，输出orz，经过作者实测，会爆0。</p>
+<h2 id="24-大模拟">2.4 大模拟⭐⭐</h2>
+<p>如果你有一种模拟策略，可是出于复杂度原因，无法通过所有测试点；并且你不会其他方法，可以试试暴力搜索。</p>
+<h2 id="25-按测试数据中关系到复杂度的东西分治">2.5 按测试数据中关系到复杂度的东西分治。⭐⭐⭐</h2>
+<p>例子：LUOGU P3371：n&lt;=10000，开邻接矩阵会MLE，但是邻接表／链式前向星不是特别熟，可以采取以下策略：</p>
+<ol>
+<li>n&lt;=500，邻接矩阵+Floyd，即空间n<sup>2</sup>时间n<sup>3</sup>。</li>
+<li>n&lt;=5000，邻接矩阵+Dijkstra，即空间n<sup>2</sup>时间n<sup>2</sup>。</li>
+<li>n&lt;=10000，邻接表+Dijkstra，即空间n+m，时间n<sup>2</sup>。</li>
+</ol>
+<h1 id="3-进阶骗分方法难度系数4~8颗">3 进阶骗分方法（难度系数4~8颗⭐）</h1>
+<h2 id="31-dfs">3.1 DFS⭐⭐⭐⭐</h2>
+<p>搜索。</p>
+<h2 id="32-bfs">3.2 BFS⭐⭐⭐⭐⭐</h2>
+<p>搜索。</p>
+<h2 id="33-概率论">3.3 概率论⭐⭐⭐⭐⭐⭐</h2>
+<p>可以结合一些概率知识判断答案可能的分布情况，然后结合输出随机数或模拟等方法给出答案。</p>
+<h2 id="34-打表">3.4 打表⭐⭐⭐⭐⭐⭐</h2>
+<p>之所以给这个难度，是因为：</p>
+<ol>
+<li>模拟程序不保证正确</li>
+<li>打表数据范围未知</li>
+<li>造表时浪费很多时间</li>
+</ol>
+<h2 id="35-对拍">3.5 对拍⭐⭐⭐⭐⭐⭐⭐⭐</h2>
+<p>如果你有很多种想法，可以都写出来，然后比较数据，取比较靠谱的。</p>
+<h1 id="4-阎王骗分方法难度系数9颗">4 阎王骗分方法（难度系数9颗⭐）</h1>
+<h2 id="41-保证正确的骗分方法">4.1 保证正确的骗分方法⭐⭐⭐⭐⭐⭐⭐⭐⭐</h2>
+<blockquote>
+<p>最好的、最高效的骗分方法就是从现在开始认真钻研OI，学习算法，写保证正确的程序，从小牛成为神犇。</p>
+</blockquote>
+<h1 id="5-结语">5 结语</h1>
+<p>打竞赛时，不仅要想着骗分，更重要的是想正确的实现方法。如果你想不出来，就证明这是你的薄弱环节，今后要努力钻研这个算法，从此不用骗分！</p>
+<h1 id="6-骗分导论信息">6 《骗分导论》信息</h1>
+<p>作者：rui_er（CQY）<br>
+日期：2019年6月24日<br>
+字数：1326字</p>
 ]]></content>
     </entry>
     <entry>
