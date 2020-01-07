@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-01-06T11:17:21.158Z</updated>
+    <updated>2020-01-07T08:17:41.555Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[游记列表]]></title>
+        <id>https://qz-cqy.github.io/post/list</id>
+        <link href="https://qz-cqy.github.io/post/list">
+        </link>
+        <updated>2020-01-07T08:15:25.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="/post/i-ak-csp2019-j">CSP2019入门级游记</a></p>
+<p><a href="/post/i-ak-noip2018-pj">NOIp2018普及组游记</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[AC题目A+B的1000种方法]]></title>
         <id>https://qz-cqy.github.io/post/How-to-AC-LG-P1001</id>
@@ -785,6 +795,36 @@ int main()
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[CSP2019入门级游记]]></title>
+        <id>https://qz-cqy.github.io/post/i-ak-csp2019-j</id>
+        <link href="https://qz-cqy.github.io/post/i-ak-csp2019-j">
+        </link>
+        <updated>2019-11-26T08:13:10.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="基础信息">基础信息：</h1>
+<p>省份：北京</p>
+<p>学校：清华大学附属实验学校</p>
+<p>年级：初一</p>
+<p>比赛：2019 年 CCF 非专业级软件能力认证（CSP-J/S 2019）</p>
+<h1 id="前言">前言</h1>
+<p>报名的时候：啊！为什么我点了！我不是应该报提高组的吗？！</p>
+<p>考完试：呼~幸好我报的是普及组，提高组我都不会。</p>
+<h1 id="j1">J1</h1>
+<p>网上答题，拿了84分。出了考场听好多大佬说估分90+，当时快要疯了。还好分数线没有那么高。</p>
+<h1 id="j2-day-1">J2-Day 1</h1>
+<p>打开Guide，设置我习惯的环境、字体，关掉<s>可恶的</s>自动补全。解压ZIP文件的时候，瞄了一眼密码，敲进去，两次都不对。后来我突然意识到前面的等号也是密码QAQ。</p>
+<h2 id="t1">T1</h2>
+<p>比去年的还要水，切掉。</p>
+<h2 id="t2">T2</h2>
+<p>直接模拟！当场编译通过，所有样例都过了，下一题！（赛后洛谷上测的时候却CE了，希望不要爆0 QAQ）</p>
+<h2 id="t3">T3</h2>
+<p>动态规划？不会，写了个部分分。</p>
+<h2 id="t4">T4</h2>
+<p>图论，一个搜索搞定。可惜时间复杂度不够，不会优化，拿不到满分。</p>
+<h1 id="结果">结果</h1>
+<p>敬请期待……</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[骗分导论]]></title>
         <id>https://qz-cqy.github.io/post/How-to-get-score</id>
         <link href="https://qz-cqy.github.io/post/How-to-get-score">
@@ -853,6 +893,40 @@ int main()
 <p>作者：rui_er（CQY）<br>
 日期：2019年6月24日<br>
 字数：1326字</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NOIp2018普及组游记]]></title>
+        <id>https://qz-cqy.github.io/post/i-ak-noip2018-pj</id>
+        <link href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
+        </link>
+        <updated>2018-12-12T08:11:49.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="基础信息">基础信息：</h1>
+<p>省份：北京</p>
+<p>学校：清华大学附属实验学校</p>
+<p>年级：小学六年级</p>
+<p>比赛：全国青少年信息学奥林匹克联赛（NOIp）2018年北京市普及组比赛</p>
+<p>第一次参加NOIp</p>
+<h1 id="day-0">Day 0</h1>
+<p>明天就是NOIp了，不知道有多难，先好好睡一觉。（在北京有个好处：不用去省会）</p>
+<h1 id="day-1">Day 1</h1>
+<p>走进考场，紧张地打开Guide。考试时间到了，下发zip文件。输入密码。</p>
+<p>咦？怎么不对</p>
+<p>咦？怎么又不对</p>
+<p>咦？怎么还不对</p>
+<p>听到了周围选手敲键盘的声音，我非常着急。（咳咳，怎么变成写作文了）</p>
+<p>我仔细看了一眼密码，敲了一遍，总算对了。打开试题。</p>
+<h2 id="t1">T1</h2>
+<p>咳咳，怎么这么简单？！五分钟编程，五分钟写数据，得了100分（赛后得知）。</p>
+<h2 id="t2">T2</h2>
+<p>写个模拟吧。看这个数据貌似要开long long。</p>
+<p>写完了，测了数据，都对了就没再管。查成绩时，80分？哪里不对？（说实话我到现在都没调出来）</p>
+<h2 id="t3">T3</h2>
+<p>啊啊啊这个怎么做啊！应该是动态规划，可我还不会！匆匆忙忙写了个贪心，好像是10分。</p>
+<h2 id="t4">T4</h2>
+<p>二叉树？这【数据删除】我都不知道是啥！骗个分吧，4分。</p>
+<h1 id="结果">结果</h1>
+<p>普及二等奖，194分，距离一等奖线差1分（自闭QAQ），因为姓氏拼音靠前，是普及二等奖第一名QAQ</p>
 ]]></content>
     </entry>
     <entry>
