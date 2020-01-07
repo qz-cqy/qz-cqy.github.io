@@ -1,22 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://qz-cqy.github.io</id>
-    <title>rui_er | I AK IOI</title>
-    <updated>2020-01-07T10:49:58.789Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://qz-cqy.github.io"/>
-    <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
-    <subtitle>相信玄学，研究科学 | Think twice, code once. </subtitle>
-    <logo>https://qz-cqy.github.io/images/avatar.png</logo>
-    <icon>https://qz-cqy.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
-    <entry>
-        <title type="html"><![CDATA[背包九讲（转载）]]></title>
-        <id>https://qz-cqy.github.io/post/pack-problem</id>
-        <link href="https://qz-cqy.github.io/post/pack-problem">
-        </link>
-        <updated>2020-01-07T10:36:37.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="背包九讲">背包九讲</h1>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>背包九讲（转载） | rui_er | I AK IOI</title>
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1578394194780">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="背包九讲（转载） | rui_er | I AK IOI - Atom Feed" href="https://qz-cqy.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="背包九讲
+目录
+第一讲 01背包问题
+第二讲 完全背包问题
+第三讲 多重背包问题
+第四讲 混合三种背包问题
+第五讲 二维费用的背包问题
+第六讲 分组的背包问题
+第七讲 有依赖的背包问题
+第八讲 泛化物品
+第九讲 背包问题问法的变化
+附：US..." />
+    <meta name="keywords" content="USACO,背包,动态规划/DP,OI" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://qz-cqy.github.io">
+  <img class="avatar" src="https://qz-cqy.github.io/images/avatar.png?v=1578394194780" alt="">
+  </a>
+  <h1 class="site-title">
+    rui_er | I AK IOI
+  </h1>
+  <p class="site-description">
+    相信玄学，研究科学 | Think twice, code once. 
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/list" class="menu">
+          比赛游记
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://qz-cqy.github.io" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+        <a href="https://www.zhihu.com/people/rui-71-61-94/activities" target="_blank">
+          <i class="ri-zhihu-line"></i>
+        </a>
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              背包九讲（转载）
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-01-07
+              </span>
+              <span>
+                51 min read
+              </span>
+              
+                <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="post-tag">
+                  # USACO
+                </a>
+              
+                <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="post-tag">
+                  # 背包
+                </a>
+              
+                <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="post-tag">
+                  # 动态规划/DP
+                </a>
+              
+                <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="post-tag">
+                  # OI
+                </a>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="背包九讲">背包九讲</h1>
 <h1 id="目录">目录</h1>
 <p>第一讲 01背包问题<br>
 第二讲 完全背包问题<br>
@@ -356,957 +469,88 @@ F(i,j)=max{ F(i-t[j]<em>k,j-1)+k</em>w[j] } (0&lt;=k&lt;=i mod t[j] );<br>
             f:=f[i-t[j]]+w[j];
 </code></pre>
 <p>此时,第J个物品便有可能加入到一个已经有该物品的最优解中,正好满足完全背包问题的要求.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[游记列表]]></title>
-        <id>https://qz-cqy.github.io/post/list</id>
-        <link href="https://qz-cqy.github.io/post/list">
-        </link>
-        <updated>2020-01-07T08:15:25.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="/post/i-ak-csp2019-j">CSP2019入门级游记</a></p>
-<p><a href="/post/i-ak-noip2018-pj">NOIp2018普及组游记</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AC题目A+B的1000种方法]]></title>
-        <id>https://qz-cqy.github.io/post/How-to-AC-LG-P1001</id>
-        <link href="https://qz-cqy.github.io/post/How-to-AC-LG-P1001">
-        </link>
-        <updated>2020-01-06T09:29:05.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="首先标准方法">首先，标准方法</h1>
-<blockquote>
-<p>C++</p>
-</blockquote>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-int main()
-{
-	int a, b;
-	cin&gt;&gt;a&gt;&gt;b;
-	cout&lt;&lt;a+b&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-<blockquote>
-<p>C</p>
-</blockquote>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main() {
-    int a,b;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    printf(&quot;%d&quot;, a+b);
-    return 0;
-}
-</code></pre>
-<blockquote>
-<p>Pascal</p>
-</blockquote>
-<pre><code class="language-pascal">var a, b: longint;
-begin
-    readln(a,b);
-    writeln(a+b);
-end.
-</code></pre>
-<blockquote>
-<p>Python2</p>
-</blockquote>
-<pre><code class="language-python">s = raw_input().split()
-print int(s[0]) + int(s[1])
-</code></pre>
-<blockquote>
-<p>Python3</p>
-</blockquote>
-<pre><code class="language-python">s = input().split()
-print(int(s[0]) + int(s[1]))
-</code></pre>
-<blockquote>
-<p>Java</p>
-</blockquote>
-<pre><code class="language-java">import java.io.*;
-import java.util.*;
-public class Main {
-    public static void main(String args[]) throws Exception {
-        Scanner cin=new Scanner(System.in);
-        int a = cin.nextInt(), b = cin.nextInt();
-        System.out.println(a+b);
-    }
-}
-</code></pre>
-<blockquote>
-<p>JavaScript</p>
-</blockquote>
-<pre><code class="language-js">const fs = require('fs')
-const data = fs.readFileSync('/dev/stdin')
-const result = data.toString('ascii').trim().split(' ').map(x =&gt; parseInt(x)).reduce((a, b) =&gt; a + b, 0)
-console.log(result)
-process.exit()
-</code></pre>
-<blockquote>
-<p>Ruby</p>
-</blockquote>
-<pre><code class="language-ruby">a, b = gets.split.map(&amp;:to_i)
-print a+b
-</code></pre>
-<blockquote>
-<p>PHP</p>
-</blockquote>
-<pre><code class="language-php">&lt;?php
-$input = trim(file_get_contents(&quot;php://stdin&quot;));
-list($a, $b) = explode(' ', $input);
-echo $a + $b;
-</code></pre>
-<blockquote>
-<p>Rust</p>
-</blockquote>
-<pre><code class="language-rust">use std::io;
 
-fn main(){
-    let mut input=String::new();
-    io::stdin().read_line(&amp;mut input).unwrap();
-    let mut s=input.trim().split(' ');
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E8%83%8C%E5%8C%85%E4%B9%9D%E8%AE%B2">背包九讲</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E7%9B%AE%E5%BD%95-2">目录</a></li>
+<li><a href="#p01-01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">P01: 01背包问题</a>
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE">题目</a></li>
+</ul>
+</li>
+</ul>
 
-    let a:i32=s.next().unwrap()
-               .parse().unwrap();
-    let b:i32=s.next().unwrap()
-               .parse().unwrap();
-    println!(&quot;{}&quot;,a+b);
-}
-</code></pre>
-<blockquote>
-<p>Go</p>
-</blockquote>
-<pre><code class="language-go">package main
+              </div>
+            </div>
+          </article>
+        </div>
 
-import &quot;fmt&quot;
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://qz-cqy.github.io/post/list">
+              <h3 class="post-title">
+                游记列表
+              </h3>
+            </a>
+          </div>
+        
 
-func main() {
-   var a, b int
-   fmt.Scanf(&quot;%d%d&quot;, &amp;a, &amp;b)
-   fmt.Println(a+b)
-}
-</code></pre>
-<blockquote>
-<p>C# Mono</p>
-</blockquote>
-<pre><code class="language-cpp">using System;
+        
 
-public class APlusB{
-    private static void Main(){
-        string[] input = Console.ReadLine().Split(' ');
-        Console.WriteLine(int.Parse(input[0]) + int.Parse(input[1]));
-    }
-}
-</code></pre>
-<blockquote>
-<p>VB Mono</p>
-</blockquote>
-<pre><code class="language-vb">Imports System
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
 
-Module APlusB
-   Sub Main()
-       Dim ins As String() = Console.ReadLine().Split(New Char(){&quot; &quot;c})
-       Console.WriteLine(Int(ins(0))+Int(ins(1)))
-   End Sub
-End Module
-</code></pre>
-<blockquote>
-<p>Kotlin</p>
-</blockquote>
-<pre><code class="language-kotlin">fun main(args: Array&lt;String&gt;) {
-    val (a, b) = readLine()!!.split(' ').map(String::toInt)
-    println(a + b)
-}
-</code></pre>
-<blockquote>
-<p>Haskell</p>
-</blockquote>
-<pre><code>main = do
-    [a, b] &lt;- (map read . words) `fmap` getLine
-    print (a+b)
-</code></pre>
-<blockquote>
-<p>Scala</p>
-</blockquote>
-<pre><code>object Main extends App {
-  println(scala.io.StdIn.readLine().split(&quot; &quot;).map(_.toInt).sum)
-}
-</code></pre>
-<blockquote>
-<p>Perl</p>
-</blockquote>
-<pre><code class="language-perl">my $in = &lt;STDIN&gt;;
-chomp $in;
-$in = [split /[\s,]+/, $in];
-my $c = $in-&gt;[0] + $in-&gt;[1];
-print &quot;$c\n&quot;;
-</code></pre>
-<blockquote>
-<p>文言</p>
-</blockquote>
-<pre><code>施「require('fs').readFileSync」於「「/dev/stdin」」。名之曰「數據」。
-施「(buf =&gt; buf.toString().trim())」於「數據」。昔之「數據」者。今其是矣。
-施「(s =&gt; s.split(' '))」於「數據」。昔之「數據」者。今其是矣。
-注曰。「「文言尚菜，無對象之操作，故需 JavaScript 之语法」」。
+      </div>
+    </div>
 
-夫「數據」之一。取一以施「parseInt」。名之曰「甲」。
-夫「數據」之二。取一以施「parseInt」。名之曰「乙」。
+    <script>
+      hljs.initHighlightingOnLoad()
 
-加「甲」以「乙」。書之。
-</code></pre>
-<p>以上内容来自<a href="https://www.luogu.com.cn/problem/P1001">这里</a></p>
-<h1 id="二分答案">二分答案</h1>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-int a, b;
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-int BinarySearch(int left, int right);
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
-int main()
-{
-    cin&gt;&gt;a&gt;&gt;b;
-    cout&lt;&lt;BinarySearch(-2147483648, 2147483647)&lt;&lt;endl;
-    return 0;
-}
-
-int BinarySearch(int left, int right)
-{
-    int mid = (left + right) / 2;
-    if(mid == a + b) return mid;
-    else if(mid &lt; a + b) return BinarySearch(mid+1, right);
-    else return BinarySearch(left, mid-1); 
-}
-</code></pre>
-<blockquote>
-<p>升级版：namespace</p>
-</blockquote>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-
-namespace add
-{
-    inline int BinarySearch(int l, int r, int a, int b)
-    {
-    	int m = (l + r) / 2;
-        if(m == a + b) return m;
-    	else if(m &lt; a + b) return add::BinarySearch(m+1, r, a, b);
-        else return add::BinarySearch(l, m-1, a, b); 
-    }
-}
-
-int main()
-{
-    int a, b;
-    std::cin&gt;&gt;a&gt;&gt;b;
-    std::cout&lt;&lt;add::BinarySearch(-2147483648, 2147483647, a, b)&lt;&lt;std::endl;
-    return 0;
-}
-</code></pre>
-<h1 id="lctlink-cut-tree">LCT(Link-Cut Tree)</h1>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-using namespace std;
-struct node 
-{
-    int data,rev,sum;
-    node *son[2],*pre;
-    bool judge();
-    bool isroot();
-    void pushdown();
-    void update();
-    void setson(node *child,int lr);
-}lct[233];
-int top,a,b;
-node *getnew(int x)
-{
-    node *now=lct+ ++top;
-    now-&gt;data=x;
-    now-&gt;pre=now-&gt;son[1]=now-&gt;son[0]=lct;
-    now-&gt;sum=0;
-    now-&gt;rev=0;
-    return now;
-}
-bool node::judge(){return pre-&gt;son[1]==this;}
-bool node::isroot()
-{
-    if(pre==lct)return true;
-    return !(pre-&gt;son[1]==this||pre-&gt;son[0]==this);
-}
-void node::pushdown()
-{
-    if(this==lct||!rev)return;
-    swap(son[0],son[1]);
-    son[0]-&gt;rev^=1;
-    son[1]-&gt;rev^=1;
-    rev=0;
-}
-void node::update(){sum=son[1]-&gt;sum+son[0]-&gt;sum+data;}
-void node::setson(node *child,int lr)
-{
-    this-&gt;pushdown();
-    child-&gt;pre=this;
-    son[lr]=child;
-    this-&gt;update();
-}
-void rotate(node *now)
-{
-    node *father=now-&gt;pre,*grandfa=father-&gt;pre;
-    if(!father-&gt;isroot()) grandfa-&gt;pushdown();
-    father-&gt;pushdown();now-&gt;pushdown();
-    int lr=now-&gt;judge();
-    father-&gt;setson(now-&gt;son[lr^1],lr);
-    if(father-&gt;isroot()) now-&gt;pre=grandfa;
-    else grandfa-&gt;setson(now,father-&gt;judge());
-    now-&gt;setson(father,lr^1);
-    father-&gt;update();now-&gt;update();
-    if(grandfa!=lct) grandfa-&gt;update();
-}
-void splay(node *now)
-{
-    if(now-&gt;isroot())return;
-    for(;!now-&gt;isroot();rotate(now))
-    if(!now-&gt;pre-&gt;isroot())
-    now-&gt;judge()==now-&gt;pre-&gt;judge()?rotate(now-&gt;pre):rotate(now);
-}
-node *access(node *now)
-{
-    node *last=lct;
-    for(;now!=lct;last=now,now=now-&gt;pre)
-    {
-        splay(now);
-        now-&gt;setson(last,1);
-    }
-    return last;
-}
-void changeroot(node *now)
-{
-    access(now)-&gt;rev^=1;
-    splay(now);
-}
-void connect(node *x,node *y)
-{
-    changeroot(x);
-    x-&gt;pre=y;
-    access(x);
-}
-void cut(node *x,node *y)
-{
-    changeroot(x);
-    access(y);
-    splay(x);
-    x-&gt;pushdown();
-    x-&gt;son[1]=y-&gt;pre=lct;
-    x-&gt;update();
-}
-int query(node *x,node *y)
-{
-    changeroot(x);
-    node *now=access(y);
-    return now-&gt;sum;
-}
-int main()
-{
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    node *A=getnew(a);
-    node *B=getnew(b);
-    //连边 Link
-        connect(A,B);
-    //断边 Cut
-        cut(A,B);
-    //再连边orz Link again
-        connect(A,B);
-    printf(&quot;%d\n&quot;,query(A,B)); 
-    return 0;
-}
-</code></pre>
-<p>@Treeloveswater</p>
-<h1 id="树状数组">树状数组</h1>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-using namespace std;
-int lowbit(int a)
-{
-    return a&amp;(-a);
-}
-int main()
-{
-    int n=2,m=1;
-    int ans[m+1];
-    int a[n+1],c[n+1],s[n+1];
-    int o=0;
-    memset(c,0,sizeof(c));
-    s[0]=0;
-    for(int i=1;i&lt;=n;i++)
-    {
-        cin&gt;&gt;a[i];
-        s[i]=s[i-1]+a[i];
-        c[i]=s[i]-s[i-lowbit(i)];//树状数组创建前缀和优化
-    }
-    for(int i=1;i&lt;=m;i++)
-    {
-        int q=2;
-        //if(q==1)
-        //{（没有更改操作）
-        //    int x,y;
-        //    cin&gt;&gt;x&gt;&gt;y;
-        //    int j=x;
-        //    while(j&lt;=n)
-        //    {
-        //        c[j]+=y;
-        //        j+=lowbit(j);
-        //    }
-        //}
-        //else
-        {
-            int x=1,y=2;//求a[1]+a[2]的和
-            int s1=0,s2=0,p=x-1;
-            while(p&gt;0)
-            {
-                s1+=c[p];
-                p-=lowbit(p);//树状数组求和操作，用两个前缀和相减得到区间和
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
             }
-            p=y;
-            while(p&gt;0)
-            {
-                s2+=c[p];
-                p-=lowbit(p);
-            }    
-            o++;
-            ans[o]=s2-s1;//存储答案
-        }
-    }
-    for(int i=1;i&lt;=o;i++)
-        cout&lt;&lt;ans[i]&lt;&lt;endl;//输出
-    return 0;
-}
-</code></pre>
-<p>@Lolierl</p>
-<h1 id="宏定义">宏定义</h1>
-<pre><code class="language-cpp">#include &lt;cstdio&gt; 
-#include &lt;iostream&gt;
-#define lol long long int 
-#define A using
-#define Long namespace
-#define time std
-#define ago ;
-#define Here int
-#define was main
-#define a ()
-#define monkey {  
-#define called lol x,y;
-#define Jack cin&gt;&gt;x&gt;&gt;y;
-#define ak cout&lt;&lt;x+y;
-#define ioi return 0;
-#define Orz }
-A Long time ago Here was a monkey called Jack ak ioi Orz
-</code></pre>
-<p>@我叫榨菜</p>
-<h1 id="splay">Splay</h1>
-<pre><code class="language-cpp">//一颗资瓷区间加、区间翻转、区间求和的Splay
-#include &lt;bits/stdc++.h&gt;
-#define ll long long
-#define N 100000
-using namespace std;
-int sz[N], rev[N], tag[N], sum[N], ch[N][2], fa[N], val[N];
-int n, m, rt, x;
-void push_up(int x){
-    sz[x] = sz[ch[x][0]] + sz[ch[x][1]] + 1;
-    sum[x] = sum[ch[x][1]] + sum[ch[x][0]] + val[x];
-}
-void push_down(int x){
-    if(rev[x]){
-        swap(ch[x][0], ch[x][1]);
-        if(ch[x][1]) rev[ch[x][1]] ^= 1;
-        if(ch[x][0]) rev[ch[x][0]] ^= 1;
-        rev[x] = 0;
-    }
-    if(tag[x]){
-        if(ch[x][1]) tag[ch[x][1]] += tag[x], sum[ch[x][1]] += tag[x];
-        if(ch[x][0]) tag[ch[x][0]] += tag[x], sum[ch[x][0]] += tag[x];
-        tag[x] = 0;
-    }
-}
-void rotate(int x, int &amp;k){
-    int y = fa[x], z = fa[fa[x]];
-    int kind = ch[y][1] == x;
-    if(y == k) k = x;
-    else ch[z][ch[z][1]==y] = x;
-    fa[x] = z; fa[y] = x; fa[ch[x][!kind]] = y;
-    ch[y][kind] = ch[x][!kind]; ch[x][!kind] = y;
-    push_up(y); push_up(x);
-}
-void splay(int x, int &amp;k){
-    while(x != k){
-        int y = fa[x], z = fa[fa[x]];
-        if(y != k) if(ch[y][1] == x ^ ch[z][1] == y) rotate(x, k);
-        else rotate(y, k);
-        rotate(x, k);
-    }
-}
-int kth(int x, int k){
-    push_down(x);
-    int r = sz[ch[x][0]]+1;
-    if(k == r) return x;
-    if(k &lt; r) return kth(ch[x][0], k);
-    else return kth(ch[x][1], k-r);
-}
-void split(int l, int r){
-    int x = kth(rt, l), y = kth(rt, r+2);
-    splay(x, rt); splay(y, ch[rt][1]);
-}
-void rever(int l, int r){
-    split(l, r);
-    rev[ch[ch[rt][1]][0]] ^= 1;
-}
-void add(int l, int r, int v){
-    split(l, r);
-    tag[ch[ch[rt][1]][0]] += v;
-    val[ch[ch[rt][1]][0]] += v;
-    push_up(ch[ch[rt][1]][0]);
-}
-int build(int l, int r, int f){
-    if(l &gt; r) return 0;
-    if(l == r){
-        fa[l] = f;
-        sz[l] = 1;
-        return l;
-    }
-    int mid = l + r &gt;&gt; 1;
-    ch[mid][0] = build(l, mid-1, mid);
-    ch[mid][1] = build(mid+1, r, mid);
-    fa[mid] = f;
-    push_up(mid);
-    return mid;
-}
-int asksum(int l, int r){
-    split(l, r);
-    return sum[ch[ch[rt][1]][0]];
-}
-int main(){
-    //总共两个数
-    n = 2;
-    rt = build(1, n+2, 0);//建树
-    for(int i = 1; i &lt;= n; i++){
-        scanf(&quot;%d&quot;, &amp;x);
-        add(i, i, x);//区间加
-    }
-    rever(1, n);//区间翻转
-    printf(&quot;%d\n&quot;, asksum(1, n));//区间求和
-    return 0;
-}
-</code></pre>
-<p>@SW_Wind</p>
-<h1 id="spfa">SPFA</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-using namespace std;
-int n,m,a,b,op,head[200009],next[200009],dis[200009],len[200009],v[200009],l,r,team[200009],pd[100009],u,v1,e;
-int lt(int x,int y,int z)
-{
-    op++,v[op]=y;
-    next[op]=head[x],head[x]=op,len[op]=z;
-}
-int SPFA(int s,int f)//SPFA……
-{
-    for(int i=1;i&lt;=200009;i++){dis[i]=999999999;}
-    l=0,r=1,team[1]=s,pd[s]=1,dis[s]=0;
-    while(l!=r)
-    {
-        l=(l+1)%90000,u=team[l],pd[u]=0,e=head[u];
-        while(e!=0)
-        {
-            v1=v[e];
-            if(dis[v1]&gt;dis[u]+len[e])
-            {
-                dis[v1]=dis[u]+len[e];
-                if(!pd[v1])
-                {
-                    r=(r+1)%90000,
-                    team[r]=v1,
-                    pd[v1]=1;
-                }
-            }
-            e=next[e];
-        } 
-    }
-    return dis[f];
-}
-int main()
-{
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    lt(1,2,a);lt(2,3,b);//1到2为a，2到3为b，1到3即为a+b……
-    printf(&quot;%d&quot;,SPFA(1,3));
-    return 0;
-}
-</code></pre>
-<p>@doby</p>
-<h1 id="floyd">Floyd</h1>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-using namespace std;
-long long n=3,a,b,dis[4][4];
-int main()
-{
-    cin&gt;&gt;a&gt;&gt;b;
-    for(int i=1;i&lt;=n;i++)
-    {
-        for(int j=1;j&lt;=n;j++)
-        {
-            dis[i][j]=2147483647;
-        }
-    }
-    dis[1][2]=a,dis[2][3]=b;
-    for(int k=1;k&lt;=n;k++)
-    {
-        for(int i=1;i&lt;=n;i++)
-        {
-            for(int j=1;j&lt;=n;j++)
-            {
-                dis[i][j]=min(dis[i][j],dis[i][k]+dis[k][j]);//Floyd……
-            }
-        }
-    }
-    cout&lt;&lt;dis[1][3];
-}
-</code></pre>
-<p>@doby</p>
-<h1 id="递归">递归</h1>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-using namespace std;
-long long a,b,c;
-long long dg(long long a)
-{
-    if(a&lt;=5){return a;}//防超时……
-    return (dg(a/2)+dg(a-a/2));
-}
-int main()
-{
-    cin&gt;&gt;a&gt;&gt;b;
-    c=dg(a)+dg(b);
-    cout&lt;&lt;c;
-}
-</code></pre>
-<p>@doby</p>
-<h1 id="高精">高精</h1>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-using namespace std;
-int main()
-{
-    char a1[1000],b1[1000];
-      int a[1000]={0},b[1000]={0},c[1000]={0},la,lb,lc,i,x;
-      cin&gt;&gt;a1&gt;&gt;b1;
-      la=strlen(a1);
-      lb=strlen(b1);
-      for(i=0;i&lt;=la-1;i++){a[la-i]=a1[i]-48;}
-    for(i=0;i&lt;=lb-1;i++){b[lb-i]=b1[i]-48;}
-      lc=1,x=0;
-    while(lc&lt;=la||lc&lt;=lb){c[lc]=a[lc]+b[lc]+x,x=c[lc]/10,c[lc]%=10,lc++;}
-    c[lc]=x;
-    if(c[lc]==0){lc--;}
-    for(i=lc;i&gt;=1;i--){cout&lt;&lt;c[i];}
-    cout&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>@doby</p>
-<h1 id="dijkstrastl的优先队列优化">Dijkstra+STL的优先队列优化</h1>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstdlib&gt;
-#include &lt;cmath&gt;
-#include &lt;cctype&gt;
-#include &lt;climits&gt;
-#include &lt;algorithm&gt;
-#include &lt;map&gt;
-#include &lt;queue&gt;
-#include &lt;vector&gt;
-#include &lt;ctime&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-using namespace std;
-const int N=405;
-struct Edge {
-    int v,w;
-};
-vector&lt;Edge&gt; edge[N*N];
-int n;
-int dis[N*N];
-bool vis[N*N];
-struct cmp {
-    bool operator()(int a,int b) {
-        return dis[a]&gt;dis[b];
-    }
-};
-int Dijkstra(int start,int end)
-{
-    priority_queue&lt;int,vector&lt;int&gt;,cmp&gt; dijQue;
-    memset(dis,-1,sizeof(dis));
-    memset(vis,0,sizeof(vis));
-    dijQue.push(start);
-    dis[start]=0;
-    while(!dijQue.empty()) {
-        int u=dijQue.top();
-        dijQue.pop();
-        vis[u]=0;
-        if(u==end)
-            break;
-        for(int i=0; i&lt;edge[u].size(); i++) {
-            int v=edge[u][i].v;
-            if(dis[v]==-1 || dis[v]&gt;dis[u]+edge[u][i].w) {
-                dis[v]=dis[u]+edge[u][i].w;
-                if(!vis[v]) {
-                    vis[v]=true;
-                    dijQue.push(v);
-                }
-            }
-        }
-    }
-    return dis[end];
-}
-int main()
-{
-    int a,b;
-    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
-    Edge Qpush;
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-    Qpush.v=1;
-    Qpush.w=a;
-    edge[0].push_back(Qpush);
-
-    Qpush.v=2;
-    Qpush.w=b;
-    edge[1].push_back(Qpush);
-
-    printf(&quot;%d&quot;,Dijkstra(0,2));
-    return 0;
-}
-</code></pre>
-<p>@yyy2015c01</p>
-<h1 id="trie字典树">Trie字典树</h1>
-<pre><code class="language-cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdlib&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-struct node{
-    int str[26];
-    int sum;
-}s[1000];
-char str1[100];
-int t=0,tot=0,ss=0;
-bool f1;
-void built()
-{
-    t=0;
-    for(int i=0;i&lt;strlen(str1);i++)
-    {
-         if(str1[i]=='-'){
-             f1=true;continue;
-         }
-         if(!s[t].str[str1[i]-'0'])
-         s[t].str[str1[i]-'0']=++tot;
-         t=s[t].str[str1[i]-'0'];
-         s[t].sum=str1[i]-'0';
-    }
-}
-int query()
-{
-   int t=0;int s1=0;
-   for(int i=0;i&lt;strlen(str1);i++)
-   {
-           if(str1[i]=='-') continue;
-           if(!s[t].str[str1[i]-'0']) return s1;
-           t=s[t].str[str1[i]-'0'];
-           s1=s1*10+s[t].sum;
-   }
-   return s1;
-}
-int main()
-{    
-  for(int i=1;i&lt;=2;i++)
-  {
-      f1=false;
-      scanf(&quot;%s&quot;,str1);
-    built();
-    if(f1)
-      ss-=query();
-      else ss+=query();
-  }
-  printf(&quot;%d&quot;,ss);
-  return 0;    
-}
-</code></pre>
-<p>@Linbom</p>
-<p>还有很多<s>毒瘤</s>搞笑解法，以后将不定期更新</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CSP2019入门级游记]]></title>
-        <id>https://qz-cqy.github.io/post/i-ak-csp2019-j</id>
-        <link href="https://qz-cqy.github.io/post/i-ak-csp2019-j">
-        </link>
-        <updated>2019-11-26T08:13:10.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="基础信息">基础信息：</h1>
-<p>省份：北京</p>
-<p>学校：清华大学附属实验学校</p>
-<p>年级：初一</p>
-<p>比赛：2019 年 CCF 非专业级软件能力认证（CSP-J/S 2019）</p>
-<h1 id="前言">前言</h1>
-<p>报名的时候：啊！为什么我点了！我不是应该报提高组的吗？！</p>
-<p>考完试：呼~幸好我报的是普及组，提高组我都不会。</p>
-<h1 id="j1">J1</h1>
-<p>网上答题，拿了84分。出了考场听好多大佬说估分90+，当时快要疯了。还好分数线没有那么高。</p>
-<h1 id="j2-day-1">J2-Day 1</h1>
-<p>打开Guide，设置我习惯的环境、字体，关掉<s>可恶的</s>自动补全。解压ZIP文件的时候，瞄了一眼密码，敲进去，两次都不对。后来我突然意识到前面的等号也是密码QAQ。</p>
-<h2 id="t1">T1</h2>
-<p>比去年的还要水，切掉。</p>
-<h2 id="t2">T2</h2>
-<p>直接模拟！当场编译通过，所有样例都过了，下一题！（赛后洛谷上测的时候却CE了，希望不要爆0 QAQ）</p>
-<h2 id="t3">T3</h2>
-<p>动态规划？不会，写了个部分分。</p>
-<h2 id="t4">T4</h2>
-<p>图论，一个搜索搞定。可惜时间复杂度不够，不会优化，拿不到满分。</p>
-<h1 id="结果">结果</h1>
-<p>敬请期待……</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[骗分导论]]></title>
-        <id>https://qz-cqy.github.io/post/How-to-get-score</id>
-        <link href="https://qz-cqy.github.io/post/How-to-get-score">
-        </link>
-        <updated>2019-06-24T07:56:36.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="1-骗分是什么">1 骗分是什么？</h1>
-<p>总会有一天，蒟蒻与大佬同台竞技。大佬当然可以专心写程序AC，但是蒟蒻却不会那个算法。假如你是<s>李华</s>蒟蒻，请你帮忙想一个办法，让你可以得分。</p>
-<p>答案：<mark><em><strong>骗分</strong></em></mark></p>
-<p>骗分是一种竞赛技巧，可以帮你在不会的题上得分。骗分有很多种方法，将在下文详细介绍。</p>
-<h1 id="2-基础骗分方法难度系数1~3颗">2 基础骗分方法（难度系数1~3颗⭐）</h1>
-<h2 id="21-特判数据">2.1 特判数据⭐</h2>
-<p>有时，测试点中可能包含数据，特判一下可能可以帮你获得一个测试点的分。</p>
-<h2 id="22-输出随机数">2.2 输出随机数⭐</h2>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;time.h&gt;
-using namespace std;
-
-int main()
-{
-	srand((unsigned)time(NULL));
-	cout&lt;&lt;rand()%N&lt;&lt;endl;//0~N-1
-	return 0;
-}
-</code></pre>
-<p>听说有人用这个方法在某一届NOIp骗来了70+分！如果你觉得你人品够好你可以试试。</p>
-<h2 id="23-输出特殊答案">2.3 输出特殊答案⭐</h2>
-<p>如果题目中出现形如这个的话：</p>
-<blockquote>
-<p>如果无解，输出-1</p>
-</blockquote>
-<p>你应该暗自庆幸：输出-1应该可以骗来一些分！不过有些题可能利用这个来坑人，LUOGU P2874：如果没有可行路线的话，输出orz，经过作者实测，会爆0。</p>
-<h2 id="24-大模拟">2.4 大模拟⭐⭐</h2>
-<p>如果你有一种模拟策略，可是出于复杂度原因，无法通过所有测试点；并且你不会其他方法，可以试试暴力搜索。</p>
-<h2 id="25-按测试数据中关系到复杂度的东西分治">2.5 按测试数据中关系到复杂度的东西分治。⭐⭐⭐</h2>
-<p>例子：LUOGU P3371：n&lt;=10000，开邻接矩阵会MLE，但是邻接表／链式前向星不是特别熟，可以采取以下策略：</p>
-<ol>
-<li>n&lt;=500，邻接矩阵+Floyd，即空间n<sup>2</sup>时间n<sup>3</sup>。</li>
-<li>n&lt;=5000，邻接矩阵+Dijkstra，即空间n<sup>2</sup>时间n<sup>2</sup>。</li>
-<li>n&lt;=10000，邻接表+Dijkstra，即空间n+m，时间n<sup>2</sup>。</li>
-</ol>
-<h1 id="3-进阶骗分方法难度系数4~8颗">3 进阶骗分方法（难度系数4~8颗⭐）</h1>
-<h2 id="31-dfs">3.1 DFS⭐⭐⭐⭐</h2>
-<p>搜索。</p>
-<h2 id="32-bfs">3.2 BFS⭐⭐⭐⭐⭐</h2>
-<p>搜索。</p>
-<h2 id="33-概率论">3.3 概率论⭐⭐⭐⭐⭐⭐</h2>
-<p>可以结合一些概率知识判断答案可能的分布情况，然后结合输出随机数或模拟等方法给出答案。</p>
-<h2 id="34-打表">3.4 打表⭐⭐⭐⭐⭐⭐</h2>
-<p>之所以给这个难度，是因为：</p>
-<ol>
-<li>模拟程序不保证正确</li>
-<li>打表数据范围未知</li>
-<li>造表时浪费很多时间</li>
-</ol>
-<h2 id="35-对拍">3.5 对拍⭐⭐⭐⭐⭐⭐⭐⭐</h2>
-<p>如果你有很多种想法，可以都写出来，然后比较数据，取比较靠谱的。</p>
-<h1 id="4-阎王骗分方法难度系数9颗">4 阎王骗分方法（难度系数9颗⭐）</h1>
-<h2 id="41-保证正确的骗分方法">4.1 保证正确的骗分方法⭐⭐⭐⭐⭐⭐⭐⭐⭐</h2>
-<blockquote>
-<p>最好的、最高效的骗分方法就是从现在开始认真钻研OI，学习算法，写保证正确的程序，从小牛成为神犇。</p>
-</blockquote>
-<h1 id="5-结语">5 结语</h1>
-<p>打竞赛时，不仅要想着骗分，更重要的是想正确的实现方法。如果你想不出来，就证明这是你的薄弱环节，今后要努力钻研这个算法，从此不用骗分！</p>
-<h1 id="6-骗分导论信息">6 《骗分导论》信息</h1>
-<p>作者：rui_er（CQY）<br>
-日期：2019年6月24日<br>
-字数：1326字</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[NOIp2018普及组游记]]></title>
-        <id>https://qz-cqy.github.io/post/i-ak-noip2018-pj</id>
-        <link href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
-        </link>
-        <updated>2018-12-12T08:11:49.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="基础信息">基础信息：</h1>
-<p>省份：北京</p>
-<p>学校：清华大学附属实验学校</p>
-<p>年级：小学六年级</p>
-<p>比赛：全国青少年信息学奥林匹克联赛（NOIp）2018年北京市普及组比赛</p>
-<p>第一次参加NOIp</p>
-<h1 id="day-0">Day 0</h1>
-<p>明天就是NOIp了，不知道有多难，先好好睡一觉。（在北京有个好处：不用去省会）</p>
-<h1 id="day-1">Day 1</h1>
-<p>走进考场，紧张地打开Guide。考试时间到了，下发zip文件。输入密码。</p>
-<p>咦？怎么不对</p>
-<p>咦？怎么又不对</p>
-<p>咦？怎么还不对</p>
-<p>听到了周围选手敲键盘的声音，我非常着急。（咳咳，怎么变成写作文了）</p>
-<p>我仔细看了一眼密码，敲了一遍，总算对了。打开试题。</p>
-<h2 id="t1">T1</h2>
-<p>咳咳，怎么这么简单？！五分钟编程，五分钟写数据，得了100分（赛后得知）。</p>
-<h2 id="t2">T2</h2>
-<p>写个模拟吧。看这个数据貌似要开long long。</p>
-<p>写完了，测了数据，都对了就没再管。查成绩时，80分？哪里不对？（说实话我到现在都没调出来）</p>
-<h2 id="t3">T3</h2>
-<p>啊啊啊这个怎么做啊！应该是动态规划，可我还不会！匆匆忙忙写了个贪心，好像是10分。</p>
-<h2 id="t4">T4</h2>
-<p>二叉树？这【数据删除】我都不知道是啥！骗个分吧，4分。</p>
-<h1 id="结果">结果</h1>
-<p>普及二等奖，194分，距离一等奖线差1分（自闭QAQ），因为姓氏拼音靠前，是普及二等奖第一名QAQ</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://qz-cqy.github.io/post/hello-gridea</id>
-        <link href="https://qz-cqy.github.io/post/hello-gridea">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+    </script>
+  </body>
+</html>
