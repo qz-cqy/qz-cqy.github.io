@@ -1,129 +1,117 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>背包九讲（转载） | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1578395522744">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1578395618391">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="背包九讲
+目录
+第一讲 01背包问题
+第二讲 完全背包问题
+第三讲 多重背包问题
+第四讲 混合三种背包问题
+第五讲 二维费用的背包问题
+第六讲 分组的背包问题
+第七讲 有依赖的背包问题
+第八讲 泛化物品
+第九讲 背包问题问法的变化
+附：US..." />
+    <meta name="keywords" content="USACO,背包,动态规划/DP,OI" />
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://qz-cqy.github.io">
-        <img class="avatar" src="https://qz-cqy.github.io/images/avatar.png?v=1578395522744" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://qz-cqy.github.io">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1578395618391" class="site-logo">
         <h1 class="site-title">rui_er | I AK IOI</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="/archives" class="menu purple-link">
+          <a href="/archives" class="site-nav">
             归档
           </a>
         
       
         
-          <a href="/tags" class="menu purple-link">
+          <a href="/tags" class="site-nav">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="menu purple-link">
+          <a href="/post/about" class="site-nav">
             关于
           </a>
         
       
         
-          <a href="/post/list" class="menu purple-link">
+          <a href="/post/list" class="site-nav">
             比赛游记
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">背包九讲（转载）</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-01-07</span>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">背包九讲（转载）</h2>
+            <div class="post-date">2020-01-07</div>
             
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://qz-cqy.github.io/tag/NpQHbc2L7">
-                    USACO
-                    
-                      ，
-                    
-                  </a>
-                
-                  <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI">
-                    背包
-                    
-                      ，
-                    
-                  </a>
-                
-                  <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp">
-                    动态规划/DP
-                    
-                      ，
-                    
-                  </a>
-                
-                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz">
-                    OI
-                    
-                  </a>
-                
-              </span>
-            
-          </div>
-          <div class="post-content">
-            <h1 id="背包九讲">背包九讲</h1>
+            <div class="post-content" v-pre>
+              <h1 id="背包九讲">背包九讲</h1>
 <h1 id="目录">目录</h1>
 <p>第一讲 01背包问题<br>
 第二讲 完全背包问题<br>
@@ -464,45 +452,51 @@ F(i,j)=max{ F(i-t[j]<em>k,j-1)+k</em>w[j] } (0&lt;=k&lt;=i mod t[j] );<br>
 </code></pre>
 <p>此时,第J个物品便有可能加入到一个已经有该物品的最优解中,正好满足完全背包问题的要求.</p>
 
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="tag">
+                    USACO
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="tag">
+                    背包
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="tag">
+                    动态规划/DP
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/list">
+                  <h3 class="post-title">
+                    游记列表[TOP]
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
-
-        
-          <div class="next-post">
-            <a class="purple-link" href="https://qz-cqy.github.io/post/list">
-              <h3 class="post-title">
-                下一篇：游记列表[TOP]
-              </h3>
-            </a>
-          </div>
-          
       </div>
-
-      
-
-      <div class="site-footer">
-  <div class="slogan">相信玄学，研究科学 | Think twice, code once. </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -512,6 +506,8 @@ var app = new Vue({
 })
 
 </script>
+
+
 
 
 
