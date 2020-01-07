@@ -4,106 +4,105 @@
     <meta charset="utf-8" >
 
 <title>骗分导论[TOP] | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1578395736686">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1578396200578">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
+
+    <meta name="description" content="1 骗分是什么？
+总会有一天，蒟蒻与大佬同台竞技。大佬当然可以专心写程序AC，但是蒟蒻却不会那个算法。假如你是李华蒟蒻，请你帮忙想一个办法，让你可以得分。
+答案：骗分
+骗分是一种竞赛技巧，可以帮你在不会的题上得分。骗分有很多种方法，将在下文..." />
+    <meta name="keywords" content="骗分,OI" />
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://qz-cqy.github.io">rui_er | I AK IOI</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1578396200578" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
         
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
+      
         
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
+      
         
-          <li>
-            
-              <a href="/post/list" class="menu">
-                比赛游记
-              </a>
-            
-          </li>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
-      </ul>
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+        
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
     </div>
   </div>
-</nav>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>骗分导论[TOP]</h1>
-            <p class="article-meta">
-              2019-06-24
-              
-                <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="badge secondary">
-                  骗分
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge secondary">
-                  OI
-                </a>
-              
-            </p>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">骗分导论[TOP]</h2>
+            <div class="post-date">2019-06-24</div>
             
-            <div class="post-content">
+            <div class="post-content" v-pre>
               <h1 id="1-骗分是什么">1 骗分是什么？</h1>
 <p>总会有一天，蒟蒻与大佬同台竞技。大佬当然可以专心写程序AC，但是蒟蒻却不会那个算法。假如你是<s>李华</s>蒟蒻，请你帮忙想一个办法，让你可以得分。</p>
 <p>答案：<mark><em><strong>骗分</strong></em></mark></p>
@@ -169,158 +168,53 @@ int main()
 字数：1326字</p>
 
             </div>
-          </article>
-        </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="tag">
+                    骗分
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
               </div>
-              <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
-                <h3 class="post-title">
-                  NOIp2018普及组游记
-                </h3>
-              </a>
-            </div>
-          
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
+                  <h3 class="post-title">
+                    NOIp2018普及组游记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
         </div>
-        
       </div>
-
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://qz-cqy.github.io/images/avatar.png?v=1578395736686" class="no-responsive avatar">
-    <div class="text-muted">相信玄学，研究科学 | Think twice, code once. </div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/pack-problem">背包九讲（转载）</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/list">游记列表[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/How-to-AC-LG-P1001">AC题目A+B的1000种方法[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/i-ak-csp2019-j">CSP2019入门级游记</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/How-to-get-score">骗分导论[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/about">关于</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">NOIp2018普及组游记</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/hello-gridea">Hello Gridea</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="badge secondary">
-          USACO
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="badge secondary">
-          背包
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="badge success">
-          动态规划/DP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge secondary">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="badge warning">
-          NOIp/CSP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge secondary">
-          洛谷
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="badge secondary">
-          骗分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/4Hc_Jfc8r" class="badge secondary">
-          Gridea
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-
-
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
 <script type="application/javascript">
 
 AOS.init();
 
-hljs.initHighlightingOnLoad()
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
+
+
 
 
 
