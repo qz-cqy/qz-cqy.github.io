@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-01-07T10:54:40.883Z</updated>
+    <updated>2020-01-07T11:01:50.538Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -359,7 +359,7 @@ F(i,j)=max{ F(i-t[j]<em>k,j-1)+k</em>w[j] } (0&lt;=k&lt;=i mod t[j] );<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[游记列表]]></title>
+        <title type="html"><![CDATA[游记列表[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/list</id>
         <link href="https://qz-cqy.github.io/post/list">
         </link>
@@ -369,7 +369,7 @@ F(i,j)=max{ F(i-t[j]<em>k,j-1)+k</em>w[j] } (0&lt;=k&lt;=i mod t[j] );<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[AC题目A+B的1000种方法]]></title>
+        <title type="html"><![CDATA[AC题目A+B的1000种方法[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/How-to-AC-LG-P1001</id>
         <link href="https://qz-cqy.github.io/post/How-to-AC-LG-P1001">
         </link>
@@ -1173,7 +1173,7 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[骗分导论]]></title>
+        <title type="html"><![CDATA[骗分导论[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/How-to-get-score</id>
         <link href="https://qz-cqy.github.io/post/How-to-get-score">
         </link>
