@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>题解 P1305@洛谷 【新二叉树】  | rui_er | I AK IOI</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1579933220015">
+<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="方法简述
+虽然不用建树，我还是建了一个，用的是顺序存储结构（数组）
+char tree[501];
+
+头文件
+#include &lt;iostream&gt;
+#include &lt;memory.h&gt;
+#include &lt;..." />
+    <meta name="keywords" content="树,图论,算法,题解,OI,洛谷" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1579933220015" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">题解 P1305@洛谷 【新二叉树】 </h2>
+            <div class="post-date">2019-05-23</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="方法简述">方法简述</h1>
+<p>虽然不用建树，我还是建了一个，用的是顺序存储结构（数组）</p>
+<pre><code class="language-cpp">char tree[501];
+</code></pre>
+<h1 id="头文件">头文件</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;memory.h&gt;
+#include &lt;map&gt;
+using namespace std;
+</code></pre>
+<p>其中memory.h是为memset做准备的</p>
+<h1 id="建树">建树</h1>
+<pre><code class="language-cpp">char tree[501];
+map&lt;char, int&gt; k;
+
+memset(tree, '*', 501);
+int n;
+cin&gt;&gt;n;
+char a, b, c;
+for(int i=0;i&lt;n;i++)
+{
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+    if(!i)
+    {
+        tree[1] = a;
+        k[a] = 1;
+    }
+    k[b] = k[a] * 2;
+    tree[k[b]] = b;
+    k[c] = k[a] * 2 + 1;
+    tree[k[c]] = c;
+}
+</code></pre>
+<p>memset行用于给tree赋值。</p>
+<blockquote>
+<p>听说第一行就是有关根节点的一行</p>
+</blockquote>
+<p>if行用于判断是否为第一行，将根节点写入。k用于存字符出现的下标地址，方便查询一个节点的位置。</p>
+<h1 id="遍历">遍历</h1>
+<pre><code class="language-cpp">void DLR(int n)
+{
+    if(tree[n] == '*') return;
+    cout&lt;&lt;tree[n];
+    DLR(n*2);
+    DLR(n*2+1);
+}
+</code></pre>
+<p>还记得前文的memset吗？输入的空结点用<code>*</code>表示，所以方便起见把树初始化成<code>*</code>。如果遇到<code>*</code>，则代表该结点不存在，自然就可以退出那个结点了。</p>
+<p>根据前序遍历的定义，写出递归函数即可。</p>
+<h1 id="程序">程序</h1>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;memory.h&gt;
+#include &lt;map&gt;
+using namespace std;
+
+char tree[501];
+map&lt;char, int&gt; k;
+
+void DLR(int n)
+{
+    if(tree[n] == '*') return;
+    cout&lt;&lt;tree[n];
+    DLR(n*2);
+    DLR(n*2+1);
+}
+
+int main()
+{
+    memset(tree, '*', 501);
+    int n;
+    cin&gt;&gt;n;
+    char a, b, c;
+    for(int i=0;i&lt;n;i++)
+    {
+        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+        if(!i)
+        {
+            tree[1] = a;
+            k[a] = 1;
+        }
+        k[b] = k[a] * 2;
+        tree[k[b]] = b;
+        k[c] = k[a] * 2 + 1;
+        tree[k[c]] = c;
+    }
+    DLR(1);
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="tag">
+                    树
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="tag">
+                    图论
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
+                  <h3 class="post-title">
+                    NOIp2018普及组游记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

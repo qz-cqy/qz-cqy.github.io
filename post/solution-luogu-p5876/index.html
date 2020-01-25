@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>题解 P5876@洛谷 【化简单词】 | rui_er | I AK IOI</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1579933220015">
+<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="看来前面题解的各种做法（其实也就两种），我决定给你们写一篇STL的。
+介绍一下使用的函数：substr()
+这个函数有两个参数，第一个是起始位置，第二个是子串长度，作用是取字符串的一部分，返回值为这段的内容。用法：
+string s;
+s...." />
+    <meta name="keywords" content="算法,题解,OI,洛谷" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1579933220015" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">题解 P5876@洛谷 【化简单词】</h2>
+            <div class="post-date">2020-01-15</div>
+            
+            <div class="post-content" v-pre>
+              <p>看来前面题解的各种做法（其实也就两种），我决定给你们写一篇STL的。</p>
+<h3 id="介绍一下使用的函数substr">介绍一下使用的函数：<code>substr()</code></h3>
+<p>这个函数有两个参数，第一个是起始位置，第二个是子串长度，作用是取字符串的一部分，返回值为这段的内容。用法：</p>
+<pre><code class="language-cpp">string s;
+s.substr(0, 5);
+</code></pre>
+<p>表示取字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 的前五位。</p>
+<h3 id="看一眼数据范围">看一眼数据范围</h3>
+<p>发现可以暴力！于是就有了下面的思路：</p>
+<blockquote>
+<p>枚举每个字符串，枚举前缀位数，判断这个前缀是否也是其他字符串的前缀：如果是，前缀位数加一，继续判断；如果不是，说明找到了最短的前缀，输出。</p>
+</blockquote>
+<h3 id="你们最爱的代码">你们最爱的代码</h3>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main()
+{
+	int n;
+	cin&gt;&gt;n;
+	string s[51];
+	for(int i=1;i&lt;=n;i++) cin&gt;&gt;s[i];
+	for(int i=1;i&lt;=n;i++)
+	{
+		for(int j=1;j&lt;=s[i].length();j++)
+		{
+			bool book = true;
+			for(int k=1;k&lt;=n;k++)
+			{
+				if(k == i) continue;
+				if(s[i].substr(0, j) == s[k].substr(0, j))
+				{
+					book = false;
+					break;
+				}
+			}
+			if(book)
+			{
+				cout&lt;&lt;s[i].substr(0, j)&lt;&lt;endl;
+				break;
+			}
+		}
+	}
+	return 0;
+}
+</code></pre>
+<p>实测AC。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/orz-cqy">
+                  <h3 class="post-title">
+                    【项目】膜拜rui_er
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

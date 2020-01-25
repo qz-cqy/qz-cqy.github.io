@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】 | rui_er | I AK IOI</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1579933220015">
+<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="真心不明白为什么这题是绿题，只是一个模拟。
+读懂题意是关键
+我第一次提交的时候对题面理解有误，加了一句sort(x, x+n);，结果WA了很多测试点。其实这里是需要按照顺序到达每个地点的QAQ。
+模拟方法
+对于每一个地点，判断两种方案中耗..." />
+    <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1579933220015" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】</h2>
+            <div class="post-date">2019-09-19</div>
+            
+            <div class="post-content" v-pre>
+              <p><s>真心不明白为什么这题是绿题，只是一个模拟。</s></p>
+<h1 id="读懂题意是关键">读懂题意是关键</h1>
+<p>我第一次提交的时候对题面理解有误，加了一句<code>sort(x, x+n);</code>，结果WA了很多测试点。其实这里是需要按照顺序到达每个地点的QAQ。</p>
+<h1 id="模拟方法">模拟方法</h1>
+<p>对于每一个地点，判断两种方案中耗费疲劳值最少的方案，详见代码。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+#define ll long long
+
+int main()
+{
+    ll n, a, b;
+    cin&gt;&gt;n&gt;&gt;a&gt;&gt;b;
+    ll x[100001];
+    for(ll i=1;i&lt;=n;i++) cin&gt;&gt;x[i];
+    ll sum = 0;
+    for(ll i=1;i&lt;n;i++)
+    {
+        ll l = x[i+1] - x[i];
+        sum += min(b, a*l);
+    }
+    cout&lt;&lt;sum&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="tag">
+                    Atcoder
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/solution-luogu-at2447-atcoder-2447">
+                  <h3 class="post-title">
+                    题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
