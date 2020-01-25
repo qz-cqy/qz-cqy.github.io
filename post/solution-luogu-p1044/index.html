@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>NOIp2018普及组游记 | rui_er | I AK IOI</title>
+<title>题解 P1044@洛谷 【栈】  | rui_er | I AK IOI</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,15 +18,15 @@
 
 
 
-    <meta name="description" content="基础信息：
-省份：北京
-学校：清华大学附属实验学校
-年级：小学六年级
-比赛：全国青少年信息学奥林匹克联赛（NOIp）2018年北京市普及组比赛
-第一次参加NOIp
-Day 0
-明天就是NOIp了，不知道有多难，先好好睡一觉。（在北京有个好处..." />
-    <meta name="keywords" content="NOIp/CSP,OI" />
+    <meta name="description" content="主要原理：卡特兰数
+首先，根据题意，自己枚举了一些比较小的时候的结果，感觉很熟悉，突然发现——
+
+这不就是卡特兰数吗？！
+
+紧接着我企图上百度百科找到题解卡特兰数数列，用于打表输出。
+这是被我打了的表：
+const long long ca..." />
+    <meta name="keywords" content="数学,打表,算法,题解,OI,洛谷" />
   </head>
   <body>
     <div id="app" class="main">
@@ -103,51 +103,74 @@ Day 0
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">NOIp2018普及组游记</h2>
-            <div class="post-date">2018-12-12</div>
+            <h2 class="post-title">题解 P1044@洛谷 【栈】 </h2>
+            <div class="post-date">2019-04-20</div>
             
             <div class="post-content" v-pre>
-              <h1 id="基础信息">基础信息：</h1>
-<p>省份：北京</p>
-<p>学校：清华大学附属实验学校</p>
-<p>年级：小学六年级</p>
-<p>比赛：全国青少年信息学奥林匹克联赛（NOIp）2018年北京市普及组比赛</p>
-<p>第一次参加NOIp</p>
-<h1 id="day-0">Day 0</h1>
-<p>明天就是NOIp了，不知道有多难，先好好睡一觉。（在北京有个好处：不用去省会）</p>
-<h1 id="day-1">Day 1</h1>
-<p>走进考场，紧张地打开Guide。考试时间到了，下发zip文件。输入密码。</p>
-<p>咦？怎么不对</p>
-<p>咦？怎么又不对</p>
-<p>咦？怎么还不对</p>
-<p>听到了周围选手敲键盘的声音，我非常着急。（咳咳，怎么变成写作文了）</p>
-<p>我仔细看了一眼密码，敲了一遍，总算对了。打开试题。</p>
-<h2 id="t1">T1</h2>
-<p>咳咳，怎么这么简单？！五分钟编程，五分钟写数据，得了100分（赛后得知）。</p>
-<h2 id="t2">T2</h2>
-<p>写个模拟吧。看这个数据貌似要开long long。</p>
-<p>写完了，测了数据，都对了就没再管。查成绩时，80分？哪里不对？（说实话我到现在都没调出来）</p>
-<h2 id="t3">T3</h2>
-<p>啊啊啊这个怎么做啊！应该是动态规划，可我还不会！匆匆忙忙写了个贪心，好像是10分。</p>
-<h2 id="t4">T4</h2>
-<p>二叉树？这【数据删除】我都不知道是啥！骗个分吧，4分。</p>
-<h1 id="结果">结果</h1>
-<p>普及二等奖，194分，距离一等奖线差1分（自闭QAQ），因为姓氏拼音靠前，是普及二等奖第一名QAQ</p>
+              <h1 id="主要原理卡特兰数">主要原理：卡特兰数</h1>
+<p>首先，根据题意，自己枚举了一些比较小的时候的结果，感觉很熟悉，突然发现——</p>
+<blockquote>
+<p>这不就是卡特兰数吗？！</p>
+</blockquote>
+<p>紧接着我<s>企图</s>上<a href="https://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/6125746?fr=aladdin">百度百科</a>找到<s>题解</s>卡特兰数数列，用于打表输出。</p>
+<p>这是<s>被我打了的</s>表：</p>
+<pre><code>const long long catalan[] = {1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452};
+</code></pre>
+<p>综合题意，得程序：</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+const long long catalan[] = {1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452};
+
+int main()
+{
+	int n;
+	cin&gt;&gt;n;
+	cout&lt;&lt;catalan[n]&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<p>打表数据出处：https://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/6125746?fr=aladdin#1</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="tag">
-                    NOIp/CSP
+                  <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="tag">
+                    数学
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="tag">
+                    打表
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
                   </a>
                 
                   <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
                     OI
                   </a>
                 
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
+                  <h3 class="post-title">
+                    NOIp2018普及组游记
+                  </h3>
+                </a>
+              </div>
             
 
             
