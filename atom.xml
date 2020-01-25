@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-01-09T11:23:44.901Z</updated>
+    <updated>2020-01-25T05:43:56.849Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[关于NOIP的暂停和恢复]]></title>
+        <id>https://qz-cqy.github.io/post/noip-death-and-rebirth</id>
+        <link href="https://qz-cqy.github.io/post/noip-death-and-rebirth">
+        </link>
+        <updated>2020-01-21T13:21:21.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="背景">背景</h1>
+<p><a href="https://www.ccf.org.cn/c/2019-08-16/668162.shtml">CCF关于暂停NOIP竞赛的公告——2019/08/16</a></p>
+<p><a href="https://www.ccf.org.cn/c/2020-01-21/694716.shtml">CCF关于恢复NOIP竞赛的公告——2020/01/21</a></p>
+<h1 id="如何看待">如何看待</h1>
+<ol>
+<li><s>暂停NOIP是被机惨的结果，至于恢复，是一套说辞罢了，不要在意</s></li>
+<li>把CSP2019的证书当成绝版吧！NOIP恢复了，CSP-J/S会不复存在！</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【项目】膜拜rui_er]]></title>
         <id>https://qz-cqy.github.io/post/orz-cqy</id>
@@ -26,8 +42,24 @@
         </link>
         <updated>2020-01-08T09:14:22.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
-<p>注：由于图片使用洛谷图床，有些图片可能加载不出来，可以前往<a href="https://ak-ioi.blog.luogu.org/building-a-blog#">洛谷博客</a>查看</p>
+<p>注：由于图片使用洛谷图床，有些图片可能会很慢甚至加载不出来，可以前往<a href="https://ak-ioi.blog.luogu.org/building-a-blog#">洛谷博客</a>查看</p>
 </blockquote>
+<h1 id="0-先来说一下此方法的优点和缺点">0 先来说一下此方法的优点和缺点</h1>
+<p>优点：</p>
+<ul>
+<li>使用简单</li>
+<li>无需写任何代码</li>
+<li>快捷、方便</li>
+<li>离线编辑博客，随时写，随时传</li>
+<li>主题美观、多样</li>
+<li>……</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>由于是比较新的软件，可能会有些东西没有详细说明（但是大多数经常使用的都已经在下面介绍了，所以不用怕）</li>
+<li>……</li>
+</ul>
+<p>看完这么多优点，是不是很想要呢？那就接着往下看吧！这么好的一个东西，你值得拥有！</p>
 <h1 id="1-准备工作">1 准备工作</h1>
 <p>准备一个自己的空网站（可以不是顶级域名），如果你已经有了，并且对Github的操作比较熟悉，你可以跳过下面的指导，直接进入第二部分。</p>
 <h2 id="11-不想付钱怎么办">1.1 不想付钱怎么办</h2>
