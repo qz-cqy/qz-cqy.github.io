@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>CSP2019入门级游记 | rui_er | I AK IOI</title>
+<title>题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】 | rui_er | I AK IOI</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,15 +18,11 @@
 
 
 
-    <meta name="description" content="基础信息：
-省份：北京
-学校：清华大学附属实验学校
-年级：初一
-比赛：2019 年 CCF 非专业级软件能力认证（CSP-J/S 2019）
-前言
-报名的时候：啊！为什么我点了！我不是应该报提高组的吗？！
-考完试：呼~幸好我报的是普及组，提..." />
-    <meta name="keywords" content="NOIp/CSP,OI" />
+    <meta name="description" content="首先，我们用字符串s1来进行操作，s用来对照。题目说1&lt;=|s|&lt;=10^5，因此数组开大一点。其次，容易想到，|s|是奇数时不可能满足条件，故加上：
+if(l&amp;1)
+{
+	cout&lt;&lt;&quot;No&qu..." />
+    <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
   </head>
   <body>
     <div id="app" class="main">
@@ -103,43 +99,83 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">CSP2019入门级游记</h2>
-            <div class="post-date">2019-11-26</div>
+            <h2 class="post-title">题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】</h2>
+            <div class="post-date">2019-02-13</div>
             
             <div class="post-content" v-pre>
-              <h1 id="基础信息">基础信息：</h1>
-<p>省份：北京</p>
-<p>学校：清华大学附属实验学校</p>
-<p>年级：初一</p>
-<p>比赛：2019 年 CCF 非专业级软件能力认证（CSP-J/S 2019）</p>
-<h1 id="前言">前言</h1>
-<p>报名的时候：啊！为什么我点了！我不是应该报提高组的吗？！</p>
-<p>考完试：呼~幸好我报的是普及组，提高组我都不会。</p>
-<h1 id="j1">J1</h1>
-<p>网上答题，拿了84分。出了考场听好多大佬说估分90+，当时快要疯了。还好分数线没有那么高。</p>
-<h1 id="j2-day-1">J2-Day 1</h1>
-<p>打开Guide，设置我习惯的环境、字体，关掉<s>可恶的</s>自动补全。解压ZIP文件的时候，瞄了一眼密码，敲进去，两次都不对。后来我突然意识到前面的等号也是密码QAQ。</p>
-<h2 id="t1">T1</h2>
-<p>比去年的还要水，切掉。</p>
-<h2 id="t2">T2</h2>
-<p>直接模拟！当场编译通过，所有样例都过了，下一题！（赛后洛谷上测的时候却CE了，希望不要爆0 QAQ）</p>
-<h2 id="t3">T3</h2>
-<p>动态规划？不会，写了个部分分。</p>
-<h2 id="t4">T4</h2>
-<p>图论，一个搜索搞定。可惜时间复杂度不够，不会优化，拿不到满分。</p>
-<h1 id="结果">结果</h1>
-<p>敬请期待……</p>
+              <p>首先，我们用字符串s1来进行操作，s用来对照。题目说1&lt;=|s|&lt;=10^5，因此数组开大一点。其次，容易想到，|s|是奇数时不可能满足条件，故加上：</p>
+<pre><code class="language-cpp">if(l&amp;1)
+{
+	cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>其中<code>&amp;</code>是<code>按位与运算</code></p>
+<p>之后，分两步，如题。</p>
+<p>写出下列代码：</p>
+<pre><code class="language-cpp">for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
+for(int i=0;i&lt;l;i++)
+{
+	if(s1[i] == 'b') s1[i] = 'd';
+	else if(s1[i] == 'd') s1[i] = 'b';
+	else if(s1[i] == 'p') s1[i] = 'q';
+	else s1[i] = 'p';
+}
+</code></pre>
+<p>综合以上，判断字符串相等，使用<code>strcmp()</code>。</p>
+<p>综合所有，下为完整代码：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string.h&gt;
+using namespace std;
+
+char s[100010];
+char s1[100010];
+
+int main()
+{
+	cin&gt;&gt;s;
+	int l = strlen(s);
+	if(l&amp;1)
+	{
+		cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+		return 0;
+	}
+	for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
+	for(int i=0;i&lt;l;i++)
+	{
+		if(s1[i] == 'b') s1[i] = 'd';
+		else if(s1[i] == 'd') s1[i] = 'b';
+		else if(s1[i] == 'p') s1[i] = 'q';
+		else s1[i] = 'p';
+	}
+	if(!strcmp(s1, s)) cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+	else cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="tag">
-                    NOIp/CSP
+                  <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="tag">
+                    Atcoder
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
                   </a>
                 
                   <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
                     OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
                   </a>
                 
               </div>
@@ -147,9 +183,9 @@
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://qz-cqy.github.io/post/solution-luogu-at2287-atcoder-2287">
+                <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
                   <h3 class="post-title">
-                    题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】
+                    NOIp2018普及组游记
                   </h3>
                 </a>
               </div>
