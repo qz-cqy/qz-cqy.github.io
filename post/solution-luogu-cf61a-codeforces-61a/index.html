@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>动态规划/DP | rui_er | I AK IOI</title>
+<title>题解 CF61A@洛谷 | 61A@Codeforces 【Ultra-Fast Mathematician】  | rui_er | I AK IOI</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,13 @@
 
 
 
-    <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
+    <meta name="description" content="首先，介绍一下高大上的
+异或运算符
+写作'^'或&quot;xor&quot;
+接下来，如果在最后输出bool数组，就会变成16进制，我一开始就遇到了这个QAQ、qwq。
+好，紧接着，上代码：
+#include &lt;iostream&g..." />
+    <meta name="keywords" content="Codeforces,算法,题解,OI,洛谷" />
   </head>
   <body>
     <div id="app" class="main">
@@ -94,43 +100,79 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 动态规划/DP</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://qz-cqy.github.io/post/pack-problem">
-                  <h2 class="post-title">背包九讲（转载）</h2>
-                </a>
-                <div class="post-date">
-                  2020-01-07
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://qz-cqy.github.io/post/solution-luogu-p5146">
-                  <h2 class="post-title">题解 P5146@洛谷 【最大差值】 </h2>
-                </a>
-                <div class="post-date">
-                  2019-07-12
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">题解 CF61A@洛谷 | 61A@Codeforces 【Ultra-Fast Mathematician】 </h2>
+            <div class="post-date">2019-01-29</div>
+            
+            <div class="post-content" v-pre>
+              <p>首先，介绍一下<s>高大上的</s></p>
+<h1 id="异或运算符">异或运算符</h1>
+<p>写作'^'或&quot;xor&quot;</p>
+<p>接下来，如果在最后输出<code>bool</code>数组，就会变成16进制，我一开始就遇到了这个QAQ、qwq。</p>
+<p>好，紧接着，上代码：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
 
-          <div class="pagination-container">
-  
-  
-</div>
+int main()
+{
+	string s1, s2;
+	cin&gt;&gt;s1;
+	cin&gt;&gt;s2;
+	int len = s1.size();
+	bool a, b;
+	bool ans;
+	for(int i=0;i&lt;len;i++)
+	{
+		a = s1[i] - '0';
+		b = s2[i] - '0';
+		ans = a xor b;
+		cout&lt;&lt;ans;
+	}
+	return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="tag">
+                    Codeforces
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/solution-luogu-cf409d-codeforces-409d">
+                  <h3 class="post-title">
+                    题解 CF409D 【Big Data】 
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>
