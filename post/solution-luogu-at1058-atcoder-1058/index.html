@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】  | rui_er | I AK IOI</title>
+<title>题解 AT1058@洛谷 | 1058@Atcoder 【とても長い文字列】 | rui_er | I AK IOI</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,13 +18,14 @@
 
 
 
-    <meta name="description" content="刚刚看了下面的题解，貌似有桶排的有set的，那么我就要用map了！（连map都没人用吗？）
-头文件
-#include &lt;iostream&gt;
-#include &lt;map&gt;
-using namespace std;
+    <meta name="description" content="本题的数学方法有过了，我来一发循环链表（C/C++专属福利）。
+根据题目意思，要我们循环遍历一个字符串。自然可以想到循环链表。
+把样例1建入循环链表长什么样呢？如下图
 
-准..." />
+可以看到效果很好。
+关于循环链表的知识
+代码：
+#include &l..." />
     <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
   </head>
   <body>
@@ -102,64 +103,51 @@ using namespace std;
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 </h2>
-            <div class="post-date">2019-05-01</div>
+            <h2 class="post-title">题解 AT1058@洛谷 | 1058@Atcoder 【とても長い文字列】</h2>
+            <div class="post-date">2019-07-09</div>
             
             <div class="post-content" v-pre>
-              <p>刚刚看了下面的题解，貌似有桶排的有set的，那么我就要用map了！（连map都没人用吗？）</p>
-<h1 id="头文件">头文件</h1>
+              <p>本题的数学方法有过了，我来一发循环链表（C/C++专属福利）。</p>
+<p>根据题目意思，要我们循环遍历一个字符串。自然可以想到循环链表。</p>
+<p>把样例1建入循环链表长什么样呢？如下图</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/pic/62743.png" alt="" loading="lazy"></figure>
+<p>可以看到效果很好。</p>
+<p><a href="http://baidu.apphb.com/?q=%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8">关于循环链表的知识</a></p>
+<p>代码：</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;map&gt;
-using namespace std;
-</code></pre>
-<h1 id="准备阶段输入">准备阶段——输入</h1>
-<pre><code class="language-cpp">map&lt;int, bool&gt; have;
-int n;
-cin&gt;&gt;n;
-int k;
-for(int i=0;i&lt;n;i++) 
-{
-	cin&gt;&gt;k;
-    //剩下的下一阶段介绍
-}
-</code></pre>
-<p>have是一个以int类型为索引存储bool类型的map。<br>
-根据题意可以写出输入部分：输入询问个数n，再输入n个询问内容k。</p>
-<h1 id="判断出现与否">判断出现与否</h1>
-<pre><code class="language-cpp">for(int i=0;i&lt;n;i++) 
-{
-	cin&gt;&gt;k;
-	if(have[k]) have.erase(k);//$
-	else have[k] = true;//%
-}
-</code></pre>
-<p>其中$行表示，如果k出现过，就把它从have中删除；<br>
-%行表示，否则将它加入have中。</p>
-<h1 id="统计次数">统计次数</h1>
-<pre><code class="language-cpp">cout&lt;&lt;have.size()&lt;&lt;endl;
-</code></pre>
-<p>调用STL的统计大小的函数即可。</p>
-<blockquote>
-<p>综合以上，得</p>
-</blockquote>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;map&gt;
 using namespace std;
 
-map&lt;int, bool&gt; have;
+struct node
+{
+	char data;
+	node* next;
+};
 
 int main()
 {
+	string s;
 	int n;
-	cin&gt;&gt;n;
+	cin&gt;&gt;s&gt;&gt;n;
+	int l = s.length();
 	int k;
-	for(int i=0;i&lt;n;i++) 
+	node *first, *last;
+	first = NULL, last = NULL;
+	for(k=0;k&lt;l;k++)
 	{
-		cin&gt;&gt;k;
-		if(have[k]) have.erase(k);
-		else have[k] = true;
+		node *p = new node;
+		p-&gt;data = s[k];
+		p-&gt;next = NULL;
+		if(k == 0) first = p;
+		else
+		{
+			if(k == l - 1) p-&gt;next = first;
+			last-&gt;next = p;
+		}
+		last = p;
 	}
-	cout&lt;&lt;have.size()&lt;&lt;endl;
+	last = first;
+	for(k=1;k&lt;n;k++,last=last-&gt;next);
+	cout&lt;&lt;last-&gt;data&lt;&lt;endl;
 	return 0;
 }
 </code></pre>
@@ -193,9 +181,9 @@ int main()
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://qz-cqy.github.io/post/solution-luogu-at3538-atcoder-3538">
+                <a href="https://qz-cqy.github.io/post/solution-luogu-cf937a-codeforces-937a">
                   <h3 class="post-title">
-                    题解 AT3538@洛谷 | 3538@Atcoder 【Credits】 
+                    题解 CF937A@洛谷 | 937A@Codeforces 【Olympiad】 
                   </h3>
                 </a>
               </div>
