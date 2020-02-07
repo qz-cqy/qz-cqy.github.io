@@ -1,108 +1,113 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>T117887 【【QZR-01】G同学与旅行计划】 大样例 | rui_er | I AK IOI</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1580870292149">
+<meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="输入样例：
-3637 5573 7048 15
-749 3365 282 914 2137 1588 2522 1909 3692 2654 3655 310 2832 2508 772 3550 3584 559 2173 1385 30..." />
-    <meta name="keywords" content="样例,OI,洛谷" />
+<script src="https://qz-cqy.github.io/media/js/jquery.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/aos.js"></script>
+<script src="https://qz-cqy.github.io/media/js/pace.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/view-image.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/functions.js"></script>
+    <script src="https://qz-cqy.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://qz-cqy.github.io/media/js/prism.min.js"></script>
+    
   </head>
   <body>
-    <div id="app" class="main">
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://qz-cqy.github.io"><img src="https://qz-cqy.github.io/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
 
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://qz-cqy.github.io">
-        <img src="https://qz-cqy.github.io/images/avatar.png?v=1580870292149" class="site-logo">
-        <h1 class="site-title">rui_er | I AK IOI</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/list" class="site-nav">
-            比赛游记
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      相信玄学，研究科学 | Think twice, code once. 
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                
+                  <li class=""><a href="https://qz-cqy.github.io" class="menu">首页</a></li>
+                
+                
+                  <li class="" >
+                    <a href="/" class="menu">
+                      首页
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/list" class="menu">
+                      比赛游记
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
 
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">T117887 【【QZR-01】G同学与旅行计划】 大样例</h2>
-            <div class="post-date">2020-02-04</div>
-            
-            <div class="post-content" v-pre>
-              <h1 id="输入样例">输入样例：</h1>
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/ucqMKnWEr.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-02-04"><i class="fa fa-calendar"></i><span class="lately">3 天前</span></time>
+               
+               
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="ctag ctag-0 ctag-ucqMKnWEr" aria-label="">样例</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-1 ctag-JGfUi4Foz" aria-label="">OI</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-2 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">T117887 【【QZR-01】G同学与旅行计划】 大样例</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="输入样例">输入样例：</h1>
 <pre><code>3637 5573 7048 15
 749 3365 282 914 2137 1588 2522 1909 3692 2654 3655 310 2832 2508 772 3550 3584 559 2173 1385 3099 1979 3947 193 236 2817 1422 4724 3760 1061 226 1183 4799 771 1838 2109 691 3071 4723 3822 3553 633 4517 2383 337 2827 1442 1593 2221 4568 392 1554 2654 2888 4442 2274 4810 2553 3281 1959 1279 3385 1812 3912 2885 4600 2706 3776 4321 3674 3022 4415 718 3725 4600 1909 2471 47 2931 3194 2334 1091 1567 3052 4817 1953 2177 1560 3488 3865 566 3580 4905 1228 1132 4265 1828 1330 548 4217 1928 4473 1009 3832 3062 402 4328 182 3787 4113 1532 791 2042 83 470 4235 1353 765 4769 2074 207 1252 1913 666 4372 1426 2126 2520 2890 1278 32 1525 4146 2820 4401 2498 4572 789 65 1892 4987 4959 229 2738 2342 2057 4932 1307 3503 75 3129 1811 2404 745 1855 1636 2584 3411 984 4072 4805 4893 2854 618 1376 764 1270 1629 4806 3569 4669 2437 3760 690 4415 2471 350 2175 1558 4286 4123 494 2917 2594 1843 971 2174 4397 3923 2621 4541 3978 3861 99 582 1985 2758 1874 226 2423 959 4073 2033 3129 1756 3063 2363 2968 2087 4697 2430 1027 3133 529 4205 3348 649 2338 3437 75 229 810 2464 705 3590 2872 4545 144 209 2664 4786 4371 24 840 2975 4801 3337 3993 1070 2647 3765 3430 4175 2905 704 4735 1153 2817 2762 1354 2282 2137 4053 2372 3706 957 3658 1924 2739 1243 2323 2591 860 1461 4762 4856 779 2792 2888 3926 888 4042 993 91 751 113 596 3808 4690 716 4058 4191 4548 601 3698 1090 1684 3270 4305 4731 3987 2819 4297 4972 2185 2368 4594 4169 1609 3638 1688 591 1823 2748 2813 1139 3810 485 3872 2977 3495 3428 3799 2279 836 4669 1665 3069 635 522 42 3594 4069 4855 550 4519 4789 4112 4128 2252 768 1274 4426 2407 3652 2994 4216 4783 1830 2803 4672 3001 3475 312 2963 3362 3593 1363 4355 2011 913 288 127 1281 1301 419 4814 1617 4039 4916 1897 3376 630 732 3972 1793 630 1095 4122 2527 1323 2172 4945 4956 2082 1873 1968 2584 2822 1079 2660 80 1322 2192 51 2160 3878 4797 2185 985 2546 1910 414 2879 1480 3310 3019 1638 4845 2194 3283 1394 1105 4178 1220 1703 2369 1201 1008 3512 4596 3905 3145 799 1389 1118 4390 266 3065 3612 4452 2286 422 4304 2795 1135 980 815 1059 4032 4449 2264 1529 2826 2050 4299 3785 863 2423 208 2486 819 24 3706 614 1999 1593 4007 433 3051 2664 3568 2157 3492 1247 271 1601 1783 4190 4126 4748 2678 3874 4808 4607 458 3851 2297 1757 994 4163 718 4652 4752 193 2578 4784 3289 3957 2469 4679 4996 1613 2161 2691 2454 2618 550 2105 3595 1646 3112 4299 4896 340 4409 2822 3275 700 4578 3469 574 1116 3572 4276 4354 4475 3711 2527 476 2850 2566 4911 2828 3237 780 175 2942 1026 3856 4787 106 4524 2199 2831 1005 3751 2827 2394 2821 4794 3674 2647 222 2056 2504 2042 3891 4168 4148 2249 2055 3350 2290 2137 1828 1001 667 1359 325 4308 4874 751 4028 1163 3283 4931 519 533 4248 995 164 2064 185 1616 612 3782 3172 1232 3918 65 3708 415 4972 3430 4039 2847 2538 2835 1522 2415 1170 3026 4658 3592 2523 4919 894 551 4105 614 1937 2295 288 603 2069 4897 4313 4720 2601 465 4042 410 3234 843 4281 1474 2628 1831 3630 1398 346 4101 4056 3583 2233 4065 932 4231 3356 3170 2934 350 2825 4576 155 1370 74 2562 3922 4726 3529 2860 4920 2346 4810 209 3939 1585 4311 3950 639 1858 4440 4388 3638 660 1864 3126 4544 4902 3153 1127 1904 1259 101 93 72 4119 1258 1476 3184 1768 2837 4175 4824 3388 3659 4464 2595 2065 1408 654 3449 2207 3737 2353 1641 3976 472 1690 3598 1827 3282 2435 4781 3146 4956 1056 1560 1923 3131 1923 311 400 1825 4152 3384 3603 3725 4915 2400 1751 3761 1624 2815 599 2540 579 4826 2717 3551 198 1056 3347 4192 3680 2852 2661 4234 2744 4868 4413 2025 143 1661 604 4154 3149 2543 4872 1346 2003 1748 635 2561 4185 2871 4517 1092 1147 3932 2359 1503 1161 3704 3624 3577 2950 3953 2574 190 3919 1700 2882 2128 1809 3570 4310 2572 1870 3157 2764 4038 3606 4180 1039 271 2461 4420 2963 181 2534 2174 400 494 4363 3831 3191 3687 4352 4174 2200 2448 2743 3740 1587 4875 411 4517 3553 336 1552 4640 1722 4109 1526 427 4579 189 4382 2985 2746 3639 4803 1848 4077 578 3391 433 2417 4427 1999 1166 398 1750 1431 1959 457 3454 4368 37 679 344 4290 2007 265 2177 5 20 4875 809 789 247 4556 4954 3302 4408 632 3363 395 1339 321 2042 4411 3545 751 160 3943 3289 2073 2241 1195 4717 2355 3166 4399 733 2896 3314 2424 2980 2848 1524 1245 1581 4086 4881 4639 3082 2708 2996 1162 702 927 3935 4521 1077 4477 2941 1081 3752 2764 4844 3342 1294 4529 3552 857 2675 2114 4703 85 1258 1398 2372 1990 4149 1157 2031 2613 332 2333 1068 3773 2637 980 3381 1325 4999 4944 1875 1680 4248 1719 1500 2447 838 3415 4186 1974 4901 1562 1385 1819 2815 601 3939 2202 1579 3979 3502 40 2549 1566 1501 2858 2187 4450 4138 4690 4238 4416 2079 2967 4241 4417 2598 256 3638 1520 160 2074 271 4813 10 481 2653 3900 426 765 1372 1616 1006 2442 1702 3688 2801 699 4762 2018 4504 250 4208 4428 615 1033 2127 1446 314 524 4084 4625 1743 1941 2376 4378 1602 4467 3706 4148 1701 4559 2503 4408 571 279 1834 4106 496 3612 2500 1442 4597 4368 4354 2441 2996 3761 1866 3955 416 1517 4241 501 4359 2107 3909 585 1031 993 2894 1019 4417 1216 1526 4911 4532 4131 990 35 309 104 1296 2501 3386 4326 4059 558 1666 1315 3660 4183 4632 2254 3186 1145 4111 131 739 4455 4551 2019 641 2071 2347 2902 3331 4165 3681 4491 274 3386 331 1577 2237 2512 3230 2187 1049 2644 1875 2384 3285 1556 1623 4588 231 3679 3060 4751 4467 89 4150 2483 161 2894 1090 1503 2352 1693 4899 3887 2025 3478 4284 835 2327 2017 853 2809 2804 1416 4584 4949 2448 4114 4361 2419 2254 1847 4015 3095 3094 1480 4789 4896 3503 185 1217 3926 3093 548 2576 3677 2225 4771 4941 344 3281 2937 2270 942 4317 2529 3179 3756 2158 1104 214 703 3329 2277 2907 370 2180 2449 4805 4705 890 3607 236 764 4912 3899 2905 2467 4899 4844 177 1887 4844 2954 3364 1909 2640 1342 11 343 3276 1547 4828 2670 1797 1403 128 2738 340 1246 1321 4377 684 1107 293 3728 2761 1330 796 4913 3413 113 232 3386 1573 2923 222 1390 3136 2358 3530 4703 2906 1346 4478 596 2039 446 1245 2742 1090 2432 3209 728 29 3812 3974 1090 4677 1636 2597 926 749 1290 4788 2818 1509 1788 4283 2807 1497 1524 1696 1313 2933 2986 4860 4366 2338 1187 1985 926 3592 4232 3315 1565 1034 4180 2657 3027 808 1570 3850 1892 1852 4913 4505 3162 4747 2393 2662 327 4491 1583 74 1832 1857 703 4036 2079 754 3025 3937 1799 494 2380 1256 818 3265 3929 4281 4419 795 609 679 805 2215 1813 3175 2242 3370 3794 986 773 876 2616 1612 118 432 131 3100 3287 2798 2665 3782 3726 241 338 2268 4674 1597 317 1056 1184 3845 4690 3891 1955 661 2200 4723 4545 1230 3506 1014 3613 1317 895 2384 990 1933 3381 3812 4600 3989 1304 2124 3910 562 1191 1827 3476 2602 1403 3867 835 3435 2485 206 1428 2746 2399 2609 938 793 1345 4244 3794 4388 658 4084 1521 1995 3252 177 1758 331 3357 316 3343 3346 186 3891 1863 3516 504 1795 2890 1892 4387 2001 1527 4244 2014 1700 2052 1978 2480 2119 2408 3507 1801 1182 785 3056 1743 2522 4645 2951 1366 3930 3633 441 1567 2423 4017 875 2990 148 4020 757 3055 2678 4880 1760 1526 3291 3141 1973 4867 3895 4638 4812 295 2417 228 19 3021 2372 2280 4594 3493 1799 4981 2051 639 2168 475 3551 4574 86 2697 4218 2555 982 1739 4684 3956 1399 112 2648 4631 998 2221 4428 3935 3304 4922 3983 200 3144 892 1946 1774 763 3207 1187 4341 4180 941 1485 1038 3787 4642 3476 4057 3413 1733 833 3951 883 2748 1957 840 1648 3873 1382 3379 724 3697 592 4518 4811 330 3633 4574 708 831 2082 782 687 2090 1525 3711 1755 1597 4607 990 3332 685 2859 3553 3325 4501 3689 1783 199 1894 2029 4884 3677 131 3884 2063 370 629 1680 3547 4842 1530 704 4791 3706 2238 2566 1819 4764 3298 363 4558 2820 1192 3350 4657 1460 2979 1106 4350 1583 671 4399 1328 4992 2697 115 3363 1933 2442 4753 1610 3077 4102 426 1374 4554 3392 1101 2111 2066 1466 2658 2627 607 1826 4272 4813 3119 1099 2982 3391 2955 1537 240 3151 3736 3601 68 2756 629 1269 1615 1801 227 1491 4623 3477 1797 2644 2802 2940 4062 3022 1895 702 1407 2308 973 3750 4977 3249 1535 2063 1079 1386 1245 3513 500 3027 4690 4692 3451 461 2895 2075 2120 4410 2733 4969 4862 2282 516 1010 4033 1270 1743 199 804 3539 1760 348 3032 2682 1937 3732 4944 4927 3029 2997 242 3141 4031 3220 2591 1994 836 113 4845 2857 893 4388 857 2616 3613 4673 590 3938 3870 2348 2616 3714 4580 75 2164 4605 2313 1042 1881 4575 1391 3678 1947 3017 1909 3402 2325 1937 543 4646 894 4367 3677 3473 729 4731 82 1031 3705 2302 1187 1934 3772 1317 1013 3895 4024 3505 3933 1798 3049 76 2697 4983 1897 33 2017 3571 1682 108 1117 961 891 1316 2094 3489 2418 1866 3224 1801 3679 3990 4457 3601 4035 4362 3612 4898 4785 4406 1129 4920 2465 3056 813 654 1159 4873 3827 2248 1568 905 1925 4262 2038 2120 3163 1021 741 817 4873 1536 2154 270 4999 2919 2098 2552 3078 1994 214 4875 2447 4715 2357 1248 4612 1549 1512 107 3905 2914 4388 3107 649 1009 3086 2475 786 1728 4605 323 224 1126 2953 3864 1559 4819 1959 195 4048 333 2765 2971 4819 4995 3667 3589 4951 1441 534 2799 933 772 4367 1903 2344 3921 4351 926 818 877 3577 1666 203 25 221 840 1285 2764 1545 21 3267 3191 3882 178 3534 460 2724 2072 3031 4361 4163 4424 4620 2044 1384 1726 4053 1499 1779 1277 3848 4276 236 1357 4723 1082 1973 4063 938 3895 4489 2957 3190 4612 3644 2378 1343 2778 3903 3582 1649 4526 2757 1545 721 3799 3089 3875 4542 2650 2521 3470 719 4506 4387 4437 3815 3626 3744 1714 4463 636 3762 2407 2359 4364 2979 391 1323 2120 3064 4023 2897 2070 1698 3115 4170 456 4119 2342 1038 1855 3683 24 3080 562 379 2503 1413 2472 2051 2963 967 1507 3995 1055 1934 985 3148 38 3569 716 3954 3918 675 413 1081 399 274 531 1618 3613 3457 2854 4641 2864 3458 2430 1586 557 2831 1768 1951 3696 1064 3686 4822 3511 3486 2687 4215 4578 2984 4604 613 3921 236 1725 2722 26 2680 252 762 1501 1671 2289 376 4985 1315 4169 3770 2757 2406 265 3771 4010 1023 3480 917 2740 4886 4496 1097 380 1569 1132 2949 1457 77 4182 640 4452 4333 3933 2252 1109 3722 353 1822 2976 4490 2820 4710 3878 4700 3299 2978 976 1764 2049 3813 4483 2114 3041 1138 3882 3810 1079 2986 273 4511 1493 331 4287 2535 2995 860 2506 708 2062 4383 3113 2426 4872 3573 451 2162 4725 4213 4265 1984 841 1596 3122 316 4903 2979 2588 1756 4878 807 1064 4789 4752 502 264 2498 887 2630 4653 3874 146 2396 2961 193 1121 2915 1311 4744 1309 3557 2219 150 4684 902 2740 1138 3513 3738 3198 815 2113 843 3627 2632 3227 3084 3337 568 2678 2864 304 4034 4962 1426 606 4161 104 3142 94 1317 15 1994 2784 717 1906 4096 4922 3825 4015 1310 255 3555 1101 2671 3369 3052 4518 4316 925 4219 4199 1054 875 2464 417 883 3259 3857 4278 2011 1648 4406 4393 2663 214 2097 9 4109 3031 4938 2024 4432 3676 1927 3208 4125 3139 4941 1796 1383 3918 3582 2850 4564 4190 1527 4907 4942 4034 4674 1765 2806 4974 3467 4121 346 3476 4197 996 497 310 175 2167 3368 1025 4936 1090 4770 266 1901 2136 1049 1064 1293 2839 3201 3197 4474 661 1163 4731 2431 1970 4214 1748 4341 2950 2314 897 2623 312 2947 477 3762 3429 903 3035 4851 4144 3117 271 4225 1800 1904 3454 4898 4837 980 3423 3432 60 4261 4643 1732 2896 3094 1857 2747 2545 4359 4366 3700 4502 1506 4361 3224 139 3755 3216 3598 695 1700 2618 4069 2785 756 3709 903 2655 184 915 354 2905 4958 1382 3987 2007 906 739 91 3990 1260 3348 3919 3015 4065 4443 659 653 101 4318 152 3511 1362 3940 3003 1250 678 2491 4383 4656 860 3663 1857 4934 440 2262 2435 3116 3134 3061 4443 4325 3639 2186 457 4511 3361 4223 4528 4522 3746 990 1574 4693 611 4862 2423 2208 4232 3731 3693 657 4244 1870 2071 3199 4466 2650 3735 4618 1814 3944 4224 820 3444 4495 3798 417 1035 1928 3812 961 3714 4692 319 1082 4764 2817 1873 3093 1074 2891 3328 27 1594 651 536 4374 4180 2970 3989 3311 3672 1629 4125 1020 1161 4995 3681 648 28 3088 4181 2753 1175 69 4428 3102 1443 2249 4525 4353 2682 4487 1293 613 3576 3444 3903 4342 3340 2445 4161 2605 2265 868 1596 4892 317 1999 3083 4156 1827 1832 446 1355 2944 4191 3581 566 2820 3108 3924 3294 1990 2454 4861 3395 1936 3315 3744 53 2111 2989 144 4652 1042 3611 2838 524 1367 4551 1448 1455 2732 3079 3445 1753 2962 3885 4050 132 2839 3191 3284 1977 2351 2024 2048 4245 4798 590 179 2253 2956 76 2703 377 4179 4162 4874 1311 1384 2264 2623 1587 154 1072 227 520 2896 2368 4876 694 383 2096 772 4882 1629 157 147 410 925 22 3353 2705 1497 1155 4304 1351 1575 3638 524 4550 3818 2069 4305 3285 3366 298 3917 661 4570 3007 2416 3263 4456 2301 4840 205 4850 2069 2692 377 1266 2778 245 4711 1364 261 2295 4916 4317 3402 1524 472 3126 1081 974 1271 66 1773 1547 1184 1262 1213 1176 290 4097 1305 3936 1353 525 1033 45 3669 3709 1176 3017 132 312 1694 942 442 3316 2415 1219 1574 3442 1344 4901 4980 2684 2653 2146 4894 3401 3513 4191 380 3136 4742 1884 4149 4427 1885 474 1763 1432 3002 33 1406 1820 644 1887 3162 95 2557 4142 627 2733 4997 288 4885 279 1688 781 779 993 3069 4721 2609 3206 3666 2773 822 3285 3784 301 3394 1872 4087 3770 2550 457 542 3986 13 545 4220 1903 357 4212 105 3601 4749 2457 564 2219 1104 2687 649 66 1664 1685 3861 4522 3595 4430 4643 4951 1487 297 326 412 1189 2364 3232 2022 1505 4384 1997 4904 3797 4687 3813 2785 1510 2976 973 1125 2571 3620 4634 3000 4398 1157 2112 2700 2369 3330 2468 1488 2475 4579 3306 1236 3234 1141 1562 1396 3438 1341 3335 1513 903 1678 3220 625 919 4431 1855 4268 2446 1696 616 2457 1569 1898 3958 2890 3143 3077 3808 3714 1386 3860 4468 678 3427 3486 3208 2911 1308 2280 1264 2534 905 4354 2529 2013 2484 2346 859 293 3417 2015 4063 3903 2442 2289 2694 1636 4688 3229 2691 2890 4493 1451 249 2571 1130 3669 4440 81 1233 4815 4003 4610 3861 3631 73 2176 1006 481 374 3684 3977 1059 779 4924 1428 4723 2090 3347 2004 2838 4650 1354 3512 4021 31 2418 3531 1364 2281 4169 3784 1724 1091 1704 4253 439 1068 2151 3819 2265 4524 3100 82 254 2221 177 660 3762 686 4600 4865 1730 314 1839 4894 211 2489 2835 4609 1778 4882 4593 600 2168 4859 1767 1710 1478 4070 378 4519 1590 271 1317 4724 2094 4445 1056 1704 3195 2038 610 1149 119 1374 4250 2390 1398 3230 987 2161 1460 4157 3535 971 357 744 4903 647 4853 2346 1009 3005 123 3967 1775 597 1075 2402 383 3849 4650 4155 1854 2478 2707 732 168 1763 3447 849 3237 2361 1692 4068 4618 4201 2905 520 638 2062 4860 663 73 4739 4700 3762 3679 3648 2541 4677 1739 1585 2926 1417 3253 2281 4653 1096 2410 703 1514 1911 3049 4132 3662 4357 4605 4512 972 3748 1512 2077 865 3599 4203 1199 2459 4760 319 3049 4477 882 99 126 2324 4899 1960 887 1116 87 1514 1876 534 2600 6 2861 2829 3465 2533 2361 1106 4496 3116 137 712 3752 4501 3702 1205 2954 3742 3387 218 1301 1392 4059 3766 3374 3623 3195 62 3767 4997 2064 4887 3129 2225 4055 797 1135 772 3451 2714 1824 3252 4640 3877 308 1326 44 1564 2628 2389 1375 3172 2210 2939 1979 1483 1575 3592 1719 3343 4653 1184 3222 134 1422 3137 1444 2464 2513 1014 1548 625 351 2781 2149 1244 2038 3435 3385 3509 3008 734 3216 2100 4688 2783 747 409 1835 2647 1833 2839 1224 2873 4461 2093 4706 4708 4009 4460 3772 2797 4251 3540 4000 3763 158 672 1138 1687 2962 2384 4971 2621 381 4400 3898 605 4556 1688 3894 918 2115 3376 1045 3465 2312 3794 2813 2859 629 420 2518 919 175 4297 2792 388 937 3915 82 4628 576 255 1619 3036 529 1140 2326 1956 3369 1128 1321 4203 2433 2260 3471 3107 3320 1895 2572 1894 212 3768 869 2452 3447 3405 4543 529 2621 2061 4400 316 2118 4177 689 4535 533 2833 4852 1625 162 2523 4985 4449 3462 3178 3320 3724 2561 725 1914 3874 4609 2295 984 4584 2949 4635 3510 1788 4578 3323 892 2121 4790 393 3970 1069 609 2494 3389 179 1568 461 3700 873 406 2884 3809 857 3129 1530 3523 1705 3701 3056 4352 4596 1876 1497 2164 4418 2907 2219 2127 1639 3186 4663 1496 1574 3664 1101 988 4843 3051 4700 304 1284 1853 2079 1839 2613 1904 296 386 998 4037 1849 2306 3122 4101 3233 176 96 2291 973 3965 4557 3461 693 97 3298 4327 2631 2118 1564 1070 3585 2281 3278 2528 670 3766 1220 880 1444 67 1706 2839 706 3177 488 1307 1379 103 357 3207 3205 2162 2894 1751 3008 855 816 4857 2831 2281 2899 492 2306 1721 1326 3023 3316 729 4322 2700 2454 2298 564 4568 4594 2060 1773 2773 4896 223 1548 2190 4920 958 907 1653 1616 3642 62 4888 2866 4732 4882 3416 958 345 111 1868 3893 4983 1362 1774 1029 4299 1646 3804 4058 2535 1846 1934 2004 992 1039 3145 1739 726 1536 4928 3194 1124 1830 3705 439 1983 310 4417 1896 2590 4570 4429 4755 4112 3567 3093 2530 4642 1636 2501 2744 1484 1540 2888 2212 2120 1702 1322 4657 2610 4712 4221 1513 2738 4341 4541 1281 1680 2996 1214 3500 990 3437 1043 4432 4094 2186 644 158 2195 2310 1365 1119 2583 2373 3993 3157 2841 1201 197 3957 2189 4803 2882 4242 4120 3519 2640 3659 2256 2409 4681 2282 4779 2042 187 2399 4255 3029 3058 4351 104 3440 4059 557 4354 766 4659 1524 553 3635 1500 3569 3048 1174 3353 1601 2109 2040 759 245 3555 3808 3028 2565 4919 3998 3945 2731 1198 4935 2559 3157 2371 3834 4597 4027 408 4161 1777 626 3741 2336 4065 3270 2797 1679 859 983 2619 953 910 947 3293 3441 1027 2209 1169 881 1602 2410 3027 2196 3574 4264 1164 908 4125 744 4164 818 442 706 4006 3435 3289 2733 3188 2656 722 2355 4627 1153 2804 396 1858 1423 694 397 104 98 82 1327 216 3592 3299 1854 3982 639 796 2720 1014 776 208 4351 4289 4037 386 84 4431 1018 2546 2149 1669 82 1325 2923 1460 181 2112 3453 1 3743 4713 2331 2638 748 1207 4611 3804 1216 3587 1571 1189 3237 2161 2670 98 4737 1625 1326 3067 3874 2493 1336 2138 136 2771 44 3588 3668 3585 366 1970 464 4885 4636 3869 585 2464 1219 36 3306 2515 4882 1995 4394 301 2556 2080 2448 2323 853 345 1531 2797 4687 4032 1946 1682 4802 2747 139 4283 2627 2792 2665 1450 2595 4950 3956 3183 1621 1560 4655 4832 498 3856 96 4487 1268 219 1940 378 4842 3127 3079 3270 4023 3462 1262 847 267 2433 2342 675 2777 4017 763 304 4416 1780 4576 3496 966 2388 3231 4383 3067 315 2687 3509 232 37 3792 3886 3680 1066 4984 4518 3100 1728 4225 1503 4416 260 2426 3637 1718 3426 3975 4839 2847 621 1903 4309 3448 1957
 1 2 2554
@@ -3775,61 +3780,305 @@ NO
 YES
 </code></pre>
 
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/669fTzmrs.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-01-21">2020-01-21</time>
+                  <h4 class="title white no-margin">关于NOIP的暂停和恢复</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+
+              <div id="comments" class="bg-white hosted ">
+
+              
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              
+                <div class="clear"></div>
+              </div>
+
+              <div class="clear"></div>
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="tag">
-                    样例
-                  </a>
-                
-                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
-                    OI
-                  </a>
-                
-                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
-                    洛谷
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth">
-                  <h3 class="post-title">
-                    关于NOIP的暂停和恢复
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-
           </div>
+      </main>
 
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/ucqMKnWEr.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-04">2020-02-04</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887">T117887 【【QZR-01】G同学与旅行计划】 大样例</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/669fTzmrs.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-01-21">2020-01-21</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth">关于NOIP的暂停和恢复</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/solution-luogu-p5876" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-01-15">2020-01-15</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/solution-luogu-p5876">题解 P5876@洛谷 【化简单词】</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="ctag ctag-0 ctag-ucqMKnWEr" aria-label="">样例</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-1 ctag-JGfUi4Foz" aria-label="">OI</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-2 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="ctag ctag-3 ctag-669fTzmrs" aria-label="">NOIp/CSP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-4 ctag-l4yUSbyQA" aria-label="">算法</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-5 ctag-1yYYfIIPJ" aria-label="">题解</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="ctag ctag-6 ctag-nZNq1VXdp" aria-label="">项目</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="ctag ctag-7 ctag-KdGX_R7Ny" aria-label="">博客</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="ctag ctag-8 ctag-xZrk8scCiD" aria-label="">教程</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="ctag ctag-9 ctag-NpQHbc2L7" aria-label="">USACO</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="ctag ctag-10 ctag--SU_ouiGKI" aria-label="">背包</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="ctag ctag-11 ctag-p4MY2Ni7Jp" aria-label="">动态规划/DP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="ctag ctag-12 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="ctag ctag-13 ctag-kAU4cMLlY" aria-label="">交互题</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="ctag ctag-14 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="ctag ctag-15 ctag--Uo4spsOM" aria-label="">骗分</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="ctag ctag-16 ctag-Ku4f4mt2C" aria-label="">树</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="ctag ctag-17 ctag-P33QCO5aCZ" aria-label="">图论</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="ctag ctag-18 ctag-7IKLNdSii" aria-label="">数学</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="ctag ctag-19 ctag-ARwT1hdHRj" aria-label="">打表</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qz-cqy.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">rui_er | I AK IOI</a></h4>
+                    <p class="founder">相信玄学，研究科学 | Think twice, code once. </p>
+                    <div class="social">
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
         </div>
-      </div>
+
+        <div class="logo">
+          <a href="https://qz-cqy.github.io"><img class="" src="https://qz-cqy.github.io/media/images/logo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 34 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    <div class="clear"></div>
+
+      <script type="text/javascript">
+       jQuery(document).ready(function($){
+          $("photos img").each(function(){
+              var _a = $("<a></a>").attr("href",this.src);
+              $(this).wrap("<div class='photo'></div>").wrap(_a);
+          })
+          $("figure img").each(function(){
+              var _b = $("<a></a>").attr("href",this.src);
+              $(this).wrap(_b);
+          })
+          isImgLoad(function(){
+            var photos = document.querySelector('photos');
+            if(photos){
+              waterfall(photos);
+            }
+            $(window).resize(function() {
+             if(photos){
+                  waterfall(photos);
+            }
+          });
+        });
+        var t_img;
+        var isLoad = true;
+        function isImgLoad(callback){
+          $('photos img').each(function(){
+            if(this.height === 0){
+              isLoad = false;
+              return false;
+            }
+          });
+          if(isLoad){
+            clearTimeout(t_img);
+            callback();
+          }else{
+            isLoad = true;
+            t_img = setTimeout(function(){
+              isImgLoad(callback);
+            },500);
+          }
+        }
+      });
+      </script>
+
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-
-
-
+    <!-- end: #wrapper -->
   </body>
 </html>
