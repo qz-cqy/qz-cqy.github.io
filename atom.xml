@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-08T02:04:43.064Z</updated>
+    <updated>2020-02-09T01:41:34.002Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -3840,6 +3840,7 @@ int main()
 <p>如果你想要把博客放到网站上，这里非常重要！！！</p>
 <p><strong>基础配置</strong>中，选择<code>Github Pages</code>就可以把你的Github地址传上去，用于更新博客。域名填写<code>https://xxx.github.io</code>，仓库写<code>xxx.github.io</code>，分支写<code>master</code>，仓库用户名写<code>xxx</code>，邮箱写你Github的注册邮箱，最后Token写你的密码就好了。至于CNAME，没什么用，直接空着即可。</p>
 <p><strong>评论配置</strong>中你可以更改评论的设置，里面有教程，跟着教程走就好了。</p>
+<h3 id="如果配置完全正确但还是无法建立远程连接可以参考这篇文章应该是gridea的bug">如果配置完全正确但还是无法建立远程连接，可以参考<a href="https://yeming.site/post/gridea_help/">这篇文章</a>，应该是Gridea的bug。</h3>
 <h1 id="3-更新博客">3 更新博客</h1>
 <p>每次更新完博客之后不会自动同步到网页，需要点击首页页面左下角的“同步”按钮，等不到一分钟就同步好了。Gridea会自动在输入的Github地址同步文件，同步期间全程不需要手动操作。</p>
 <p>同步完以后，等一两分钟就可以在网页查看效果了。我的博客也是这么搭建的。不得不说，有了这个应用之后，在自己的网站上写博客非常方便，在这里给作者点个赞！</p>
