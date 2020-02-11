@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-11T10:44:00.257Z</updated>
+    <updated>2020-02-11T12:26:36.013Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,72 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告]]></title>
+        <id>https://qz-cqy.github.io/post/qzcf-qzjr-about-competition</id>
+        <link href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">
+        </link>
+        <updated>2020-02-11T11:23:14.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="一-题目审核结果">一、题目审核结果</h1>
+<p>每道上交给团队进行审核的题目的审核结果分为如下几类：<img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></p>
+<h1 id="二-提交审核题目要求">二、提交审核题目要求</h1>
+<p>提供给团队的所有题目请按照洛谷公开赛/公开题目审核标准格式，将由团队管理员（大多数时候是我，rui_er）审核通过，重点检查内容：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>、数据、标程，题目状态请设为比赛题目，题目难度设为尚无评定，不要添加任何标签。</p>
+<h1 id="三-审核结果">三、审核结果</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">结果</th>
+<th style="text-align:center">可能的情况</th>
+<th style="text-align:center">可能的后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">符合提交审核题目要求且与洛谷题库、重大或知名比赛没有重题（重题判定参加此表）</td>
+<td style="text-align:center">通过审核，加入比赛</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">与洛谷题库、重大或知名比赛算法较相似且题目数据要求复杂度不存在优化</td>
+<td style="text-align:center">修改题目（可能需要加强数据）后再次审核，有机会加入比赛</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">与洛谷题库、重大或知名比赛代码较相似</td>
+<td style="text-align:center">修改题目（可能需要加难题目）后再次审核，有机会加入比赛</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">与洛谷题库、重大或知名比赛代码只需要少许改动即可AC</td>
+<td style="text-align:center">直接打回，不予加入比赛</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">与洛谷题库、重大或知名比赛同一份代码即可AC</td>
+<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目，并酌情考虑撤销管理员和提出团队</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">提交的题目不符合本公告中【二、提交审核题目要求】中的要求</td>
+<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">未提交审核</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></td>
+<td style="text-align:center">已经提交审核，但团队管理员仍未进行审核</td>
+<td style="text-align:center">等待团队管理员进行审核</td>
+</tr>
+</tbody>
+</table>
+<h1 id="附录-重大或知名比赛列表">附录、重大或知名比赛列表</h1>
+<p>重大或知名比赛包括（不限于）：NOIP、CSP、ISIJ、ICPC、各省省选、NOI、JOI、USACO、IOI、Baltic OI、Codeforces比赛、无论是否加入题库的洛谷比赛题目。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【重要】评论使用须知]]></title>
         <id>https://qz-cqy.github.io/post/talking</id>
@@ -8077,40 +8143,6 @@ int main()
 </code></pre>
 <p>@Linbom</p>
 <p>还有很多<s>毒瘤</s>搞笑解法，以后将不定期更新</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P5834@洛谷 【[USACO19DEC]MooBuzz】]]></title>
-        <id>https://qz-cqy.github.io/post/solution-luogu-p5834</id>
-        <link href="https://qz-cqy.github.io/post/solution-luogu-p5834">
-        </link>
-        <updated>2019-12-19T13:48:40.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>题目大意：求从一开始第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>个既不是三的倍数又不是五的倍数的数</strong></p>
-<p>没有思路。列几个数看看：</p>
-<p>1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19, 22, 23, 26, 28, 29, ……</p>
-<p>因为三乘五等于十五，所以猜测模15的余数可能有规律。列一下：</p>
-<p>1, 2, 4, 7, 8, 11, 13, 14, 1, 2, 4, 7, 8, 11, 13, 14, ……</p>
-<p>于是很明显地发现存在8位的循环节。根据数学推导可得（以下所有公式中的除号“/”均表示整除，即向下取整）：</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>n</mi><mi>s</mi><mo>=</mo><mo>(</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>8</mn><mo>)</mo><mo>∗</mo><mn>15</mn><mo>+</mo><mi>a</mi><mo>[</mo><mi>n</mi><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mn>8</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">ans=(n/8)*15+a[n\mod8]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">/</span><span class="mord">8</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord mathdefault">n</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mclose">]</span></span></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>[</mo><mn>1...</mn><mi>n</mi><mo>]</mo><mo>=</mo><mo>{</mo><mn>14</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>7</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>11</mn><mo separator="true">,</mo><mn>13</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">a[1...n]=\{14, 1, 2, 4, 7, 8, 11, 13\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mopen">[</span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">7</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">3</span><span class="mclose">}</span></span></span></span>，就是上面推导的余数。</p>
-<p>但是当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mn>8</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n\mod8=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>时发现有问题，此时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>n</mi><mi>s</mi><mo>=</mo><mo>(</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>8</mn><mo>)</mo><mo>∗</mo><mn>15</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">ans=(n/8)*15-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">/</span><span class="mord">8</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，特判一下就好。</p>
-<p>AC代码：</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int a[8] = {14, 1, 2, 4, 7, 8, 11, 13};
-
-int main()
-{
-	int n;
-    cin&gt;&gt;n;
-    int d = n / 8;
-    int ans = d * 15;
-    if(n % 8 != 0) ans += a[n%8];
-    else --ans;
-    cout&lt;&lt;ans&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>
