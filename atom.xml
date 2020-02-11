@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-11T12:34:27.929Z</updated>
+    <updated>2020-02-11T12:39:13.298Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -72,7 +72,7 @@
 <tr>
 <td style="text-align:center"><img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"></td>
 <td style="text-align:center">与洛谷题库、重大或知名比赛同一份代码即可AC</td>
-<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目，并酌情考虑撤销管理员和提出团队</td>
+<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目，并酌情考虑撤销管理员和踢出团队</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"></td>
