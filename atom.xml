@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-11T12:28:50.253Z</updated>
+    <updated>2020-02-11T12:30:32.247Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -11,11 +11,30 @@
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
     <entry>
+        <title type="html"><![CDATA[【重要】评论使用须知]]></title>
+        <id>https://qz-cqy.github.io/post/talking</id>
+        <link href="https://qz-cqy.github.io/post/talking">
+        </link>
+        <updated>2020-02-11T10:27:19.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="1-评论系统">1 评论系统</h1>
+<p>评论系统采用<strong>Valine</strong>。</p>
+<h1 id="2-使用方式">2  使用方式</h1>
+<p>滑到每篇文章的最下位置有一个评论区，填入昵称、邮箱、网址后即可留言。也有回复功能，被回复者的邮箱中会收到信息。评论时<strong>可以使用Markdown公式</strong></p>
+<h1 id="3-评论规则请自觉遵守以下规则">3 评论规则：请自觉遵守以下规则</h1>
+<ul>
+<li>禁止在评论中辱骂他人</li>
+<li>禁止将昵称、邮箱、网址设置为敏感内容</li>
+<li>禁止谈论一切有关政治的问题</li>
+<li>禁止恶意骚扰他人</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告]]></title>
         <id>https://qz-cqy.github.io/post/qzcf-qzjr-about-competition</id>
         <link href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">
         </link>
-        <updated>2020-02-11T11:23:14.000Z</updated>
+        <updated>2020-02-10T11:23:14.000Z</updated>
         <content type="html"><![CDATA[<h1 id="一-题目审核结果">一、题目审核结果</h1>
 <p>每道上交给团队进行审核的题目的审核结果分为如下几类：<img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></p>
 <h1 id="二-提交审核题目要求">二、提交审核题目要求</h1>
@@ -74,25 +93,6 @@
 </table>
 <h1 id="附录-重大或知名比赛列表">附录、重大或知名比赛列表</h1>
 <p>重大或知名比赛包括（不限于）：NOIP、CSP、ISIJ、ICPC、各省省选、NOI、JOI、USACO、IOI、Baltic OI、Codeforces比赛、无论是否加入题库的洛谷比赛题目。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【重要】评论使用须知]]></title>
-        <id>https://qz-cqy.github.io/post/talking</id>
-        <link href="https://qz-cqy.github.io/post/talking">
-        </link>
-        <updated>2020-02-11T10:27:19.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="1-评论系统">1 评论系统</h1>
-<p>评论系统采用<strong>Valine</strong>。</p>
-<h1 id="2-使用方式">2  使用方式</h1>
-<p>滑到每篇文章的最下位置有一个评论区，填入昵称、邮箱、网址后即可留言。也有回复功能，被回复者的邮箱中会收到信息。评论时<strong>可以使用Markdown公式</strong></p>
-<h1 id="3-评论规则请自觉遵守以下规则">3 评论规则：请自觉遵守以下规则</h1>
-<ul>
-<li>禁止在评论中辱骂他人</li>
-<li>禁止将昵称、邮箱、网址设置为敏感内容</li>
-<li>禁止谈论一切有关政治的问题</li>
-<li>禁止恶意骚扰他人</li>
-</ul>
 ]]></content>
     </entry>
     <entry>
