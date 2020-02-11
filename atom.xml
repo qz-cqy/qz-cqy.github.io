@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-11T02:52:43.195Z</updated>
+    <updated>2020-02-11T10:44:00.257Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[【重要】评论使用须知]]></title>
+        <id>https://qz-cqy.github.io/post/talking</id>
+        <link href="https://qz-cqy.github.io/post/talking">
+        </link>
+        <updated>2020-02-11T10:27:19.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="1-评论系统">1 评论系统</h1>
+<p>评论系统采用<strong>Valine</strong>。</p>
+<h1 id="2-使用方式">2  使用方式</h1>
+<p>滑到每篇文章的最下位置有一个评论区，填入昵称、邮箱、网址后即可留言。也有回复功能，被回复者的邮箱中会收到信息。评论时<strong>可以使用Markdown公式</strong></p>
+<h1 id="3-评论规则请自觉遵守以下规则">3 评论规则：请自觉遵守以下规则</h1>
+<ul>
+<li>禁止在评论中辱骂他人</li>
+<li>禁止将昵称、邮箱、网址设置为敏感内容</li>
+<li>禁止谈论一切有关政治的问题</li>
+<li>禁止恶意骚扰他人</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[T117887 【【QZR-01】G同学与旅行计划】 大样例]]></title>
         <id>https://qz-cqy.github.io/post/big-sample-qzr01-t117887</id>
@@ -8090,54 +8109,6 @@ int main()
     else --ans;
     cout&lt;&lt;ans&lt;&lt;endl;
     return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P4057@洛谷 【[Code+#1]晨跑】]]></title>
-        <id>https://qz-cqy.github.io/post/solution-luogu-p4057</id>
-        <link href="https://qz-cqy.github.io/post/solution-luogu-p4057">
-        </link>
-        <updated>2019-12-06T12:55:57.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="十年oi一场空不开long-long">十年OI一场空，不开long long……</h1>
-<p>一开始没开ll被卡了好久，直到今天我看向了数据范围……</p>
-<p>欧式gcd：</p>
-<pre><code class="language-cpp">ll gcd(ll a, ll b)
-{
-  return b==0?a:gcd(b,a%b);
-}
-</code></pre>
-<p>lcm：</p>
-<pre><code class="language-cpp">ll lcm(ll a, ll b)
-{
-  return a/gcd(a,b)*b;
-}
-</code></pre>
-<p>三个数的lcm就先求两个的lcm，再求下一个，即：</p>
-<pre><code class="language-cpp">lcm(lcm(a,b),c);
-</code></pre>
-<p>完整代码：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-#define ll long long
-
-ll gcd(ll a, ll b)
-{
-    return b==0?a:gcd(b,a%b);
-}
-
-ll lcm(ll a, ll b)
-{
-    return a/gcd(a,b)*b;
-}
-
-int main()
-{
-    ll a, b, c;
-    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-    cout&lt;&lt;lcm(lcm(a,b),c)&lt;&lt;endl;
-	return 0;
 }
 </code></pre>
 ]]></content>
