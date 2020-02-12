@@ -1,0 +1,494 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】 | rui_er | I AK IOI</title>
+<meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
+<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
+
+<script src="https://qz-cqy.github.io/media/js/jquery.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/aos.js"></script>
+<script src="https://qz-cqy.github.io/media/js/pace.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/view-image.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/functions.js"></script>
+    <script src="https://qz-cqy.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://qz-cqy.github.io/media/js/prism.min.js"></script>
+    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+    
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://qz-cqy.github.io"><img src="https://qz-cqy.github.io/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                
+                  <li class=""><a href="https://qz-cqy.github.io" class="menu">首页</a></li>
+                
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/list" class="menu">
+                      比赛游记
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-02-12"><i class="fa fa-calendar"></i><span class="lately">1 分钟前</span></time>
+               
+               
+               <span id="/post/solution-luogu-at5659-atcoder-5659/" class="leancloud_visitors views-counter meta-info">
+                <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
+               </span>
+               
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="ctag ctag-0 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-2 ctag-1yYYfIIPJ" aria-label="">题解</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>~~看一下这道题的题面，决定放弃这道题，~~突然想起在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>Atcoder</mtext></mrow><annotation encoding="application/x-tex">\text{Atcoder}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">Atcoder</span></span></span></span></span> 上可能会有英文翻译，便到原题看了一眼，真的有。题意大概是：</p>
+<ul>
+<li>输入一个仅由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">\lt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">\gt</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&gt;</span></span></span></span> 组成的字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> ，假设共 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 位；</li>
+<li>请你构造一个共 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">l+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 位数列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> ，满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 最小，同时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">a_{i+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.638891em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span> 的关系是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">s_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 中的字符（即：大于或小于）。</li>
+<li>输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∑</mo><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+<p>看了一眼数据规模，想到一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> 的暴力解法：</p>
+<ul>
+<li>从前往后扫一遍字符串，构造 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><msup><mo>=</mo><mo mathvariant="normal">′</mo></msup><msup><mo>&lt;</mo><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">s_i=&#x27;\lt&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.901892em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span><span class="base"><span class="strut" style="height:0.790992em;vertical-align:-0.0391em;"></span><span class="mrel"><span class="mrel">&lt;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 对应的值，具体方法： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>a</mi><mi>i</mi></msub><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a_{i+1}=a_i+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.638891em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，可以证明这是最优方案；</li>
+<li>从后往前扫一遍字符串，构造 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><msup><mo>=</mo><mo mathvariant="normal">′</mo></msup><msup><mo>&gt;</mo><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">s_i=&#x27;\gt&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.901892em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel">=</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span><span class="base"><span class="strut" style="height:0.790992em;vertical-align:-0.0391em;"></span><span class="mrel"><span class="mrel">&gt;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span> 对应的值，具体方法： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>=</mo><mi>max</mi><mo>⁡</mo><mo>(</mo><msub><mi>a</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">a_i=\max(a_i, a_{i+1}+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> ，可以证明这是最优方案。</li>
+</ul>
+<p>最后再扫一遍记好的数组，记录 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>n</mi><mi>s</mi><mo>=</mo><mo>∑</mo><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">ans=\sum a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ，输出即可，<strong>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">ans</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span></span> 可能需要使用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>long long</mtext></mrow><annotation encoding="application/x-tex">\text{long long}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">long long</span></span></span></span></span></strong>。</p>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+
+string s;
+ll l, a[500001];
+ll ans; 
+
+int main()
+{
+	cin&gt;&gt;s;
+	s = &quot; &quot; + s;
+	l = s.length() - 1;
+	for(int i=1;i&lt;=l;i++) (s[i] == '&lt;') ? (a[i+1] = a[i] + 1) : (a[i+1]);
+	for(int i=l;i&gt;=1;i--) (s[i] == '&gt;') ? (a[i] = max(a[i], a[i+1]+1)) : (a[i]);
+	for(int i=1;i&lt;=l+1;i++) ans += a[i];
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/post-images/talking.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/talking" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-02-11">2020-02-11</time>
+                  <h4 class="title white no-margin">【重要】评论使用须知[TOP]</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+
+              <div id="comments" class="bg-white hosted ">
+
+              
+                <script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+
+<script>
+    var valine = new Valine();
+    valine.init({
+        el: '#comments',
+        appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz' ,
+        appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
+
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+                <div class="clear"></div>
+              
+                <div class="clear"></div>
+              </div>
+
+              <div class="clear"></div>
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-12">2020-02-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/talking" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/post-images/talking.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-11">2020-02-11</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/talking">【重要】评论使用须知[TOP]</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/post-images/qzcf-qzjr-about-competition.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-10">2020-02-10</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="ctag ctag-0 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-2 ctag-1yYYfIIPJ" aria-label="">题解</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="ctag ctag-5 ctag-FwuHJNNKD" aria-label="">重要</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="ctag ctag-6 ctag-LsGynlhxT" aria-label="">置顶</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="ctag ctag-7 ctag-qjWIR15w1" aria-label="">声明/公告</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="ctag ctag-8 ctag-ucqMKnWEr" aria-label="">样例</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="ctag ctag-9 ctag-669fTzmrs" aria-label="">NOIp/CSP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="ctag ctag-10 ctag-nZNq1VXdp" aria-label="">项目</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="ctag ctag-11 ctag-KdGX_R7Ny" aria-label="">博客</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="ctag ctag-12 ctag-xZrk8scCiD" aria-label="">教程</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="ctag ctag-13 ctag-NpQHbc2L7" aria-label="">USACO</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="ctag ctag-14 ctag--SU_ouiGKI" aria-label="">背包</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="ctag ctag-15 ctag-p4MY2Ni7Jp" aria-label="">动态规划/DP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="ctag ctag-16 ctag-kAU4cMLlY" aria-label="">交互题</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="ctag ctag-17 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="ctag ctag-18 ctag--Uo4spsOM" aria-label="">骗分</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="ctag ctag-19 ctag-Ku4f4mt2C" aria-label="">树</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="ctag ctag-20 ctag-P33QCO5aCZ" aria-label="">图论</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="ctag ctag-21 ctag-7IKLNdSii" aria-label="">数学</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="ctag ctag-22 ctag-ARwT1hdHRj" aria-label="">打表</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qz-cqy.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">rui_er | I AK IOI</a></h4>
+                    <p class="founder">相信玄学，研究科学 | Think twice, code once. </p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://qz-cqy.github.io" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://qz-cqy.github.io"><img class="" src="https://qz-cqy.github.io/media/images/logo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 37 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    <div class="clear"></div>
+
+      <script type="text/javascript">
+       jQuery(document).ready(function($){
+          $("photos img").each(function(){
+              var _a = $("<a></a>").attr("href",this.src);
+              $(this).wrap("<div class='photo'></div>").wrap(_a);
+          })
+          $("figure img").each(function(){
+              var _b = $("<a></a>").attr("href",this.src);
+              $(this).wrap(_b);
+          })
+          isImgLoad(function(){
+            var photos = document.querySelector('photos');
+            if(photos){
+              waterfall(photos);
+            }
+            $(window).resize(function() {
+             if(photos){
+                  waterfall(photos);
+            }
+          });
+        });
+        var t_img;
+        var isLoad = true;
+        function isImgLoad(callback){
+          $('photos img').each(function(){
+            if(this.height === 0){
+              isLoad = false;
+              return false;
+            }
+          });
+          if(isLoad){
+            clearTimeout(t_img);
+            callback();
+          }else{
+            isLoad = true;
+            t_img = setTimeout(function(){
+              isImgLoad(callback);
+            },500);
+          }
+        }
+      });
+      </script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>
