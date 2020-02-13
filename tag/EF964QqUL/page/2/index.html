@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】  | rui_er | I AK IOI</title>
+<title>Atcoder | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -13,13 +13,11 @@
 <script src="https://qz-cqy.github.io/media/js/pace.min.js"></script>
 <script src="https://qz-cqy.github.io/media/js/view-image.min.js"></script>
 <script src="https://qz-cqy.github.io/media/js/functions.js"></script>
-    <script src="https://qz-cqy.github.io/media/js/waterfall.min.js"></script>
-    <script src="https://qz-cqy.github.io/media/js/prism.min.js"></script>
-    
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-    
   </head>
   <body>
+    <!-- start: #wrapper -->
+    <div class="wrapper">
+      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -74,169 +72,47 @@
         <div class="clear"></div>
       </header>
 
-      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
-
-        <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');">
-            <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-04-02"><i class="fa fa-calendar"></i><span class="lately">10 个月前</span></time>
-               
-               
-               <span id="/post/solution-luogu-cf677a-codeforces-677a/" class="leancloud_visitors views-counter meta-info">
-                <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
-               </span>
-               
-            </div>
-            <div class="info">
-              <div class="tags ">
-                
-                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="ctag ctag-0 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-2 ctag-1yYYfIIPJ" aria-label="">题解</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
-                    
-              </div>
-              <h1 class="title ularge white bold">题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 </h1>
-            </div>
-          </div>
-        </div>  
-
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile">
-            <article class="main-article post">
-              <section class="post-content">
-                <div class="text">
-                  <p>首先，没看题的回去看题！</p>
-<p>这是一道模拟题</p>
-<h1 id="头文件">头文件</h1>
-<p>只需要iostream</p>
-<blockquote>
-<p>哦，对了，这里是C++党领地</p>
-</blockquote>
-<h1 id="主程序">主程序</h1>
-<p>观察一下，答案每次要么加1，要么加2，所以只需要先加上1，然后如果输入的数（a）大于k，则再加1即可。</p>
-<pre><code class="language-cpp">if(a &gt; k) c++;
-c++;
-</code></pre>
-<p>因为有n次循环，所以把上面的放入循环中：</p>
-<pre><code class="language-cpp">while(n--)
-{
-	cin&gt;&gt;a;
-    if(a &gt; k) c++;
-    c++'
-}
-</code></pre>
-<p>在前面加上输入和输出，得到程序：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
+            <div class="main-article post">
+  <h2 class="year"># Atcoder</h2>
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at2201-atcoder-2201" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-02-13">2019-02-13</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at2201-atcoder-2201">题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】</a>
+          </h4>
+        </div>
+      </article>
 
-int main()
-{
-	int n, k;
-	cin&gt;&gt;n&gt;&gt;k;
-	int a;
-	int c = 0;
-	while(n--)
-	{
-		cin&gt;&gt;a;
-		if(a &gt; k) c++;
-		c++;
-	}
-	cout&lt;&lt;c&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-
-                </div>
-                <div class="clear"></div>
-              </section>
-            </article>
-            <div class="clear"></div>
-
-            <section class="related section">
-              
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/7IKLNdSii.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-p1044" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-04-20">2019-04-20</time>
-                  <h4 class="title white no-margin">题解 P1044@洛谷 【栈】 </h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-              
-              <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/7IKLNdSii.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf791a-codeforces-791a" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-04-02">2019-04-02</time>
-                  <h4 class="title white no-margin">题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 </h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-
-                <div class="clear"></div>
-            </section>
-
-              <div class="clear"></div>
-
-              <div id="comments" class="bg-white hosted ">
-
-              
-                <script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
-
-<script>
-    var valine = new Valine();
-    valine.init({
-        el: '#comments',
-        appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz' ,
-        appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
-        pageSize: 30,
-        placeholder: '既然来了，那就留个痕迹吧~',
-        visitor: true // 阅读量统计
-    })
-
-jQuery(document).ready(function($){
-    $('.vemoji-btn').text('😀');
-    $("#comments").on('click', 'span.vat',function(){
-        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
-        $('textarea#veditor').focus();
-    })
-    if(window.location.hash){
-        var checkExist = setInterval(function() {
-            if ($(window.location.hash).length) {
-                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
-                clearInterval(checkExist);
-            }
-        }, 100);
-    }
-})
-</script>
-
-                <div class="clear"></div>
-              
-                <div class="clear"></div>
+    
+    <div class="clear"></div>
+</div>
+            <!-- end: .articles -->
+            
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                  <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="prev button red">上一页</a>
+                
+                
               </div>
-
-              <div class="clear"></div>
             </div>
+            
           </div>
+          </div>
+        </div>
       </main>
 
-          <footer id="footer" class="grid-container">
+        <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -467,50 +343,6 @@ jQuery(document).ready(function($){
         </a>
     </footer>
     <div class="clear"></div>
-
-      <script type="text/javascript">
-       jQuery(document).ready(function($){
-          $("photos img").each(function(){
-              var _a = $("<a></a>").attr("href",this.src);
-              $(this).wrap("<div class='photo'></div>").wrap(_a);
-          })
-          $("figure img").each(function(){
-              var _b = $("<a></a>").attr("href",this.src);
-              $(this).wrap(_b);
-          })
-          isImgLoad(function(){
-            var photos = document.querySelector('photos');
-            if(photos){
-              waterfall(photos);
-            }
-            $(window).resize(function() {
-             if(photos){
-                  waterfall(photos);
-            }
-          });
-        });
-        var t_img;
-        var isLoad = true;
-        function isImgLoad(callback){
-          $('photos img').each(function(){
-            if(this.height === 0){
-              isLoad = false;
-              return false;
-            }
-          });
-          if(isLoad){
-            clearTimeout(t_img);
-            callback();
-          }else{
-            isLoad = true;
-            t_img = setTimeout(function(){
-              isImgLoad(callback);
-            },500);
-          }
-        }
-      });
-      </script>
-
     </div>
     <!-- end: #wrapper -->
   </body>

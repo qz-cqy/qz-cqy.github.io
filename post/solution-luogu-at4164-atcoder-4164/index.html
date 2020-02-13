@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】  | rui_er | I AK IOI</title>
+<title>题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】 | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -77,12 +77,12 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-04-02"><i class="fa fa-calendar"></i><span class="lately">10 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-02-13"><i class="fa fa-calendar"></i><span class="lately">1 分钟前</span></time>
                
                
-               <span id="/post/solution-luogu-cf677a-codeforces-677a/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/solution-luogu-at4164-atcoder-4164/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -90,7 +90,7 @@
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="ctag ctag-0 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
+                      <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="ctag ctag-0 ctag-EF964QqUL" aria-label="">Atcoder</a>
                     
                       <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
                     
@@ -101,7 +101,7 @@
                       <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
                     
               </div>
-              <h1 class="title ularge white bold">题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 </h1>
+              <h1 class="title ularge white bold">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</h1>
             </div>
           </div>
         </div>  
@@ -111,45 +111,48 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>首先，没看题的回去看题！</p>
-<p>这是一道模拟题</p>
-<h1 id="头文件">头文件</h1>
-<p>只需要iostream</p>
-<blockquote>
-<p>哦，对了，这里是C++党领地</p>
-</blockquote>
-<h1 id="主程序">主程序</h1>
-<p>观察一下，答案每次要么加1，要么加2，所以只需要先加上1，然后如果输入的数（a）大于k，则再加1即可。</p>
-<pre><code class="language-cpp">if(a &gt; k) c++;
-c++;
+                  <p>题意：求输入的数和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>lcm</mtext></mrow><annotation encoding="application/x-tex">\text{lcm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">lcm</span></span></span></span></span></p>
+<p>这里根据数学证明可得：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>m</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mo>=</mo><mi>a</mi><mi mathvariant="normal">/</mi><mi>gcd</mi><mo>⁡</mo><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mo>∗</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">lcm(a, b)=a/\gcd(a, b)*b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord">/</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>gcd</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\gcd</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span></span></span></span> 可以通过辗转相除法计算。以下给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>Python3</mtext></mrow><annotation encoding="application/x-tex">\text{Python3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">Python3</span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>C++</mtext></mrow><annotation encoding="application/x-tex">\text{C++}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">C++</span></span></span></span></span> 的程序以及伪代码。</p>
+<p>Python3:</p>
+<pre><code class="language-py">def gcd(x, y):
+    if y == 0:
+        return x
+    return gcd(y, x%y)
+
+def lcm(x, y):
+    if x &lt; y:
+        z = x
+        x = y
+        y = z
+    return x / gcd(x, y) * y
+
+print(int(lcm(int(input()), 2)))
 </code></pre>
-<p>因为有n次循环，所以把上面的放入循环中：</p>
-<pre><code class="language-cpp">while(n--)
-{
-	cin&gt;&gt;a;
-    if(a &gt; k) c++;
-    c++'
-}
-</code></pre>
-<p>在前面加上输入和输出，得到程序：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
+<p>C++:</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 
 int main()
 {
-	int n, k;
-	cin&gt;&gt;n&gt;&gt;k;
-	int a;
-	int c = 0;
-	while(n--)
-	{
-		cin&gt;&gt;a;
-		if(a &gt; k) c++;
-		c++;
-	}
-	cout&lt;&lt;c&lt;&lt;endl;
-	return 0;
+    int n;
+    cin&gt;&gt;n;
+    cout&lt;&lt;n/__gcd(max(2, n), min(2, n))*2&lt;&lt;endl;
+    return 0;
 }
+</code></pre>
+<p>伪代码：</p>
+<pre><code>int gcd(x, y):
+    if y==0:
+        return x
+    return gcd(y, x mod y)
+
+int lcm(x, y):
+    if x &lt; y:
+        swap x ↔ y
+    return x/gcd(x, y)*y
+
+input n
+print lcm(n, 2)
 </code></pre>
 
                 </div>
@@ -160,26 +163,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/7IKLNdSii.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-p1044" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-04-20">2019-04-20</time>
-                  <h4 class="title white no-margin">题解 P1044@洛谷 【栈】 </h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/7IKLNdSii.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf791a-codeforces-791a" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2019-04-02">2019-04-02</time>
-                  <h4 class="title white no-margin">题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 </h4>
+                  <time datetime="2020-02-13">2020-02-13</time>
+                  <h4 class="title white no-margin">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
