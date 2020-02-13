@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-13T07:23:56.772Z</updated>
+    <updated>2020-02-13T07:27:26.964Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -146,7 +146,7 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[【重要】评论使用须知[TOP]]]></title>
+        <title type="html"><![CDATA[【重要】评论使用须知（2020年2月13日更新）[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/talking</id>
         <link href="https://qz-cqy.github.io/post/talking">
         </link>
@@ -163,9 +163,10 @@ int main()
 <li>禁止恶意骚扰他人。</li>
 <li>以下关键词（或句式）属于违规内容：
 <ul>
-<li>“XXX爱XXX”</li>
-<li>一切用在不正当语境中的含有隐晦的可能为辱骂、涉政、骚扰、侵犯他人的词语</li>
-<li>……</li>
+<li>“XXX爱XXX”；</li>
+<li>一切用在不正当语境中的含有隐晦的可能为辱骂、涉政、骚扰、侵犯他人的词语（例子不方便举出）；</li>
+<li>一切问候他人亲属、长辈、祖先的不和谐用语（例子不方便举出，但你应该懂）；</li>
+<li>其他管理员认为不宜讨论的内容。</li>
 </ul>
 </li>
 </ul>
