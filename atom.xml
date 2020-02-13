@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-12T08:54:19.362Z</updated>
+    <updated>2020-02-13T01:52:41.474Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】]]></title>
+        <id>https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632</id>
+        <link href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">
+        </link>
+        <updated>2020-02-13T01:51:43.000Z</updated>
+        <content type="html"><![CDATA[<p>题意：输入一个整数，求有多少个由两个<strong>不同的正整数</strong>组成的无序二元组（交换数字顺序视为同一种）加起来等于这个整数。</p>
+<p>通过数学推理（以下的除号均表示整除运算）：</p>
+<p>如果输入的整数（设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>）是奇数，则输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(n-1)\div 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>；否则输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>÷</mo><mn>2</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\div 2-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，但根据整除运算也可写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(n-1)\div 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</p>
+<p>Python:</p>
+<pre><code class="language-py">print((int(input())-1)//2)
+</code></pre>
+<p>C++:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+	int n;
+    cin&gt;&gt;n;
+    cout&lt;&lt;(n-1)/2&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>C:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+	int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    printf(&quot;%d\n&quot;, (n-1)/2);
+    return 0;
+}
+</code></pre>
+<p>伪代码：</p>
+<pre><code>input n
+n ← floor((n-1)/2)
+print n
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] ><】]]></title>
         <id>https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659</id>
@@ -7402,16 +7444,6 @@ F(i,j)=max{ F(i-t[j]<em>k,j-1)+k</em>w[j] } (0&lt;=k&lt;=i mod t[j] );<br>
             f:=f[i-t[j]]+w[j];
 </code></pre>
 <p>此时,第J个物品便有可能加入到一个已经有该物品的最优解中,正好满足完全背包问题的要求.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[游记列表[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/list</id>
-        <link href="https://qz-cqy.github.io/post/list">
-        </link>
-        <updated>2020-01-07T08:15:25.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="/post/i-ak-csp2019-j">CSP2019入门级游记</a></p>
-<p><a href="/post/i-ak-noip2018-pj">NOIp2018普及组游记</a></p>
 ]]></content>
     </entry>
 </feed>

@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】  | rui_er | I AK IOI</title>
+<title>题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】 | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -79,10 +79,10 @@
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-05-01"><i class="fa fa-calendar"></i><span class="lately">9 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-02-13"><i class="fa fa-calendar"></i><span class="lately">1 分钟前</span></time>
                
                
-               <span id="/post/solution-luogu-at3530-atcoder-3530/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/solution-luogu-at5632-atcoder-5632/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -101,7 +101,7 @@
                       <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
                     
               </div>
-              <h1 class="title ularge white bold">题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 </h1>
+              <h1 class="title ularge white bold">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</h1>
             </div>
           </div>
         </div>  
@@ -111,62 +111,39 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>刚刚看了下面的题解，貌似有桶排的有set的，那么我就要用map了！（连map都没人用吗？）</p>
-<h1 id="头文件">头文件</h1>
+                  <p>题意：输入一个整数，求有多少个由两个<strong>不同的正整数</strong>组成的无序二元组（交换数字顺序视为同一种）加起来等于这个整数。</p>
+<p>通过数学推理（以下的除号均表示整除运算）：</p>
+<p>如果输入的整数（设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>）是奇数，则输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(n-1)\div 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>；否则输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>÷</mo><mn>2</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\div 2-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，但根据整除运算也可写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(n-1)\div 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</p>
+<p>Python:</p>
+<pre><code class="language-py">print((int(input())-1)//2)
+</code></pre>
+<p>C++:</p>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;map&gt;
 using namespace std;
-</code></pre>
-<h1 id="准备阶段输入">准备阶段——输入</h1>
-<pre><code class="language-cpp">map&lt;int, bool&gt; have;
-int n;
-cin&gt;&gt;n;
-int k;
-for(int i=0;i&lt;n;i++) 
-{
-	cin&gt;&gt;k;
-    //剩下的下一阶段介绍
-}
-</code></pre>
-<p>have是一个以int类型为索引存储bool类型的map。<br>
-根据题意可以写出输入部分：输入询问个数n，再输入n个询问内容k。</p>
-<h1 id="判断出现与否">判断出现与否</h1>
-<pre><code class="language-cpp">for(int i=0;i&lt;n;i++) 
-{
-	cin&gt;&gt;k;
-	if(have[k]) have.erase(k);//$
-	else have[k] = true;//%
-}
-</code></pre>
-<p>其中$行表示，如果k出现过，就把它从have中删除；<br>
-%行表示，否则将它加入have中。</p>
-<h1 id="统计次数">统计次数</h1>
-<pre><code class="language-cpp">cout&lt;&lt;have.size()&lt;&lt;endl;
-</code></pre>
-<p>调用STL的统计大小的函数即可。</p>
-<blockquote>
-<p>综合以上，得</p>
-</blockquote>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;map&gt;
-using namespace std;
-
-map&lt;int, bool&gt; have;
 
 int main()
 {
 	int n;
-	cin&gt;&gt;n;
-	int k;
-	for(int i=0;i&lt;n;i++) 
-	{
-		cin&gt;&gt;k;
-		if(have[k]) have.erase(k);
-		else have[k] = true;
-	}
-	cout&lt;&lt;have.size()&lt;&lt;endl;
-	return 0;
+    cin&gt;&gt;n;
+    cout&lt;&lt;(n-1)/2&lt;&lt;endl;
+    return 0;
 }
+</code></pre>
+<p>C:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+	int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    printf(&quot;%d\n&quot;, (n-1)/2);
+    return 0;
+}
+</code></pre>
+<p>伪代码：</p>
+<pre><code>input n
+n ← floor((n-1)/2)
+print n
 </code></pre>
 
                 </div>
@@ -177,26 +154,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/Ku4f4mt2C.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-p1305" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-05-23">2019-05-23</time>
-                  <h4 class="title white no-margin">题解 P1305@洛谷 【新二叉树】 </h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
                 <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-at3538-atcoder-3538" class="full-link"></a>
+                 <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2019-04-30">2019-04-30</time>
-                  <h4 class="title white no-margin">题解 AT3538@洛谷 | 3538@Atcoder 【Credits】 </h4>
+                  <time datetime="2020-02-12">2020-02-12</time>
+                  <h4 class="title white no-margin">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
