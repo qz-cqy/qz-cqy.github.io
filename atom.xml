@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-13T07:27:26.964Z</updated>
+    <updated>2020-02-14T09:07:25.450Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,340 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[洛谷管理员列表（截至2020年2月13日）[TOP]]]></title>
+        <id>https://qz-cqy.github.io/post/luogu-admin</id>
+        <link href="https://qz-cqy.github.io/post/luogu-admin">
+        </link>
+        <updated>2020-02-14T09:04:36.000Z</updated>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:center">名字</th>
+<th style="text-align:center">标签</th>
+<th style="text-align:left">粉丝</th>
+<th style="text-align:center">活跃度</th>
+<th style="text-align:center">颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">洛谷</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">5.13k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">绿</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">kkksc03</td>
+<td style="text-align:center">吉祥物</td>
+<td style="text-align:left">5.94k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">8457</td>
+<td style="text-align:center">chen_zhe</td>
+<td style="text-align:center">Aya</td>
+<td style="text-align:left">5.67k</td>
+<td style="text-align:center">超级活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">256</td>
+<td style="text-align:center">lin_toto</td>
+<td style="text-align:center">ユメミ</td>
+<td style="text-align:left">3.13k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">8943</td>
+<td style="text-align:center">老K</td>
+<td style="text-align:center">QAQ</td>
+<td style="text-align:left">1.48k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">141</td>
+<td style="text-align:center">w</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">355</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">1492</td>
+<td style="text-align:center">HansBug</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">578</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">401</td>
+<td style="text-align:center">soha</td>
+<td style="text-align:center">空气</td>
+<td style="text-align:left">1.13k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">3711</td>
+<td style="text-align:center">laosb</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">282</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">11171</td>
+<td style="text-align:center">ddd</td>
+<td style="text-align:center">求关注</td>
+<td style="text-align:left">566</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:center">xmyzwls</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">352</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">灰</td>
+</tr>
+<tr>
+<td style="text-align:left">51185</td>
+<td style="text-align:center">darkflames</td>
+<td style="text-align:center">Hasselblad</td>
+<td style="text-align:left">944</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">5088</td>
+<td style="text-align:center">yjjr</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">695</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">2978</td>
+<td style="text-align:center">zcysky</td>
+<td style="text-align:center">白羽</td>
+<td style="text-align:left">1.29k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">42102</td>
+<td style="text-align:center">yanQval</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">237</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">15326</td>
+<td style="text-align:center">will7101</td>
+<td style="text-align:center">可爱</td>
+<td style="text-align:left">520</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">12621</td>
+<td style="text-align:center">fstqwq</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">580</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">52177</td>
+<td style="text-align:center">hqy2000</td>
+<td style="text-align:center">スイカ</td>
+<td style="text-align:left">356</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">53062</td>
+<td style="text-align:center">Anguei</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">1.16k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">53495</td>
+<td style="text-align:center">memset0</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">2.17k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">29</td>
+<td style="text-align:center">yeszy</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">962</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">绿</td>
+</tr>
+<tr>
+<td style="text-align:left">11751</td>
+<td style="text-align:center">ComeIntoPower</td>
+<td style="text-align:center">小圆</td>
+<td style="text-align:left">823</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">36482</td>
+<td style="text-align:center">龟龟号打捞船</td>
+<td style="text-align:center">铲屎官</td>
+<td style="text-align:left">1.61k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">2674</td>
+<td style="text-align:center">「QQ红包」</td>
+<td style="text-align:center">发红包了</td>
+<td style="text-align:left">977</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">5846</td>
+<td style="text-align:center">yyy2015c01</td>
+<td style="text-align:center">嘤嘤嘤</td>
+<td style="text-align:left">1.35k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">829</td>
+<td style="text-align:center">Scarlet</td>
+<td style="text-align:center">芙兰朵露</td>
+<td style="text-align:left">547</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">96686</td>
+<td style="text-align:center">hh0592821</td>
+<td style="text-align:center">PM</td>
+<td style="text-align:left">629</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">3296</td>
+<td style="text-align:center">noip</td>
+<td style="text-align:center">毒瘤</td>
+<td style="text-align:left">1.75k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">绿</td>
+</tr>
+<tr>
+<td style="text-align:left">173989</td>
+<td style="text-align:center">岭上团子</td>
+<td style="text-align:center">聪团</td>
+<td style="text-align:left">445</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">15289</td>
+<td style="text-align:center">阮行止</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">702</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">3182</td>
+<td style="text-align:center">Created_equal1</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">769</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">100544</td>
+<td style="text-align:center">xht37</td>
+<td style="text-align:center">天痕</td>
+<td style="text-align:left">1.45k</td>
+<td style="text-align:center">超级活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">49093</td>
+<td style="text-align:center">_sys</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">334</td>
+<td style="text-align:center">活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">6813</td>
+<td style="text-align:center">mrsrz</td>
+<td style="text-align:center">珂愛</td>
+<td style="text-align:left">1.01k</td>
+<td style="text-align:center">活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">5130</td>
+<td style="text-align:center">mcfx</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">357</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">9433</td>
+<td style="text-align:center">FlierKing</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">523</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">397</td>
+<td style="text-align:center">洛谷网校</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">176</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">10703</td>
+<td style="text-align:center">小粉兔</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">2.02k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">22030</td>
+<td style="text-align:center">StudyingFather</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">717</td>
+<td style="text-align:center">超级活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】]]></title>
         <id>https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164</id>
@@ -7079,82 +7413,6 @@ int main()
         </link>
         <updated>2020-01-09T11:19:37.000Z</updated>
         <content type="html"><![CDATA[<p>网址：<a href="https://qzcf.github.io/dalao/CQYAKIOI_upd.html">膜拜rui_er</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[五分钟搭建属于自己的博客[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/building-a-blog</id>
-        <link href="https://qz-cqy.github.io/post/building-a-blog">
-        </link>
-        <updated>2020-01-08T09:14:22.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>注：由于图片使用洛谷图床，有些图片可能会很慢甚至加载不出来，可以前往<a href="https://ak-ioi.blog.luogu.org/building-a-blog#">洛谷博客</a>查看</p>
-</blockquote>
-<h1 id="0-优点和缺点">0 优点和缺点</h1>
-<p>优点：</p>
-<ul>
-<li>使用简单</li>
-<li>无需写任何代码</li>
-<li>快捷、方便</li>
-<li>离线编辑博客，随时写，随时传</li>
-<li>主题美观、多样</li>
-<li>……</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>由于是比较新的软件，可能会有些东西没有详细说明（但是大多数经常使用的都已经在下面介绍了，所以不用怕）</li>
-<li>……</li>
-</ul>
-<p>看完这么多优点，是不是很想要呢？那就接着往下看吧！这么好的一个东西，你值得拥有！</p>
-<h1 id="1-准备工作">1 准备工作</h1>
-<ul>
-<li>
-<p>下载git</p>
-</li>
-<li>
-<p>准备一个自己的空网站（可以不是顶级域名），如果你已经有了，并且对Github的操作比较熟悉，你可以跳过下面的指导，直接进入第二部分。</p>
-</li>
-</ul>
-<h2 id="11-不想付钱怎么办">1.1 不想付钱怎么办</h2>
-<p>如果你还没有自己的空网站，在<a href="https://www.github.com">Github</a>创建是一个不错的选择。这样创建出来的网站会长成这个样子：<code>https://xxx.github.io</code>（比如我的就是https://qz-cqy.github.io）。首先，你需要在Github上创建一个账号。这个注册方法和正常网站没有太大区别，我在这里就不详细讲解了。如果不清楚，可以到<a href="https://git-scm.com/book/zh/v2/GitHub-%E8%B4%A6%E6%88%B7%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE">这个博客</a>看一下，我认为讲的还是不错的。</p>
-<p>有了Github账号以后，我们创建一个仓库。仓库名称设置成<code>账号名称.github.io</code>，然后选择“创建空仓库”选项，设置为<strong>公开仓库</strong>，就可以进入编写界面了。你可以看到你写的代码，例如<a href="https://www.github.com/qz-cqy/qz-cqy.github.io">我的项目</a>。神犇们可以自己写html的代码，搭建出漂亮的网页，但如果我们不会，怎么办呢？</p>
-<h1 id="2-安装博客静态写作软件gridea">2 安装博客静态写作软件Gridea</h1>
-<p><a href="https://www.gridea.dev">Gridea官网</a></p>
-<p>这里可以下载不同操作系统（Mac OS/Windows/Linux）下的程序。下面我以Windows系统为例讲解。</p>
-<h2 id="21-如何下载">2.1 如何下载</h2>
-<p>进入官网以后，你将看到如下画面：</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/j6asmvst.png" alt="" loading="lazy"></figure>
-<p>接下来单击中间的按钮：</p>
-<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/jh2lbj06.png" alt="" loading="lazy"></figure>
-<p>就会自动下载。</p>
-<h2 id="22-下载以后">2.2 下载以后</h2>
-<p>下载后双击运行博客部署程序，会在桌面建立快捷方式，双击进去就可以写博客了。让我们先来熟悉一下每个选项的用处。</p>
-<h2 id="23-熟悉操作">2.3 熟悉操作</h2>
-<p>这里，我们可以看到左边有五个栏目：文章、菜单、标签、主题、远程。</p>
-<h3 id="231-文章栏目">2.3.1 文章栏目</h3>
-<p>文章栏目会显示所有写过的文章（如下图）。</p>
-<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/dq0w5ovm.png" alt="" loading="lazy"></figure>
-<p>我们看到右上角有一个<strong>加号</strong>，单击进去就可以写文章了。里面使用<strong>Markdown</strong>编写，使用方法参见<a href="https://www.luogu.com.cn/blog/luogu/how-to-use-markdown">这里</a>，可能不完全一样，但大体上几乎相同。进入编辑文章界面后，将鼠标移动到右侧，会发现六个图标。上面写了功能简介。如果你对Markdown语法足够了解，那么你是不需要前四个按钮的。第五个用于更改URL、标签等设置，第六个用于预览。</p>
-<p>写完文章以后，将鼠标移动到靠上的位置，出现三个图标：左箭头、黑勾和<strong>绿勾</strong>。左箭头用于退出，黑勾是存为草稿，绿勾是保存并发布。发布后页面不会自动跳转，需要点一下左箭头退出编辑。</p>
-<h3 id="232-菜单栏目">2.3.2 菜单栏目</h3>
-<p>菜单会在网页上标题下方显示，初始状态有四个菜单：首页、归档、标签、关于，在网页里可以找到他们的作用。加号用于新建菜单，里面有详细的说明和备注。这一栏目对我们的博客作用不大，且浅显易懂，在这里就不过多介绍了。</p>
-<h3 id="233-标签栏目">2.3.3 标签栏目</h3>
-<p>标签栏目用于管理文章的标签。新建文章时直接在上面2.3.1中介绍过的第五个按钮里加标签即可，不必手动添加。当一个标签下没有文章时，<strong>标签不会自动移除</strong>，会出现删除选项，手动移除。</p>
-<h2 id="234-主题栏目">2.3.4 主题栏目</h2>
-<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/c8lb2uvj.png" alt="" loading="lazy"></figure>
-<p>主题栏目主要是网站的设计。</p>
-<p><strong>基础配置</strong>界面是关于网站样式的设计。默认含有四个主题，可前往官网预览，可以在<a href="https://www.gridea.dev/theme">这里</a>下载其他主题。</p>
-<p><strong>自定义配置</strong>中是一些杂的网站样式设计，在里面有详细的备注，在这里不过多解释了。</p>
-<p><strong>网页图标</strong>和<strong>头像配置</strong>就是更改网页图标和头像的，没有其他功能，大家可以自行探索。</p>
-<h2 id="235-远程栏目">2.3.5 远程栏目</h2>
-<p>如果你想要把博客放到网站上，这里非常重要！！！</p>
-<p><strong>基础配置</strong>中，选择<code>Github Pages</code>就可以把你的Github地址传上去，用于更新博客。域名填写<code>https://xxx.github.io</code>，仓库写<code>xxx.github.io</code>，分支写<code>master</code>，仓库用户名写<code>xxx</code>，邮箱写你Github的注册邮箱，最后Token写你的密码就好了。至于CNAME，没什么用，直接空着即可。</p>
-<p><strong>评论配置</strong>中你可以更改评论的设置，里面有教程，跟着教程走就好了。</p>
-<h3 id="如果配置完全正确但还是无法建立远程连接可以参考这篇文章应该是gridea的bug">如果配置完全正确但还是无法建立远程连接，可以参考<a href="https://yeming.site/post/gridea_help/">这篇文章</a>，应该是Gridea的bug。</h3>
-<h1 id="3-更新博客">3 更新博客</h1>
-<p>每次更新完博客之后不会自动同步到网页，需要点击首页页面左下角的“同步”按钮，等不到一分钟就同步好了。Gridea会自动在输入的Github地址同步文件，同步期间全程不需要手动操作。</p>
-<p>同步完以后，等一两分钟就可以在网页查看效果了。我的博客也是这么搭建的。不得不说，有了这个应用之后，在自己的网站上写博客非常方便，在这里给作者点个赞！</p>
-<p>另外，也欢迎大家到<a href="https://qz-cqy.github.io">我的博客</a>来参观！</p>
 ]]></content>
     </entry>
 </feed>

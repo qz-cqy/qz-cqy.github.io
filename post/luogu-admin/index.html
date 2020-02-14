@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 AT2018@洛谷 | 2018@Atcoder 【バイナリハックイージー / Unhappy Hacking (ABC Edit)】 | rui_er | I AK IOI</title>
+<title>洛谷管理员列表（截至2020年2月13日）[TOP] | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -77,12 +77,12 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/LsGynlhxT.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-07-16"><i class="fa fa-calendar"></i><span class="lately">7 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-02-14"><i class="fa fa-calendar"></i><span class="lately">3 分钟前</span></time>
                
                
-               <span id="/post/solution-luogu-at2018-atcoder-2018/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/luogu-admin/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -90,18 +90,12 @@
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="ctag ctag-0 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                      <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="ctag ctag-0 ctag-LsGynlhxT" aria-label="">置顶</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-2 ctag-1yYYfIIPJ" aria-label="">题解</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-1 ctag-GpG87CBmBd" aria-label="">洛谷</a>
                     
               </div>
-              <h1 class="title ularge white bold">题解 AT2018@洛谷 | 2018@Atcoder 【バイナリハックイージー / Unhappy Hacking (ABC Edit)】</h1>
+              <h1 class="title ularge white bold">洛谷管理员列表（截至2020年2月13日）[TOP]</h1>
             </div>
           </div>
         </div>  
@@ -111,53 +105,332 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="c党题解">C++党题解</h1>
-<p><s>P党请右转下楼，那里才是你们的基地</s></p>
-<p>输入是从后面添加，退格是从后面删除。这个feature好像与什么相似……是什么呢？</p>
-<p>懂了的<a href="https://www.luogu.org/problemnew/show/AT2018">点我</a></p>
-<hr>
-<p>好吧，没想到你还没懂。这就是个栈！FILO！</p>
-<p>具体操作：</p>
-<ol>
-<li>
-<p>对于数字键，push对应的数字</p>
-</li>
-<li>
-<p>对于退格键，如果文档非空则pop，否则什么都不做。</p>
-</li>
-</ol>
-<p>但是最后的文本是倒着的，怎么办呢？pop进另一个栈！这样就可以正过来了！</p>
-<p>代码：</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main()
-{
-    string oper;
-    cin&gt;&gt;oper;
-    int l = oper.length();
-    stack&lt;char&gt; text, tmp;
-    for(int i=0;i&lt;l;i++)
-    {
-        if(oper[i] != 'B') text.push(oper[i]);
-        else
-        {
-            if(!text.empty()) text.pop();
-        }
-    }
-    while(!text.empty())
-    {
-        tmp.push(text.top());
-        text.pop();
-    }
-    while(!tmp.empty())
-    {
-        cout&lt;&lt;tmp.top();
-        tmp.pop();
-    }
-    return 0;
-}
-</code></pre>
+                  <table>
+<thead>
+<tr>
+<th style="text-align:left">ID</th>
+<th style="text-align:center">名字</th>
+<th style="text-align:center">标签</th>
+<th style="text-align:left">粉丝</th>
+<th style="text-align:center">活跃度</th>
+<th style="text-align:center">颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center">洛谷</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">5.13k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">绿</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center">kkksc03</td>
+<td style="text-align:center">吉祥物</td>
+<td style="text-align:left">5.94k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">8457</td>
+<td style="text-align:center">chen_zhe</td>
+<td style="text-align:center">Aya</td>
+<td style="text-align:left">5.67k</td>
+<td style="text-align:center">超级活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">256</td>
+<td style="text-align:center">lin_toto</td>
+<td style="text-align:center">ユメミ</td>
+<td style="text-align:left">3.13k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">8943</td>
+<td style="text-align:center">老K</td>
+<td style="text-align:center">QAQ</td>
+<td style="text-align:left">1.48k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">141</td>
+<td style="text-align:center">w</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">355</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">1492</td>
+<td style="text-align:center">HansBug</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">578</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">401</td>
+<td style="text-align:center">soha</td>
+<td style="text-align:center">空气</td>
+<td style="text-align:left">1.13k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">3711</td>
+<td style="text-align:center">laosb</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">282</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">11171</td>
+<td style="text-align:center">ddd</td>
+<td style="text-align:center">求关注</td>
+<td style="text-align:left">566</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">14</td>
+<td style="text-align:center">xmyzwls</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">352</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">灰</td>
+</tr>
+<tr>
+<td style="text-align:left">51185</td>
+<td style="text-align:center">darkflames</td>
+<td style="text-align:center">Hasselblad</td>
+<td style="text-align:left">944</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">5088</td>
+<td style="text-align:center">yjjr</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">695</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">2978</td>
+<td style="text-align:center">zcysky</td>
+<td style="text-align:center">白羽</td>
+<td style="text-align:left">1.29k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">42102</td>
+<td style="text-align:center">yanQval</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">237</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">15326</td>
+<td style="text-align:center">will7101</td>
+<td style="text-align:center">可爱</td>
+<td style="text-align:left">520</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">12621</td>
+<td style="text-align:center">fstqwq</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">580</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">52177</td>
+<td style="text-align:center">hqy2000</td>
+<td style="text-align:center">スイカ</td>
+<td style="text-align:left">356</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">53062</td>
+<td style="text-align:center">Anguei</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">1.16k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">53495</td>
+<td style="text-align:center">memset0</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">2.17k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">29</td>
+<td style="text-align:center">yeszy</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">962</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">绿</td>
+</tr>
+<tr>
+<td style="text-align:left">11751</td>
+<td style="text-align:center">ComeIntoPower</td>
+<td style="text-align:center">小圆</td>
+<td style="text-align:left">823</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">36482</td>
+<td style="text-align:center">龟龟号打捞船</td>
+<td style="text-align:center">铲屎官</td>
+<td style="text-align:left">1.61k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">2674</td>
+<td style="text-align:center">「QQ红包」</td>
+<td style="text-align:center">发红包了</td>
+<td style="text-align:left">977</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">5846</td>
+<td style="text-align:center">yyy2015c01</td>
+<td style="text-align:center">嘤嘤嘤</td>
+<td style="text-align:left">1.35k</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">829</td>
+<td style="text-align:center">Scarlet</td>
+<td style="text-align:center">芙兰朵露</td>
+<td style="text-align:left">547</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">96686</td>
+<td style="text-align:center">hh0592821</td>
+<td style="text-align:center">PM</td>
+<td style="text-align:left">629</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">3296</td>
+<td style="text-align:center">noip</td>
+<td style="text-align:center">毒瘤</td>
+<td style="text-align:left">1.75k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">绿</td>
+</tr>
+<tr>
+<td style="text-align:left">173989</td>
+<td style="text-align:center">岭上团子</td>
+<td style="text-align:center">聪团</td>
+<td style="text-align:left">445</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">15289</td>
+<td style="text-align:center">阮行止</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">702</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">3182</td>
+<td style="text-align:center">Created_equal1</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">769</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">100544</td>
+<td style="text-align:center">xht37</td>
+<td style="text-align:center">天痕</td>
+<td style="text-align:left">1.45k</td>
+<td style="text-align:center">超级活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">49093</td>
+<td style="text-align:center">_sys</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">334</td>
+<td style="text-align:center">活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">6813</td>
+<td style="text-align:center">mrsrz</td>
+<td style="text-align:center">珂愛</td>
+<td style="text-align:left">1.01k</td>
+<td style="text-align:center">活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">5130</td>
+<td style="text-align:center">mcfx</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">357</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center">橙</td>
+</tr>
+<tr>
+<td style="text-align:left">9433</td>
+<td style="text-align:center">FlierKing</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">523</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">397</td>
+<td style="text-align:center">洛谷网校</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">176</td>
+<td style="text-align:center">潜水</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">10703</td>
+<td style="text-align:center">小粉兔</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">2.02k</td>
+<td style="text-align:center">冒泡</td>
+<td style="text-align:center">红</td>
+</tr>
+<tr>
+<td style="text-align:left">22030</td>
+<td style="text-align:center">StudyingFather</td>
+<td style="text-align:center"></td>
+<td style="text-align:left">717</td>
+<td style="text-align:center">超级活跃</td>
+<td style="text-align:center">红</td>
+</tr>
+</tbody>
+</table>
 
                 </div>
                 <div class="clear"></div>
@@ -167,26 +440,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/kAU4cMLlY.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf727c-codeforces-727c" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-07-16">2019-07-16</time>
-                  <h4 class="title white no-margin">题解 CF727C@洛谷 | 727C@Codeforces 【Guess the Array】 </h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-p5146" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2019-07-12">2019-07-12</time>
-                  <h4 class="title white no-margin">题解 P5146@洛谷 【最大差值】 </h4>
+                  <time datetime="2020-02-13">2020-02-13</time>
+                  <h4 class="title white no-margin">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
