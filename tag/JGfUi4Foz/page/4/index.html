@@ -4,251 +4,65 @@
     <meta charset="utf-8" >
 
 <title>OI | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1581677144300">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1581677275119">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
+
+    <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
   </head>
   <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://qz-cqy.github.io">rui_er | I AK IOI</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/list" class="menu">
-                比赛游记
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+    <div id="app" class="main">
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: OI</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf4a-codeforces-4a">题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </a>
-    </h2>
-    <p class="article-meta">
-      2019-01-31
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge ">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge success">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge success">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge secondary">
-          洛谷
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf4a-codeforces-4a" class="readmore-link">
-        <button>
-          Read More
-        </button>
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1581677275119" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
       </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf61a-codeforces-61a">题解 CF61A@洛谷 | 61A@Codeforces 【Ultra-Fast Mathematician】 </a>
-    </h2>
-    <p class="article-meta">
-      2019-01-29
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge secondary">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge success">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge success">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge secondary">
-          洛谷
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf61a-codeforces-61a" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf409d-codeforces-409d">题解 CF409D 【Big Data】 </a>
-    </h2>
-    <p class="article-meta">
-      2019-01-02
-      
-        <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="badge ">
-          打表
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge warning">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge secondary">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge warning">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge success">
-          洛谷
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf409d-codeforces-409d" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">NOIp2018普及组游记</a>
-    </h2>
-    <p class="article-meta">
-      2018-12-12
-      
-        <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="badge ">
-          NOIp/CSP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge warning">
-          OI
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
-        </div>
-        <div class="row flex-edges">
-  
-    <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/page/3/" class="paper-btn">
-      上一页
-    </a>
-  
-  
-</div>
-
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://qz-cqy.github.io/images/avatar.png?v=1581677144300" class="no-responsive avatar">
-    <div class="text-muted">相信玄学，研究科学 | Think twice, code once. </div>
+    </div>
+    <div>
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
     <div class="social-container">
       
         
@@ -262,259 +76,107 @@
         
       
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
     </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/calculating-size-of-circle">积分法求圆面积</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/luogu-admin">洛谷管理员列表（包括题目管理志愿者，截至2020年2月13日）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/talking">【重要】评论使用须知（2020年2月13日更新）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887">T117887 【【QZR-01】G同学与旅行计划】 大样例</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth">关于NOIP的暂停和恢复</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-p5876">题解 P5876@洛谷 【化简单词】</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
     </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://qz-cqy.github.io/tag/A6K5EMTnS" class="badge secondary">
-          微积分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="badge ">
-          数学
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="badge ">
-          置顶
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge warning">
-          洛谷
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="badge warning">
-          Atcoder
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge success">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge ">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="badge secondary">
-          重要
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="badge success">
-          声明/公告
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="badge success">
-          样例
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="badge success">
-          NOIp/CSP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="badge success">
-          项目
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="badge warning">
-          博客
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="badge secondary">
-          教程
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="badge secondary">
-          USACO
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="badge ">
-          背包
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="badge ">
-          动态规划/DP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="badge secondary">
-          交互题
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge ">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="badge ">
-          骗分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="badge ">
-          树
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="badge secondary">
-          图论
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="badge secondary">
-          打表
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: OI</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://qz-cqy.github.io/post/solution-luogu-cf4a-codeforces-4a">
+                  <h2 class="post-title">题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </h2>
+                </a>
+                <div class="post-date">
+                  2019-01-31
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://qz-cqy.github.io/post/solution-luogu-cf61a-codeforces-61a">
+                  <h2 class="post-title">题解 CF61A@洛谷 | 61A@Codeforces 【Ultra-Fast Mathematician】 </h2>
+                </a>
+                <div class="post-date">
+                  2019-01-29
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://qz-cqy.github.io/post/solution-luogu-cf409d-codeforces-409d">
+                  <h2 class="post-title">题解 CF409D 【Big Data】 </h2>
+                </a>
+                <div class="post-date">
+                  2019-01-02
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://qz-cqy.github.io/post/i-ak-noip2018-pj">
+                  <h2 class="post-title">NOIp2018普及组游记</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-12
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
+              </div>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+    <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/page/3/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
+  
+  
+</div>
+
+        </div>
+      </div>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
 <script type="application/javascript">
 
 AOS.init();
 
-hljs.initHighlightingOnLoad()
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
+
+
 
 
 

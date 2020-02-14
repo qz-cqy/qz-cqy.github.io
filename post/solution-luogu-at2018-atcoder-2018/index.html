@@ -4,110 +4,105 @@
     <meta charset="utf-8" >
 
 <title>题解 AT2018@洛谷 | 2018@Atcoder 【バイナリハックイージー / Unhappy Hacking (ABC Edit)】 | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1581677144300">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1581677275119">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
+
+    <meta name="description" content="C++党题解
+P党请右转下楼，那里才是你们的基地
+输入是从后面添加，退格是从后面删除。这个feature好像与什么相似……是什么呢？
+懂了的点我
+
+好吧，没想到你还没懂。这就是个栈！FILO！
+具体操作：
+
+
+对于数字键，push对应的数字..." />
+    <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://qz-cqy.github.io">rui_er | I AK IOI</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1581677275119" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
         
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
+      
         
-          <li>
-            
-              <a href="/post/list" class="menu">
-                比赛游记
-              </a>
-            
-          </li>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
+      
         
-      </ul>
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
   </div>
-</nav>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>题解 AT2018@洛谷 | 2018@Atcoder 【バイナリハックイージー / Unhappy Hacking (ABC Edit)】</h1>
-            <p class="article-meta">
-              2019-07-16
-              
-                <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="badge warning">
-                  Atcoder
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge warning">
-                  算法
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-                  题解
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge secondary">
-                  OI
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge secondary">
-                  洛谷
-                </a>
-              
-            </p>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">题解 AT2018@洛谷 | 2018@Atcoder 【バイナリハックイージー / Unhappy Hacking (ABC Edit)】</h2>
+            <div class="post-date">2019-07-16</div>
             
-            <div class="post-content">
+            <div class="post-content" v-pre>
               <h1 id="c党题解">C++党题解</h1>
 <p><s>P党请右转下楼，那里才是你们的基地</s></p>
 <p>输入是从后面添加，退格是从后面删除。这个feature好像与什么相似……是什么呢？</p>
@@ -157,296 +152,65 @@ int main()
 </code></pre>
 
             </div>
-          </article>
-        </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="tag">
+                    Atcoder
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
               </div>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-p5146">
-                <h3 class="post-title">
-                  题解 P5146@洛谷 【最大差值】 
-                </h3>
-              </a>
-            </div>
-          
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/solution-luogu-p5146">
+                  <h3 class="post-title">
+                    题解 P5146@洛谷 【最大差值】 
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
         </div>
-        
       </div>
-
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://qz-cqy.github.io/images/avatar.png?v=1581677144300" class="no-responsive avatar">
-    <div class="text-muted">相信玄学，研究科学 | Think twice, code once. </div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/calculating-size-of-circle">积分法求圆面积</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/luogu-admin">洛谷管理员列表（包括题目管理志愿者，截至2020年2月13日）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/talking">【重要】评论使用须知（2020年2月13日更新）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887">T117887 【【QZR-01】G同学与旅行计划】 大样例</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth">关于NOIP的暂停和恢复</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-p5876">题解 P5876@洛谷 【化简单词】</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://qz-cqy.github.io/tag/A6K5EMTnS" class="badge ">
-          微积分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="badge secondary">
-          数学
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="badge secondary">
-          置顶
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge ">
-          洛谷
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="badge ">
-          Atcoder
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge success">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge secondary">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="badge ">
-          重要
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="badge secondary">
-          声明/公告
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="badge success">
-          样例
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="badge secondary">
-          NOIp/CSP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="badge secondary">
-          项目
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="badge ">
-          博客
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="badge secondary">
-          教程
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="badge secondary">
-          USACO
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="badge secondary">
-          背包
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="badge ">
-          动态规划/DP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="badge success">
-          交互题
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge secondary">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="badge warning">
-          骗分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="badge success">
-          树
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="badge secondary">
-          图论
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="badge secondary">
-          打表
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-
-
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
 <script type="application/javascript">
 
 AOS.init();
 
-hljs.initHighlightingOnLoad()
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
+
+
 
 
 

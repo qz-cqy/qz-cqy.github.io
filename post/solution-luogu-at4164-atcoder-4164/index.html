@@ -4,110 +4,97 @@
     <meta charset="utf-8" >
 
 <title>题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】 | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1581677144300">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1581677275119">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
+
+    <meta name="description" content="题意：求输入的数和 222 的 lcm\text{lcm}lcm
+这里根据数学证明可得：lcm(a,b)=a/gcd⁡(a,b)∗blcm(a, b)=a/\gcd(a, b)*blcm(a,b)=a/gcd(a,b)∗b，而 gcd⁡\g..." />
+    <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://qz-cqy.github.io">rui_er | I AK IOI</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://qz-cqy.github.io">
+        <img src="https://qz-cqy.github.io/images/avatar.png?v=1581677275119" class="site-logo">
+        <h1 class="site-title">rui_er | I AK IOI</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
         
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
+      
         
-          <li>
-            
-              <a href="/post/list" class="menu">
-                比赛游记
-              </a>
-            
-          </li>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
+      
         
-      </ul>
+          <a href="/post/list" class="site-nav">
+            比赛游记
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
     </div>
   </div>
-</nav>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      相信玄学，研究科学 | Think twice, code once. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</h1>
-            <p class="article-meta">
-              2020-02-13
-              
-                <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="badge ">
-                  Atcoder
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge ">
-                  算法
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge success">
-                  题解
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge secondary">
-                  OI
-                </a>
-              
-                <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge secondary">
-                  洛谷
-                </a>
-              
-            </p>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</h2>
+            <div class="post-date">2020-02-13</div>
             
-            <div class="post-content">
+            <div class="post-content" v-pre>
               <p>题意：求输入的数和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>lcm</mtext></mrow><annotation encoding="application/x-tex">\text{lcm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">lcm</span></span></span></span></span></p>
 <p>这里根据数学证明可得：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>m</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mo>=</mo><mi>a</mi><mi mathvariant="normal">/</mi><mi>gcd</mi><mo>⁡</mo><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mo>∗</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">lcm(a, b)=a/\gcd(a, b)*b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord">/</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>gcd</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\gcd</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span></span></span></span> 可以通过辗转相除法计算。以下给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>Python3</mtext></mrow><annotation encoding="application/x-tex">\text{Python3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">Python3</span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>C++</mtext></mrow><annotation encoding="application/x-tex">\text{C++}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">C++</span></span></span></span></span> 的程序以及伪代码。</p>
 <p>Python3:</p>
@@ -153,296 +140,65 @@ print lcm(n, 2)
 </code></pre>
 
             </div>
-          </article>
-        </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
+            
+              <div class="tag-container">
+                
+                  <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="tag">
+                    Atcoder
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="tag">
+                    算法
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="tag">
+                    OI
+                  </a>
+                
+                  <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="tag">
+                    洛谷
+                  </a>
+                
               </div>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">
-                <h3 class="post-title">
-                  题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】
-                </h3>
-              </a>
-            </div>
-          
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">
+                  <h3 class="post-title">
+                    题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
         </div>
-        
       </div>
-
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://qz-cqy.github.io/images/avatar.png?v=1581677144300" class="no-responsive avatar">
-    <div class="text-muted">相信玄学，研究科学 | Think twice, code once. </div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/calculating-size-of-circle">积分法求圆面积</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/luogu-admin">洛谷管理员列表（包括题目管理志愿者，截至2020年2月13日）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/talking">【重要】评论使用须知（2020年2月13日更新）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887">T117887 【【QZR-01】G同学与旅行计划】 大样例</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth">关于NOIP的暂停和恢复</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-p5876">题解 P5876@洛谷 【化简单词】</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://qz-cqy.github.io/tag/A6K5EMTnS" class="badge secondary">
-          微积分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="badge secondary">
-          数学
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="badge success">
-          置顶
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge warning">
-          洛谷
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="badge success">
-          Atcoder
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge ">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge ">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="badge ">
-          重要
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="badge ">
-          声明/公告
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="badge warning">
-          样例
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="badge warning">
-          NOIp/CSP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="badge secondary">
-          项目
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="badge success">
-          博客
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="badge warning">
-          教程
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="badge secondary">
-          USACO
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="badge ">
-          背包
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="badge secondary">
-          动态规划/DP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="badge warning">
-          交互题
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge secondary">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="badge secondary">
-          骗分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="badge ">
-          树
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="badge ">
-          图论
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="badge ">
-          打表
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-
-
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
 <script type="application/javascript">
 
 AOS.init();
 
-hljs.initHighlightingOnLoad()
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
+
+
 
 
 
