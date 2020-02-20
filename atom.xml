@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-20T07:13:05.299Z</updated>
+    <updated>2020-02-20T07:15:58.831Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -24,6 +24,8 @@
 <li>关于SPFA，他死了</li>
 <li>kkk勇闯外环</li>
 <li>举报，建议禁言！</li>
+<li>希望更丰富的展现？使用Markdown</li>
+<li>任何一个伟大的思想，都有一个微不足道的开始。</li>
 </ul>
 <p>如果有我没写上的，欢迎留言补充。</p>
 ]]></content>
