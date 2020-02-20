@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-20T07:04:05.056Z</updated>
+    <updated>2020-02-20T07:05:35.783Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
     <entry>
         <title type="html"><![CDATA[我的第一场CF比赛2.14]]></title>
-        <id>https://qz-cqy.github.io/post/wo-de-di-yi-chang-cf-bi-sai-214</id>
-        <link href="https://qz-cqy.github.io/post/wo-de-di-yi-chang-cf-bi-sai-214">
+        <id>https://qz-cqy.github.io/post/first-cf</id>
+        <link href="https://qz-cqy.github.io/post/first-cf">
         </link>
         <updated>2020-02-20T06:54:14.000Z</updated>
         <content type="html"><![CDATA[<p>2月14日晚上21:05，发现有一场CF比赛（CF1304），就点进去打。</p>
