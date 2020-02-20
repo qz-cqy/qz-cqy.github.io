@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-20T06:39:44.480Z</updated>
+    <updated>2020-02-20T06:46:43.141Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -18,6 +18,19 @@
         <updated>2020-02-20T06:37:34.000Z</updated>
         <content type="html"><![CDATA[<p><s>由于站长的野心，</s> 多次尝试将博客放到网址ak-ioi.top上无果后 <s>放弃挣扎</s>，决定恢复原网址的访问。</p>
 <p>此公告。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[QZJR关于@henrytb 意外重题的公告[TOP]]]></title>
+        <id>https://qz-cqy.github.io/post/qzjr-henrytb-problem</id>
+        <link href="https://qz-cqy.github.io/post/qzjr-henrytb-problem">
+        </link>
+        <updated>2020-02-15T15:48:02.000Z</updated>
+        <content type="html"><![CDATA[<p>经过洛谷用户@rui_er 的再次审核，根据<a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告</a>判定洛谷用户@henrytb 提交的题目【G同学与h**h】与CF1304E题属于高度重题，但因为该用户出题时间在CF比赛前，不属于抄袭，故除撤下比赛外不予其他处罚。</p>
+<p>此公告。</p>
+<p>QZJR，rui_er<br>
+2020年2月15日</p>
+<p>（此文章置顶至3月3日）</p>
 ]]></content>
     </entry>
     <entry>
@@ -7460,22 +7473,6 @@ NO
 NO
 NO
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于NOIP的暂停和恢复]]></title>
-        <id>https://qz-cqy.github.io/post/noip-death-and-rebirth</id>
-        <link href="https://qz-cqy.github.io/post/noip-death-and-rebirth">
-        </link>
-        <updated>2020-01-21T13:21:21.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="背景">背景</h1>
-<p><a href="https://www.ccf.org.cn/c/2019-08-16/668162.shtml">CCF关于暂停NOIP竞赛的公告——2019/08/16</a></p>
-<p><a href="https://www.ccf.org.cn/c/2020-01-21/694716.shtml">CCF关于恢复NOIP竞赛的公告——2020/01/21</a></p>
-<h1 id="如何看待">如何看待</h1>
-<ol>
-<li><s>暂停NOIP是被机惨的结果，至于恢复，是一套说辞罢了，不要在意</s></li>
-<li>把CSP2019的证书当成绝版吧！NOIP恢复了，CSP-J/S会不复存在！</li>
-</ol>
 ]]></content>
     </entry>
 </feed>
