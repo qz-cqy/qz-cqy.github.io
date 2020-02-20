@@ -1,401 +1,129 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rui_er | I AK IOI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+    <link rel="stylesheet" href="media/live2d/css/live2d.css" />
+</head>
+<body class=" mdui-appbar-with-toolbar  mdui-theme-primary-pink mdui-theme-accent-pink">
+        <header class="mdui-toolbar mdui-color-pink mdui-appbar-fixed mdui-appbar-scroll-toolbar-hide" style="z-index: 1000">
+    <a href="javascript:;" mdui-drawer="{target: '#left-drawer',overlay:true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+    <span class="mdui-typo-title">rui_er | I AK IOI</span>
+    <div class="mdui-toolbar-spacer"></div>
+<!--    <a href="javascript:history.go(0);" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+</header>
 
-<title>Gridea | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582242425013">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
-
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-  </head>
-  <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://qz-cqy.github.io">rui_er | I AK IOI</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
+        <div class="mdui-drawer mdui-color-white mdui-drawer-full-height mdui-drawer-close" id="left-drawer">
+    <ul class="mdui-list">
+        <li class="mdui-subheader">菜单</li>
         
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a href="/archives" class="mdui-list-item-content">归档</a>
+        </li>
         
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a href="/tags" class="mdui-list-item-content">标签</a>
+        </li>
         
-          <li>
-            
-              <a href="/post/list" class="menu">
-                比赛游记
-              </a>
-            
-          </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a href="/post/list" class="mdui-list-item-content">比赛游记</a>
+        </li>
         
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a href="/post/about" class="mdui-list-item-content">关于</a>
+        </li>
         
-      </ul>
-    </div>
-  </div>
-</nav>
+    </ul>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: Gridea</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://qz-cqy.github.io/post/hello-gridea">Hello Gridea</a>
-    </h2>
-    <p class="article-meta">
-      2018-12-12
-      
-        <a href="https://qz-cqy.github.io/tag/4Hc_Jfc8r" class="badge secondary">
-          Gridea
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+        <div class="mdui-container">
+            <div class="mdui-row mdui-row-gapless">
+                <div class="k-container">
+                    <div class="head_card-offset"></div>
+                    
+    <div class="mdui-card">
+        <div class="mdui-card-media">
+            <img src="https://qz-cqy.github.io/post-images/hello-gridea.png"/>
+            <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                    <div class="mdui-card-primary-title">Hello Gridea</div>
+                    <div class="mdui-card-primary-subtitle"><p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-    </p>
-    <div class="row">
-      <a href="https://qz-cqy.github.io/post/hello-gridea" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+</div>
+                </div>
+                <div class="mdui-card-actions" style="float:right;">
+                    <a href="https://qz-cqy.github.io/post/hello-gridea" class="mdui-btn mdui-ripple mdui-ripple-white">点击查看</a>
+                </div>
+            </div>
         </div>
-        <div class="row flex-edges">
-  
-  
+    </div>
+    <div class="head_card-offset"></div>
+
+
+                </div>
+            </div>
+            <div class="mdui-row mdui-row-gapless">
+                <div class="k-container">
+                    
+
+                </div>
+            </div>
+        </div>
+        <footer class="mdui-container footer ">
+    <div class="head_card-offset"></div>
+    <div class="mdui-row mdui-row-gapless">
+        <div class="k-container">
+            <img width="100%" src="/media/img/skirt.png">
+        </div>
+    </div>
+
+    <div class="site-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+</footer>
+<div id="landlord" style="left:5px;bottom:0px;">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    <div class="live_talk_input_body">
+        <div class="live_talk_input_name_body">
+            <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+        </div>
+        <div class="live_talk_input_text_body">
+            <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+            <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+        </div>
+    </div>
+    <input name="live_talk" id="live_talk" value="1" type="hidden" />
+    <div class="live_ico_box">
+        <div class="live_ico_item type_info" id="showInfoBtn"></div>
+        <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+        <div class="live_ico_item type_music" id="musicButton"></div>
+        <div class="live_ico_item type_youdu" id="youduButton"></div>
+        <div class="live_ico_item type_quit" id="hideButton"></div>
+        <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+        <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+        <input name="live2dBGM" value="https://img.apa70.com/123.mp3" type="hidden">
+        <input name="live2dBGM" value="https://img.apa70.com/123.mp3" type="hidden">
+        <input id="duType" value="douqilai,l2d_caihong" type="hidden">
+    </div>
 </div>
-
-      </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://qz-cqy.github.io/images/avatar.png?v=1582242425013" class="no-responsive avatar">
-    <div class="text-muted">相信玄学，研究科学 | Think twice, code once. </div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/luogu-geng">洛谷神梗收录</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/first-cf">我的第一场CF比赛2.14</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/blog-back">关于qz-cqy.github.io恢复访问的公告</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/qzjr-henrytb-problem">QZJR关于@henrytb 意外重题的公告[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/calculating-size-of-circle">积分法求圆面积</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/luogu-admin">洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://qz-cqy.github.io/post/talking">【重要】评论使用须知（2020年2月13日更新）[TOP]</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="badge warning">
-          洛谷
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="badge warning">
-          Codeforces
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="badge ">
-          OI
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="badge success">
-          声明/公告
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="badge warning">
-          重要
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="badge secondary">
-          置顶
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/A6K5EMTnS" class="badge ">
-          微积分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="badge ">
-          数学
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="badge warning">
-          Atcoder
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="badge ">
-          算法
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="badge secondary">
-          题解
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="badge success">
-          样例
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="badge secondary">
-          NOIp/CSP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="badge secondary">
-          项目
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="badge success">
-          博客
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="badge secondary">
-          教程
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="badge success">
-          USACO
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="badge ">
-          背包
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="badge warning">
-          动态规划/DP
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="badge ">
-          交互题
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="badge secondary">
-          骗分
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="badge secondary">
-          树
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="badge ">
-          图论
-        </a>
-      
-        <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="badge success">
-          打表
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
+<div id="open_live2d">召唤伊斯特瓦尔</div>
+<script>
+    var message_Path = '/media/live2d/';//资源目录，如果目录不对请更改
+    var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口路径
 </script>
+<!--<script src="/media/js/jquery-3.3.1.min.js"></script>-->
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/media/live2d/js/message.js"></script>
 
-
-
-
-  </body>
+    </body>
+<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
 </html>
