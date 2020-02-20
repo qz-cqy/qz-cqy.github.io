@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-20T06:37:15.067Z</updated>
+    <updated>2020-02-20T06:39:44.480Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[关于qz-cqy.github.io恢复访问的公告]]></title>
+        <id>https://qz-cqy.github.io/post/blog-back</id>
+        <link href="https://qz-cqy.github.io/post/blog-back">
+        </link>
+        <updated>2020-02-20T06:37:34.000Z</updated>
+        <content type="html"><![CDATA[<p><s>由于站长的野心，</s> 多次尝试将博客放到网址ak-ioi.top上无果后 <s>放弃挣扎</s>，决定恢复原网址的访问。</p>
+<p>此公告。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[积分法求圆面积]]></title>
         <id>https://qz-cqy.github.io/post/calculating-size-of-circle</id>
@@ -7466,62 +7476,6 @@ NO
 <li><s>暂停NOIP是被机惨的结果，至于恢复，是一套说辞罢了，不要在意</s></li>
 <li>把CSP2019的证书当成绝版吧！NOIP恢复了，CSP-J/S会不复存在！</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P5876@洛谷 【化简单词】]]></title>
-        <id>https://qz-cqy.github.io/post/solution-luogu-p5876</id>
-        <link href="https://qz-cqy.github.io/post/solution-luogu-p5876">
-        </link>
-        <updated>2020-01-15T05:51:15.000Z</updated>
-        <content type="html"><![CDATA[<p>看来前面题解的各种做法（其实也就两种），我决定给你们写一篇STL的。</p>
-<h3 id="介绍一下使用的函数substr">介绍一下使用的函数：<code>substr()</code></h3>
-<p>这个函数有两个参数，第一个是起始位置，第二个是子串长度，作用是取字符串的一部分，返回值为这段的内容。用法：</p>
-<pre><code class="language-cpp">string s;
-s.substr(0, 5);
-</code></pre>
-<p>表示取字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span> 的前五位。</p>
-<h3 id="看一眼数据范围">看一眼数据范围</h3>
-<p>发现可以暴力！于是就有了下面的思路：</p>
-<blockquote>
-<p>枚举每个字符串，枚举前缀位数，判断这个前缀是否也是其他字符串的前缀：如果是，前缀位数加一，继续判断；如果不是，说明找到了最短的前缀，输出。</p>
-</blockquote>
-<h3 id="你们最爱的代码">你们最爱的代码</h3>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main()
-{
-	int n;
-	cin&gt;&gt;n;
-	string s[51];
-	for(int i=1;i&lt;=n;i++) cin&gt;&gt;s[i];
-	for(int i=1;i&lt;=n;i++)
-	{
-		for(int j=1;j&lt;=s[i].length();j++)
-		{
-			bool book = true;
-			for(int k=1;k&lt;=n;k++)
-			{
-				if(k == i) continue;
-				if(s[i].substr(0, j) == s[k].substr(0, j))
-				{
-					book = false;
-					break;
-				}
-			}
-			if(book)
-			{
-				cout&lt;&lt;s[i].substr(0, j)&lt;&lt;endl;
-				break;
-			}
-		}
-	}
-	return 0;
-}
-</code></pre>
-<p>实测AC。</p>
 ]]></content>
     </entry>
 </feed>

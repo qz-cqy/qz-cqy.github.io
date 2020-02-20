@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 P1305@洛谷 【新二叉树】  | rui_er | I AK IOI</title>
+<title>关于qz-cqy.github.io恢复访问的公告 | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -77,12 +77,12 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/Ku4f4mt2C.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/qjWIR15w1.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-05-23"><i class="fa fa-calendar"></i><span class="lately">9 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-02-20"><i class="fa fa-calendar"></i><span class="lately">2 分钟前</span></time>
                
                
-               <span id="/post/solution-luogu-p1305/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/blog-back/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -90,20 +90,12 @@
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="ctag ctag-0 ctag-Ku4f4mt2C" aria-label="">树</a>
+                      <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="ctag ctag-0 ctag-qjWIR15w1" aria-label="">声明/公告</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="ctag ctag-1 ctag-P33QCO5aCZ" aria-label="">图论</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-2 ctag-l4yUSbyQA" aria-label="">算法</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-3 ctag-1yYYfIIPJ" aria-label="">题解</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-4 ctag-JGfUi4Foz" aria-label="">OI</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-5 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                      <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="ctag ctag-1 ctag-FwuHJNNKD" aria-label="">重要</a>
                     
               </div>
-              <h1 class="title ularge white bold">题解 P1305@洛谷 【新二叉树】 </h1>
+              <h1 class="title ularge white bold">关于qz-cqy.github.io恢复访问的公告</h1>
             </div>
           </div>
         </div>  
@@ -113,95 +105,8 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="方法简述">方法简述</h1>
-<p>虽然不用建树，我还是建了一个，用的是顺序存储结构（数组）</p>
-<pre><code class="language-cpp">char tree[501];
-</code></pre>
-<h1 id="头文件">头文件</h1>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;memory.h&gt;
-#include &lt;map&gt;
-using namespace std;
-</code></pre>
-<p>其中memory.h是为memset做准备的</p>
-<h1 id="建树">建树</h1>
-<pre><code class="language-cpp">char tree[501];
-map&lt;char, int&gt; k;
-
-memset(tree, '*', 501);
-int n;
-cin&gt;&gt;n;
-char a, b, c;
-for(int i=0;i&lt;n;i++)
-{
-    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-    if(!i)
-    {
-        tree[1] = a;
-        k[a] = 1;
-    }
-    k[b] = k[a] * 2;
-    tree[k[b]] = b;
-    k[c] = k[a] * 2 + 1;
-    tree[k[c]] = c;
-}
-</code></pre>
-<p>memset行用于给tree赋值。</p>
-<blockquote>
-<p>听说第一行就是有关根节点的一行</p>
-</blockquote>
-<p>if行用于判断是否为第一行，将根节点写入。k用于存字符出现的下标地址，方便查询一个节点的位置。</p>
-<h1 id="遍历">遍历</h1>
-<pre><code class="language-cpp">void DLR(int n)
-{
-    if(tree[n] == '*') return;
-    cout&lt;&lt;tree[n];
-    DLR(n*2);
-    DLR(n*2+1);
-}
-</code></pre>
-<p>还记得前文的memset吗？输入的空结点用<code>*</code>表示，所以方便起见把树初始化成<code>*</code>。如果遇到<code>*</code>，则代表该结点不存在，自然就可以退出那个结点了。</p>
-<p>根据前序遍历的定义，写出递归函数即可。</p>
-<h1 id="程序">程序</h1>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;memory.h&gt;
-#include &lt;map&gt;
-using namespace std;
-
-char tree[501];
-map&lt;char, int&gt; k;
-
-void DLR(int n)
-{
-    if(tree[n] == '*') return;
-    cout&lt;&lt;tree[n];
-    DLR(n*2);
-    DLR(n*2+1);
-}
-
-int main()
-{
-    memset(tree, '*', 501);
-    int n;
-    cin&gt;&gt;n;
-    char a, b, c;
-    for(int i=0;i&lt;n;i++)
-    {
-        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-        if(!i)
-        {
-            tree[1] = a;
-            k[a] = 1;
-        }
-        k[b] = k[a] * 2;
-        tree[k[b]] = b;
-        k[c] = k[a] * 2 + 1;
-        tree[k[c]] = c;
-    }
-    DLR(1);
-    return 0;
-}
-</code></pre>
+                  <p><s>由于站长的野心，</s> 多次尝试将博客放到网址ak-ioi.top上无果后 <s>放弃挣扎</s>，决定恢复原网址的访问。</p>
+<p>此公告。</p>
 
                 </div>
                 <div class="clear"></div>
@@ -211,26 +116,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/post-images/How-to-get-score.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/How-to-get-score" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-06-24">2019-06-24</time>
-                  <h4 class="title white no-margin">骗分导论[TOP]</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-at3530-atcoder-3530" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/post-images/calculating-size-of-circle.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/calculating-size-of-circle" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2019-05-01">2019-05-01</time>
-                  <h4 class="title white no-margin">题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 </h4>
+                  <time datetime="2020-02-14">2020-02-14</time>
+                  <h4 class="title white no-margin">积分法求圆面积</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
