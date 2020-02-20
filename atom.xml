@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-20T07:11:17.280Z</updated>
+    <updated>2020-02-20T07:13:05.299Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,24 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[洛谷神梗收录]]></title>
+        <id>https://qz-cqy.github.io/post/luogu-geng</id>
+        <link href="https://qz-cqy.github.io/post/luogu-geng">
+        </link>
+        <updated>2020-02-20T07:05:49.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>说句闲话：研究珂学的最好方法是</li>
+<li>臭名昭著</li>
+<li>我知道了，但你出言不逊是！！</li>
+<li>我谔谔</li>
+<li>关于SPFA，他死了</li>
+<li>kkk勇闯外环</li>
+<li>举报，建议禁言！</li>
+</ul>
+<p>如果有我没写上的，欢迎留言补充。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[我的第一场CF比赛2.14]]></title>
         <id>https://qz-cqy.github.io/post/first-cf</id>
@@ -699,72 +717,6 @@ int main()
 </li>
 </ul>
 <h2 id="违规评论将被删除">违规评论将被删除</h2>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/qzcf-qzjr-about-competition</id>
-        <link href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition">
-        </link>
-        <updated>2020-02-10T11:23:14.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="一-题目审核结果">一、题目审核结果</h1>
-<p>每道上交给团队进行审核的题目的审核结果分为如下几类：<img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></p>
-<h1 id="二-提交审核题目要求">二、提交审核题目要求</h1>
-<p>提供给团队的所有题目请按照洛谷公开赛/公开题目审核标准格式，将由团队管理员（大多数时候是我，rui_er）审核通过，重点检查内容：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>、数据、标程，题目状态请设为比赛题目，题目难度设为尚无评定，不要添加任何标签。</p>
-<h1 id="三-审核结果">三、审核结果</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">结果</th>
-<th style="text-align:center">可能的情况</th>
-<th style="text-align:center">可能的后果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">符合提交审核题目要求且与洛谷题库、重大或知名比赛没有重题（重题判定参加此表）</td>
-<td style="text-align:center">通过审核，加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛算法较相似且题目数据要求复杂度不存在优化</td>
-<td style="text-align:center">修改题目（可能需要加强数据）后再次审核，有机会加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛代码较相似</td>
-<td style="text-align:center">修改题目（可能需要加难题目）后再次审核，有机会加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛代码只需要少许改动即可AC</td>
-<td style="text-align:center">直接打回，不予加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛同一份代码即可AC</td>
-<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目，并酌情考虑撤销管理员和踢出团队</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">提交的题目不符合本公告中【二、提交审核题目要求】中的要求或至少两位程序没有明显错误且没有被Hack的验题人均不能AC</td>
-<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">未提交审核</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">已经提交审核，但团队管理员仍未进行审核</td>
-<td style="text-align:center">等待团队管理员进行审核</td>
-</tr>
-</tbody>
-</table>
-<h1 id="附录-重大或知名比赛列表">附录、重大或知名比赛列表</h1>
-<p>重大或知名比赛包括（不限于）：NOIP、CSP、ISIJ、ICPC、各省省选、NOI、JOI、USACO、IOI、Baltic OI、Codeforces比赛、无论是否加入题库的洛谷比赛题目。</p>
 ]]></content>
     </entry>
 </feed>
