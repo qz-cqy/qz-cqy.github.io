@@ -1,802 +1,361 @@
-<!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="">
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
-<meta name="theme-color" content="">
-<title>rui_er | I AK IOI</title>
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582242726682">
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>图论 | rui_er | I AK IOI</title>
+<meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
-<link rel="stylesheet" href="/media/css/pisces.css">
-
-<link rel="stylesheet" href="/media/fonts/font-awesome.css">
-<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-<link href="/media/hljs/styles/github.css" rel="stylesheet">  
-
-<script src="/media/hljs/highlight.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-
+<script src="https://qz-cqy.github.io/media/js/jquery.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/aos.js"></script>
+<script src="https://qz-cqy.github.io/media/js/pace.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/view-image.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/functions.js"></script>
   </head>
   <body>
-    <div class="head-top-line"></div>
-    <div class="header-box">
+    <!-- start: #wrapper -->
+    <div class="wrapper">
       
-<div class=" ">
-  <header class="header  ">
-    <div class="blog-header box-shadow-wrapper  " id="header">
-      <div class="nav-toggle" id="nav_toggle">
-        <div class="toggle-box">
-          <div class="line line-top"></div>
-          <div class="line line-center"></div>
-          <div class="line line-bottom"></div>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
         </div>
-      </div>
-      <div class="site-meta">       
-        <div class="site-title">
-          
-            <a href="/" class="brand">
-              <span>rui_er | I AK IOI</span>
-            </a>  
-          
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://qz-cqy.github.io"><img src="https://qz-cqy.github.io/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                
+                  <li class=""><a href="https://qz-cqy.github.io" class="menu">首页</a></li>
+                
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/list" class="menu">
+                      比赛游记
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
         </div>
-        
-      </div>
-      <nav class="site-nav" id="site_nav">
-        <ul id="nav_ul">
-          
-            <li class="nav-item ">
-              
-                <a href="/archives">
-                  <i class="fa fa-archive"></i> 归档
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/tags">
-                  <i class="fa fa-tags"></i> 标签
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/post/list">
-                  <i class="fa fa-globe"></i> 比赛游记
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/post/about">
-                  <i class="fa fa-user"></i> 关于
-                </a>
-              
-            </li>
-          
-          <li class="nav-item">
-            <a>
-              <i class="fa fa-search"></i> 搜索
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-</div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
 
-<script type="text/javascript"> 
- 
-  let showNav = true;
-
-  let navToggle = document.querySelector('#nav_toggle'),
-  siteNav = document.querySelector('#site_nav');
-  
-  function navClick() {
-    let sideBar = document.querySelector('.sidebar');
-    let navUl = document.querySelector('#nav_ul');
-    navToggle.classList.toggle('nav-toggle-active');
-    siteNav.classList.toggle('nav-menu-active');
-    if (siteNav.classList.contains('nav-menu-active')) {
-      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
-    } else {
-      siteNav.style = "";
-    }
-  }
-
-  navToggle.addEventListener('click',navClick);  
-</script>
-    </div>
-    <div class="main-continer">
-      
-      <div class="section-layout  ">
-        <div class="section-layout-wrapper">
-          <div class="sidebar">
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
+            <div class="main-article post">
+  <h2 class="year"># 图论</h2>
     
-<div class="sidebar-wrapper box-shadow-wrapper bg-color">
-  <div class="sidebar-item">
-    <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
-    <p class="site-author-name">rui_er | I AK IOI</p>
-    <p class="site-description right-motion"></p>
-  </div>
-  <div class="sidebar-item side-item-stat right-motion">
-    <div class="sidebar-item-box">
-      <a href="/archives/">
-        
-        <span class="site-item-stat-count">43</span>
-        <span class="site-item-stat-name">文章</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="">
-        <span class="site-item-stat-count">24</span>
-        <span class="site-item-stat-name">分类</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="/tags/">
-        <span class="site-item-stat-count">24</span>
-        <span class="site-item-stat-name">标签</span>
-      </a>
-    </div>
-  </div>
-  
-    
-      <div class="sidebar-item" style="border-top: 1px dotted #ccc; margin-top: 10px;">
-      </div>
-    
-  
-  
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-p1305" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/Ku4f4mt2C.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-05-23">2019-05-23</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-p1305">题解 P1305@洛谷 【新二叉树】 </a>
+          </h4>
+        </div>
+      </article>
 
-
+    
+    <div class="clear"></div>
 </div>
-</div>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          图论
-          <small>标签</small>
-        </h2>
-      </div>
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p1305">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    05-23
-                    <small>题解 P1305@洛谷 【新二叉树】 </small>
-                  </h1>
-                </div>  
+            <!-- end: .articles -->
+            
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                
               </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-    </div>
-  </div>
-</div>
-                  </section>
-                </div>
-              </div>
+            </div>
+            
+          </div>
           </div>
         </div>
-      </div>
-      <div class="footer-box">
-  <footer class="footer">
-    <div class="copyright">
-      © 2019-2020 <i class="fa fa-heart"></i> HsxyHao
+      </main>
+
+        <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/luogu-geng" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/GpG87CBmBd.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-20">2020-02-20</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/luogu-geng">洛谷神梗收录</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/first-cf" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-20">2020-02-20</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/first-cf">我的第一场CF比赛2.14</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/blog-back" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/qjWIR15w1.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-20">2020-02-20</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/blog-back">关于qz-cqy.github.io恢复访问的公告</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd" class="ctag ctag-0 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW" class="ctag ctag-1 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz" class="ctag ctag-2 ctag-JGfUi4Foz" aria-label="">OI</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/qjWIR15w1" class="ctag ctag-3 ctag-qjWIR15w1" aria-label="">声明/公告</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/FwuHJNNKD" class="ctag ctag-4 ctag-FwuHJNNKD" aria-label="">重要</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/LsGynlhxT" class="ctag ctag-5 ctag-LsGynlhxT" aria-label="">置顶</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/A6K5EMTnS" class="ctag ctag-6 ctag-A6K5EMTnS" aria-label="">微积分</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/7IKLNdSii" class="ctag ctag-7 ctag-7IKLNdSii" aria-label="">数学</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/EF964QqUL" class="ctag ctag-8 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA" class="ctag ctag-9 ctag-l4yUSbyQA" aria-label="">算法</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ" class="ctag ctag-10 ctag-1yYYfIIPJ" aria-label="">题解</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr" class="ctag ctag-11 ctag-ucqMKnWEr" aria-label="">样例</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/669fTzmrs" class="ctag ctag-12 ctag-669fTzmrs" aria-label="">NOIp/CSP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/nZNq1VXdp" class="ctag ctag-13 ctag-nZNq1VXdp" aria-label="">项目</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny" class="ctag ctag-14 ctag-KdGX_R7Ny" aria-label="">博客</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/xZrk8scCiD" class="ctag ctag-15 ctag-xZrk8scCiD" aria-label="">教程</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/NpQHbc2L7" class="ctag ctag-16 ctag-NpQHbc2L7" aria-label="">USACO</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI" class="ctag ctag-17 ctag--SU_ouiGKI" aria-label="">背包</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp" class="ctag ctag-18 ctag-p4MY2Ni7Jp" aria-label="">动态规划/DP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/kAU4cMLlY" class="ctag ctag-19 ctag-kAU4cMLlY" aria-label="">交互题</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-Uo4spsOM" class="ctag ctag-20 ctag--Uo4spsOM" aria-label="">骗分</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C" class="ctag ctag-21 ctag-Ku4f4mt2C" aria-label="">树</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ" class="ctag ctag-22 ctag-P33QCO5aCZ" aria-label="">图论</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj" class="ctag ctag-23 ctag-ARwT1hdHRj" aria-label="">打表</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qz-cqy.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">rui_er | I AK IOI</a></h4>
+                    <p class="founder">相信玄学，研究科学 | Think twice, code once. </p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://qz-cqy.github.io" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://qz-cqy.github.io"><img class="" src="https://qz-cqy.github.io/media/images/logo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 45 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    <div class="clear"></div>
     </div>
-    <div class="poweredby">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </footer>
-  
-  
-  <div class=" back-to-top" id="back_to_top">
-    <i class="fa fa-arrow-up"></i>
-    
-    <span class="scrollpercent">
-      <span id="back_to_top_text">0</span>%
-    </span>
-    
-  </div>
-  
-  
-  
-    
-
-  
-</div>
-<script>
-
-  let sideBarOpen = 'sidebar-open';
-  let body = document.body;
-  let back2Top = document.querySelector('#back_to_top'),
-  back2TopText = document.querySelector('#back_to_top_text'),
-  drawerBox = document.querySelector('#drawer_box'),
-  rightSideBar = document.querySelector('.sidebar'),
-  viewport = document.querySelector('body');
-
-  function scrollAnimation(currentY, targetY) {
-   
-    let needScrollTop = targetY - currentY
-    let _currentY = currentY
-    setTimeout(() => {
-      const dist = Math.ceil(needScrollTop / 10)
-      _currentY += dist
-      window.scrollTo(_currentY, currentY)
-      if (needScrollTop > 10 || needScrollTop < -10) {
-        scrollAnimation(_currentY, targetY)
-      } else {
-        window.scrollTo(_currentY, targetY)
-      }
-    }, 1)
-  }
-
-  back2Top.addEventListener("click", function(e) {
-    scrollAnimation(document.scrollingElement.scrollTop, 0);
-    e.stopPropagation();
-    return false;
-  });
-  
-  window.addEventListener('scroll', function(e) {
-    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
-    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
-      back2Top.classList.add('back-top-active');
-    }
-    if (percent == 0) {
-      back2Top.classList.remove('back-top-active');
-    }
-    if (back2TopText) {
-      back2TopText.textContent = Math.floor(percent);
-    }
-  });
-
-  
-  let hasCacu = false;
-  window.onresize = function() {
-    if (window.width > 991) {
-      calcuHeight();
-    } else {
-      hasCacu = false;
-    }
-  }
-
-  function calcuHeight() {
-    // 动态调整站点概览高度
-    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
-      let sideBar = document.querySelector('.sidebar');
-      let navUl = document.querySelector('#site_nav');
-      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
-      hasCacu = true;
-    }
-  }
-  calcuHeight();
-  
-  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
-
-  if (drawerBox) {
-    let rightMotions = document.querySelectorAll('.right-motion');
-    let right = drawerBox.classList.contains('right');
-
-    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
-
-    let openProp, closeProp;
-    if (right) {
-      openProp = {
-        paddingRight: RIGHT_MOVE_DIS 
-      };
-      closeProp = {
-        paddingRight: '0px'
-      };
-    } else {
-      openProp = {
-        paddingLeft: RIGHT_MOVE_DIS 
-      };
-      closeProp = {
-        paddingLeft: '0px'
-      };
-    }
-
-    drawerBox.onclick = function() {
-      open = !open;
-      window.Velocity(rightSideBar, 'stop');
-      window.Velocity(viewport, 'stop');
-      window.Velocity(rightMotions, 'stop');
-      if (open) {
-        window.Velocity(rightSideBar, {
-          width: RIGHT_MOVE_DIS
-        }, {
-          duration: MOTION_TIME,
-          begin: function() {
-            window.Velocity(rightMotions, transitionDir,{ });
-          }
-        })
-        window.Velocity(viewport, openProp,{
-          duration: MOTION_TIME
-        });
-      } else {
-        window.Velocity(rightSideBar, {
-          width: '0px'
-        }, {
-          duration: MOTION_TIME,
-          begin: function() {
-            window.Velocity(rightMotions, {
-              opacity: 0
-            });
-          }
-        })
-        window.Velocity(viewport, closeProp ,{
-          duration: MOTION_TIME
-        });
-      }
-      for (let i = 0; i < drawerBox.children.length; i++) {
-        drawerBox.children[i].classList.toggle('muse-line');
-      }
-      drawerBox.classList.toggle(sideBarOpen);
-    }
-  }
-
-  // 代码高亮
-  hljs.initHighlightingOnLoad();
-
-</script>
-    </div>
+    <!-- end: #wrapper -->
   </body>
-  <script src="/media/js/motion.js"></script>
 </html>
