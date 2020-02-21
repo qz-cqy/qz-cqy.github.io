@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-21T09:49:33.853Z</updated>
+    <updated>2020-02-21T09:53:15.800Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,24 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[近期算法学习目标]]></title>
+        <id>https://qz-cqy.github.io/post/algorithms</id>
+        <link href="https://qz-cqy.github.io/post/algorithms">
+        </link>
+        <updated>2020-02-21T09:50:06.000Z</updated>
+        <content type="html"><![CDATA[<p>注：感叹号数量越多，优先级越高</p>
+<ul>
+<li>珂朵莉树！！！</li>
+<li>猫树！！！</li>
+<li>KMP（复习）！！</li>
+<li>Ek最大流（复习）！！</li>
+<li>Dinic！！</li>
+<li>分块！</li>
+<li>AC自动机！</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[洛谷神梗收录]]></title>
         <id>https://qz-cqy.github.io/post/luogu-geng</id>
@@ -700,34 +718,6 @@ int main()
 	return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【重要】评论使用须知（2020年2月13日更新）[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/talking</id>
-        <link href="https://qz-cqy.github.io/post/talking">
-        </link>
-        <updated>2020-02-11T10:27:19.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="1-评论系统">1 评论系统</h1>
-<p>评论系统采用<strong>Valine</strong>。</p>
-<h1 id="2-使用方式">2  使用方式</h1>
-<p>滑到每篇文章的最下位置有一个评论区，填入昵称、邮箱、网址后即可留言。也有回复功能，被回复者的邮箱中会收到信息。评论时<strong>可以使用Markdown公式</strong>。</p>
-<h1 id="3-评论规则请自觉遵守以下规则">3 评论规则：请自觉遵守以下规则</h1>
-<ul>
-<li>禁止在评论中辱骂他人；</li>
-<li>禁止将昵称、邮箱、网址设置为敏感内容；</li>
-<li>禁止谈论一切有关政治的问题；</li>
-<li>禁止恶意骚扰他人。</li>
-<li>以下关键词（或句式）属于违规内容：
-<ul>
-<li>“XXX爱XXX”；</li>
-<li>一切用在不正当语境中的含有隐晦的可能为辱骂、涉政、骚扰、侵犯他人的词语（例子不方便举出）；</li>
-<li>一切问候他人亲属、长辈、祖先的不和谐用语（例子不方便举出，但你应该懂）；</li>
-<li>其他管理员认为不宜讨论的内容。</li>
-</ul>
-</li>
-</ul>
-<h2 id="违规评论将被删除">违规评论将被删除</h2>
 ]]></content>
     </entry>
 </feed>
