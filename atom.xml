@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-21T10:11:17.715Z</updated>
+    <updated>2020-02-24T00:27:05.408Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -11,9 +11,90 @@
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
     <entry>
+        <title type="html"><![CDATA[友链[TOP]]]></title>
+        <id>https://qz-cqy.github.io/post/friends/</id>
+        <link href="https://qz-cqy.github.io/post/friends/">
+        </link>
+        <updated>2020-02-24T00:13:50.000Z</updated>
+        <content type="html"><![CDATA[<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext>我</mtext></mstyle></mrow><annotation encoding="application/x-tex">\text{\Large我}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback sizing reset-size6 size8">我</span></span></span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">昵称</th>
+<th style="text-align:center">网址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">rui_er</td>
+<td style="text-align:center"><a href="https://www.luogu.com.cn/user/122461/">https://www.luogu.com.cn/user/122461/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">rui_er</td>
+<td style="text-align:center"><a href="https://www.codeforces.com/profile/rui_er/">https://www.codeforces.com/profile/rui_er/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">qz-cqy</td>
+<td style="text-align:center"><a href="https://qz-cqy.github.io/">https://qz-cqy.github.io/</a></td>
+</tr>
+</tbody>
+</table>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext>大佬</mtext></mstyle></mrow><annotation encoding="application/x-tex">\text{\Large大佬}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback sizing reset-size6 size8">大佬</span></span></span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">昵称</th>
+<th style="text-align:center">网址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">memset0</td>
+<td style="text-align:center"><a href="https://memset0.cn/">https://memset0.cn/</a></td>
+</tr>
+</tbody>
+</table>
+<p>要交换友链的在下面留言！</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext>网站</mtext></mstyle></mrow><annotation encoding="application/x-tex">\text{\Large网站}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback sizing reset-size6 size8">网站</span></span></span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">网站</th>
+<th style="text-align:center">网址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">洛谷</td>
+<td style="text-align:center"><a href="https://www.luogu.com.cn/">https://www.luogu.com.cn/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Codeforces</td>
+<td style="text-align:center"><a href="https://www.codeforces.com/">https://www.codeforces.com/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Codeforces镜像</td>
+<td style="text-align:center"><a href="https://www.codeforces.ml/">https://www.codeforces.ml/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">青竹计算机学会QZCF</td>
+<td style="text-align:center"><a href="https://qzcf.github.io/">https://qzcf.github.io/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">骐骥计算机学会</td>
+<td style="text-align:center"><a href="https://sqrt-7-qhfz.github.io">https://sqrt-7-qhfz.github.io</a></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[不同难度占AC数比例（2020年2月21日更新）]]></title>
-        <id>https://qz-cqy.github.io/post/difficulty-of-problems</id>
-        <link href="https://qz-cqy.github.io/post/difficulty-of-problems">
+        <id>https://qz-cqy.github.io/post/difficulty-of-problems/</id>
+        <link href="https://qz-cqy.github.io/post/difficulty-of-problems/">
         </link>
         <updated>2020-02-21T09:58:29.000Z</updated>
         <content type="html"><![CDATA[<p>灰//尚无评定：3.9531478770131771595900439238653%（27题）<br>
@@ -29,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[近期算法学习目标]]></title>
-        <id>https://qz-cqy.github.io/post/algorithms</id>
-        <link href="https://qz-cqy.github.io/post/algorithms">
+        <id>https://qz-cqy.github.io/post/algorithms/</id>
+        <link href="https://qz-cqy.github.io/post/algorithms/">
         </link>
         <updated>2020-02-21T09:50:06.000Z</updated>
         <content type="html"><![CDATA[<p>注：感叹号数量越多，优先级越高</p>
@@ -47,8 +128,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷神梗收录]]></title>
-        <id>https://qz-cqy.github.io/post/luogu-geng</id>
-        <link href="https://qz-cqy.github.io/post/luogu-geng">
+        <id>https://qz-cqy.github.io/post/luogu-geng/</id>
+        <link href="https://qz-cqy.github.io/post/luogu-geng/">
         </link>
         <updated>2020-02-20T07:05:49.000Z</updated>
         <content type="html"><![CDATA[<ul>
@@ -76,8 +157,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[我的第一场CF比赛2.14]]></title>
-        <id>https://qz-cqy.github.io/post/first-cf</id>
-        <link href="https://qz-cqy.github.io/post/first-cf">
+        <id>https://qz-cqy.github.io/post/first-cf/</id>
+        <link href="https://qz-cqy.github.io/post/first-cf/">
         </link>
         <updated>2020-02-20T06:54:14.000Z</updated>
         <content type="html"><![CDATA[<p>2月14日晚上21:05，发现有一场CF比赛（CF1304），就点进去打。</p>
@@ -129,8 +210,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[关于qz-cqy.github.io恢复访问的公告]]></title>
-        <id>https://qz-cqy.github.io/post/blog-back</id>
-        <link href="https://qz-cqy.github.io/post/blog-back">
+        <id>https://qz-cqy.github.io/post/blog-back/</id>
+        <link href="https://qz-cqy.github.io/post/blog-back/">
         </link>
         <updated>2020-02-20T06:37:34.000Z</updated>
         <content type="html"><![CDATA[<p><s>由于站长的野心，</s> 多次尝试将博客放到网址ak-ioi.top上无果后 <s>放弃挣扎</s>，决定恢复原网址的访问。</p>
@@ -139,8 +220,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[QZJR关于@henrytb 意外重题的公告[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/qzjr-henrytb-problem</id>
-        <link href="https://qz-cqy.github.io/post/qzjr-henrytb-problem">
+        <id>https://qz-cqy.github.io/post/qzjr-henrytb-problem/</id>
+        <link href="https://qz-cqy.github.io/post/qzjr-henrytb-problem/">
         </link>
         <updated>2020-02-15T15:48:02.000Z</updated>
         <content type="html"><![CDATA[<p>经过洛谷用户@rui_er 的再次审核，根据<a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告</a>判定洛谷用户@henrytb 提交的题目【G同学与h**h】与CF1304E题属于高度重题，但因为该用户出题时间在CF比赛前，不属于抄袭，故除撤下比赛外不予其他处罚。</p>
@@ -152,8 +233,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[积分法求圆面积]]></title>
-        <id>https://qz-cqy.github.io/post/calculating-size-of-circle</id>
-        <link href="https://qz-cqy.github.io/post/calculating-size-of-circle">
+        <id>https://qz-cqy.github.io/post/calculating-size-of-circle/</id>
+        <link href="https://qz-cqy.github.io/post/calculating-size-of-circle/">
         </link>
         <updated>2020-02-14T10:04:12.000Z</updated>
         <content type="html"><![CDATA[<p>众所周知，圆的解析式（以原点为圆心， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 为半径）为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><msup><mi>r</mi><mn>2</mn></msup><mo separator="true">,</mo><mo>(</mo><mi>x</mi><mo>∈</mo><mo>[</mo><mo>−</mo><mi>r</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">x^2+y^2=r^2, (x\in [-r, r])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span>。</p>
@@ -198,8 +279,8 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/luogu-admin</id>
-        <link href="https://qz-cqy.github.io/post/luogu-admin">
+        <id>https://qz-cqy.github.io/post/luogu-admin/</id>
+        <link href="https://qz-cqy.github.io/post/luogu-admin/">
         </link>
         <updated>2020-02-14T09:04:36.000Z</updated>
         <content type="html"><![CDATA[<h1 id="常年管理员">常年管理员</h1>
@@ -604,8 +685,8 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】]]></title>
-        <id>https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164</id>
-        <link href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164">
+        <id>https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/</id>
+        <link href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/">
         </link>
         <updated>2020-02-13T03:42:25.000Z</updated>
         <content type="html"><![CDATA[<p>题意：求输入的数和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>lcm</mtext></mrow><annotation encoding="application/x-tex">\text{lcm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">lcm</span></span></span></span></span></p>
@@ -650,48 +731,6 @@ int lcm(x, y):
 
 input n
 print lcm(n, 2)
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】]]></title>
-        <id>https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632</id>
-        <link href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632">
-        </link>
-        <updated>2020-02-13T01:51:43.000Z</updated>
-        <content type="html"><![CDATA[<p>题意：输入一个整数，求有多少个由两个<strong>不同的正整数</strong>组成的无序二元组（交换数字顺序视为同一种）加起来等于这个整数。</p>
-<p>通过数学推理（以下的除号均表示整除运算）：</p>
-<p>如果输入的整数（设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>）是奇数，则输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(n-1)\div 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>；否则输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>÷</mo><mn>2</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\div 2-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，但根据整除运算也可写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>÷</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(n-1)\div 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</p>
-<p>Python:</p>
-<pre><code class="language-py">print((int(input())-1)//2)
-</code></pre>
-<p>C++:</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-	int n;
-    cin&gt;&gt;n;
-    cout&lt;&lt;(n-1)/2&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>C:</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main()
-{
-	int n;
-    scanf(&quot;%d&quot;, &amp;n);
-    printf(&quot;%d\n&quot;, (n-1)/2);
-    return 0;
-}
-</code></pre>
-<p>伪代码：</p>
-<pre><code>input n
-n ← floor((n-1)/2)
-print n
 </code></pre>
 ]]></content>
     </entry>
