@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-24T00:39:02.787Z</updated>
+    <updated>2020-02-24T00:53:28.028Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,69 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[我的第二场CF比赛2.23]]></title>
+        <id>https://qz-cqy.github.io/post/second-cf/</id>
+        <link href="https://qz-cqy.github.io/post/second-cf/">
+        </link>
+        <updated>2020-02-24T00:39:11.000Z</updated>
+        <content type="html"><![CDATA[<p>2月23日，这天有一场17点开始的比赛（CF1313）！机不可失！时不再来！这场比赛必须打！</p>
+<p>比赛开始后，看了一眼A题，这什么玩意，乱七八糟的，还好数据不大，直接写个暴力<s>膜你</s>模拟，PP了。</p>
+<p>B题，今天的CF怎么回事，全是怪题。这题怕不是要数学大法推式子？！算了，一会再说。</p>
+<p>C1题，n方，这么简单？结果忘开long long见祖宗。我立刻意识到了这一点，很快就PP了。</p>
+<p>C2题，nlogn，这个怎么做？想了半天线段树，没有思路。最后你谷大佬说是用两遍单调栈？不管了，反正没想出来。</p>
+<p>D题，nlogn？我的方法过不了所有数据，CF要求要过所有数据，算了吧。</p>
+<p>懒得看E题了，反正也不会。返回去看B题，推了十几分钟，得到了这两个式子：</p>
+<pre><code>Min=min(max(x+y-n, 0)+1, n)
+Max=min(x+y-1, n)
+</code></pre>
+<p>不知道对不对，反正自己测了几个都没问题，交上去，PP了。（后来发现这么简单一题同班大佬AC-Automation说没做出来，还比D还难，要知道我不会D题）据说洛谷里有问这题结论的讨论，还得到了答案 <s>，可惜发完就删了，我没看到。</s></p>
+<p>PP三道题之后，看一眼CF-ml-Predictor，说+106？太棒了！然而每过一段时间就往下掉一点，真的是第一次希望比赛快点结束。</p>
+<p>最后还剩十几分钟，我去洛谷水了会儿讨论和犇犇。</p>
+<p>比赛结束时，只剩+95了。最后，CF给我+103，特别高兴。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">题目</th>
+<th style="text-align:center">状态</th>
+<th style="text-align:center">赛后查看时状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">PP</td>
+<td style="text-align:center">AC</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">PP</td>
+<td style="text-align:center">AC</td>
+</tr>
+<tr>
+<td style="text-align:center">C1</td>
+<td style="text-align:center">PP(-1)</td>
+<td style="text-align:center">AC</td>
+</tr>
+<tr>
+<td style="text-align:center">C2</td>
+<td style="text-align:center">未提交</td>
+<td style="text-align:center">未提交</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">未提交</td>
+<td style="text-align:center">未提交</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">未提交</td>
+<td style="text-align:center">未提交</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[友链[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/friends/</id>
@@ -678,57 +741,6 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </tr>
 </tbody>
 </table>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】]]></title>
-        <id>https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/</id>
-        <link href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/">
-        </link>
-        <updated>2020-02-13T03:42:25.000Z</updated>
-        <content type="html"><![CDATA[<p>题意：求输入的数和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>lcm</mtext></mrow><annotation encoding="application/x-tex">\text{lcm}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord text"><span class="mord">lcm</span></span></span></span></span></p>
-<p>这里根据数学证明可得：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>c</mi><mi>m</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mo>=</mo><mi>a</mi><mi mathvariant="normal">/</mi><mi>gcd</mi><mo>⁡</mo><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mo>∗</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">lcm(a, b)=a/\gcd(a, b)*b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">c</span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">a</span><span class="mord">/</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span><span class="mopen">(</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>gcd</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\gcd</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop"><span style="margin-right:0.01389em;">g</span>cd</span></span></span></span> 可以通过辗转相除法计算。以下给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>Python3</mtext></mrow><annotation encoding="application/x-tex">\text{Python3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">Python3</span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>C++</mtext></mrow><annotation encoding="application/x-tex">\text{C++}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">C++</span></span></span></span></span> 的程序以及伪代码。</p>
-<p>Python3:</p>
-<pre><code class="language-py">def gcd(x, y):
-    if y == 0:
-        return x
-    return gcd(y, x%y)
-
-def lcm(x, y):
-    if x &lt; y:
-        z = x
-        x = y
-        y = z
-    return x / gcd(x, y) * y
-
-print(int(lcm(int(input()), 2)))
-</code></pre>
-<p>C++:</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main()
-{
-    int n;
-    cin&gt;&gt;n;
-    cout&lt;&lt;n/__gcd(max(2, n), min(2, n))*2&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>伪代码：</p>
-<pre><code>int gcd(x, y):
-    if y==0:
-        return x
-    return gcd(y, x mod y)
-
-int lcm(x, y):
-    if x &lt; y:
-        swap x ↔ y
-    return x/gcd(x, y)*y
-
-input n
-print lcm(n, 2)
-</code></pre>
 ]]></content>
     </entry>
 </feed>

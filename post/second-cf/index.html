@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】  | rui_er | I AK IOI</title>
+<title>我的第二场CF比赛2.23 | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -77,12 +77,12 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/VyDl9Z2Vr.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-01-31"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-02-24"><i class="fa fa-calendar"></i><span class="lately">14 分钟前</span></time>
                
                
-               <span id="/post/solution-luogu-cf4a-codeforces-4a/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/second-cf/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -90,18 +90,16 @@
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW/" class="ctag ctag-0 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
+                      <a href="https://qz-cqy.github.io/tag/VyDl9Z2Vr/" class="ctag ctag-0 ctag-VyDl9Z2Vr" aria-label="">CF比赛</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
+                      <a href="https://qz-cqy.github.io/tag/XcOUHe17O0/" class="ctag ctag-1 ctag-XcOUHe17O0" aria-label="">游记</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/" class="ctag ctag-2 ctag-1yYYfIIPJ" aria-label="">题解</a>
+                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW/" class="ctag ctag-2 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
                     
                       <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
-                    
               </div>
-              <h1 class="title ularge white bold">题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </h1>
+              <h1 class="title ularge white bold">我的第二场CF比赛2.23</h1>
             </div>
           </div>
         </div>  
@@ -111,18 +109,61 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="首先声明本题解使用python3语言">首先声明：本题解使用Python3语言</h1>
-<p>首先，我在纸上列出了一些正整数，发现</p>
-<blockquote>
-<p>所有大于等于4的偶数都可以分成两个正偶数的和</p>
-</blockquote>
-<p>然后，按照以上规律，轻而易举地编写Python3程序（C++有了，只好用Python3）：</p>
-<pre><code class="language-python">n = int(input())
-if ((n &gt;= 4) and (n % 2 == 0)):
-    print(&quot;YES&quot;)
-else:
-    print(&quot;NO&quot;)
+                  <p>2月23日，这天有一场17点开始的比赛（CF1313）！机不可失！时不再来！这场比赛必须打！</p>
+<p>比赛开始后，看了一眼A题，这什么玩意，乱七八糟的，还好数据不大，直接写个暴力<s>膜你</s>模拟，PP了。</p>
+<p>B题，今天的CF怎么回事，全是怪题。这题怕不是要数学大法推式子？！算了，一会再说。</p>
+<p>C1题，n方，这么简单？结果忘开long long见祖宗。我立刻意识到了这一点，很快就PP了。</p>
+<p>C2题，nlogn，这个怎么做？想了半天线段树，没有思路。最后你谷大佬说是用两遍单调栈？不管了，反正没想出来。</p>
+<p>D题，nlogn？我的方法过不了所有数据，CF要求要过所有数据，算了吧。</p>
+<p>懒得看E题了，反正也不会。返回去看B题，推了十几分钟，得到了这两个式子：</p>
+<pre><code>Min=min(max(x+y-n, 0)+1, n)
+Max=min(x+y-1, n)
 </code></pre>
+<p>不知道对不对，反正自己测了几个都没问题，交上去，PP了。（后来发现这么简单一题同班大佬AC-Automation说没做出来，还比D还难，要知道我不会D题）据说洛谷里有问这题结论的讨论，还得到了答案 <s>，可惜发完就删了，我没看到。</s></p>
+<p>PP三道题之后，看一眼CF-ml-Predictor，说+106？太棒了！然而每过一段时间就往下掉一点，真的是第一次希望比赛快点结束。</p>
+<p>最后还剩十几分钟，我去洛谷水了会儿讨论和犇犇。</p>
+<p>比赛结束时，只剩+95了。最后，CF给我+103，特别高兴。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">题目</th>
+<th style="text-align:center">状态</th>
+<th style="text-align:center">赛后查看时状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">PP</td>
+<td style="text-align:center">AC</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">PP</td>
+<td style="text-align:center">AC</td>
+</tr>
+<tr>
+<td style="text-align:center">C1</td>
+<td style="text-align:center">PP(-1)</td>
+<td style="text-align:center">AC</td>
+</tr>
+<tr>
+<td style="text-align:center">C2</td>
+<td style="text-align:center">未提交</td>
+<td style="text-align:center">未提交</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">未提交</td>
+<td style="text-align:center">未提交</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:center">未提交</td>
+<td style="text-align:center">未提交</td>
+</tr>
+</tbody>
+</table>
 
                 </div>
                 <div class="clear"></div>
@@ -132,26 +173,13 @@ else:
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-at2201-atcoder-2201/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-02-13">2019-02-13</time>
-                  <h4 class="title white no-margin">题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf61a-codeforces-61a/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/post-images/friends.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/friends/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2019-01-29">2019-01-29</time>
-                  <h4 class="title white no-margin">题解 CF61A@洛谷 | 61A@Codeforces 【Ultra-Fast Mathematician】 </h4>
+                  <time datetime="2020-02-24">2020-02-24</time>
+                  <h4 class="title white no-margin">友链[TOP]</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
