@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-24T11:34:17.590Z</updated>
+    <updated>2020-02-24T12:05:33.542Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[CF记录[TOP]]]></title>
+        <id>https://qz-cqy.github.io/post/cf-mark/</id>
+        <link href="https://qz-cqy.github.io/post/cf-mark/">
+        </link>
+        <updated>2020-02-24T11:58:22.000Z</updated>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center">日期</th>
+<th style="text-align:center">大号/rui_er</th>
+<th style="text-align:center">小号/PP-Automation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2018.12.*</td>
+<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
+<td style="text-align:center">尚未注册</td>
+</tr>
+<tr>
+<td style="text-align:center">2020.2.14</td>
+<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201456-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
+<td style="text-align:center">尚未注册</td>
+</tr>
+<tr>
+<td style="text-align:center">2020.2.21</td>
+<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201456-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
+<td style="text-align:center"><img src="https://img.shields.io/badge/PP--Automation-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/PP-Automation" alt="" loading="lazy"></td>
+</tr>
+<tr>
+<td style="text-align:center">2020.2.23</td>
+<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201559-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
+<td style="text-align:center"><img src="https://img.shields.io/badge/PP--Automation-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/PP-Automation" alt="" loading="lazy"></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[nazo开始大厅[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/nazo-begin/</id>
@@ -268,412 +307,6 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <p>又因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mrow><mi mathvariant="normal">整</mi><mi mathvariant="normal">圆</mi></mrow></msub><mo>=</mo><msub><mi>S</mi><mrow><mi mathvariant="normal">下</mi><mi mathvariant="normal">半</mi><mi mathvariant="normal">部</mi><mi mathvariant="normal">分</mi></mrow></msub><mo>+</mo><msub><mi>S</mi><mrow><mi mathvariant="normal">上</mi><mi mathvariant="normal">半</mi><mi mathvariant="normal">部</mi><mi mathvariant="normal">分</mi></mrow></msub><mo>=</mo><mn>2</mn><msub><mi>S</mi><mrow><mi mathvariant="normal">上</mi><mi mathvariant="normal">半</mi><mi mathvariant="normal">部</mi><mi mathvariant="normal">分</mi></mrow></msub></mrow><annotation encoding="application/x-tex">S_{整圆}=S_{下半部分}+S_{上半部分}=2S_{上半部分}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">整</span><span class="mord cjk_fallback mtight">圆</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">下</span><span class="mord cjk_fallback mtight">半</span><span class="mord cjk_fallback mtight">部</span><span class="mord cjk_fallback mtight">分</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">上</span><span class="mord cjk_fallback mtight">半</span><span class="mord cjk_fallback mtight">部</span><span class="mord cjk_fallback mtight">分</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">上</span><span class="mord cjk_fallback mtight">半</span><span class="mord cjk_fallback mtight">部</span><span class="mord cjk_fallback mtight">分</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。</p>
 <p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mrow><mi mathvariant="normal">整</mi><mi mathvariant="normal">圆</mi></mrow></msub><mo>=</mo><mi>π</mi><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S_{整圆}=\pi r^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">整</span><span class="mord cjk_fallback mtight">圆</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>。</p>
 <p>证毕。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/luogu-admin/</id>
-        <link href="https://qz-cqy.github.io/post/luogu-admin/">
-        </link>
-        <updated>2020-02-14T09:04:36.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="常年管理员">常年管理员</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">标签</th>
-<th style="text-align:left">粉丝</th>
-<th style="text-align:center">活跃度</th>
-<th style="text-align:center">颜色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:center">洛谷</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">5.13k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">绿</td>
-</tr>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:center">kkksc03</td>
-<td style="text-align:center">吉祥物</td>
-<td style="text-align:left">5.94k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">8457</td>
-<td style="text-align:center">chen_zhe</td>
-<td style="text-align:center">Aya</td>
-<td style="text-align:left">5.67k</td>
-<td style="text-align:center">超级活跃</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">256</td>
-<td style="text-align:center">lin_toto</td>
-<td style="text-align:center">ユメミ</td>
-<td style="text-align:left">3.13k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">141</td>
-<td style="text-align:center">w</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">355</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">1492</td>
-<td style="text-align:center">HansBug</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">578</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">401</td>
-<td style="text-align:center">soha</td>
-<td style="text-align:center">空气</td>
-<td style="text-align:left">1.13k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">3711</td>
-<td style="text-align:center">laosb</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">282</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">11171</td>
-<td style="text-align:center">ddd</td>
-<td style="text-align:center">求关注</td>
-<td style="text-align:left">566</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">14</td>
-<td style="text-align:center">xmyzwls</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">352</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">灰</td>
-</tr>
-<tr>
-<td style="text-align:left">51185</td>
-<td style="text-align:center">darkflames</td>
-<td style="text-align:center">Hasselblad</td>
-<td style="text-align:left">944</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">5088</td>
-<td style="text-align:center">yjjr</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">695</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">2978</td>
-<td style="text-align:center">zcysky</td>
-<td style="text-align:center">白羽</td>
-<td style="text-align:left">1.29k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">42102</td>
-<td style="text-align:center">yanQval</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">237</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">15326</td>
-<td style="text-align:center">will7101</td>
-<td style="text-align:center">可爱</td>
-<td style="text-align:left">520</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">12621</td>
-<td style="text-align:center">fstqwq</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">580</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">52177</td>
-<td style="text-align:center">hqy2000</td>
-<td style="text-align:center">スイカ</td>
-<td style="text-align:left">356</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">53062</td>
-<td style="text-align:center">Anguei</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">1.16k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">53495</td>
-<td style="text-align:center">memset0</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">2.17k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">29</td>
-<td style="text-align:center">yeszy</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">962</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">绿</td>
-</tr>
-<tr>
-<td style="text-align:left">11751</td>
-<td style="text-align:center">ComeIntoPower</td>
-<td style="text-align:center">小圆</td>
-<td style="text-align:left">823</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">36482</td>
-<td style="text-align:center">龟龟号打捞船</td>
-<td style="text-align:center">铲屎官</td>
-<td style="text-align:left">1.61k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">2674</td>
-<td style="text-align:center">「QQ红包」</td>
-<td style="text-align:center">发红包了</td>
-<td style="text-align:left">977</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">5846</td>
-<td style="text-align:center">yyy2015c01</td>
-<td style="text-align:center">嘤嘤嘤</td>
-<td style="text-align:left">1.35k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">829</td>
-<td style="text-align:center">Scarlet</td>
-<td style="text-align:center">芙兰朵露</td>
-<td style="text-align:left">547</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">96686</td>
-<td style="text-align:center">hh0592821</td>
-<td style="text-align:center">PM</td>
-<td style="text-align:left">629</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">3296</td>
-<td style="text-align:center">noip</td>
-<td style="text-align:center">毒瘤</td>
-<td style="text-align:left">1.75k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">绿</td>
-</tr>
-<tr>
-<td style="text-align:left">173989</td>
-<td style="text-align:center">岭上团子</td>
-<td style="text-align:center">聪团</td>
-<td style="text-align:left">445</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">15289</td>
-<td style="text-align:center">阮行止</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">702</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">3182</td>
-<td style="text-align:center">Created_equal1</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">769</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">100544</td>
-<td style="text-align:center">xht37</td>
-<td style="text-align:center">ET</td>
-<td style="text-align:left">1.45k</td>
-<td style="text-align:center">超级活跃</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">5130</td>
-<td style="text-align:center">mcfx</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">357</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">9433</td>
-<td style="text-align:center">FlierKing</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">523</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">397</td>
-<td style="text-align:center">洛谷网校</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">176</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<h1 id="题目管理志愿者轮换管理员">题目管理志愿者（轮换管理员）</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">标签</th>
-<th style="text-align:left">粉丝</th>
-<th style="text-align:center">活跃度</th>
-<th style="text-align:center">颜色</th>
-<th style="text-align:center">是否现任</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">10703</td>
-<td style="text-align:center">小粉兔</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">2.02k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">22030</td>
-<td style="text-align:center">StudyingFather</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">717</td>
-<td style="text-align:center">超级活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">115864</td>
-<td style="text-align:center">NaCly_Fish</td>
-<td style="text-align:center">绒布球</td>
-<td style="text-align:left">3.47k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:left">65363</td>
-<td style="text-align:center">一扶苏一</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">543</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:left">6813</td>
-<td style="text-align:center">mrsrz</td>
-<td style="text-align:center">珂愛</td>
-<td style="text-align:left">1.01k</td>
-<td style="text-align:center">活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">49093</td>
-<td style="text-align:center">_sys</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">334</td>
-<td style="text-align:center">活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">20218</td>
-<td style="text-align:center">zhouwc</td>
-<td style="text-align:center">legends</td>
-<td style="text-align:left">803</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:left">20782</td>
-<td style="text-align:center">CYJian</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">1.14k</td>
-<td style="text-align:center">活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-</tbody>
-</table>
-<h1 id="曾经的管理员可能不全面">曾经的管理员（可能不全面）</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">标签</th>
-<th style="text-align:left">粉丝</th>
-<th style="text-align:center">活跃度</th>
-<th style="text-align:center">颜色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">8943</td>
-<td style="text-align:center">老K</td>
-<td style="text-align:center">QAQ</td>
-<td style="text-align:left">1.48k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-</tr>
-</tbody>
-</table>
 ]]></content>
     </entry>
 </feed>
