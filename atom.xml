@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-24T03:11:48.246Z</updated>
+    <updated>2020-02-24T07:16:02.524Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -114,6 +114,10 @@ Max=min(x+y-1, n)
 <tr>
 <td style="text-align:center">memset0</td>
 <td style="text-align:center"><a href="https://memset0.cn/">https://memset0.cn/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">henrytb</td>
+<td style="text-align:center"><a href="https://henrytbtrue.github.io/">https://henrytbtrue.github.io/</a></td>
 </tr>
 </tbody>
 </table>
