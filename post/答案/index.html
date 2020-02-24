@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 <meta name="theme-color" content="#000">
-<title>题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】  | rui_er | I AK IOI</title>
+<title>第二关 | rui_er | I AK IOI</title>
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582542358993">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 " />
-    <meta name="keywords" content="数学,Codeforces,算法,题解,OI,洛谷" />
+    <meta name="description" content="第二关" />
+    <meta name="keywords" content="nazo" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -139,17 +139,9 @@
 <div class="sidebar">
     <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
       
-        <div class="post-list-sidebar">
-          <div class="sidebar-title">
-            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
-            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
-          </div>
-        </div>
-      
       <div class="sidebar-body gemini" id="sidebar_body">
         
-          <div class="post-side-meta" id="post_side_meta">
-            
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
@@ -206,180 +198,6 @@
   </div>
 
 </div>
-          </div>
-          <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-            <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E5%A4%B4%E6%96%87%E4%BB%B6">头文件</a></li>
-<li><a href="#%E4%B8%BB%E5%87%BD%E6%95%B0">主函数</a></li>
-<li><a href="#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0">递归函数</a></li>
-<li><a href="#%E6%B1%87%E6%80%BB">汇总</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-          </div>
         
       </div>
     </div>
@@ -465,8 +283,8 @@ window.addEventListener('load', function() {
               <div class="article-box">
     <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://qz-cqy.github.io/post/solution-luogu-cf791a-codeforces-791a/">
-      题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 
+    <a class="post-title-link" href="https://qz-cqy.github.io/post/答案/">
+      第二关
     </a>
   </h1>
   <div class="post-meta">
@@ -474,7 +292,7 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-04-02</span>
+      <span>2020-02-24</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -483,38 +301,8 @@ window.addEventListener('load', function() {
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://qz-cqy.github.io/tag/7IKLNdSii/">
-              <span>数学</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/laB4cV8PqW/">
-              <span>Codeforces</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/">
-              <span>算法</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/">
-              <span>题解</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/">
-              <span>OI</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/">
-              <span>洛谷</span>
+            <a href="https://qz-cqy.github.io/tag/HWTiDnjh-/">
+              <span>nazo</span>
             </a>
           
         
@@ -523,76 +311,18 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>1分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>258<span class="pc-show">字数</span></span>
+      <span>13<span class="pc-show">字数</span></span>
     </span>
   </div>
 </header>
 </div>
               <div class="post-body next-md-body" id="post_body">
-                <p>这一题是一个模拟算法。</p>
-<p>我采用递归的方式解题。</p>
-<h1 id="头文件">头文件</h1>
-<p>没有什么特殊的。</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-</code></pre>
-<h1 id="主函数">主函数</h1>
-<blockquote>
-<p>在主函数中只需要以下几件事：</p>
-</blockquote>
-<ol>
-<li>输入</li>
-<li>跑一遍递归函数</li>
-<li>输出</li>
-</ol>
-<pre><code class="language-cpp">int main()
-{
-	int a, b;
-	cin&gt;&gt;a&gt;&gt;b;
-	cout&lt;&lt;f(a, b)&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-<p>可见递归函数是程序重点。</p>
-<h1 id="递归函数">递归函数</h1>
-<p>首先，声明函数，一定要在main前面！！！<code>int f(int a, int b);</code></p>
-<p>其次，在后面写函数。</p>
-<ul>
-<li>如果已经满足条件（第一个数比第二个数大），则return 0。</li>
-<li>否则次数加1，模拟下一年。这里次数就是返回值。</li>
-</ul>
-<pre><code class="language-cpp">int f(int a, int b)
-{
-	if(a &gt; b) return 0;
-	else return 1 + f(3*a, 2*b);
-}
-</code></pre>
-<h1 id="汇总">汇总</h1>
-<p>最后，把前面所有的合起来，得到：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-
-int f(int a, int b);
-
-int main()
-{
-	int a, b;
-	cin&gt;&gt;a&gt;&gt;b;
-	cout&lt;&lt;f(a, b)&lt;&lt;endl;
-	return 0;
-}
-
-int f(int a, int b)
-{
-	if(a &gt; b) return 0;
-	else return 1 + f(3*a, 2*b);
-}
-
-</code></pre>
+                <p>暂时只更新到这里了，以后再来</p>
 
               </div>
               <div class="post-footer">
@@ -603,7 +333,7 @@ int f(int a, int b)
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qz-cqy.github.io/post/solution-luogu-cf791a-codeforces-791a/" title="题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 ">题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 </a>
+      <a href="https://qz-cqy.github.io/post/答案/" title="第二关">第二关</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -612,32 +342,14 @@ int f(int a, int b)
   </ul>
   <div class="tags">
     
-      <a href="https://qz-cqy.github.io/tag/7IKLNdSii/"># 数学</a>
-    
-      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW/"># Codeforces</a>
-    
-      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/"># 算法</a>
-    
-      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/"># 题解</a>
-    
-      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/"># OI</a>
-    
-      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/"># 洛谷</a>
+      <a href="https://qz-cqy.github.io/tag/HWTiDnjh-/"># nazo</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 " href="https://qz-cqy.github.io/post/solution-luogu-cf677a-codeforces-677a/">题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 </a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 " href="https://qz-cqy.github.io/post/solution-luogu-cf677a-codeforces-677a/">上一篇</a>
-      
     </div>
     <div class="nav-next">
-      
-        <a class="nav-pc-next" title="题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】" href="https://qz-cqy.github.io/post/solution-luogu-cf914a-codeforces-914a/">题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】</a>
-        <a class="nav-mobile-next" title="题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】" href="https://qz-cqy.github.io/post/solution-luogu-cf914a-codeforces-914a/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
