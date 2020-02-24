@@ -1885,18 +1885,87 @@ blockquote:before {
   font-weight: bold;
 }
 body {
-      background-color: #fff !important;
+      background-color: #eee;
     }
     .nav-toggle .line {
-      background-color: undefined !important;
+      background-color: #eee !important;
+    }.header {
+        width: 960px;
+        margin: 0 auto;
+      }
+
+      .main-continer {
+        width: 960px;
+        margin: 0 auto;
+      }
+    body {
+      color: #555;
+    }
+    .next-md-body {
+      color: #555;
+    }
+    .next-md-body h1, .next-md-body h2 {
+      border-bottom-color: #555;
+    }
+    .archive-timeline-box::after, .tag-timeline-wrapper::after {
+      background: #eee;
+    }h1, h2, h3, h4, h5, h6 {
+      color: #555;
+    }
+    
+    .archive-timeline-title::before {
+      background-color: #555;
+    }
+    
+    .post-title-link::before {
+      background-color: #555;
+    }
+    
+    .node-title::before {
+      background-color: #555;
     }.bg-color {
-      background-color: transparent;
+      background-color: #fff;
+    }a {
+      color: #555;
+    }
+    
+    .next-md-body a, .friends-box a  {
+      color: #555;
+      border-bottom: 1px solid #555;
+    }a:hover {
+      color: #222;
+    }
+    
+    .archive-timeline-box .tag-node:hover::before {
+      background-color: #222;
+    }
+    
+    .markdownIt-TOC a:hover {
+      color: #222;
+      border-bottom-color: #222;
+    }
+
+    .next-md-body a:hover, .friends-box a:hover {
+      color: #222;
+      border-bottom-color: #222;
+    }
+      .nav-item a {
+        color:  #555;
+      }.nav-item a:hover {
+        color: #222;
+      }.nav-item-active {
+      background: #f9f9f9;
+    }
+
+    .nav-item:hover {
+      background: #f9f9f9;
+      color: rgba(0, 0, 0, 0.98);
     }.markdownIt-TOC a {
-      color: #000;
-      border-bottom-color: #000;
+      color: #eee;
+      border-bottom-color: #eee;
     }.markdownIt-TOC a:hover {
-      color: #000;
-      border-bottom-color: #000;
+      color: #fff;
+      border-bottom-color: #fff;
     }.active-current > a {
       color: #fc6423 !important;
       border-bottom-color: #fc6423 !important;
@@ -1916,9 +1985,22 @@ body {
       color: #fc6423;
       border-bottom-color: #fc6423;
     }
+      .site-meta {
+        background: #000 !important;
+      }
+      .head-top-line {
+        background: #000 !important;
+      }
     .brand {
-      background: transparent;
+      background: #000;
     }
-    .box-shadow-wrapper {
+    .main-title {
+      color: #FFF;
+    }
+    .mist .site-title i {
+      background: #FFF;
+    }.box-scale > #landlord {
+      transform: scale(1);
+    }.box-shadow-wrapper {
       box-shadow: none !important;
     }

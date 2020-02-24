@@ -3,19 +3,19 @@
   <head>
       <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="">
+<meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
-<meta name="theme-color" content="">
+<meta name="theme-color" content="#000">
 <title>rui_er | I AK IOI</title>
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582529183534">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582529563376">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
-<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
 
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
-<link href="/media/hljs/styles/github.css" rel="stylesheet">  
+<link href="/media/hljs/styles/androidstudio.css" rel="stylesheet">  
 
 <script src="/media/hljs/highlight.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
@@ -30,9 +30,9 @@
     <div class="head-top-line"></div>
     <div class="header-box">
       
-<div class=" ">
-  <header class="header  ">
-    <div class="blog-header box-shadow-wrapper  " id="header">
+<div class=" gemini">
+  <header class="header bg-color ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
       <div class="nav-toggle" id="nav_toggle">
         <div class="toggle-box">
           <div class="line line-top"></div>
@@ -48,6 +48,8 @@
             </a>  
           
         </div>
+        
+          <p class="subtitle">精于心，简于形</p>
         
       </div>
       <nav class="site-nav" id="site_nav">
@@ -128,7 +130,7 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  ">
+      <div class="section-layout  gemini">
         <div class="section-layout-wrapper">
           <div class="sidebar">
     
@@ -136,7 +138,7 @@
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
     <p class="site-author-name">rui_er | I AK IOI</p>
-    <p class="site-description right-motion"></p>
+    <p class="site-description right-motion">这个人很懒，什么都不想写...</p>
   </div>
   <div class="sidebar-item side-item-stat right-motion">
     <div class="sidebar-item-box">
@@ -161,12 +163,43 @@
   </div>
   
     
-      <div class="sidebar-item" style="border-top: 1px dotted #ccc; margin-top: 10px;">
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
       </div>
     
   
   
 
+
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="https://www.luogu.com.cn">【洛谷】</a>
+        </p>
+      
+        <p>
+          <a href="https://codeforces.com">【Codeforces】</a>
+        </p>
+      
+        <p>
+          <a href="https://henrytbtrue.github.io">【henrytb的博客】</a>
+        </p>
+      
+        <p>
+          <a href="https://qzcf.github.io">【青竹计算机学会】</a>
+        </p>
+      
+        <p>
+          <a href="https://sqrt-7-qhfz.github.io">【骐骥计算机学会】</a>
+        </p>
+      
+    </div>
+  </div>
 
 </div>
 </div>
@@ -713,7 +746,7 @@
   </footer>
   
   
-  <div class=" back-to-top" id="back_to_top">
+  <div class="gemini back-to-top" id="back_to_top">
     <i class="fa fa-arrow-up"></i>
     
     <span class="scrollpercent">
@@ -723,9 +756,48 @@
   </div>
   
   
+    <link rel="stylesheet" href="/media/live2d/histoire/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left:5px;bottom:0px;" data-key="4e3a1759264749a8b6d10a20067dccdc">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    <div class="live_talk_input_body">
+      <div class="live_talk_input_name_body">
+        <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+      </div>
+      <div class="live_talk_input_text_body">
+        <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+        <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+      </div>
+    </div>
+    <input name="live_talk" id="live_talk" value="1" type="hidden" />
+    <div class="live_ico_box">
+      <div class="live_ico_item type_info" id="showInfoBtn"></div>
+      <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+      
+      <div class="live_ico_item type_music" id="musicButton"></div>
+      
+      <div class="live_ico_item type_youdu" id="youduButton"></div>
+      <div class="live_ico_item type_quit" id="hideButton"></div>
+      <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+      <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+      <input id="duType" value="douqilai" type="hidden">
+      
+        <input name="live2dBGM" value="https://music.163.com/#/song?id=459434585" type="hidden">
+      
+    </div>
+  </div>
+</div>
+<div id="open_live2d">召唤伊斯特瓦尔</div>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+var message_Path = '/media/live2d/histoire/';
+let landlord = document.querySelector('#landlord');
+var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/histoire/js/live2d.js"></script>
+<script type="text/javascript" src="/media/live2d/histoire/js/message.js"></script>
   
-    
-
   
 </div>
 <script>
