@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-24T00:29:26.477Z</updated>
+    <updated>2020-02-24T00:39:02.787Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -16,8 +16,7 @@
         <link href="https://qz-cqy.github.io/post/friends/">
         </link>
         <updated>2020-02-24T00:13:50.000Z</updated>
-        <content type="html"><![CDATA[<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext>我</mtext></mstyle></mrow><annotation encoding="application/x-tex">\text{\Large我}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback sizing reset-size6 size8">我</span></span></span></span></span></span></p>
+        <content type="html"><![CDATA[<h1 id="我">我</h1>
 <table>
 <thead>
 <tr>
@@ -40,8 +39,7 @@
 </tr>
 </tbody>
 </table>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext>大佬</mtext></mstyle></mrow><annotation encoding="application/x-tex">\text{\Large大佬}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback sizing reset-size6 size8">大佬</span></span></span></span></span></span></p>
+<h1 id="大佬">大佬</h1>
 <table>
 <thead>
 <tr>
@@ -57,8 +55,7 @@
 </tbody>
 </table>
 <p>要交换友链的在下面留言！</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext>网站</mtext></mstyle></mrow><annotation encoding="application/x-tex">\text{\Large网站}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text"><span class="mord cjk_fallback sizing reset-size6 size8">网站</span></span></span></span></span></span></p>
+<h1 id="网站">网站</h1>
 <table>
 <thead>
 <tr>
