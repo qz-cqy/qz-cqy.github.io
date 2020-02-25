@@ -7,7 +7,7 @@
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 <meta name="theme-color" content="#000">
 <title>游记列表[TOP] | rui_er | I AK IOI</title>
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582619187430">
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582623860645">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -130,287 +130,7 @@
   navToggle.addEventListener('click',navClick);  
 </script>
     </div>
-    <div class="main-continer">
-      
-      <div class="section-layout gemini ">
-        <div class="section-layout-wrapper">
-          
-
-<div class="sidebar">
-    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
-      
-      <div class="sidebar-body gemini" id="sidebar_body">
-        
-          
-<div class="sidebar-wrapper box-shadow-wrapper bg-color">
-  <div class="sidebar-item">
-    <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
-    <p class="site-author-name">rui_er | I AK IOI</p>
-    <p class="site-description right-motion">I AK IOI</p>
-  </div>
-  <div class="sidebar-item side-item-stat right-motion">
-    <div class="sidebar-item-box">
-      <a href="/archives/">
-        
-        <span class="site-item-stat-count">50</span>
-        <span class="site-item-stat-name">文章</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="">
-        <span class="site-item-stat-count">28</span>
-        <span class="site-item-stat-name">分类</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="/tags/">
-        <span class="site-item-stat-count">28</span>
-        <span class="site-item-stat-name">标签</span>
-      </a>
-    </div>
-  </div>
-  
     
-      <div class="sidebar-item">
-        <span class="site-item-rss">
-            <i class="fa fa-rss"></i>
-            <a href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-        </span>
-      </div>
-    
-  
-  
-
-
-  <div class="sidebar-item right-motion sidebar-item-friends">
-    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
-    <div class="friends-box">
-      
-        <p>
-          <a href="https://www.luogu.com.cn">【洛谷】</a>
-        </p>
-      
-        <p>
-          <a href="https://henrytbtrue.ml">【henrytb的博客】</a>
-        </p>
-      
-    </div>
-  </div>
-
-</div>
-        
-      </div>
-    </div>
-</div>
-<script>
-  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
-  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
-  const SLIDE_UP_IN = 'slide-up-in';
-
-  let sidebar = document.querySelector('#sidebar'),
-  tocSideBar = document.querySelector('#tocSideBar'),
-  metaSideBar = document.querySelector('#metaSideBar'),
-  postToc = document.querySelector('#post_toc'),
-  postSiteMeta = document.querySelector('#post_side_meta'),
-  sidebarTitle = document.querySelector('.sidebar-title'),
-  sidebarBody = document.querySelector('#sidebar_body');
-
-  tocSideBar && tocSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  metaSideBar && metaSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  function toggleSidebar(e) {
-    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
-    if (currentTitle == e.srcElement) {
-      return ;
-    }
-    let current, showElement, hideElement;
-    if (e.srcElement == metaSideBar) {
-      showElement = postSiteMeta;
-      hideElement = postToc;
-    } else if (e.srcElement == tocSideBar){
-      showElement = postToc;
-      hideElement = postSiteMeta;
-    }
-    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
-    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
-
-    window.Velocity(hideElement, 'stop');
-    window.Velocity(hideElement, 'transition.slideUpOut', {
-      display: 'none',
-      duration: 200,
-      complete: function () {
-        window.Velocity(showElement, 'transition.slideDownIn', {
-          duration: 200
-        });
-      }
-    })
-    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
-    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
-  }
-
-  postToc.addEventListener('transitionend', function() {
-    this.classList.remove(SLIDE_UP_IN);
-  });
-
-
-  if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
-    let hasFix = false;
-    let scrollEl = document.querySelector('.main-continer');
-    let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
-    window.addEventListener('scroll', function(e) {
-    if (document.scrollingElement.scrollTop >= limitTop) {
-      if (!hasFix) {
-        sidebar.classList.add('sidebar-fixed');
-        hasFix = true;
-      }
-    } else {
-      if (hasFix) {
-        sidebar.classList.remove('sidebar-fixed');
-        hasFix = false;
-      }
-    }
-  });
-  }
-  
-</script>
-          <div class="section-box box-shadow-wrapper">
-            <div class="section bg-color post post-page">
-              <div class="article-box">
-    <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://qz-cqy.github.io/post/list/">
-      游记列表[TOP]
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-      <span class="meta-item">
-        <i class="fa fa-thumb-tack"></i>
-        <span>置顶</span>
-        <span class="post-meta-divider">|</span>
-      </span>
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-01-07</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-      <span class="meta-item">
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://qz-cqy.github.io/tag/LsGynlhxT/">
-              <span>置顶</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/669fTzmrs/">
-              <span>NOIp/CSP</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/">
-              <span>OI</span>
-            </a>
-          
-        
-      </span>
-      <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>12<span class="pc-show">字数</span></span>
-    </span>
-  </div>
-</header>
-</div>
-              <div class="post-body next-md-body" id="post_body">
-                <p><a href="/post/i-ak-csp2019-j">CSP2019入门级游记</a></p>
-<p><a href="/post/i-ak-noip2018-pj">NOIp2018普及组游记</a></p>
-
-              </div>
-              <div class="post-footer">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      rui_er | I AK IOI
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="https://qz-cqy.github.io/post/list/" title="游记列表[TOP]">游记列表[TOP]</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，转载请注明出处！
-    </li>
-  </ul>
-  <div class="tags">
-    
-      <a href="https://qz-cqy.github.io/tag/LsGynlhxT/"># 置顶</a>
-    
-      <a href="https://qz-cqy.github.io/tag/669fTzmrs/"># NOIp/CSP</a>
-    
-      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/"># OI</a>
-    
-  </div>
-  <div class="nav">
-    <div class="nav-prev">
-      
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="背包九讲（转载）" href="https://qz-cqy.github.io/post/pack-problem/">背包九讲（转载）</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="背包九讲（转载）" href="https://qz-cqy.github.io/post/pack-problem/">上一篇</a>
-      
-    </div>
-    <div class="nav-next">
-      
-        <a class="nav-pc-next" title="AC题目A+B的1000种方法[TOP]" href="https://qz-cqy.github.io/post/how-to-ac-luogu-p1001/">AC题目A+B的1000种方法[TOP]</a>
-        <a class="nav-mobile-next" title="AC题目A+B的1000种方法[TOP]" href="https://qz-cqy.github.io/post/how-to-ac-luogu-p1001/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
-      
-    </div>
-  </div>
-</div>
-              
-                
-                  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-  var gitalk = new Gitalk({
-    clientID: 'c1b3bf755427c788aa86',
-    clientSecret: '70293021ab0a59602bff1e27a73f9f6e14050af5',
-    repo: 'qz-cqy.github.io',
-    owner: 'qz-cqy',
-    admin: ['qz-cqy'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-  gitalk.render('gitalk-container')
-</script>
-                
-                
-              
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="footer-box">
   <footer class="footer">
     <div class="copyright">
@@ -610,6 +330,279 @@ var apiKey = landlord.dataset.key;
   hljs.initHighlightingOnLoad();
 
 </script>
+    </div>
+    <div class="main-continer">
+      
+      <div class="section-layout gemini ">
+        <div class="section-layout-wrapper">
+          
+
+<div class="sidebar">
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
+    <p class="site-author-name">rui_er | I AK IOI</p>
+    <p class="site-description right-motion">I AK IOI</p>
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">50</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">28</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">28</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+
+
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="https://www.luogu.com.cn">【洛谷】</a>
+        </p>
+      
+        <p>
+          <a href="https://henrytb.ml">【henrytb的博客】</a>
+        </p>
+      
+    </div>
+  </div>
+
+</div>
+        
+      </div>
+    </div>
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+
+  if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+    let hasFix = false;
+    let scrollEl = document.querySelector('.main-continer');
+    let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+    window.addEventListener('scroll', function(e) {
+    if (document.scrollingElement.scrollTop >= limitTop) {
+      if (!hasFix) {
+        sidebar.classList.add('sidebar-fixed');
+        hasFix = true;
+      }
+    } else {
+      if (hasFix) {
+        sidebar.classList.remove('sidebar-fixed');
+        hasFix = false;
+      }
+    }
+  });
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <div class="article-box">
+    <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://qz-cqy.github.io/post/list/">
+      游记列表[TOP]
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-01-07</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://qz-cqy.github.io/tag/LsGynlhxT/">
+              <span>置顶</span>
+            </a>、
+          
+        
+          
+            <a href="https://qz-cqy.github.io/tag/669fTzmrs/">
+              <span>NOIp/CSP</span>
+            </a>、
+          
+        
+          
+            <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/">
+              <span>OI</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>12<span class="pc-show">字数</span></span>
+    </span>
+  </div>
+</header>
+</div>
+              <div class="post-body next-md-body" id="post_body">
+                <p><a href="/post/i-ak-csp2019-j">CSP2019入门级游记</a></p>
+<p><a href="/post/i-ak-noip2018-pj">NOIp2018普及组游记</a></p>
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      rui_er | I AK IOI
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://qz-cqy.github.io/post/list/" title="游记列表[TOP]">游记列表[TOP]</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://qz-cqy.github.io/tag/LsGynlhxT/"># 置顶</a>
+    
+      <a href="https://qz-cqy.github.io/tag/669fTzmrs/"># NOIp/CSP</a>
+    
+      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/"># OI</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="背包九讲（转载）" href="https://qz-cqy.github.io/post/pack-problem/">背包九讲（转载）</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="背包九讲（转载）" href="https://qz-cqy.github.io/post/pack-problem/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="AC题目A+B的1000种方法[TOP]" href="https://qz-cqy.github.io/post/how-to-ac-luogu-p1001/">AC题目A+B的1000种方法[TOP]</a>
+        <a class="nav-mobile-next" title="AC题目A+B的1000种方法[TOP]" href="https://qz-cqy.github.io/post/how-to-ac-luogu-p1001/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+              
+                
+                
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'id',
+            appKey: 'token'
+        })
+    </script>
     </div>
   </body>
   <script src="/media/js/motion.js"></script>
