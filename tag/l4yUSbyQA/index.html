@@ -1,1209 +1,514 @@
-<!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="Gridea静态个人博客">
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
-<meta name="theme-color" content="#000">
-<title>rui_er | I AK IOI</title>
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582548767043">
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>算法 | rui_er | I AK IOI</title>
+<meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
+<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
-<link rel="stylesheet" href="/media/css/gemini.css">
-
-<link rel="stylesheet" href="/media/fonts/font-awesome.css">
-<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-<link href="/media/hljs/styles/androidstudio.css" rel="stylesheet">  
-
-<script src="/media/hljs/highlight.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-
+<script src="https://qz-cqy.github.io/media/js/jquery.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/aos.js"></script>
+<script src="https://qz-cqy.github.io/media/js/pace.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/view-image.min.js"></script>
+<script src="https://qz-cqy.github.io/media/js/functions.js"></script>
   </head>
   <body>
-    <div class="head-top-line"></div>
-    <div class="header-box">
+    <!-- start: #wrapper -->
+    <div class="wrapper">
       
-<div class=" gemini">
-  <header class="header bg-color ">
-    <div class="blog-header box-shadow-wrapper bg-color " id="header">
-      <div class="nav-toggle" id="nav_toggle">
-        <div class="toggle-box">
-          <div class="line line-top"></div>
-          <div class="line line-center"></div>
-          <div class="line line-bottom"></div>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
         </div>
-      </div>
-      <div class="site-meta">       
-        <div class="site-title">
-          
-            <a href="/" class="brand">
-              <span>rui_er | I AK IOI</span>
-            </a>  
-          
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://qz-cqy.github.io"><img src="https://qz-cqy.github.io/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                
+                  <li class=""><a href="https://qz-cqy.github.io" class="menu">首页</a></li>
+                
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/list" class="menu">
+                      比赛游记
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/nazo-begin" class="menu">
+                      nazo游戏
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
         </div>
-        
-          <p class="subtitle">三思而后码</p>
-        
-      </div>
-      <nav class="site-nav" id="site_nav">
-        <ul id="nav_ul">
-          
-            <li class="nav-item ">
-              
-                <a href="/archives">
-                  <i class="fa fa-archive"></i> 归档
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/tags">
-                  <i class="fa fa-tags"></i> 标签
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/post/list">
-                  <i class="fa fa-globe"></i> 比赛游记
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/post/nazo-begin">
-                  <i class="fa fa-globe"></i> nazo游戏
-                </a>
-              
-            </li>
-          
-            <li class="nav-item ">
-              
-                <a href="/post/about">
-                  <i class="fa fa-user"></i> 关于
-                </a>
-              
-            </li>
-          
-          <li class="nav-item">
-            <a>
-              <i class="fa fa-search"></i> 搜索
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-</div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
 
-<script type="text/javascript"> 
- 
-  let showNav = true;
-
-  let navToggle = document.querySelector('#nav_toggle'),
-  siteNav = document.querySelector('#site_nav');
-  
-  function navClick() {
-    let sideBar = document.querySelector('.sidebar');
-    let navUl = document.querySelector('#nav_ul');
-    navToggle.classList.toggle('nav-toggle-active');
-    siteNav.classList.toggle('nav-menu-active');
-    if (siteNav.classList.contains('nav-menu-active')) {
-      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
-    } else {
-      siteNav.style = "";
-    }
-  }
-
-  navToggle.addEventListener('click',navClick);  
-</script>
-    </div>
-    <div class="main-continer">
-      
-      <div class="section-layout  gemini">
-        <div class="section-layout-wrapper">
-          <div class="sidebar">
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
+            <div class="main-article post">
+  <h2 class="year"># 算法</h2>
     
-<div class="sidebar-wrapper box-shadow-wrapper bg-color">
-  <div class="sidebar-item">
-    <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
-    <p class="site-author-name">rui_er | I AK IOI</p>
-    <p class="site-description right-motion">I AK IOI</p>
-  </div>
-  <div class="sidebar-item side-item-stat right-motion">
-    <div class="sidebar-item-box">
-      <a href="/archives/">
-        
-        <span class="site-item-stat-count">48</span>
-        <span class="site-item-stat-name">文章</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="">
-        <span class="site-item-stat-count">27</span>
-        <span class="site-item-stat-name">分类</span>
-      </a>
-    </div>
-    <div class="sidebar-item-box">
-      <a href="/tags/">
-        <span class="site-item-stat-count">27</span>
-        <span class="site-item-stat-name">标签</span>
-      </a>
-    </div>
-  </div>
-  
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/algorithms/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-02-21">2020-02-21</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/algorithms/">近期算法学习目标</a>
+          </h4>
+        </div>
+      </article>
+
     
-      <div class="sidebar-item">
-        <span class="site-item-rss">
-            <i class="fa fa-rss"></i>
-            <a href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
-        </span>
-      </div>
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-02-13">2020-02-13</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</a>
+          </h4>
+        </div>
+      </article>
+
     
-  
-  
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-02-13">2020-02-13</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632/">题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</a>
+          </h4>
+        </div>
+      </article>
 
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-02-12">2020-02-12</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659/">题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</a>
+          </h4>
+        </div>
+      </article>
 
-  <div class="sidebar-item right-motion sidebar-item-friends">
-    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
-    <div class="friends-box">
-      
-        <p>
-          <a href="https://www.luogu.com.cn">【洛谷】</a>
-        </p>
-      
-        <p>
-          <a href="https://henrytbtrue.github.io">【henrytb的博客】</a>
-        </p>
-      
-    </div>
-  </div>
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-p5876/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-01-15">2020-01-15</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-p5876/">题解 P5876@洛谷 【化简单词】</a>
+          </h4>
+        </div>
+      </article>
 
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-p5834/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-12-19">2019-12-19</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-p5834/">题解 P5834@洛谷 【[USACO19DEC]MooBuzz】</a>
+          </h4>
+        </div>
+      </article>
+
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-p4057/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-12-06">2019-12-06</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-p4057/">题解 P4057@洛谷 【[Code+#1]晨跑】</a>
+          </h4>
+        </div>
+      </article>
+
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at359-atcoder-359/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-10-11">2019-10-11</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at359-atcoder-359/">题解 AT359@洛谷 | 359@Atcoder 【団子とうさぎ】 </a>
+          </h4>
+        </div>
+      </article>
+
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at2287-atcoder-2287/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-09-19">2019-09-19</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at2287-atcoder-2287/">题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】</a>
+          </h4>
+        </div>
+      </article>
+
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qz-cqy.github.io/post/solution-luogu-at2447-atcoder-2447/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2019-07-31">2019-07-31</time>
+          <h4 class="title usmall">
+            <a href="https://qz-cqy.github.io/post/solution-luogu-at2447-atcoder-2447/">题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 </a>
+          </h4>
+        </div>
+      </article>
+
+    
+    <div class="clear"></div>
 </div>
-</div>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          算法
-          <small>标签</small>
-        </h2>
-      </div>
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://qz-cqy.github.io/post/algorithms/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    02-21
-                    <small>近期算法学习目标</small>
-                  </h1>
-                </div>  
+            <!-- end: .articles -->
+            
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                
+                  <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/page/2" class="next button red">下一页</a>
+                
               </div>
-            </a>
-          
-        
-          
-        
-      
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at4164-atcoder-4164/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    02-13
-                    <small>题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at5632-atcoder-5632/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    02-13
-                    <small>题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at5659-atcoder-5659/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    02-12
-                    <small>题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p5876/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    01-15
-                    <small>题解 P5876@洛谷 【化简单词】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p5834/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    12-19
-                    <small>题解 P5834@洛谷 【[USACO19DEC]MooBuzz】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p4057/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    12-06
-                    <small>题解 P4057@洛谷 【[Code+#1]晨跑】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at359-atcoder-359/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    10-11
-                    <small>题解 AT359@洛谷 | 359@Atcoder 【団子とうさぎ】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at2287-atcoder-2287/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    09-19
-                    <small>题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at2447-atcoder-2447/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-31
-                    <small>题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf727c-codeforces-727c/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-16
-                    <small>题解 CF727C@洛谷 | 727C@Codeforces 【Guess the Array】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at2018-atcoder-2018/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-16
-                    <small>题解 AT2018@洛谷 | 2018@Atcoder 【バイナリハックイージー / Unhappy Hacking (ABC Edit)】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p5146/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-12
-                    <small>题解 P5146@洛谷 【最大差值】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at1058-atcoder-1058/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-09
-                    <small>题解 AT1058@洛谷 | 1058@Atcoder 【とても長い文字列】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf937a-codeforces-937a/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-09
-                    <small>题解 CF937A@洛谷 | 937A@Codeforces 【Olympiad】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p1305/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    05-23
-                    <small>题解 P1305@洛谷 【新二叉树】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at3530-atcoder-3530/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    05-01
-                    <small>题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at3538-atcoder-3538/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    04-30
-                    <small>题解 AT3538@洛谷 | 3538@Atcoder 【Credits】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-p1044/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    04-20
-                    <small>题解 P1044@洛谷 【栈】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf677a-codeforces-677a/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    04-02
-                    <small>题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf791a-codeforces-791a/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    04-02
-                    <small>题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf914a-codeforces-914a/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    03-28
-                    <small>题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-at2201-atcoder-2201/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    02-13
-                    <small>题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf4a-codeforces-4a/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    01-31
-                    <small>题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf61a-codeforces-61a/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    01-29
-                    <small>题解 CF61A@洛谷 | 61A@Codeforces 【Ultra-Fast Mathematician】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-      
-        
-          
-        
-          
-        
-          
-            <a href="https://qz-cqy.github.io/post/solution-luogu-cf409d-codeforces-409d/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    01-02
-                    <small>题解 CF409D 【Big Data】 </small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-    </div>
-  </div>
-</div>
-                  </section>
-                </div>
-              </div>
+            </div>
+            
+          </div>
           </div>
         </div>
-      </div>
-      <div class="footer-box">
-  <footer class="footer">
-    <div class="copyright">
-      © 2019-2020 <i class="fa fa-heart"></i> HsxyHao
+      </main>
+
+        <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/cf-mark/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/VyDl9Z2Vr.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-24">2020-02-24</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/cf-mark/">CF记录[TOP]</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/python/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/HWTiDnjh-.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-24">2020-02-24</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/python/">第五关</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qz-cqy.github.io/post/122461/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/HWTiDnjh-.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-02-24">2020-02-24</time>
+                      <h4 class="title usmall">
+                        <a href="https://qz-cqy.github.io/post/122461/">第四关</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://qz-cqy.github.io/tag/VyDl9Z2Vr/" class="ctag ctag-0 ctag-VyDl9Z2Vr" aria-label="">CF比赛</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW/" class="ctag ctag-1 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-2 ctag-JGfUi4Foz" aria-label="">OI</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/HWTiDnjh-/" class="ctag ctag-3 ctag-HWTiDnjh-" aria-label="">nazo</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/XcOUHe17O0/" class="ctag ctag-4 ctag-XcOUHe17O0" aria-label="">游记</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/" class="ctag ctag-5 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/" class="ctag ctag-6 ctag-l4yUSbyQA" aria-label="">算法</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/qjWIR15w1/" class="ctag ctag-7 ctag-qjWIR15w1" aria-label="">声明/公告</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/FwuHJNNKD/" class="ctag ctag-8 ctag-FwuHJNNKD" aria-label="">重要</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/LsGynlhxT/" class="ctag ctag-9 ctag-LsGynlhxT" aria-label="">置顶</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/A6K5EMTnS/" class="ctag ctag-10 ctag-A6K5EMTnS" aria-label="">微积分</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/7IKLNdSii/" class="ctag ctag-11 ctag-7IKLNdSii" aria-label="">数学</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/EF964QqUL/" class="ctag ctag-12 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/" class="ctag ctag-13 ctag-1yYYfIIPJ" aria-label="">题解</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr/" class="ctag ctag-14 ctag-ucqMKnWEr" aria-label="">样例</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/669fTzmrs/" class="ctag ctag-15 ctag-669fTzmrs" aria-label="">NOIp/CSP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/nZNq1VXdp/" class="ctag ctag-16 ctag-nZNq1VXdp" aria-label="">项目</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny/" class="ctag ctag-17 ctag-KdGX_R7Ny" aria-label="">博客</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/xZrk8scCiD/" class="ctag ctag-18 ctag-xZrk8scCiD" aria-label="">教程</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/NpQHbc2L7/" class="ctag ctag-19 ctag-NpQHbc2L7" aria-label="">USACO</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI/" class="ctag ctag-20 ctag--SU_ouiGKI" aria-label="">背包</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp/" class="ctag ctag-21 ctag-p4MY2Ni7Jp" aria-label="">动态规划/DP</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/kAU4cMLlY/" class="ctag ctag-22 ctag-kAU4cMLlY" aria-label="">交互题</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/-Uo4spsOM/" class="ctag ctag-23 ctag--Uo4spsOM" aria-label="">骗分</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C/" class="ctag ctag-24 ctag-Ku4f4mt2C" aria-label="">树</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ/" class="ctag ctag-25 ctag-P33QCO5aCZ" aria-label="">图论</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj/" class="ctag ctag-26 ctag-ARwT1hdHRj" aria-label="">打表</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qz-cqy.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">rui_er | I AK IOI</a></h4>
+                    <p class="founder">相信玄学，研究科学 | Think twice, code once. </p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://qz-cqy.github.io" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://qz-cqy.github.io"><img class="" src="https://qz-cqy.github.io/media/images/logo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 56 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    <div class="clear"></div>
     </div>
-    <div class="poweredby">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-    </div>
-  </footer>
-  
-  
-  <div class="gemini back-to-top" id="back_to_top">
-    <i class="fa fa-arrow-up"></i>
-    
-    <span class="scrollpercent">
-      <span id="back_to_top_text">0</span>%
-    </span>
-    
-  </div>
-  
-  
-    <link rel="stylesheet" href="/media/live2d/histoire/css/live2d.css" />
-<div class="box-scale">
-  <div id="landlord" style="left:5px;bottom:0px;" data-key="4e3a1759264749a8b6d10a20067dccdc">
-    <div class="message" style="opacity:0"></div>
-    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
-    <div class="live_talk_input_body">
-      <div class="live_talk_input_name_body">
-        <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
-      </div>
-      <div class="live_talk_input_text_body">
-        <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
-        <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
-      </div>
-    </div>
-    <input name="live_talk" id="live_talk" value="1" type="hidden" />
-    <div class="live_ico_box">
-      <div class="live_ico_item type_info" id="showInfoBtn"></div>
-      <div class="live_ico_item type_talk" id="showTalkBtn"></div>
-      
-      <div class="live_ico_item type_music" id="musicButton"></div>
-      
-      <div class="live_ico_item type_youdu" id="youduButton"></div>
-      <div class="live_ico_item type_quit" id="hideButton"></div>
-      <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
-      <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
-      <input id="duType" value="douqilai" type="hidden">
-      
-        <input name="live2dBGM" value="https://music.163.com/#/song?id=459434585" type="hidden">
-      
-    </div>
-  </div>
-</div>
-<div id="open_live2d">召唤伊斯特瓦尔</div>
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<script>
-var message_Path = '/media/live2d/histoire/';
-let landlord = document.querySelector('#landlord');
-var apiKey = landlord.dataset.key;
-</script>
-<script type="text/javascript" src="/media/live2d/histoire/js/live2d.js"></script>
-<script type="text/javascript" src="/media/live2d/histoire/js/message.js"></script>
-  
-  
-</div>
-<script>
-
-  let sideBarOpen = 'sidebar-open';
-  let body = document.body;
-  let back2Top = document.querySelector('#back_to_top'),
-  back2TopText = document.querySelector('#back_to_top_text'),
-  drawerBox = document.querySelector('#drawer_box'),
-  rightSideBar = document.querySelector('.sidebar'),
-  viewport = document.querySelector('body');
-
-  function scrollAnimation(currentY, targetY) {
-   
-    let needScrollTop = targetY - currentY
-    let _currentY = currentY
-    setTimeout(() => {
-      const dist = Math.ceil(needScrollTop / 10)
-      _currentY += dist
-      window.scrollTo(_currentY, currentY)
-      if (needScrollTop > 10 || needScrollTop < -10) {
-        scrollAnimation(_currentY, targetY)
-      } else {
-        window.scrollTo(_currentY, targetY)
-      }
-    }, 1)
-  }
-
-  back2Top.addEventListener("click", function(e) {
-    scrollAnimation(document.scrollingElement.scrollTop, 0);
-    e.stopPropagation();
-    return false;
-  });
-  
-  window.addEventListener('scroll', function(e) {
-    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
-    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
-      back2Top.classList.add('back-top-active');
-    }
-    if (percent == 0) {
-      back2Top.classList.remove('back-top-active');
-    }
-    if (back2TopText) {
-      back2TopText.textContent = Math.floor(percent);
-    }
-  });
-
-  
-  let hasCacu = false;
-  window.onresize = function() {
-    if (window.width > 991) {
-      calcuHeight();
-    } else {
-      hasCacu = false;
-    }
-  }
-
-  function calcuHeight() {
-    // 动态调整站点概览高度
-    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
-      let sideBar = document.querySelector('.sidebar');
-      let navUl = document.querySelector('#site_nav');
-      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
-      hasCacu = true;
-    }
-  }
-  calcuHeight();
-  
-  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
-
-  if (drawerBox) {
-    let rightMotions = document.querySelectorAll('.right-motion');
-    let right = drawerBox.classList.contains('right');
-
-    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
-
-    let openProp, closeProp;
-    if (right) {
-      openProp = {
-        paddingRight: RIGHT_MOVE_DIS 
-      };
-      closeProp = {
-        paddingRight: '0px'
-      };
-    } else {
-      openProp = {
-        paddingLeft: RIGHT_MOVE_DIS 
-      };
-      closeProp = {
-        paddingLeft: '0px'
-      };
-    }
-
-    drawerBox.onclick = function() {
-      open = !open;
-      window.Velocity(rightSideBar, 'stop');
-      window.Velocity(viewport, 'stop');
-      window.Velocity(rightMotions, 'stop');
-      if (open) {
-        window.Velocity(rightSideBar, {
-          width: RIGHT_MOVE_DIS
-        }, {
-          duration: MOTION_TIME,
-          begin: function() {
-            window.Velocity(rightMotions, transitionDir,{ });
-          }
-        })
-        window.Velocity(viewport, openProp,{
-          duration: MOTION_TIME
-        });
-      } else {
-        window.Velocity(rightSideBar, {
-          width: '0px'
-        }, {
-          duration: MOTION_TIME,
-          begin: function() {
-            window.Velocity(rightMotions, {
-              opacity: 0
-            });
-          }
-        })
-        window.Velocity(viewport, closeProp ,{
-          duration: MOTION_TIME
-        });
-      }
-      for (let i = 0; i < drawerBox.children.length; i++) {
-        drawerBox.children[i].classList.toggle('muse-line');
-      }
-      drawerBox.classList.toggle(sideBarOpen);
-    }
-  }
-
-  // 代码高亮
-  hljs.initHighlightingOnLoad();
-
-</script>
-    </div>
+    <!-- end: #wrapper -->
   </body>
-  <script src="/media/js/motion.js"></script>
 </html>
