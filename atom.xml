@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-25T05:38:24.108Z</updated>
+    <updated>2020-02-25T05:49:09.642Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -210,6 +210,7 @@
         <content type="html"><![CDATA[<p>这里是qz-cqy的nazo游戏。在这里，你可以享受解密过关的快乐。当然，你可以通过到GitHub上面查看源码来获得过关答案甚至直接传到结束大厅，但是这样是没有意义的。另外，请不要尝试在Archive或者Tag中查询，因为剩余地点均为隐藏状态，无法再上述两个位置找到。</p>
 <p><strong>请随时把当前关网址保存到本地，暂时作者还没有写记录你闯关状态的cookie。</strong></p>
 <p>下一关地址：<a href="/post/first">点我</a></p>
+<p>有空格请用<code>-</code>代替。</p>
 ]]></content>
     </entry>
     <entry>

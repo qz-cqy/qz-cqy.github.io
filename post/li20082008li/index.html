@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 <meta name="theme-color" content="#000">
-<title>青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP] | rui_er | I AK IOI</title>
+<title>第六关 | rui_er | I AK IOI</title>
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582609739491">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]" />
-    <meta name="keywords" content="声明/公告,重要,置顶,OI,洛谷" />
+    <meta name="description" content="第六关" />
+    <meta name="keywords" content="nazo" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -139,17 +139,9 @@
 <div class="sidebar">
     <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
       
-        <div class="post-list-sidebar">
-          <div class="sidebar-title">
-            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
-            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
-          </div>
-        </div>
-      
       <div class="sidebar-body gemini" id="sidebar_body">
         
-          <div class="post-side-meta" id="post_side_meta">
-            
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
@@ -206,180 +198,6 @@
   </div>
 
 </div>
-          </div>
-          <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-            <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%80-%E9%A2%98%E7%9B%AE%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C">一、题目审核结果</a></li>
-<li><a href="#%E4%BA%8C-%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82">二、提交审核题目要求</a></li>
-<li><a href="#%E4%B8%89-%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C">三、审核结果</a></li>
-<li><a href="#%E9%99%84%E5%BD%95-%E9%87%8D%E5%A4%A7%E6%88%96%E7%9F%A5%E5%90%8D%E6%AF%94%E8%B5%9B%E5%88%97%E8%A1%A8">附录、重大或知名比赛列表</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-          </div>
         
       </div>
     </div>
@@ -465,22 +283,16 @@ window.addEventListener('load', function() {
               <div class="article-box">
     <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/">
-      青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]
+    <a class="post-title-link" href="https://qz-cqy.github.io/post/li20082008li/">
+      第六关
     </a>
   </h1>
   <div class="post-meta">
     
-      <span class="meta-item">
-        <i class="fa fa-thumb-tack"></i>
-        <span>置顶</span>
-        <span class="post-meta-divider">|</span>
-      </span>
-    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-10</span>
+      <span>2020-02-25</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -489,32 +301,8 @@ window.addEventListener('load', function() {
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://qz-cqy.github.io/tag/qjWIR15w1/">
-              <span>声明/公告</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/FwuHJNNKD/">
-              <span>重要</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/LsGynlhxT/">
-              <span>置顶</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/">
-              <span>OI</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/">
-              <span>洛谷</span>
+            <a href="https://qz-cqy.github.io/tag/HWTiDnjh-/">
+              <span>nazo</span>
             </a>
           
         
@@ -523,75 +311,19 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>1分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>554<span class="pc-show">字数</span></span>
+      <span>9<span class="pc-show">字数</span></span>
     </span>
   </div>
 </header>
 </div>
               <div class="post-body next-md-body" id="post_body">
-                <h1 id="一-题目审核结果">一、题目审核结果</h1>
-<p>每道上交给团队进行审核的题目的审核结果分为如下几类：<img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"> <img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></p>
-<h1 id="二-提交审核题目要求">二、提交审核题目要求</h1>
-<p>提供给团队的所有题目请按照洛谷公开赛/公开题目审核标准格式，将由团队管理员（大多数时候是我，rui_er）审核通过，重点检查内容：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>、数据、标程，题目状态请设为比赛题目，题目难度设为尚无评定，不要添加任何标签。</p>
-<h1 id="三-审核结果">三、审核结果</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">结果</th>
-<th style="text-align:center">可能的情况</th>
-<th style="text-align:center">可能的后果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-5eb95e.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">符合提交审核题目要求且与洛谷题库、重大或知名比赛没有重题（重题判定参加此表）</td>
-<td style="text-align:center">通过审核，加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E8%BD%BB%E5%BE%AE%E7%9B%B8%E4%BC%BC-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛算法较相似且题目数据要求复杂度不存在优化</td>
-<td style="text-align:center">修改题目（可能需要加强数据）后再次审核，有机会加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%AD%E5%BA%A6%E7%9B%B8%E4%BC%BC-e67e22.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛代码较相似</td>
-<td style="text-align:center">修改题目（可能需要加难题目）后再次审核，有机会加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E9%AB%98%E5%BA%A6%E7%9B%B8%E4%BC%BC-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛代码只需要少许改动即可AC</td>
-<td style="text-align:center">直接打回，不予加入比赛</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%AE%8C%E5%85%A8%E9%87%8D%E9%A2%98-9b59b6.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">与洛谷题库、重大或知名比赛同一份代码即可AC</td>
-<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目，并酌情考虑撤销管理员和踢出团队</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%B8%8D%E7%AC%A6%E5%90%88%E8%A6%81%E6%B1%82-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">提交的题目不符合本公告中【二、提交审核题目要求】中的要求或至少两位程序没有明显错误且没有被Hack的验题人均不能AC</td>
-<td style="text-align:center">直接打回，不予加入比赛；对于严重者，接下来一周不再接受该用户题目</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E6%9C%AA%E6%8F%90%E4%BA%A4%E5%AE%A1%E6%A0%B8-bbbbbb.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">未提交审核</td>
-<td style="text-align:center">无</td>
-</tr>
-<tr>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E6%8E%92%E9%98%9F%E5%AE%A1%E6%A0%B8%E4%B8%AD-34495e.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">已经提交审核，但团队管理员仍未进行审核</td>
-<td style="text-align:center">等待团队管理员进行审核</td>
-</tr>
-</tbody>
-</table>
-<h1 id="附录-重大或知名比赛列表">附录、重大或知名比赛列表</h1>
-<p>重大或知名比赛包括（不限于）：NOIP、CSP、ISIJ、ICPC、各省省选、NOI、JOI、USACO、IOI、Baltic OI、Codeforces比赛、无论是否加入题库的洛谷比赛题目。</p>
+                <p>NaN==NaN</p>
+<p>有空格请用<code>-</code>代替。</p>
 
               </div>
               <div class="post-footer">
@@ -602,7 +334,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/" title="青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告[TOP]</a>
+      <a href="https://qz-cqy.github.io/post/li20082008li/" title="第六关">第六关</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -611,30 +343,14 @@ window.addEventListener('load', function() {
   </ul>
   <div class="tags">
     
-      <a href="https://qz-cqy.github.io/tag/qjWIR15w1/"># 声明/公告</a>
-    
-      <a href="https://qz-cqy.github.io/tag/FwuHJNNKD/"># 重要</a>
-    
-      <a href="https://qz-cqy.github.io/tag/LsGynlhxT/"># 置顶</a>
-    
-      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/"># OI</a>
-    
-      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/"># 洛谷</a>
+      <a href="https://qz-cqy.github.io/tag/HWTiDnjh-/"># nazo</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【重要】评论使用须知（2020年2月13日更新）[TOP]" href="https://qz-cqy.github.io/post/talking/">【重要】评论使用须知（2020年2月13日更新）[TOP]</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【重要】评论使用须知（2020年2月13日更新）[TOP]" href="https://qz-cqy.github.io/post/talking/">上一篇</a>
-      
     </div>
     <div class="nav-next">
-      
-        <a class="nav-pc-next" title="T117887 【【QZR-01】G同学与旅行计划】 大样例" href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887/">T117887 【【QZR-01】G同学与旅行计划】 大样例</a>
-        <a class="nav-mobile-next" title="T117887 【【QZR-01】G同学与旅行计划】 大样例" href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
