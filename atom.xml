@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-25T05:52:07.319Z</updated>
+    <updated>2020-02-25T05:55:11.667Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -208,6 +208,9 @@
         </link>
         <updated>2020-02-24T10:51:56.000Z</updated>
         <content type="html"><![CDATA[<p>这里是qz-cqy的nazo游戏。在这里，你可以享受解密过关的快乐。当然，你可以通过到GitHub上面查看源码来获得过关答案甚至直接传到结束大厅，但是这样是没有意义的。另外，请不要尝试在Archive或者Tag中查询，因为剩余地点均为隐藏状态，无法再上述两个位置找到。</p>
+<p>后面的关卡如果博主认为比较难，可能会有按照如下格式<code>hint: $\color{white}\colorbox{white}{hint}$</code>的提示，请先自己思考后再查看。</p>
+<p>样例：</p>
+<p>hint: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="white"><menclose mathbackground="white"><mtext>这一关这么简单还看提示</mtext></menclose></mstyle></mrow><annotation encoding="application/x-tex">\color{white}\colorbox{white}{这一关这么简单还看提示}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2833299999999999em;vertical-align:-0.3em;"></span><span class="mord" style="color:white;"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9833299999999998em;"><span style="top:-2.98333em;"><span class="pstrut" style="height:3.28333em;"></span><span class="stretchy colorbox" style="color:white;height:1.2833299999999999em;background-color:white;"></span></span><span style="top:-3.28333em;"><span class="pstrut" style="height:3.28333em;"></span><span class="mord boxpad" style="color:white;"><span class="mord cjk_fallback" style="color:white;">这</span><span class="mord cjk_fallback" style="color:white;">一</span><span class="mord cjk_fallback" style="color:white;">关</span><span class="mord cjk_fallback" style="color:white;">这</span><span class="mord cjk_fallback" style="color:white;">么</span><span class="mord cjk_fallback" style="color:white;">简</span><span class="mord cjk_fallback" style="color:white;">单</span><span class="mord cjk_fallback" style="color:white;">还</span><span class="mord cjk_fallback" style="color:white;">看</span><span class="mord cjk_fallback" style="color:white;">提</span><span class="mord cjk_fallback" style="color:white;">示</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3em;"><span></span></span></span></span></span></span></span></span></p>
 <p><strong>请随时把当前关网址保存到本地，暂时作者还没有写记录你闯关状态的cookie。</strong></p>
 <p>下一关地址：<a href="/post/first">点我</a></p>
 <p>有空格请用<code>-</code>代替。</p>
