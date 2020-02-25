@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
 <meta name="theme-color" content="#000">
-<title>题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】  | rui_er | I AK IOI</title>
+<title>【[洛谷日报#254]五分钟搭建自己的博客】发布有感 | rui_er | I AK IOI</title>
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico?v=1582619009167">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 " />
-    <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
+    <meta name="description" content="【[洛谷日报#254]五分钟搭建自己的博客】发布有感" />
+    <meta name="keywords" content="洛谷日报,置顶,OI,洛谷" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -139,9 +139,17 @@
 <div class="sidebar">
     <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
       
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
       <div class="sidebar-body gemini" id="sidebar_body">
         
-          
+          <div class="post-side-meta" id="post_side_meta">
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
@@ -198,6 +206,188 @@
   </div>
 
 </div>
+          </div>
+          <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+            <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#0-%E5%85%88%E4%B8%8A%E5%9B%BE">0 先上图</a></li>
+<li><a href="#1-%E5%86%99%E4%BD%9C%E8%BF%87%E7%A8%8B">1 写作过程</a>
+<ul>
+<li><a href="#11-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFgridea%E8%80%8C%E4%B8%8D%E6%98%AFhexo">1.1 为什么是Gridea，而不是Hexo？</a></li>
+<li><a href="#12-%E5%86%99%E4%BD%9C%E4%B8%AD">1.2 写作中</a></li>
+<li><a href="#13-%E5%AE%A1%E6%A0%B8%E6%9C%9F">1.3 审核期</a></li>
+<li><a href="#14-%E4%BF%AE%E6%94%B9%E6%9C%9F">1.4 修改期</a></li>
+<li><a href="#15-%E9%80%9A%E8%BF%87%E5%AE%A1%E6%A0%B8">1.5 通过审核</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%AD%89%E5%BE%85%E5%8F%91%E5%B8%83">2 等待发布</a></li>
+<li><a href="#3-%E6%9C%80%E7%BB%88%E5%8F%91%E5%B8%83">3 最终发布</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    lList.push(elem);
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+addTocNumber(tocContent, '');
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+          </div>
         
       </div>
     </div>
@@ -283,16 +473,22 @@
               <div class="article-box">
     <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://qz-cqy.github.io/post/solution-luogu-at2447-atcoder-2447/">
-      题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 
+    <a class="post-title-link" href="https://qz-cqy.github.io/post/luogu-ri-bao-254-passed/">
+      【[洛谷日报#254]五分钟搭建自己的博客】发布有感
     </a>
   </h1>
   <div class="post-meta">
     
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-07-31</span>
+      <span>2020-02-25</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -301,20 +497,14 @@
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://qz-cqy.github.io/tag/EF964QqUL/">
-              <span>Atcoder</span>
+            <a href="https://qz-cqy.github.io/tag/7tURqR6o3/">
+              <span>洛谷日报</span>
             </a>、
           
         
           
-            <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/">
-              <span>算法</span>
-            </a>、
-          
-        
-          
-            <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/">
-              <span>题解</span>
+            <a href="https://qz-cqy.github.io/tag/LsGynlhxT/">
+              <span>置顶</span>
             </a>、
           
         
@@ -340,51 +530,41 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>182<span class="pc-show">字数</span></span>
+      <span>474<span class="pc-show">字数</span></span>
     </span>
   </div>
 </header>
 </div>
               <div class="post-body next-md-body" id="post_body">
-                <p>根据题意，我们可以把数据分成三类：</p>
+                <h1 id="0-先上图">0 先上图</h1>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/mz6kbm1i.png" alt="" loading="lazy"></figure>
+<h1 id="1-写作过程">1 写作过程</h1>
+<h2 id="11-为什么是gridea而不是hexo">1.1 为什么是Gridea，而不是Hexo？</h2>
+<p>为什么选择Gridea，不用Hexo？在洛谷，很多人问过我这个问题。在这里，我统一回答一下。我想说：</p>
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&lt;</mo><mn>0</mn><mo separator="true">,</mo><mi>b</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a&lt;0, b&lt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&lt;</mo><mn>0</mn><mo separator="true">,</mo><mi>b</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a&lt;0, b&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn><mo separator="true">,</mo><mi>b</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a&gt;0, b&gt;0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+<li><s>第一，以前有过介绍Hexo搭建博客的洛谷日报</s></li>
+<li>第二，我本人搭建Hexo失败了，因为Nodejs总是报错说npm有错误</li>
+<li>第三，我想说Gridea真的很方便</li>
 </ul>
-<p>根据题意列出公式计算即可。</p>
-<p>C++：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    int a, b, c, d, e;
-    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d&gt;&gt;e;
-    int ans;
-    if(a &lt; 0)
-    {
-        if(b &lt; 0) ans = (b - a) * c;
-        else ans = (-a) * c + d + b * e;
-    }
-    else
-    {
-        ans = (b - a) * e;
-    }
-    cout&lt;&lt;ans&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>Python：</p>
-<pre><code class="language-python">a, b, c, d, e = int(input()), int(input()), int(input()), int(input()), int(input())
-if a&lt;0:
-	if b&lt;0:
-    	print((b-a)*c)
-    else:
-    	print((-a)*c+d+b*e)
-else:
-	print((b-a)*e)
-</code></pre>
+<h2 id="12-写作中">1.2 写作中</h2>
+<p>我写作的时候从下载开始，一直写到同步成功，并且不断地提醒自己要写的详细、具体，还需要偶尔插图片。真心感觉特别麻烦，废了我一个半小时还多。其他的<code>日报er</code>大概也类似吧。</p>
+<h2 id="13-审核期">1.3 审核期</h2>
+<p>日报终于提交审核了。等了整整七天。每一天，不，每一小时我都恨不得想要去看看审核的结果出来没有。</p>
+<h2 id="14-修改期">1.4 修改期</h2>
+<p>最后得到的结果：<code>ComeIntoPower: @rui_er 现在搭建博客的方法数不胜数，你大概需要补充这个方法的优点和缺点。</code></p>
+<p>我看了一眼，认为还算好改，至少没有直接驳回。于是开始修改。又花了半个多小时，终于再一次投稿。</p>
+<h2 id="15-通过审核">1.5 通过审核</h2>
+<p>这一次终于通过审核了！写日报累死了！（滑稽+无视相对论光速逃保命</p>
+<h1 id="2-等待发布">2 等待发布</h1>
+<p>过了几天，同学告诉我：<code>orz你的日报发布了，在2020年队列里！</code>于是我发了一条犇犇：<code>我的日报什么时候放上去的，不是我同学提醒我还不知道。</code></p>
+<p>过了一会，<code>kkksc03: 不，还没有，那只是未来的日报</code>。。。。。。（qwq</p>
+<h1 id="3-最终发布">3 最终发布</h1>
+<p>2020年2月25日，日报正式发布，成为[洛谷日报#254]。</p>
+<p>获得成就：</p>
+<ul>
+<li>第一个置顶讨论帖</li>
+<li>第一篇通过审核的洛谷日报</li>
+</ul>
 
               </div>
               <div class="post-footer">
@@ -395,7 +575,7 @@ else:
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://qz-cqy.github.io/post/solution-luogu-at2447-atcoder-2447/" title="题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 ">题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 </a>
+      <a href="https://qz-cqy.github.io/post/luogu-ri-bao-254-passed/" title="【[洛谷日报#254]五分钟搭建自己的博客】发布有感">【[洛谷日报#254]五分钟搭建自己的博客】发布有感</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -404,11 +584,9 @@ else:
   </ul>
   <div class="tags">
     
-      <a href="https://qz-cqy.github.io/tag/EF964QqUL/"># Atcoder</a>
+      <a href="https://qz-cqy.github.io/tag/7tURqR6o3/"># 洛谷日报</a>
     
-      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/"># 算法</a>
-    
-      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/"># 题解</a>
+      <a href="https://qz-cqy.github.io/tag/LsGynlhxT/"># 置顶</a>
     
       <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/"># OI</a>
     
@@ -418,15 +596,11 @@ else:
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】" href="https://qz-cqy.github.io/post/solution-luogu-at2287-atcoder-2287/">题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】" href="https://qz-cqy.github.io/post/solution-luogu-at2287-atcoder-2287/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 CF727C@洛谷 | 727C@Codeforces 【Guess the Array】 " href="https://qz-cqy.github.io/post/solution-luogu-cf727c-codeforces-727c/">题解 CF727C@洛谷 | 727C@Codeforces 【Guess the Array】 </a>
-        <a class="nav-mobile-next" title="题解 CF727C@洛谷 | 727C@Codeforces 【Guess the Array】 " href="https://qz-cqy.github.io/post/solution-luogu-cf727c-codeforces-727c/">下一篇</a>
+        <a class="nav-pc-next" title="洛谷词条[TOP]" href="https://qz-cqy.github.io/post/luogu-description/">洛谷词条[TOP]</a>
+        <a class="nav-mobile-next" title="洛谷词条[TOP]" href="https://qz-cqy.github.io/post/luogu-description/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

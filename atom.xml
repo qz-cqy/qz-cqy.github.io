@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-25T05:55:11.667Z</updated>
+    <updated>2020-02-25T08:23:38.338Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,43 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[【[洛谷日报#254]五分钟搭建自己的博客】发布有感]]></title>
+        <id>https://qz-cqy.github.io/post/luogu-ri-bao-254-passed/</id>
+        <link href="https://qz-cqy.github.io/post/luogu-ri-bao-254-passed/">
+        </link>
+        <updated>2020-02-25T08:06:35.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="0-先上图">0 先上图</h1>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/mz6kbm1i.png" alt="" loading="lazy"></figure>
+<h1 id="1-写作过程">1 写作过程</h1>
+<h2 id="11-为什么是gridea而不是hexo">1.1 为什么是Gridea，而不是Hexo？</h2>
+<p>为什么选择Gridea，不用Hexo？在洛谷，很多人问过我这个问题。在这里，我统一回答一下。我想说：</p>
+<ul>
+<li><s>第一，以前有过介绍Hexo搭建博客的洛谷日报</s></li>
+<li>第二，我本人搭建Hexo失败了，因为Nodejs总是报错说npm有错误</li>
+<li>第三，我想说Gridea真的很方便</li>
+</ul>
+<h2 id="12-写作中">1.2 写作中</h2>
+<p>我写作的时候从下载开始，一直写到同步成功，并且不断地提醒自己要写的详细、具体，还需要偶尔插图片。真心感觉特别麻烦，废了我一个半小时还多。其他的<code>日报er</code>大概也类似吧。</p>
+<h2 id="13-审核期">1.3 审核期</h2>
+<p>日报终于提交审核了。等了整整七天。每一天，不，每一小时我都恨不得想要去看看审核的结果出来没有。</p>
+<h2 id="14-修改期">1.4 修改期</h2>
+<p>最后得到的结果：<code>ComeIntoPower: @rui_er 现在搭建博客的方法数不胜数，你大概需要补充这个方法的优点和缺点。</code></p>
+<p>我看了一眼，认为还算好改，至少没有直接驳回。于是开始修改。又花了半个多小时，终于再一次投稿。</p>
+<h2 id="15-通过审核">1.5 通过审核</h2>
+<p>这一次终于通过审核了！写日报累死了！（滑稽+无视相对论光速逃保命</p>
+<h1 id="2-等待发布">2 等待发布</h1>
+<p>过了几天，同学告诉我：<code>orz你的日报发布了，在2020年队列里！</code>于是我发了一条犇犇：<code>我的日报什么时候放上去的，不是我同学提醒我还不知道。</code></p>
+<p>过了一会，<code>kkksc03: 不，还没有，那只是未来的日报</code>。。。。。。（qwq</p>
+<h1 id="3-最终发布">3 最终发布</h1>
+<p>2020年2月25日，日报正式发布，成为[洛谷日报#254]。</p>
+<p>获得成就：</p>
+<ul>
+<li>第一个置顶讨论帖</li>
+<li>第一篇通过审核的洛谷日报</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[洛谷词条[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/luogu-description/</id>
@@ -408,19 +445,6 @@ Max=min(x+y-1, n)
         <updated>2020-02-20T06:37:34.000Z</updated>
         <content type="html"><![CDATA[<p><s>由于站长的野心，</s> 多次尝试将博客放到网址ak-ioi.top上无果后 <s>放弃挣扎</s>，决定恢复原网址的访问。</p>
 <p>此公告。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[QZJR关于@henrytb 意外重题的公告[TOP]]]></title>
-        <id>https://qz-cqy.github.io/post/qzjr-henrytb-problem/</id>
-        <link href="https://qz-cqy.github.io/post/qzjr-henrytb-problem/">
-        </link>
-        <updated>2020-02-15T15:48:02.000Z</updated>
-        <content type="html"><![CDATA[<p>经过洛谷用户@rui_er 的再次审核，根据<a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告</a>判定洛谷用户@henrytb 提交的题目【G同学与h**h】与CF1304E题属于高度重题，但因为该用户出题时间在CF比赛前，不属于抄袭，故除撤下比赛外不予其他处罚。</p>
-<p>此公告。</p>
-<p>QZJR，rui_er<br>
-2020年2月15日</p>
-<p>（此文章置顶至3月3日）</p>
 ]]></content>
     </entry>
 </feed>
