@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-25T10:38:02.431Z</updated>
+    <updated>2020-02-26T02:09:06.905Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,46 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF1313A@洛谷 | 1313A@Codeforces 【Fast Food Restaurant】]]></title>
+        <id>https://qz-cqy.github.io/post/solution-luogu-cf1313a-codeforces-1313a/</id>
+        <link href="https://qz-cqy.github.io/post/solution-luogu-cf1313a-codeforces-1313a/">
+        </link>
+        <updated>2020-02-26T02:07:54.000Z</updated>
+        <content type="html"><![CDATA[<p>这题数据这么小，<strong>就直接暴力吧！</strong></p>
+<p>如果可以选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> ，选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">AB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 肯定不合适。先排个序，把原数组变成降序，然后枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span> 种情况判断是否可以即可。</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int t; 
+int a[3]; 
+int ans;
+
+int main()
+{
+	cin&gt;&gt;t;
+	while(t--)
+	{
+		ans = 0;
+		cin&gt;&gt;a[0]&gt;&gt;a[1]&gt;&gt;a[2];
+		if(a[0] &lt; a[1]) swap(a[0], a[1]);
+		if(a[0] &lt; a[2]) swap(a[0], a[2]);
+		if(a[1] &lt; a[2]) swap(a[1], a[2]);
+		if(a[0]) --a[0], ++ans;
+		if(a[1]) --a[1], ++ans;
+		if(a[2]) --a[2], ++ans;
+		if(a[0] &amp;&amp; a[1]) --a[0], --a[1], ++ans;
+		if(a[0] &amp;&amp; a[2]) --a[0], --a[2], ++ans;
+		if(a[1] &amp;&amp; a[2]) --a[1], --a[2], ++ans;
+		if(a[0] &amp;&amp; a[1] &amp;&amp; a[2]) --a[0], --a[1], --a[2], ++ans;
+		cout&lt;&lt;ans&lt;&lt;endl;
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【[洛谷日报#254]五分钟搭建自己的博客】发布有感]]></title>
         <id>https://qz-cqy.github.io/post/luogu-ri-bao-254-passed/</id>
@@ -435,16 +475,6 @@ Max=min(x+y-1, n)
 </tbody>
 </table>
 <p>结果：rating-=44（unrated1500→specialist1456） QAQ。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于qz-cqy.github.io恢复访问的公告]]></title>
-        <id>https://qz-cqy.github.io/post/blog-back/</id>
-        <link href="https://qz-cqy.github.io/post/blog-back/">
-        </link>
-        <updated>2020-02-20T06:37:34.000Z</updated>
-        <content type="html"><![CDATA[<p><s>由于站长的野心，</s> 多次尝试将博客放到网址ak-ioi.top上无果后 <s>放弃挣扎</s>，决定恢复原网址的访问。</p>
-<p>此公告。</p>
 ]]></content>
     </entry>
 </feed>
