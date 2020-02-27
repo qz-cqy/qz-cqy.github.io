@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-26T02:09:06.905Z</updated>
+    <updated>2020-02-27T06:02:24.565Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -398,6 +398,7 @@ Max=min(x+y-1, n)
         </link>
         <updated>2020-02-20T07:05:49.000Z</updated>
         <content type="html"><![CDATA[<ul>
+<li>等我有一天，有钱了，一定要买一台能看别人电脑里的文件的电脑</li>
 <li>说句闲话：研究珂学的最好方法是</li>
 <li>臭名昭著</li>
 <li>冒泡，戳</li>
