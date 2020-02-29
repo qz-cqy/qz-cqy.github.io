@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-28T08:59:26.651Z</updated>
+    <updated>2020-02-29T11:25:15.061Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,67 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[多线程学习笔记（非最终版，更新于2020.2.29）]]></title>
+        <id>https://qz-cqy.github.io/post/learning-thread/</id>
+        <link href="https://qz-cqy.github.io/post/learning-thread/">
+        </link>
+        <updated>2020-02-29T10:56:43.000Z</updated>
+        <content type="html"><![CDATA[<p>在2020年2月28日，二月的倒数第二天，我闲的学了一下多线程，虽说这玩意没啥用（</p>
+<p>由于我也是刚刚才学的，所以这篇文章还在实时更新。</p>
+<h1 id="1-简介">1 简介</h1>
+<p>在C++11版本中加入了<code>&lt;thread&gt;</code>头文件，此头文件主要声明了<code>std::thread</code>线程类。</p>
+<h1 id="2-用法">2 用法</h1>
+<h2 id="21-简单的例子">2.1 简单的例子</h2>
+<p>举一个特别简单的例子：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;windows.h&gt;
+using namespace std;
+ 
+void f1() 
+{
+    for (int i = 0; i &lt; 10; ++i)
+    {
+        cout &lt;&lt; &quot;thread_1111\n&quot;;
+        sleep(1);
+    }
+}
+void f2()
+{
+    for (int i = 0; i &lt; 20; ++i)
+    {
+        cout &lt;&lt; &quot;thread_2222\n&quot;;
+        sleep(1);
+    }
+}
+int main()
+{
+    thread th1(f1);  
+    thread th2(f2);
+    th1.join();
+    th2.join(); 
+    cout &lt;&lt; &quot;main()&quot;&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>是不是很简单？等会！join函数是用来干什么的？</p>
+<blockquote>
+<p>join：调用该函数会阻塞当前线程。阻塞调用者(caller)所在的线程直至被join的std::thread对象标识的线程执行结束。</p>
+</blockquote>
+<p><s>你：这什么鬼！说人话！！！</s></p>
+<p>我：也就是说，必须将线程join或者detach 等待子线程结束主进程才可以退出！！！</p>
+<p>我：学会了吗？</p>
+<p>你：等等，你只给我看了代码，可是并不能体现多线程的作用！</p>
+<p>我：再给你看个输出。</p>
+<figure data-type="image" tabindex="1"><img src="https://qz-cqy.github.io/post-images/1582975475068.PNG" alt="" loading="lazy"></figure>
+<p>可以看出，线程1与线程2是交替执行的。</p>
+<h1 id="3-参考文献">3 参考文献</h1>
+<ol>
+<li><a href="https://blog.csdn.net/sevenjoin/article/details/82187127">C++ thread用法总结(整理)</a></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF1313A@洛谷 | 1313A@Codeforces 【Fast Food Restaurant】]]></title>
         <id>https://qz-cqy.github.io/post/solution-luogu-cf1313a-codeforces-1313a/</id>
@@ -423,59 +484,6 @@ Max=min(x+y-1, n)
 <li>关于NaCly_Fish（感谢@AC_Automation）</li>
 </ul>
 <p>如果有我没写上的，欢迎留言补充。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我的第一场CF比赛2.14]]></title>
-        <id>https://qz-cqy.github.io/post/first-cf/</id>
-        <link href="https://qz-cqy.github.io/post/first-cf/">
-        </link>
-        <updated>2020-02-20T06:54:14.000Z</updated>
-        <content type="html"><![CDATA[<p>2月14日晚上21:05，发现有一场CF比赛（CF1304），就点进去打。</p>
-<p>A题超简单，很快就PP了。B题也差不多。可是C、D、E、F1/2就死活也不会。突然发现@henrytb 提供的题目【G同学与h**h】和E题重了！！！于是等到比赛结束就写了<a href="https://qz-cqy.github.io/post/qzjr-henrytb-problem">这个</a>。堪称2020年2月最大笑料。</p>
-<p>整个比赛：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">题目</th>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">赛后查看时状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">PP</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">PP</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">WA on pretest 2</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-<tr>
-<td style="text-align:center">F1/2</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-</tbody>
-</table>
-<p>结果：rating-=44（unrated1500→specialist1456） QAQ。</p>
 ]]></content>
     </entry>
 </feed>

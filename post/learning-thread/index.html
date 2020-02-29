@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>洛谷神梗收录 | rui_er | I AK IOI</title>
+<title>多线程学习笔记（非最终版，更新于2020.2.29） | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -83,12 +83,12 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/GpG87CBmBd.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/post-images/learning-thread.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-02-20"><i class="fa fa-calendar"></i><span class="lately">9 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-02-29"><i class="fa fa-calendar"></i><span class="lately">28 分钟前</span></time>
                
                
-               <span id="/post/luogu-geng/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/learning-thread/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -96,10 +96,16 @@
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/" class="ctag ctag-0 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                      <a href="https://qz-cqy.github.io/tag/5YHnlu3UX/" class="ctag ctag-0 ctag-5YHnlu3UX" aria-label="">多线程</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/Wj08bbbmrW/" class="ctag ctag-1 ctag-Wj08bbbmrW" aria-label="">学习笔记</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/" class="ctag ctag-2 ctag-l4yUSbyQA" aria-label="">算法</a>
+                    
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
                     
               </div>
-              <h1 class="title ularge white bold">洛谷神梗收录</h1>
+              <h1 class="title ularge white bold">多线程学习笔记（非最终版，更新于2020.2.29）</h1>
             </div>
           </div>
         </div>  
@@ -109,32 +115,59 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <ul>
-<li>等我有一天，有钱了，一定要买一台能看别人电脑里的文件的电脑</li>
-<li>说句闲话：研究珂学的最好方法是</li>
-<li>臭名昭著</li>
-<li>冒泡，戳</li>
-<li>我知道了，但你出言不逊是！！</li>
-<li>我谔谔</li>
-<li>P事水</li>
-<li>指挥使</li>
-<li>致远星/zyx</li>
-<li>关于SPFA，他死了</li>
-<li>kkk勇闯外环</li>
-<li>举报，建议禁言！</li>
-<li>希望更丰富的展现？使用Markdown</li>
-<li>珂朵莉太可爱了</li>
-<li>珂朵莉这么可爱，为什么要卡珂朵莉树</li>
-<li>任何一个伟大的思想，都有一个微不足道的开始。</li>
-<li>坐等memset0</li>
-<li>前排兜售</li>
-<li>烤绿鸟/烤main包</li>
-<li>在棺材板上仰卧起坐（感谢@AC_Automation）</li>
-<li>红黑树是red-blue tree（感谢@AC_Automation）</li>
-<li><s>我不当人了，我要当lj</s>（感谢@AC_Automation）</li>
-<li>关于NaCly_Fish（感谢@AC_Automation）</li>
-</ul>
-<p>如果有我没写上的，欢迎留言补充。</p>
+                  <p>在2020年2月28日，二月的倒数第二天，我闲的学了一下多线程，虽说这玩意没啥用（</p>
+<p>由于我也是刚刚才学的，所以这篇文章还在实时更新。</p>
+<h1 id="1-简介">1 简介</h1>
+<p>在C++11版本中加入了<code>&lt;thread&gt;</code>头文件，此头文件主要声明了<code>std::thread</code>线程类。</p>
+<h1 id="2-用法">2 用法</h1>
+<h2 id="21-简单的例子">2.1 简单的例子</h2>
+<p>举一个特别简单的例子：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;windows.h&gt;
+using namespace std;
+ 
+void f1() 
+{
+    for (int i = 0; i &lt; 10; ++i)
+    {
+        cout &lt;&lt; &quot;thread_1111\n&quot;;
+        sleep(1);
+    }
+}
+void f2()
+{
+    for (int i = 0; i &lt; 20; ++i)
+    {
+        cout &lt;&lt; &quot;thread_2222\n&quot;;
+        sleep(1);
+    }
+}
+int main()
+{
+    thread th1(f1);  
+    thread th2(f2);
+    th1.join();
+    th2.join(); 
+    cout &lt;&lt; &quot;main()&quot;&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>是不是很简单？等会！join函数是用来干什么的？</p>
+<blockquote>
+<p>join：调用该函数会阻塞当前线程。阻塞调用者(caller)所在的线程直至被join的std::thread对象标识的线程执行结束。</p>
+</blockquote>
+<p><s>你：这什么鬼！说人话！！！</s></p>
+<p>我：也就是说，必须将线程join或者detach 等待子线程结束主进程才可以退出！！！</p>
+<p>我：学会了吗？</p>
+<p>你：等等，你只给我看了代码，可是并不能体现多线程的作用！</p>
+<p>我：再给你看个输出。</p>
+<figure data-type="image" tabindex="1"><img src="https://qz-cqy.github.io/post-images/1582975475068.PNG" alt="" loading="lazy"></figure>
+<p>可以看出，线程1与线程2是交替执行的。</p>
+<h1 id="3-参考文献">3 参考文献</h1>
+<ol>
+<li><a href="https://blog.csdn.net/sevenjoin/article/details/82187127">C++ thread用法总结(整理)</a></li>
+</ol>
 
                 </div>
                 <div class="clear"></div>
@@ -144,26 +177,13 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/l4yUSbyQA.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/algorithms/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-02-21">2020-02-21</time>
-                  <h4 class="title white no-margin">近期算法学习目标</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/VyDl9Z2Vr.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/first-cf/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf1313a-codeforces-1313a/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-02-20">2020-02-20</time>
-                  <h4 class="title white no-margin">我的第一场CF比赛2.14</h4>
+                  <time datetime="2020-02-26">2020-02-26</time>
+                  <h4 class="title white no-margin">题解 CF1313A@洛谷 | 1313A@Codeforces 【Fast Food Restaurant】</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
