@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-02-29T11:25:15.061Z</updated>
+    <updated>2020-02-29T11:26:28.478Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
     <entry>
         <title type="html"><![CDATA[多线程学习笔记（非最终版，更新于2020.2.29）]]></title>
-        <id>https://qz-cqy.github.io/post/learning-thread/</id>
-        <link href="https://qz-cqy.github.io/post/learning-thread/">
+        <id>https://qz-cqy.github.io/post/learning-multi-thread/</id>
+        <link href="https://qz-cqy.github.io/post/learning-multi-thread/">
         </link>
         <updated>2020-02-29T10:56:43.000Z</updated>
         <content type="html"><![CDATA[<p>在2020年2月28日，二月的倒数第二天，我闲的学了一下多线程，虽说这玩意没啥用（</p>
