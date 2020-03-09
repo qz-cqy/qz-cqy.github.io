@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-09T02:21:17.399Z</updated>
+    <updated>2020-03-09T02:24:58.053Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -411,6 +411,7 @@ int main()
 <th style="text-align:center">日期</th>
 <th style="text-align:center">大号/rui_er</th>
 <th style="text-align:center">小号/PP-Automation</th>
+<th style="text-align:center">备注</th>
 </tr>
 </thead>
 <tbody>
@@ -418,21 +419,25 @@ int main()
 <td style="text-align:center">2018.12.*</td>
 <td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
 <td style="text-align:center">尚未注册</td>
+<td style="text-align:center">注册大号rui_er</td>
 </tr>
 <tr>
 <td style="text-align:center">2020.2.14</td>
 <td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201456-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
 <td style="text-align:center">尚未注册</td>
+<td style="text-align:center">大号第一场CF</td>
 </tr>
 <tr>
 <td style="text-align:center">2020.2.21</td>
 <td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201456-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
 <td style="text-align:center"><img src="https://img.shields.io/badge/PP--Automation-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/PP-Automation" alt="" loading="lazy"></td>
+<td style="text-align:center">注册小号PP-Automation</td>
 </tr>
 <tr>
 <td style="text-align:center">2020.2.23</td>
 <td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201559-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
 <td style="text-align:center"><img src="https://img.shields.io/badge/PP--Automation-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/PP-Automation" alt="" loading="lazy"></td>
+<td style="text-align:center">大号第二场CF</td>
 </tr>
 </tbody>
 </table>
