@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】 | rui_er | I AK IOI</title>
+<title>NOI Online2020游记 | rui_er | I AK IOI</title>
 <meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
 <link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
@@ -89,12 +89,12 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/EF964QqUL.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/media/images/XcOUHe17O0.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2019-02-13"><i class="fa fa-calendar"></i><span class="lately">1 年前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-03-07"><i class="fa fa-calendar"></i><span class="lately">2 天前</span></time>
                
                
-               <span id="/post/solution-luogu-at2201-atcoder-2201/" class="leancloud_visitors views-counter meta-info">
+               <span id="/post/i-ak-noi-online2020/" class="leancloud_visitors views-counter meta-info">
                 <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
                </span>
                
@@ -102,18 +102,14 @@
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qz-cqy.github.io/tag/EF964QqUL/" class="ctag ctag-0 ctag-EF964QqUL" aria-label="">Atcoder</a>
+                      <a href="https://qz-cqy.github.io/tag/XcOUHe17O0/" class="ctag ctag-0 ctag-XcOUHe17O0" aria-label="">游记</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/" class="ctag ctag-1 ctag-l4yUSbyQA" aria-label="">算法</a>
+                      <a href="https://qz-cqy.github.io/tag/669fTzmrs/" class="ctag ctag-1 ctag-669fTzmrs" aria-label="">NOIp/CSP</a>
                     
-                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/" class="ctag ctag-2 ctag-1yYYfIIPJ" aria-label="">题解</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-3 ctag-JGfUi4Foz" aria-label="">OI</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/" class="ctag ctag-4 ctag-GpG87CBmBd" aria-label="">洛谷</a>
+                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-2 ctag-JGfUi4Foz" aria-label="">OI</a>
                     
               </div>
-              <h1 class="title ularge white bold">题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】</h1>
+              <h1 class="title ularge white bold">NOI Online2020游记</h1>
             </div>
           </div>
         </div>  
@@ -123,56 +119,15 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>首先，我们用字符串s1来进行操作，s用来对照。题目说1&lt;=|s|&lt;=10^5，因此数组开大一点。其次，容易想到，|s|是奇数时不可能满足条件，故加上：</p>
-<pre><code class="language-cpp">if(l&amp;1)
-{
-	cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>其中<code>&amp;</code>是<code>按位与运算</code></p>
-<p>之后，分两步，如题。</p>
-<p>写出下列代码：</p>
-<pre><code class="language-cpp">for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
-for(int i=0;i&lt;l;i++)
-{
-	if(s1[i] == 'b') s1[i] = 'd';
-	else if(s1[i] == 'd') s1[i] = 'b';
-	else if(s1[i] == 'p') s1[i] = 'q';
-	else s1[i] = 'p';
-}
-</code></pre>
-<p>综合以上，判断字符串相等，使用<code>strcmp()</code>。</p>
-<p>综合所有，下为完整代码：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;string.h&gt;
-using namespace std;
-
-char s[100010];
-char s1[100010];
-
-int main()
-{
-	cin&gt;&gt;s;
-	int l = strlen(s);
-	if(l&amp;1)
-	{
-		cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-		return 0;
-	}
-	for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
-	for(int i=0;i&lt;l;i++)
-	{
-		if(s1[i] == 'b') s1[i] = 'd';
-		else if(s1[i] == 'd') s1[i] = 'b';
-		else if(s1[i] == 'p') s1[i] = 'q';
-		else s1[i] = 'p';
-	}
-	if(!strcmp(s1, s)) cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
-	else cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
+                  <p>今天参加NOI Online 2020的提高组，被那毒瘤<strong>NOI</strong> ONLINE吊打qwq。（其实是NO<strong>I</strong> <strong>O</strong>NL<strong>I</strong>NE</p>
+<h1 id="t1">T1</h1>
+<p>这什么玩意，写了个暴力，预估50分，洛谷爆零。</p>
+<h1 id="t2">T2</h1>
+<p>这什么玩意。写了个暴力，预估20分，洛谷20分。</p>
+<h1 id="t3">T3</h1>
+<p>这什么玩意！写了个暴力，预估40分，洛谷爆零。</p>
+<h1 id="后续">后续</h1>
+<p>自闭了，结果还没出来。</p>
 
                 </div>
                 <div class="clear"></div>
@@ -182,26 +137,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/7IKLNdSii.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf914a-codeforces-914a/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2019-03-28">2019-03-28</time>
-                  <h4 class="title white no-margin">题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/laB4cV8PqW.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/solution-luogu-cf4a-codeforces-4a/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/media/images/LsGynlhxT.jpg');"></div>
+                 <a href="https://qz-cqy.github.io/post/luogu-mu-ban/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2019-01-31">2019-01-31</time>
-                  <h4 class="title white no-margin">题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </h4>
+                  <time datetime="2020-03-05">2020-03-05</time>
+                  <h4 class="title white no-margin">洛谷模板大全[TOP]</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">

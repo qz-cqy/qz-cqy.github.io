@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qz-cqy.github.io</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-08T01:26:58.255Z</updated>
+    <updated>2020-03-09T02:06:15.882Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qz-cqy.github.io"/>
     <link rel="self" href="https://qz-cqy.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://qz-cqy.github.io/images/avatar.png</logo>
     <icon>https://qz-cqy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[NOI Online2020游记]]></title>
+        <id>https://qz-cqy.github.io/post/i-ak-noi-online2020/</id>
+        <link href="https://qz-cqy.github.io/post/i-ak-noi-online2020/">
+        </link>
+        <updated>2020-03-07T04:07:55.000Z</updated>
+        <content type="html"><![CDATA[<p>今天参加NOI Online 2020的提高组，被那毒瘤<strong>NOI</strong> ONLINE吊打qwq。（其实是NO<strong>I</strong> <strong>O</strong>NL<strong>I</strong>NE</p>
+<h1 id="t1">T1</h1>
+<p>这什么玩意，写了个暴力，预估50分，洛谷爆零。</p>
+<h1 id="t2">T2</h1>
+<p>这什么玩意。写了个暴力，预估20分，洛谷20分。</p>
+<h1 id="t3">T3</h1>
+<p>这什么玩意！写了个暴力，预估40分，洛谷爆零。</p>
+<h1 id="后续">后续</h1>
+<p>自闭了，结果还没出来。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[洛谷模板大全[TOP]]]></title>
         <id>https://qz-cqy.github.io/post/luogu-mu-ban/</id>
@@ -518,24 +535,6 @@ Max=min(x+y-1, n)
 紫//省选/NOI-：0.87847730600292825768667642752562‬%（6题）<br>
 黑//NOI/NOI+/CTSC：0.43923865300146412884333821376281‬%（3题）<br>
 总数//总数：100%（683题）</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[近期算法学习目标]]></title>
-        <id>https://qz-cqy.github.io/post/algorithms/</id>
-        <link href="https://qz-cqy.github.io/post/algorithms/">
-        </link>
-        <updated>2020-02-21T09:50:06.000Z</updated>
-        <content type="html"><![CDATA[<p>注：感叹号数量越多，优先级越高</p>
-<ul>
-<li>珂朵莉树！！！</li>
-<li>猫树！！！</li>
-<li>KMP（复习）！！</li>
-<li>Ek最大流（复习）！！</li>
-<li>Dinic！！</li>
-<li>分块！</li>
-<li>AC自动机！</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
