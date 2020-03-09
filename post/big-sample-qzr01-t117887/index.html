@@ -1,125 +1,571 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>T117887 【【QZR-01】G同学与旅行计划】 大样例 | rui_er | I AK IOI</title>
-<meta name="description" content="相信玄学，研究科学 | Think twice, code once. " />
-<link rel="shortcut icon" href="https://qz-cqy.github.io/favicon.ico">
-<link rel="stylesheet" href="https://qz-cqy.github.io/styles/main.css">
+    <meta charset="UTF-8"/>
 
-<script src="https://qz-cqy.github.io/media/js/jquery.min.js"></script>
-<script src="https://qz-cqy.github.io/media/js/masonry.pkgd.min.js"></script>
-<script src="https://qz-cqy.github.io/media/js/aos.js"></script>
-<script src="https://qz-cqy.github.io/media/js/pace.min.js"></script>
-<script src="https://qz-cqy.github.io/media/js/view-image.min.js"></script>
-<script src="https://qz-cqy.github.io/media/js/functions.js"></script>
-    <script src="https://qz-cqy.github.io/media/js/waterfall.min.js"></script>
-    <script src="https://qz-cqy.github.io/media/js/prism.min.js"></script>
-    
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="相信玄学，研究科学 | Think twice, code once. ">
+<meta name="theme-color" content="#000">
+<title>T117887 【【QZR-01】G同学与旅行计划】 大样例 | rui_er | I AK IOI</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1583747811934">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css" rel="stylesheet">  
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+
+    <meta name="description" content="T117887 【【QZR-01】G同学与旅行计划】 大样例" />
+    <meta name="keywords" content="样例,OI,洛谷" />
   </head>
   <body>
-            <header id="header" class="grid-container">
-        <!-- start: .menu-wrapper -->
-        <div class="menu-mobile"> 
-          <i class="fa fa-reorder"></i>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      
+<div class=" gemini">
+  <header class="header bg-color ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
         </div>
-        <div class="menu-wrapper">
-          <div class="">
-            <div class="logo">
-              <a href="https://qz-cqy.github.io"><img src="https://qz-cqy.github.io/media/images/logoo.png" alt=""></a>
-            </div>
-            <!-- start: .main-nav -->
-
-            <nav class="main-nav grid-container grid-parent">
-              <ul id="menu-header" class="menu gradient-effect">
-                
-                  <li class=""><a href="https://qz-cqy.github.io" class="menu">首页</a></li>
-                
-                
-                  <li class="" >
-                    <a href="/archives" class="menu">
-                      归档
-                    </a>
-                  </li>
-                
-                  <li class="" >
-                    <a href="/tags" class="menu">
-                      标签
-                    </a>
-                  </li>
-                
-                  <li class="" >
-                    <a href="/post/list" class="menu">
-                      比赛游记
-                    </a>
-                  </li>
-                
-                  <li class="" >
-                    <a href="/post/nazo-begin" class="menu">
-                      nazo游戏
-                    </a>
-                  </li>
-                
-                  <li class="" >
-                    <a href="/post/about" class="menu">
-                      关于
-                    </a>
-                  </li>
-                
-                  <li class="" >
-                    <a href="/friends" class="menu">
-                      友链
-                    </a>
-                  </li>
-                
-              </ul>
-            </nav>
-            <!-- end: .main-nav -->
-            <div class="clear"></div>
-            <div class="border hide-on-tablet hide-on-mobile"></div>
-          </div>    
-          <div class="clear"></div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>rui_er | I AK IOI</span>
+            </a>  
+          
         </div>
-        <!-- end: .menu-wrapper -->
-        <div class="clear"></div>
-      </header>
+        
+          <p class="subtitle">三思而后码</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/archives" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/tags" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/list" target="_self">
+                  <i class="fa fa-globe"></i> 比赛游记
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/nazo-begin" target="_self">
+                  <i class="fa fa-globe"></i> nazo游戏
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/friends" target="_self">
+                  <i class="fa fa-globe"></i> 友链
+                </a>
+              
+            </li>
+          
+          <li class="nav-item">
+            <a>
+              <i class="fa fa-search"></i> 搜索
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
 
-      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+<script type="text/javascript"> 
+ 
+  let showNav = true;
 
-        <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://qz-cqy.github.io/post-images/big-sample-qzr01-t117887.jpg');">
-            <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-02-04"><i class="fa fa-calendar"></i><span class="lately">1 个月前</span></time>
-               
-               
-               <span id="/post/big-sample-qzr01-t117887/" class="leancloud_visitors views-counter meta-info">
-                <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
-               </span>
-               
-            </div>
-            <div class="info">
-              <div class="tags ">
-                
-                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr/" class="ctag ctag-0 ctag-ucqMKnWEr" aria-label="">样例</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-1 ctag-JGfUi4Foz" aria-label="">OI</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/" class="ctag ctag-2 ctag-GpG87CBmBd" aria-label="">洛谷</a>
-                    
-              </div>
-              <h1 class="title ularge white bold">T117887 【【QZR-01】G同学与旅行计划】 大样例</h1>
-            </div>
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+    </div>
+    <div class="main-continer">
+      
+      <div class="section-layout gemini ">
+        <div class="section-layout-wrapper">
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
           </div>
-        </div>  
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://qz-cqy.github.io/images/avatar.png"/>
+    <p class="site-author-name">rui_er | I AK IOI</p>
+    <p class="site-description right-motion">相信玄学，研究科学 | Think twice, code once. </p>
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">54</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">30</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">30</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://qz-cqy.github.io/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://www.github.com/qz-cqy">
+              <i class="fa fa-github-alt"></i> github
+            </a>
+          
+            <a href="https://vk.com/id585734755">
+              <i class="fa fa-globe"></i> vk
+            </a>
+          
+            <a href="https://user.qzone.qq.com/2132851892/infocenter">
+              <i class="fa fa-qq"></i> QQ
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
 
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile">
-            <article class="main-article post">
-              <section class="post-content">
-                <div class="text">
-                  <h1 id="输入样例">输入样例：</h1>
+  <div class="sidebar-item">
+    https://music.163.com/#/song?id=459434585
+  </div>
+
+
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="https://www.luogu.com.cn">【洛谷】</a>
+        </p>
+      
+        <p>
+          <a href="https://henrytb.ml">【henrytb的博客】</a>
+        </p>
+      
+    </div>
+  </div>
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B">输入样例：</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B">输出样例</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    lList.push(elem);
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop + 10;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+addTocNumber(tocContent, '');
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887/">
+      T117887 【【QZR-01】G同学与旅行计划】 大样例
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-02-04</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://qz-cqy.github.io/tag/ucqMKnWEr/">
+              <span>样例</span>
+            </a>、
+          
+        
+          
+            <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/">
+              <span>OI</span>
+            </a>、
+          
+        
+          
+            <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/">
+              <span>洛谷</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>169分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>26902<span class="pc-show">字数</span></span>
+    </span>
+    
+      <span id="/post/big-sample-qzr01-t117887/" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
+      </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <h1 id="输入样例">输入样例：</h1>
 <pre><code>6709 7449 2143 19
 2834 1179 4586 1859 454 490 4364 3283 2307 1346 3648 3340 3883 185 4071 2346 254 4225 3471 4134 2573 72 1489 1648 3964 2624 3202 4372 1806 1656 583 2436 1576 447 1183 4155 99 1540 138 524 4120 1430 2930 2582 4299 549 553 3636 2378 188 2172 4076 2673 3776 301 3587 1475 3447 4317 2557 4816 1330 4667 3141 4698 2480 4393 2144 1916 4089 694 1379 1345 2668 2152 556 4263 4289 4794 2518 1309 532 2178 4638 616 2382 4462 3887 569 3045 806 4428 2676 2506 2875 141 601 1320 2103 3042 3641 2270 3473 594 4233 235 1921 1229 1620 2655 4601 2199 4239 1002 4671 3 3474 4719 4450 1697 3736 3363 1005 1833 816 332 1197 4061 4693 1681 1245 2712 2977 551 171 76 4817 1772 3042 3412 1330 3229 2292 3238 639 1916 621 3877 3553 2955 242 2932 2187 4622 692 4247 4427 1821 4884 2182 3749 4243 4190 3893 1548 2256 1031 3739 1736 1262 532 3996 2812 3799 206 1900 2564 4908 723 2138 997 853 3559 3941 4549 2384 3939 450 2892 4728 1279 4713 3361 4040 3851 3580 4938 2114 2467 1480 1357 56 1013 3267 1678 2824 4467 3047 1414 4966 428 3380 63 598 1109 2511 1765 2597 2533 2746 1448 2756 2975 238 1277 127 2965 1490 2567 3250 1578 4275 392 2643 3605 2582 588 1623 3969 484 2546 724 868 125 189 1613 294 3321 3625 72 1690 3492 3113 3346 4392 4329 2581 2223 1597 127 4020 3417 2951 3198 2207 2477 848 2149 2202 2804 4606 3948 4443 1743 3195 1966 1302 310 191 133 2919 4193 2549 3815 4542 2180 2568 1002 317 2561 390 4967 4944 4950 2944 768 2519 1091 1173 4084 2238 1391 3098 607 3504 384 3469 3552 167 268 1296 3212 2966 3625 3663 200 578 4350 798 2696 2060 1240 3092 611 800 2438 543 2789 432 1137 561 328 1001 2346 3671 4368 3833 1173 4669 3606 3082 432 56 4863 533 4131 4920 4290 424 1305 3836 2696 3870 1901 2174 4025 2050 771 305 2351 4906 1704 1144 2683 4005 1539 4658 3306 3327 2614 1682 924 885 2317 4085 4417 4577 4603 4806 4690 2389 4424 2343 1835 3148 1983 3394 3408 4802 128 4454 1349 2320 2837 2915 622 3990 4437 1520 4674 2902 3432 117 3977 1941 1951 1283 3714 3359 3668 2956 507 2812 1456 238 4548 2369 2621 2965 4353 2859 3888 2226 1292 3261 3328 1774 4294 1483 2131 317 301 4289 1896 533 4286 1504 3792 4689 1811 3781 2004 1240 340 4382 4835 3934 4889 4888 311 3453 396 758 4623 1772 1155 4046 823 1061 1107 4301 1836 1661 1023 1356 1330 99 2049 4613 4562 2634 2852 4184 2657 2068 1159 1895 2757 3022 893 1340 91 3464 693 1820 4516 1275 204 3344 30 959 1245 1965 156 2921 2113 4388 1079 3426 1297 1208 370 3307 3784 1952 3998 2334 1822 2716 2018 1453 1264 991 4277 1273 4189 4583 3013 3247 2753 2040 4114 370 2382 4194 1952 2365 2604 1403 3024 108 321 4215 1072 1851 2382 2024 3090 922 2933 4989 900 4810 2030 433 1602 3530 4869 95 1652 178 1818 2324 1851 3256 3600 4397 1819 1137 4842 2275 1636 4612 3524 661 1739 1740 1483 4765 1818 3284 3369 3324 4507 371 1149 2478 2928 2537 3229 3953 3919 3181 3554 4056 3014 2816 2395 3779 3312 1382 287 161 1117 3566 1488 601 4445 4962 4222 217 479 3979 3482 4962 3164 3768 1998 2945 1408 1261 359 1625 2486 4657 3352 2610 1904 2877 740 3018 1207 621 3222 3259 3106 2876 4271 3036 1577 857 1958 1630 4214 4943 4247 2613 3922 4071 3702 4498 3150 2631 2323 3559 3093 4875 1791 4699 796 1258 387 1277 927 861 3211 1505 1777 2239 291 3308 706 2292 752 3442 995 1736 1778 1938 4286 389 4805 3473 183 3461 3318 4484 2885 931 2529 2239 714 4182 2684 3504 454 2478 3035 3502 4061 12 2264 4907 4484 433 4040 554 4263 4969 742 1967 741 3811 1916 2473 4721 3837 2608 1592 1284 1639 3192 697 983 3228 2074 2798 1457 4938 3968 2577 2927 4403 519 4085 2862 1643 963 4530 2403 212 2035 1543 3788 2107 3730 671 1516 2414 3527 701 3037 3529 1863 2772 1680 4300 1971 3673 829 569 4364 1100 1641 3591 2876 1841 3795 3446 2874 1746 3187 1880 378 2114 1023 3242 3099 4058 643 504 3564 3151 2664 3430 1373 2744 3142 4146 3984 2615 3513 4614 4556 1203 112 2176 4661 2800 3695 2189 1913 3940 893 4270 2015 4114 2233 3852 3424 4009 1660 4384 394 3522 3053 4617 2387 2365 4339 2306 4561 3180 4804 4121 2572 3916 1827 4312 568 3422 2227 2823 4218 3056 526 1066 3629 4733 3530 1838 911 3858 4692 3564 3663 4963 976 1034 2598 689 2802 3297 1941 4215 2080 2057 2654 17 2615 586 2154 2582 2838 449 1703 2418 3841 386 4735 1219 3310 910 4594 1603 3193 3313 3979 4307 2914 669 4083 2367 2484 1612 1234 1035 2582 1214 4060 3831 2632 4011 42 4777 1466 1956 874 3778 3026 1478 4154 564 1206 3541 493 2783 2730 1337 1508 1054 3506 323 945 595 904 3702 4797 81 3923 4833 2008 1289 3534 2393 2121 4128 4523 2220 4233 168 4657 1993 3882 1355 3311 1981 4676 4436 1025 2797 1498 4526 4899 322 2325 1033 4742 279 1067 2821 14 4768 4050 3043 4469 3160 977 2197 142 231 1223 2281 3019 1657 1609 4062 1618 4890 942 1987 2986 2635 558 3194 1406 89 4581 389 4951 4246 3383 3690 4106 1953 867 3226 4503 1181 3619 1444 4423 1508 3327 2112 2606 4415 2148 1042 401 2937 108 3765 337 3807 2445 4637 4036 2259 2019 2323 4075 1156 3695 1152 2266 4875 4377 1851 1330 204 3513 13 840 3355 1728 4901 4135 2484 4288 3601 4515 3813 3110 2325 4307 743 682 234 3292 4489 3062 4988 2144 3532 4229 2156 2127 1180 4765 3459 4598 3929 939 4695 3601 2117 83 4251 3243 78 3567 1064 2852 2675 1759 4333 4764 2059 3539 4663 2361 2140 4729 1289 4786 2812 1116 4953 1277 281 1056 4408 961 4361 1086 1872 2715 3869 2497 4803 2700 3999 1091 430 3359 3848 235 1383 1398 73 2140 2122 4235 3418 4362 4283 1613 87 1233 563 1162 3174 1553 2134 3123 190 3974 2155 2959 3875 449 3633 3942 2563 2595 3472 1241 3883 4209 221 4741 467 1896 213 1939 4126 93 243 3447 3811 3289 3785 1424 764 1625 2987 1541 863 2545 683 2256 1546 2202 4584 2458 4861 3157 2597 3822 4178 841 4935 4244 1748 4029 4949 3853 1790 4779 3267 3384 2923 771 325 4048 668 4790 954 1533 888 171 4174 2790 3375 3205 2338 1225 803 1136 2520 2186 2201 1434 2065 1595 3580 1730 429 492 4119 2484 176 1258 4181 3068 3522 2546 765 927 974 4834 2093 4634 632 4857 4895 2414 612 130 719 4146 3802 998 680 1814 852 2037 3302 2849 183 704 4605 180 1044 4373 3995 1204 1330 4465 4326 3588 2896 4656 2256 2262 924 2910 286 1507 1306 2865 2110 2112 4312 1348 3821 1577 56 4138 2279 398 1353 763 2334 4613 2322 190 1345 1051 2203 2819 85 4479 4843 2309 2962 1565 4698 4089 2109 3639 956 2003 1330 134 4582 3785 3031 2877 4507 572 3995 135 434 4083 2813 4206 1240 838 4849 2580 1461 3906 1525 4161 4641 39 4889 2012 2882 1478 1208 4389 505 1059 3281 2117 3500 478 3555 2607 1031 687 2893 3448 2604 1440 1540 42 156 3265 4539 1871 1387 1161 638 1105 2402 1127 220 3535 4775 727 3670 4375 1212 2898 1331 1594 3467 1862 380 2081 3386 1366 3380 4809 2794 979 4548 1348 1577 454 817 3634 4344 2857 309 327 1236 1448 1771 2953 966 3663 1264 838 4171 3180 1955 4168 2452 3379 665 1029 4354 351 2222 1505 1668 2054 2923 2363 2308 2393 4265 696 4105 1654 4185 2755 2539 928 2057 913 3432 4269 664 3874 283 1488 248 1376 777 3608 203 2884 4367 4604 1476 23 1543 1651 2376 1489 2775 2701 2198 1930 3846 459 1936 4376 3651 1217 1999 4463 3891 4924 1641 4487 4576 2448 881 2463 4668 3065 1282 52 2310 4598 624 4508 1498 3999 1127 2579 3505 2177 2552 2499 1387 2576 1657 382 3409 219 1569 4529 3527 4115 4638 1785 2558 3267 3785 2620 584 1235 4037 316 368 396 1022 4935 1903 425 1331 2320 509 3965 4110 3671 4169 3974 565 2607 2121 2146 3051 318 1202 2275 3658 1762 1463 3960 4725 2286 1796 3153 2739 4677 208 2692 494 165 785 3049 3121 3472 3619 1218 3954 1059 4128 538 1451 3064 225 1883 2507 499 2642 635 1232 3219 156 901 3159 1198 1870 43 668 868 4280 4674 1358 1334 744 4358 3905 2512 1826 2085 281 3626 2788 4196 3230 180 4570 4782 2086 4832 1215 4318 2129 2110 3285 337 4729 382 2320 955 3972 687 239 2817 2183 1936 3082 2349 3693 3565 1027 549 179 3137 1561 4766 3509 3640 1823 4259 975 775 387 2767 259 2295 375 2000 1565 4910 427 4257 1576 747 1622 3172 4966 4822 257 3890 2505 2555 495 1482 1972 3571 648 1894 3000 1332 2512 809 2093 3199 4406 1234 1310 3524 365 1081 3118 3203 654 2533 2179 4875 2216 3252 2360 2032 338 3617 1524 3478 1156 441 1057 2688 3087 1850 3640 1616 557 2792 4432 1427 3246 2274 2204 2941 2294 4928 4029 4515 1009 404 1263 2722 2988 4569 2779 2470 1385 3169 4809 2782 2248 1325 1192 3802 3047 1283 3924 4967 3835 3167 616 4489 296 1322 3124 3285 3063 706 2584 4200 2861 3262 3681 1366 4787 104 1653 2968 4677 2577 2911 1678 3179 2186 351 221 3001 630 2290 1610 3939 557 1360 1305 2146 931 12 3056 4566 4124 3952 2243 2996 4743 1628 4285 1011 3763 455 3954 762 553 1286 534 3195 1305 2175 209 717 3823 798 3344 1279 2139 990 3471 1638 1452 4424 2486 1303 2027 792 343 2442 2038 483 1286 1084 2759 65 4560 122 71 1619 414 4233 2939 2083 4252 2767 1796 2087 745 672 1535 2371 3809 745 3045 479 1638 472 3581 4894 4952 3124 4422 3956 4308 2381 1561 3231 129 25 196 4394 2779 2453 4435 1427 563 1507 2486 2124 114 1252 4438 2162 2457 17 3517 811 2143 1117 3169 43 4412 1996 906 3402 2789 382 2989 2253 3323 3558 4063 230 1 2664 3736 3064 2802 3960 262 3764 2807 326 3418 483 3236 4997 1344 3804 147 1471 2818 4101 284 802 2075 3406 4940 1147 2621 3092 1677 379 3511 4222 2676 1595 3195 60 4077 1278 413 1730 270 1564 2549 3106 904 3150 1071 4665 1657 4716 2941 3490 1741 572 558 799 1395 399 74 2819 1920 188 502 1500 208 2069 925 111 226 4286 1104 1337 2481 1331 3472 1748 2392 610 719 2134 289 3436 3214 1053 1407 1881 3279 2348 4702 1023 4559 377 3870 2673 246 3222 2810 575 4628 1015 2241 1449 2359 1734 1712 3663 2139 3169 1192 4380 2361 137 3032 1250 8 624 4019 1771 3949 3942 2628 3655 2118 3605 1822 3340 856 3222 3779 3373 4372 3610 1314 1413 2062 715 913 4282 3376 3635 1122 4741 4620 3748 692 270 2091 968 2733 4697 2667 1663 2249 2239 4616 511 732 3039 2270 1578 2201 2792 3481 1774 1778 1303 1659 2162 3743 1412 3376 3803 4623 1075 4952 3867 4650 3581 500 2447 1923 921 2172 443 139 3372 4437 870 1349 552 149 67 1755 1196 4496 1920 2717 2555 2237 2110 2003 910 2735 456 1437 1793 1073 3419 3707 1859 765 351 262 2970 2707 472 1618 572 406 4467 3965 2288 3965 3084 3014 3733 1086 460 692 3246 2105 853 319 4181 1525 4592 3600 3586 1200 1172 4087 1920 4349 4324 3305 2560 1586 2635 4025 3157 743 2159 4547 2384 2158 3640 1399 1855 1116 1087 3274 4442 3363 4245 126 845 299 4469 2854 1925 3609 2218 322 4015 4795 3799 2462 4454 4799 4927 4399 2477 4122 3041 4995 4797 4195 4176 2310 4667 3376 2578 4596 3969 1594 1543 2402 1197 2273 3033 4197 753 4984 4625 1492 1145 1652 1230 1768 2057 3272 1 2643 4610 235 1315 788 3513 2956 2311 4966 536 4903 423 2337 3664 3885 2388 2654 4639 2765 4794 1565 4101 4767 4484 4369 3456 2975 3867 2500 2393 664 491 347 2273 3297 9 2741 4549 3499 43 3403 34 1309 1456 4911 1898 1537 4671 857 3121 4568 1453 1902 4508 4349 3062 4482 2799 1855 4052 3575 3430 1090 1424 4504 3895 4644 2016 1837 2841 4596 4161 2314 824 3115 2494 3825 3957 3833 231 3051 4296 3985 1865 1731 2634 2804 4705 79 4265 4080 4571 4283 1367 4901 1285 4385 2155 297 3053 2456 3346 2237 2285 1899 1477 4176 486 2765 877 4284 61 2497 1152 3749 3161 4378 1739 2441 2706 2149 2716 3217 1709 854 1268 1396 861 4988 2435 1656 453 4926 2967 1398 352 3913 3082 2883 333 3654 2370 4631 3406 718 4746 576 1232 2047 3168 1652 228 4407 1649 3600 1470 4337 3098 1638 4850 3818 1806 3150 4577 1774 4999 1495 1652 3496 3340 2253 996 2063 2792 3272 2824 939 3959 7 125 3919 2329 3082 1652 198 4489 1704 3329 2581 298 356 4726 591 4095 605 4388 2347 3481 4971 1234 1402 3382 2341 3976 1382 2468 1635 724 639 642 3141 3155 3105 32 4117 658 3893 4968 1856 3506 2909 693 3129 3974 4368 3763 2564 4553 600 1914 3532 1276 3903 986 1553 4872 1618 2108 4200 4296 3746 668 3121 2138 632 3330 3558 1009 4818 1422 4053 3124 1138 4158 4517 2392 4633 4099 3543 3753 2769 3379 440 4916 2782 3548 891 4174 2318 404 2831 105 1351 1137 744 2308 2989 569 4475 3817 556 3538 4022 2903 2398 3090 399 4903 441 2230 1018 1113 2033 3115 3752 4810 679 3113 2594 3806 41 4023 1189 3122 952 4740 898 2559 1301 1383 2940 1479 3075 1667 2722 3269 2639 1050 90 86 4787 1985 1457 4293 1212 4596 1843 2025 757 2590 1486 3796 2668 4440 1930 1850 350 932 2735 4851 4809 182 1938 4472 4334 3912 533 3901 3671 3328 2803 2274 3890 3796 1783 2267 2761 4944 2042 4494 1704 201 4332 485 4225 1648 1586 4209 2020 4598 1177 427 2062 4970 4036 4209 4045 4093 842 1247 2134 4322 3281 927 4901 1424 974 3852 1793 761 3576 3303 3211 3999 3511 2229 4102 1766 4056 1406 1670 2517 4730 2829 4881 2545 3333 361 3732 489 3108 4287 4814 3517 151 2664 2899 3767 582 1948 1199 1108 2758 962 4987 4730 1610 829 2725 4636 4389 2824 4408 1324 4251 4371 2379 4618 3507 5 2155 591 3720 1691 1688 1310 2754 1394 4733 3884 4456 840 4696 1872 127 3986 3871 77 716 3013 1517 1042 1574 140 2713 4946 174 1024 689 4621 269 828 467 760 1380 2376 2819 4234 1439 4600 1277 263 851 2438 3147 3371 64 1681 1964 3092 988 3184 2839 2539 154 3616 4942 2399 1132 2059 1580 4192 2876 4308 935 431 2818 636 3972 4161 3681 1326 3503 3914 3941 1849 2872 1371 3425 2812 1154 2757 4139 3366 1935 368 2370 2817 2789 1453 4505 2469 1575 2036 1862 3096 4046 3390 3850 4845 758 4084 2278 1749 1521 893 2150 1066 2598 2186 2236 467 1774 3081 2613 1511 2108 3171 724 3508 576 3518 944 2794 1554 2825 3317 4032 493 4297 47 2914 2859 4034 3342 1638 3767 4582 4013 1742 3235 273 1200 2278 3357 2099 1944 56 1411 4558 1583 3140 1611 3455 1214 4380 739 4372 560 2171 2820 2625 1534 2436 4066 1627 1806 505 515 2255 1011 2400 4886 4080 4064 1764 4652 4831 2299 1748 418 3911 4203 4210 1722 920 1460 1419 719 2975 2985 258 678 4809 2165 732 2206 2943 2012 2967 3360 3507 151 4293 4373 2712 332 1421 2544 2689 3434 2452 1434 2212 3664 3484 193 1493 1074 32 2940 1092 4774 1487 2077 1252 1796 2614 3693 4118 4215 3708 4909 2353 4074 480 2176 3258 2028 1440 4664 1285 688 4063 86 3511 3928 81 730 4025 2956 879 4508 2393 2469 102 2247 119 1147 2657 3408 4906 3470 4046 952 1604 297 4154 2999 2550 2444 2910 4382 440 3004 3976 4479 2358 47 1266 3612 3300 1477 2011 503 1832 4195 3440 1508 3575 3012 1770 2620 1937 1597 1412 1813 1136 821 1789 4758 1197 2202 3313 3335 2834 3289 4125 1304 3274 2608 736 293 3618 628 552 2212 1996 927 3208 4488 2738 2316 761 4050 2973 4203 4099 494 4617 2134 703 1644 2323 314 3475 59 1521 1515 4232 2030 2951 2905 4259 1358 4287 110 1616 2892 2314 2506 3306 198 4691 914 4172 2488 4608 383 648 1691 3219 3953 1195 3985 4918 4809 1065 4015 3000 4144 3842 1711 2943 3050 4040 504 3104 3642 2005 2247 3745 3722 3040 217 3985 126 1902 4497 387 550 3092 3835 4127 4169 4633 1475 1554 1443 4550 2740 1607 4573 1351 3982 3862 3370 2756 4288 4265 4931 668 1625 75 611 3129 2525 2204 4076 2545 1600 2679 196 3366 2277 2997 156 3805 3440 35 247 2477 1850 4943 859 2217 1053 3453 1703 4627 2688 2686 624 3469 2658 676 4176 1822 1589 1512 4386 1310 2007 3832 2210 2042 2571 4801 4406 4683 345 4967 3488 4884 3945 1398 3 3301 2606 4324 4875 1538 3273 3521 14 1033 4913 792 4083 664 890 4921 595 2554 1843 735 3358 715 4732 1137 4627 2656 2808 576 2003 4693 3242 2700 3932 3528 692 4009 1252 1877 4132 1266 584 1709 1833 4044 1639 3853 4540 1667 3572 4841 1746 904 542 563 1281 204 3091 95 4219 3615 3133 1062 4069 2112 943 740 439 4631 1396 1745 2873 314 2360 3035 1086 3673 3775 2825 3184 3994 1593 2319 4460 4518 4436 4105 1633 4424 4235 3476 3802 22 2190 502 1790 745 2896 2800 2530 3120 1670 3379 2004 1726 3346 93 1271 2981 2931 3612 243 4949 4313 4530 2935 1511 4441 1656 4032 4187 1392 232 3281 450 522 1086 419 4138 2492 64 114 1379 555 761 1112 3906 4750 3426 338 2504 29 820 4946 129 1451 1230 2912 3219 3439 1277 3084 303 3912 2426 4237 3691 391 2790 1761 1518 819 4032 1741 2699 2643 2411 3172 4302 2059 2590 751 3805 4477 1803 4082 4794 1907 4953 578 4893 1406 2855 477 3807 2999 1666 1790 731 3997 247 3757 1190 1022 4039 2329 2120 3730 4358 2616 2905 967 519 4469 3359 3926 183 4683 3346 2692 3008 2094 867 648 2812 4978 2941 1912 1234 2216 4114 117 2975 4806 3759 2092 2502 1813 4504 2873 4331 4514 643 2848 4073 4637 1541 2972 761 1803 2307 3263 1815 193 2563 171 23 2325 99 2417 2689 1682 3627 2440 956 3135 1480 3975 1079 3745 2441 1155 3748 3644 4847 431 4402 2834 4729 4375 2068 3229 779 2813 2315 3436 2911 4289 643 2125 3510 3884 2523 4512 3694 4949 2606 4554 1001 1658 4070 4529 1308 1689 467 4040 3831 979 543 1637 2008 4175 4043 752 148 299 1125 1501 4084 130 1620 4147 635 1620 3795 584 4022 364 4501 148 4236 596 4492 1562 1066 2074 4138 4684 4392 2394 2001 3842 2999 142 1532 4833 3954 1071 2483 4644 2209 4759 1488 3899 2122 62 138 3715 1155 897 3089 2154 2241 4333 3950 491 3347 2949 1413 2777 4304 1995 4629 4534 2027 1089 4159 1267 4259 2979 1044 3572 2467 583 1379 2365 4726 855 4667 2715 2957 4485 3450 3213 3284 4811 291 3025 3846 3642 1296 3772 3346 451 1320 2018 2187 874 4763 1542 2816 2176 2330 817 1728 1099 2261 4890 4912 4405 3768 3301 3275 4711 1525 4734 535 1238 1308 1995 1172 1474 1092 1044 3307 596 2620 4920 3727 1669 4517 4811 3424 2533 3819 4265 3761 1208 166 1912 3178 816 3085 2833 3898 1522 3433 4469 1914 944 3799 1783 2647 3308 1113 4957 4596 142 2283 2724 222 4576 2363 988 3799 977 1197 3545 486 3390 4535 2422 2003 2769 3529 807 4361 2382 4514 3953 1646 4954 4269 3520 2303 1575 58 4697 594 186 2329 2062 2809 2527 3724 1514 60 3932 4750 2098 4221 1923 3016 109 4309 4072 1085 4307 1475 2942 3414 3201 2092 3741 1024 1157 3902 1901 1522 1056 2704 1640 4804 1188 3921 3317 4498 2899 59 4854 4026 3327 3384 4899 3947 1868 811 1551 2909 3757 3198 3352 3411 4177 3637 669 2320 297 3916 1983 972 3946 1205 239 4365 3694 463 3568 4232 995 2481 2246 4307 1177 1991 1173 3057 3636 280 2816 2975 2641 2609 369 2539 2481 2219 370 1290 1175 4401 3261 735 3158 48 2093 4778 3875 3439 1157 4400 2389 2980 433 3746 1660 3434 286 1707 140 3494 3057 4031 2785 1692 3029 1518 2577 2979 2315 807 539 342 616 1306 919 2052 3381 1635 4206 4012 3783 3420 3293 2996 4203 3582 4158 1690 2703 2962 1700 1312 4140 2829 2561 4397 4457 2056 2886 3742 4457 4887 4955 2700 4317 3684 2404 4901 4448 788 242 1367 4540 2692 955 1596 3112 2509 13 3555 3026 2389 270 916 1201 885 1711 2846 520 4631 528 2959 4627 174 3414 4242 376 2513 2256 312 3814 139 2783 1445 1846 473 1744 1781 4842 2911 4779 2642 4262 4111 1904 2677 4469 3348 399 2635 4590 3198 1409 4594 875 4390 4333 275 4383 785 4606 4739 1923 429 1736 3565 1807 3649 4224 2535 1845 1680 2821 2890 4026 510 3350 2179 3118 2010 809 2809 919 1382 992 2461 4691 2225 2811 2803 4821 1781 263 4160 2243 3367 3135 3670 2642 1486 4356 4002 177 2730 3634 3099 4860 1771 2571 3833 1889 958 301 1343 4996 2309 3676 230 1776 2953 4215 238 4939 1365 4881 1148 2923 696 4335 178 2433 3178 3104 3356 2559 900 3398 4922 197 445 2951 13 4050 3858 993 3179 1918 1952 3135 4934 4348 3330 1108 3930 34 1115 559 4293 3873 4333 4119 2269 4101 4213 213 3702 4207 2663 250 1991 4977 3264 3986 4511 4888 1120 325 4169 4650 4636 1841 390 4591 1753 3599 1147 1611 442 2630 3894 4350 282 3460 1607 1928 3260 1657 4102 1966 175 3762 3197 3455 2640 3710 4327 3338 3825 2442 3674 3609 1278 3441 4739 2472 949 538 4902 2296 2323 266 2255 3900 1906 3289 2159 4079 92 378 3753 967 4025 4150 387 4519 4893 1716 1537 3215 3996 181 3456 964 948 1971 3861 2910 4649 2058 1599 4311 2035 1149 2059 2032 2728 1970 4938 2077 3294 3371 4135 4049 3258 2930 3116 1195 210 1437 4594 664 785 4811 1689 2503 1337 1683 1009 1510 4265 3714 3371 2895 2964 3864 1584 493 2865 291 628 1543 3679 1808 3544 3333 3080 961 4480 2415 3677 1365 915 4580 1488 4715 1342 2821 1243 556 4524 1731 1534 465 2332 1200 1636 1363 310 3887 2935 4883 4554 539 4048 69 2346 4621 4474 1926 3150 1441 3092 3875 4294 2261 3517 2921 4424 1903 832 3448 346 2025 2192 1781 744 244 751 3409 4815 4799 342 3190 4389 2151 2632 295 4590 1644 1312 2022 1537 3177 4746 381 716 2896 3114 534 4228 4366 1251 730 2313 1969 568 4539 3994 1614 2312 1720 1546 797 94 1962 1773 3252 2766 3252 3741 2244 4342 3826 4323 4311 1088 3479 2819 1770 3748 697 1633 1407 3346 270 4073 569 3485 3757 3679 4677 7 3500 1766 2497 1505 2357 4430 4407 4461 1920 1385 624 4682 2335 240 950 1942 3187 707 2409 4945 3182 4099 3177 4976 1261 43 669 4447 1289 153 3027 4943 4129 4672 1055 4512 5000 4292 2743 3554 353 2612 1666 1679 2138 2500 177 1518 3874 3292 2520 4758 2342 2972 3802 141 1806 3089 1181 3370 3075 4972 3488 149 3114 2409 3882 1013 698 4324 3526 2718 3704 541 3177 4002 2458 2110 1250 134 3696 1332 2936 3956 365 3761 3622 3718 1189 4068 274 3071 3085 1882 2067 2956 1489 2177 3956 639 1365 3077 2377 817 3595 1088 1538 4065 2330 4069 2329 1206 2319 2376 3585 1345 281 1595 182 2878 2385 3415 2270 955 3319 3801 4780 4082 2094 4304 3258 18 4384 523 4896 2552 851 3189 1837 3046 576 1345 2817 4744 4714 3445 1141 4950 327 332 2628 2243 3120 3767 3728 1515 133 4730 4677 4475 1168 3798 3386 2964 189 2488 2185 1401 4584 1605 204 4325 4357 4133 4013 3749 3414 1469 472 1408 1396 4899 661 1636 773 849 1451 390 3200 3299 3339 4041 780 4133 3010 1149 2127 2928 4704 2076 2053 945 4436 3093 1474 905 803 4957 4832 1631 2687 1219 3183 1661 4263 1865 3799 2198 1712 2408 4449 2523 2099 3848 275 2055 3488 1052 119 637 2757 1234 2003 3428 4182 1533 893 684 2378 3248 3659 3846 2983 3160 3596 3543 3899 1889 2049 487 1485 3402 3262 2521 4 3539 4404 2572 3104 1284 4895 199 3020 2374 481 1003 1872 3910 1091 789 2035 182 3292 3179 2703 2189 2909 2053 4662 1253 470 3344 3408 618 2613 3027 4893 3709 2366 2133 4063 4580 1762 3421 2930 376 3812 4173 1816 60 4795 1630 4452 2362 3755 3566 4470 4208 4906 4969 2389 3676 2110 2924 1369 4795 4126 3465 1322 1023 994 521 568 3430 1943 526 77 1994 2702 588 2921 3669 1107 1521 2362 644 3225 4563 2490 3978 301 274 4086 2747 2341 1089 1831 3507 1481 169 2155 2935 4872 856 2341 3487 4459 3111 4224 146 845 2020 3838 2848 3599 161 2906 2333 550 4742 2547 94 453 3927 2193 412 4877 192 2181 4114 2324 3381 3376 2558 2941 1269 3263 3030 4995 248 1940 771 675 1804 3231 1956 4662 3984 853 1358 4207 2619 3024 3951 2049 1781 4391 1038 2124 3824 1554 2291 3489 3979 1108 4080 682 2453 4923 7 3647 2661 4518 4154 1213 1452 4654 1 223 4935 861 1462 4066 2843 490 3200 4373 4876 160 4711 3655 2280 4106 1778 1054 4022 1053 2926 3060 4514 3129 2414 4038 4530 4044 1522 2970 2604 1924 4938 2395 1408 1149 2637 4569 4177 4600 399 94 2130 3629 3270 4690 4883 2311 1712 435 4444 2468 606 2350 3785 2011 1662 4626 3926 1216 2595 3901 4229 2616 2340 2590 2650 2156 4775 3069 1853 2279 3774 1078 3777 2269 4208 3846 4474 4026 1068 3307 1610 2301 3751 467 4437 1653 615 3343 720 4485 4949 2852 4088 1377 1447 4770 2682 2982 1705 3433 1274 4399 2964 4975 4443 4225 1386 4330 4806 1579 4950 4653 1833 1072 2559 1998 1747 4208 4416 3978 4583 2939 2769 1272 4838 4487 4259 214 3612 486 4565 1018 4710 2700 3443 4426 4320 4426 2535 3082 2717 1945 472 4097 1386 4876 3525 4091 368 4586 950 3721 3820 4560 1821 1740 3101 2180 185 1160 3766 1379 727 2389 1756 1014 2389 4854 3155 1422 2580 1102 1353 660 1799 4079 358 3998 2844 4794 2495 2996 3788 2529 1585 1657 4577 754 4009 3877 1659 582 1417 4477 4865 4990 293 2995 3525 4558 3674 1974 1735 1121 4249 2138 1605 857 1177 16 4023 2077 514 3076 1902 1695 2926 2020 581 787 3184 3793 4679 4776 3064 2386 4180 1196 2876 892 1889 2612 2919 1463 1458 278 2411 4732 2853 2939 663 4779 4875 3934 2066 1827 3550 1248 2373 4896 4577 4416 1805 263 3771 1312 2513 2647 875 1945 1268 2616 2463 1179 1163 4575 3066 2394 4927 4067 2784 3409 4800 1286 2640 2451 1494 1084 2015 1025 2416 4839 4788 1661 2264 522 1141 1418 206 4484 2586 4521 3766 445 1986 3409 274 859 969 3446 3824 2787 2309 273 1409 3296 1559 3889 2367 1771 1822 190 1459 3282 1849 12 3873 2103 4850 1853 1884 648 3019 4238 50 3059 4306 2291 4398 2747 1794 4877 3656 1650 4799 4250 4982 4955 330 2291 594 3651 3876 307 2252 4225 4396 2165 2180 1938 2 4137 1750 2652 4897 1034 76 2344 4431 498 4508 4439 3920 4667 3731 3336 840 975 4272 4680 2994 4610 1018 2561 4917 3581 92 3517 4632 408 590 2654 2378 420 1870 3234 4948 2381 4338 4735 2984 4753 4973 629 4915 3827 4357 1374 4640 398 4453 4373 1581 904 4304 1967 988 289 469 1397 4363 4725 309 3964 420 620 1375 1676 1729 1358 2720 1755 368 1199 2230 652 2835 4166 4033 1977 1752 143 534 1049 1123 4082 555 4125 3 217 3133 1290 437 1721 1324 309 599 3016 2274 3181 1145 2190 4096 2905 1481 4474 4628 219 3590 1219 2492 1275 2938 2780 4459 1324 1707 1259 1315 1535 778 1699 1120 627 2431 1270 4630 2837 1036 2277 4056 277 3938 4778 4950 1158 3044 2106 3303 3131 558 3864 134 244 894 724 1118 4348 2657 2134 3148 2840 265 1336 2915 2328 654 1975 3720 240 4276 1878 2925 1837 2392 4784 1013 3604 2520 323 2547 609 2087 1639 1844 3758 466 16 3959 1262 3460 2663 783 370 371 4346 541 1327 2280 4362 1385 1844 241 977 789 4561 2086 485 1963 3545 3794 857 496 1020 370 4452 4225 2189 242 4084 3971 3840 4627 792 165 3409 612 1171 2547 1282 3441 4919 554 1287 4391 1739 226 1362 4719 1474 1036 3589 2675 1197 1489 3097 1231 2150 4250 503 3836 4410 4470 1437 4340 2761 893 1718 3739 2818 3992 3259 4214 542 4724 2362 280 1929 3963 2273 89 118 3975 480 977 1739 1863 4756 4705 4409 2094 4805 2349 2823 4221 649 789 745 1561 66 1314 4438 4813 4961 3693 2674 1181 2077 3103 4005 3586 4584 2347 4624 1631 3286 1989 85 4146 2635 4416 3459 2077 2202 265 852 3278 4627 2790 3572 3422 4065 710 1079 1007 911 1123 812 433 2279 2983 18 3778 2888 4772 2274 3810 4720 605 2480 2826 362 4117 2084 1031 4924 3500 3041 1260 1044 4026 2555 4866 963 3389 189 16 3940 2184 2973 1483 104 2591 4847 4612 1294 4054 4840 3815 3130 792 669 1193 2413 2226 1159 3343 2248 3906 1287 2690 3618 4111 779 2219 1210 2371 848 2451 344 582 2694 3215 2434 2995 2326 2948 1367 4498 3884 2163 2944 2580 1383 3676 1369 1354 1858 2569 4239 1627 2576 1006 2752 907 3375 4096 593 270 4179 4696 4513 2203 809 2420 2497 2594 3320 1134 1822 1819 1068 3517 2043 4808 653 1755 884 4460 4882 4474 2392 2931 3186 876 1012 3865 4204 115 1783 4377 2930 3735 461 4265 2932 4806 1238 1700 2819 1424 2435 3390 1379 4276 2025 513 4986 4964 1211 1866 2798 2152 790 4482 2316 361 4962 2829 3458 1891 573 2744 4989 771 4728 4725 4520 523 2655 2449 2305 1204 763 2417 1850 2078 772 2584 231 3396 2007 540 2355 3829 1781 4641 1776 1843 2541 3990 1527 2658 1488 2523 1270 3010 193 3572 356 264 1744 3360 3620 1225 2960 1906 656 201 4828 2074 2501 1116 1912 362 2222 4747 281 1942 3978 21 4189 2443 3161 907 3668 749 2632 2197 644 2413 976 4557 3486 391 3512 4281 1174 2930 435 4452 1125 2514 4071 2558 674 3745 4217 660 265 2222 1697 145 3555 459 3270 901 3532 2190 4706 116 3611 2609 1248 3238 4011 4317 3591 3753 3691 1475 4563 2607 3637 892 3694 2730 4036 524 2250 3766 1357 2254 3452 39 914 3711 3091 1622 3722 3761 2724 3281 594 3718 3903 3523 1190 4121 2799 617 3959 1211 7 1642 2107 4020 1720 4894 3325 2428 4106 3181 3881 3058 2475 2200 1618 3441 2378 2484 3197 4025 1515 4972 1929 3177 4320 989 4506 1104 1788 2892 2814 3660 1476 4057 2294 2566 3346 115 2789 1923 1752 3511 1915 4730 4763 1899 3349 1472 374 863 2254 2182 1217 402 323 2092 2277 3481 4350 4782 544 4818 858 3687 4392 1489 3978 3630 2737 3552 2733 2258 3126 2442 3374 1076 1943 1525 29 2653 2878 4095 4682 2688 3375 1467 1933 4131 19 1326 4111 2693 2863 4822 247 4478 3345 1173 3091 4641 2308 2262 1621 2987 4439 603 2656 111 4955 1672 102 252 3738 3806 2388 1552 4410 545 434 3412 1317 4435 4948 3823 846 3817 2677 3493 8 4242 3344 30 1896 4132 482 1900 2523 1308 695 1272 2705 1628 4736 1851 1268 2614 2999 1006 3156 2871 2438 4894 4099 1085 2384 4412 3192 2967 3719 2887 1978 211 4580 938 2343 3148 988 967 2919 4769 3671 2473 3984 2735 4408 2 3642 553 2062 1397 3948 2901 4774 3266 436 4557 168 3919 569 907 3753 1333 4103 4138 1987 935 1488 1447 4081 442 110 681 2751 833 2092 4295 3205 4129 2913 1792 3847 4826 3343 185 3747 3775 2535 3161 4170 462 649 175 2244 4765 2527 501 3385 2190 3501 2247 2744 2814 696 4746 1940 800 2138 511 4611 511 1192 2137 82 187 4444 4799 2895 2616 3067 1365 4745 3005 824 1706 3209 2903 1891 1717 4863 1346 3686 1202 4273 1737 985 4716 321 2287 3736 617 1210 2585 3919 546 1847 2869 3086 1104 3997 906 3280 1959 3636 834 888 3125 769 2925 3553 1900 1160 2967 1133 534 2275 3761 4716 181 700 2820 4006 2004 201 1637 1718 315 2632 4409 4954 4821 1955 3921 4314 2043 4044 3957 787 1428 584 956 137 4650 911 2065 6 3316 4442 1389 4486 182 4972 2636 3797 1817 2845 886 173 1081 400 3484 205 539 3968 3842 4765 4449 844 3009 2529 1338 2835 1327 2864 4182 1419 569 939 45 3985 122 3477 4033 1529 4881 2485 460 2217 2661 2101 2995 2334 1844 518 3660 4084 1028 3286 3962 635 3564 4825 4319 1869 3487 1468 2683 2306 3388 3318 770 1217 3133 2635 3364 3212 2781 1999 126 3378 2288 4784 70 4192 4021 3994 1788 1485 2179 372 200 4453 4070 1545 3079 4609 1544 488 1854 2919 4102 1842 4761 4024 1118 1328 1363 1354 2022 4039 580 4156 4985 1780 1024 3796 3244 2161 2051 2795 3125 4676 3298 1904 3726 3281 4489 2848 3207 4005 147 54 3679 1160 1119 4904 3929 1482 4513 4967 1518 2622 982 1270 3791 4980 3058 1504 3394 1347 4781 913 4947 4146 1464 3905 1369 2622 2951 3201 2256 1278 780 1193 878 1869 4933 1023 2314 2529 198 3848 2448 2769 3530 765 3308 195 4555 568 4629 1047 1264 4417 4275 2145 946 808 481 3162 228 2268 2179 4149 1796 3560 618 2984 883 2588 3283 2025 4579 555 2687 4842 1372 2149 1618 4795 2142 4397 1256 2866 3472 4260 1893 2529 980 4385 1592 4994 1733 2680 118 4296 1206 4028 319 850 324 4608 1613 2716 4778 1538 4906 4376 419 3089 1402 420 2353 3032 1185 1975 3792 2653 2300 135 1379 4403 17 4328 2694 881 4739 3051 2606 1164 3209 3042 558 4648 3749 1263 492 1161 1964 1708 2551 44 4978 812 3467 4177 81 3416 3355 3886 726 3042 1500 2131 875 122 3227 2689 130 3443 3716 4326 1877 4606 1649 1273 3052 159 2289 2775 2230 720 3944 3930 4579 556 4891 277 697 3658 2572 3357 4447 845 2613 3632 4304 4013 1291 3352 4619 218 353 3575 915 4059 730 1775 4357 3245 2372 2793 1404 3902 3551 2723 4820 3154 2731 4428 1280 1821 3176 2581 4897 3041 4479 3460 2275 1077 4277 3521 2178 3461 1825 763 2043 3482 3597 407 2742 4436 1198 3959 237 2240 1545 1279 4840 3303 1750 2805 179 2811 617 2082 2777 2783 2944 4896 4407 1781 4541 1116 1191 705 4521 1909 2210 1897 4613 2786 1286 3865 201 3859 2597 4784 674 1169 4109 1387 2604 3235 3181 3532 4417 3572 3929 2225 3674 3782 3247 1902 2395 4909 1220 3985 846 4288 2368 2046 2891 488 585 1257 4874 3102 521 3590 154 1633 3955 3109 3317 2665 322 4903 1675 2657 1331 4190 3559 3774 152 4035 968 4803 2865 189 3935 4218 4372 1560 2376 4403 4200 4939 1948 4882 297 4400 2349 3034 3897 2329 2290 2574 280 3164 749 4513 3702 3683 1531 4926 4813 447 1367 2136 4470 3995 1135 431 765 4537 2000 181 2404 4279 4122 2808 2664 3926 1352 2370 1742 703 1683 822 2319 3509 4300 1607 1604 1644 2639 902 1696 238 351 69 674 4026 1379 156 1660 10 3416 1400 3261 311 3675 2259 187 901 1697 2364 1331 338 4222 1081 4277 4223 2445 4928 1826 582 73 2033 3042 2174 1137 2381 4979 2407 3792 1244 4843 2597 3004 2809 2120 1959 2414 1382 1083 3314 3602 3606 2754 892 2556 3340 2907 4179 2330 181 1345 4871 4560 2203 1609 3646 555 3267 2791 912 1894 2038 841 3933 3413 1484 2681 3468 3401 3548 3452 100 3553 3881 2044 2020 2125 1054 2773 1001 373 1429 3818 3262 3828 2172 759 1194 3121 2607 1112 1514 4098 3557 267 691 2345 3731 1055 795 4344 3718 4023 2917 960 2368 2784 549 675 4458 826 1444 3203 4391 3106 3148 1787 2240 583 3230 4376 4822 2077 3656 260 186 673 3408 4574 4502 4747 3417 4163 47 2838 492 2738 4 3845 1074 2995 3864 2173 3692 3685 1892 2937 3886 1477 1866 148 2618 3647 1639 197 2097 677 324 4951 3240 2442 2877 295 4623 1242 216 3172 907 2399 3362 4129 671 3847 365 4241 3878 3924 3792 1000 1650 2960 1654 4652 2 3996 4330 3165 423 1228 3563 2627 1333 1360 2517 4906 823 4116 286 2489 375 4729 3980 36 3229 4606 317 4249 2283 893 609 4607 4991 2264 806 3148 1497 4139 2214 4162 25 2165 967 1853 778 1916 4520 2976 854 3337 153 2773 1365 179 3516 1815 1030 4659 1142 3569 488 1410 2864 1509 2492 4976 4474 1117 1077 2396 2229 4958 1728 1079 1453 4494 2896 4755 2572 4988 1862 3490 672 4417 2236 3920 1584 3389 2325 1001 1180 1263 4272 633 2743 4140 1085 1631 966 56 2064 2807 3704 509 3407 1564 3504 584 4583 3683 3021 3844 3227 2644 1778 3367 1489 3633 1545 2193 3469 1125 2213 16 4864 2876 20 1266 777 1900 2001 3890 694 481 3115 480 425 2076 606 4391 4201 1793 4614 2819 515 956 3621 2372 3637 3976 2328 3493 3661 1657 789 4117 385 1018 4030 4560 1344 4258 1904 468 580 4247 3444 1658 1621 4780 3355 1226 2616 1646 235 2555 4698 462 3316 2001 3017 267 797 4635 3040 4482 4159 4385 593 1626
 1 2 3142
@@ -6873,436 +7319,275 @@ NO
 NO
 </code></pre>
 
-                </div>
-                <div class="clear"></div>
-              </section>
-            </article>
-            <div class="clear"></div>
-
-            <section class="related section">
-              
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/post-images/qzcf-qzjr-about-competition.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-02-10">2020-02-10</time>
-                  <h4 class="title white no-margin">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-              
-              <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://qz-cqy.github.io/post-images/noip-death-and-rebirth.jpg');"></div>
-                 <a href="https://qz-cqy.github.io/post/noip-death-and-rebirth/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-01-21">2020-01-21</time>
-                  <h4 class="title white no-margin">关于NOIP的暂停和恢复</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qz-cqy.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-
-                <div class="clear"></div>
-            </section>
-
-              <div class="clear"></div>
-
-              <div id="comments" class="bg-white hosted ">
-
-              
-                <script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
-
-<script>
-    var valine = new Valine();
-    valine.init({
-        el: '#comments',
-        appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz' ,
-        appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
-        pageSize: 30,
-        placeholder: '既然来了，那就留个痕迹吧~',
-        visitor: true // 阅读量统计
-    })
-
-jQuery(document).ready(function($){
-    $('.vemoji-btn').text('😀');
-    $("#comments").on('click', 'span.vat',function(){
-        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
-        $('textarea#veditor').focus();
-    })
-    if(window.location.hash){
-        var checkExist = setInterval(function() {
-            if ($(window.location.hash).length) {
-                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
-                clearInterval(checkExist);
-            }
-        }, 100);
-    }
-})
-</script>
-
-                <div class="clear"></div>
-              
-                <div class="clear"></div>
               </div>
-
-              <div class="clear"></div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      rui_er | I AK IOI
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://qz-cqy.github.io/post/big-sample-qzr01-t117887/" title="T117887 【【QZR-01】G同学与旅行计划】 大样例">T117887 【【QZR-01】G同学与旅行计划】 大样例</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr/"># 样例</a>
+    
+      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/"># OI</a>
+    
+      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/"># 洛谷</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告" href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/">青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告" href="https://qz-cqy.github.io/post/qzcf-qzjr-about-competition/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="关于NOIP的暂停和恢复" href="https://qz-cqy.github.io/post/noip-death-and-rebirth/">关于NOIP的暂停和恢复</a>
+        <a class="nav-mobile-next" title="关于NOIP的暂停和恢复" href="https://qz-cqy.github.io/post/noip-death-and-rebirth/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+              
+                
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+<script>
+new Valine({
+    el: '#vcomments' ,
+    appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz',
+    appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
+    notify: 'true' === 'true', 
+    avatar:'', 
+    placeholder: '',
+    pageSize: '10',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'true',
+});
+</script>
+              
             </div>
           </div>
-      </main>
-
-          <footer id="footer" class="grid-container">
-        <div class="widgets row gradient-effect">
-            <div class="default-sidebar border-effect">
-              <div class="grid-33 tablet-grid-50 mobile-grid-100">
-                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
-                  <h4 class="widget-title title white bordered">最新文章</h4>
-                  
-                  
-                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://qz-cqy.github.io/post/i-ak-noi-online2020/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/XcOUHe17O0.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-03-07">2020-03-07</time>
-                      <h4 class="title usmall">
-                        <a href="https://qz-cqy.github.io/post/i-ak-noi-online2020/">NOI Online2020游记</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
-                  
-                  
-                  
-                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://qz-cqy.github.io/post/luogu-mu-ban/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/LsGynlhxT.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-03-05">2020-03-05</time>
-                      <h4 class="title usmall">
-                        <a href="https://qz-cqy.github.io/post/luogu-mu-ban/">洛谷模板大全[TOP]</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
-                  
-                  
-                  
-                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
-                    <a href="https://qz-cqy.github.io/post/doves/" class="thumb hover-effect">
-                      <span class="fullimage cover" style="display: block;background-image: url('https://qz-cqy.github.io/media/images/HWTiDnjh-.jpg');"></span>
-                    </a>
-                    <div class="info gradient-effect">
-                      <time datetime="2020-03-01">2020-03-01</time>
-                      <h4 class="title usmall">
-                        <a href="https://qz-cqy.github.io/post/doves/">第十关</a>
-                      </h4>
-                    </div>
-                    <div class="clear"></div>
-                  </article>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  <div class="clear"></div>
-                </section>
-              </div>
-
-              <div class="grid-33 tablet-grid-50 mobile-grid-100">
-                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
-                  <h4 class="widget-title title white bordered">标签云</h4>
-                  <div class="tagcloud">
-                    
-                      <a href="https://qz-cqy.github.io/tag/XcOUHe17O0/" class="ctag ctag-0 ctag-XcOUHe17O0" aria-label="">游记</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/669fTzmrs/" class="ctag ctag-1 ctag-669fTzmrs" aria-label="">NOIp/CSP</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/JGfUi4Foz/" class="ctag ctag-2 ctag-JGfUi4Foz" aria-label="">OI</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/LsGynlhxT/" class="ctag ctag-3 ctag-LsGynlhxT" aria-label="">置顶</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/l4yUSbyQA/" class="ctag ctag-4 ctag-l4yUSbyQA" aria-label="">算法</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/GpG87CBmBd/" class="ctag ctag-5 ctag-GpG87CBmBd" aria-label="">洛谷</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/5YHnlu3UX/" class="ctag ctag-6 ctag-5YHnlu3UX" aria-label="">多线程</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/Wj08bbbmrW/" class="ctag ctag-7 ctag-Wj08bbbmrW" aria-label="">学习笔记</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/laB4cV8PqW/" class="ctag ctag-8 ctag-laB4cV8PqW" aria-label="">Codeforces</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/1yYYfIIPJ/" class="ctag ctag-9 ctag-1yYYfIIPJ" aria-label="">题解</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/7tURqR6o3/" class="ctag ctag-10 ctag-7tURqR6o3" aria-label="">洛谷日报</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/VyDl9Z2Vr/" class="ctag ctag-11 ctag-VyDl9Z2Vr" aria-label="">CF比赛</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/HWTiDnjh-/" class="ctag ctag-12 ctag-HWTiDnjh-" aria-label="">nazo</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/qjWIR15w1/" class="ctag ctag-13 ctag-qjWIR15w1" aria-label="">声明/公告</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/FwuHJNNKD/" class="ctag ctag-14 ctag-FwuHJNNKD" aria-label="">重要</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/A6K5EMTnS/" class="ctag ctag-15 ctag-A6K5EMTnS" aria-label="">微积分</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/7IKLNdSii/" class="ctag ctag-16 ctag-7IKLNdSii" aria-label="">数学</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/EF964QqUL/" class="ctag ctag-17 ctag-EF964QqUL" aria-label="">Atcoder</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/ucqMKnWEr/" class="ctag ctag-18 ctag-ucqMKnWEr" aria-label="">样例</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/nZNq1VXdp/" class="ctag ctag-19 ctag-nZNq1VXdp" aria-label="">项目</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/KdGX_R7Ny/" class="ctag ctag-20 ctag-KdGX_R7Ny" aria-label="">博客</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/xZrk8scCiD/" class="ctag ctag-21 ctag-xZrk8scCiD" aria-label="">教程</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/NpQHbc2L7/" class="ctag ctag-22 ctag-NpQHbc2L7" aria-label="">USACO</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/-SU_ouiGKI/" class="ctag ctag-23 ctag--SU_ouiGKI" aria-label="">背包</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/p4MY2Ni7Jp/" class="ctag ctag-24 ctag-p4MY2Ni7Jp" aria-label="">动态规划/DP</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/kAU4cMLlY/" class="ctag ctag-25 ctag-kAU4cMLlY" aria-label="">交互题</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/-Uo4spsOM/" class="ctag ctag-26 ctag--Uo4spsOM" aria-label="">骗分</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/Ku4f4mt2C/" class="ctag ctag-27 ctag-Ku4f4mt2C" aria-label="">树</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/P33QCO5aCZ/" class="ctag ctag-28 ctag-P33QCO5aCZ" aria-label="">图论</a>
-                    
-                      <a href="https://qz-cqy.github.io/tag/ARwT1hdHRj/" class="ctag ctag-29 ctag-ARwT1hdHRj" aria-label="">打表</a>
-                    
-                  </div>
-                  <div class="clear"></div>
-                </section>
-              </div>
-
-              <div class="grid-33 tablet-grid-50 mobile-grid-100">
-                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
-                  <h4 class="widget-title title white bordered">关于我</h4>
-                  <div class="avatar">
-                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qz-cqy.github.io/images/avatar.png);"></span></a>
-                  </div>
-                  <div class="info">
-                    <h4 class="title small author-name gradient-effect no-margin"><a href="">rui_er | I AK IOI</a></h4>
-                    <p class="founder">相信玄学，研究科学 | Think twice, code once. </p>
-                    <div class="social">
-                      
-                          
-                            <a href="https://www.github.com/qz-cqy" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
-                        
-                      
-                        
-                      
-                        
-                      
-                        
-                      
-                        
-                      
-                    </div> 
-                  </div>
-                  <div class="clear"></div>
-                  </section>
-              </div>
-
-            </div>
-            <div class="clear"></div>
         </div>
-
-        <div class="logo">
-          <a href="https://qz-cqy.github.io"><img class="" src="https://qz-cqy.github.io/media/images/logo.png" alt=""></a>
-        </div>
-        <p class="published border-effect">
-          ©2019 共 67 篇文章
-          <br/>
-          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
-        </p>
-        
-        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
-          <i class="fa fa-arrow"></i>
-        </a>
-    </footer>
-    <div class="clear"></div>
-
-      <script type="text/javascript">
-       jQuery(document).ready(function($){
-          $("photos img").each(function(){
-              var _a = $("<a></a>").attr("href",this.src);
-              $(this).wrap("<div class='photo'></div>").wrap(_a);
-          })
-          $("figure img").each(function(){
-              var _b = $("<a></a>").attr("href",this.src);
-              $(this).wrap(_b);
-          })
-          isImgLoad(function(){
-            var photos = document.querySelector('photos');
-            if(photos){
-              waterfall(photos);
-            }
-            $(window).resize(function() {
-             if(photos){
-                  waterfall(photos);
-            }
-          });
-        });
-        var t_img;
-        var isLoad = true;
-        function isImgLoad(callback){
-          $('photos img').each(function(){
-            if(this.height === 0){
-              isLoad = false;
-              return false;
-            }
-          });
-          if(isLoad){
-            clearTimeout(t_img);
-            callback();
-          }else{
-            isLoad = true;
-            t_img = setTimeout(function(){
-              isImgLoad(callback);
-            },500);
-          }
-        }
-      });
-      </script>
-
+      </div>
+      <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By HsxyHao
     </div>
-    <!-- end: #wrapper -->
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+    <link rel="stylesheet" href="/media/live2d/histoire/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left:5px;bottom:0px;" data-key="4e3a1759264749a8b6d10a20067dccdc">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    <div class="live_talk_input_body">
+      <div class="live_talk_input_name_body">
+        <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+      </div>
+      <div class="live_talk_input_text_body">
+        <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+        <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+      </div>
+    </div>
+    <input name="live_talk" id="live_talk" value="1" type="hidden" />
+    <div class="live_ico_box">
+      <div class="live_ico_item type_info" id="showInfoBtn"></div>
+      <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+      
+      <div class="live_ico_item type_music" id="musicButton"></div>
+      
+      <div class="live_ico_item type_youdu" id="youduButton"></div>
+      <div class="live_ico_item type_quit" id="hideButton"></div>
+      <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+      <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+      <input id="duType" value="douqilai" type="hidden">
+      
+        <input name="live2dBGM" value="https://music.163.com/#/song?id=459434585" type="hidden">
+      
+    </div>
+  </div>
+</div>
+<div id="open_live2d">召唤伊斯特瓦尔</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+var message_Path = '/media/live2d/histoire/';
+let landlord = document.querySelector('#landlord');
+var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/histoire/js/live2d.js"></script>
+<script type="text/javascript" src="/media/live2d/histoire/js/message.js"></script>
+  
+  
+    
+
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+    </div>
   </body>
+  <script src="/media/js/motion.js"></script>
 </html>
