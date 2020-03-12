@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.ak-ioi.cf</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-12T00:32:55.814Z</updated>
+    <updated>2020-03-12T10:18:19.917Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.ak-ioi.cf"/>
     <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://www.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://www.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[近期AC题目简要题解（upd：2020/03/12）]]></title>
+        <id>https://www.ak-ioi.cf/post/solutions-recent-ac-problems/</id>
+        <link href="https://www.ak-ioi.cf/post/solutions-recent-ac-problems/">
+        </link>
+        <updated>2020-03-12T10:12:50.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
+<p>由于这篇文章主要用于自己复习时了解大概思路，因此不会写的很详细，如果您需要题解，请自行到洛谷题解区查看。</p>
+<h1 id="20200309">2020/03/09</h1>
+<h2 id="p1270">P1270</h2>
+<p>在树上差分的递归更新时套一个类似于区间动规的循环，更新dp数组。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[NOI Online2020游记]]></title>
         <id>https://www.ak-ioi.cf/post/i-ak-noi-online2020/</id>
@@ -459,7 +472,7 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[nazo开始大厅[TOP]]]></title>
+        <title type="html"><![CDATA[nazo开始大厅]]></title>
         <id>https://www.ak-ioi.cf/post/nazo-begin/</id>
         <link href="https://www.ak-ioi.cf/post/nazo-begin/">
         </link>
@@ -534,23 +547,6 @@ Max=min(x+y-1, n)
 </tr>
 </tbody>
 </table>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[不同难度占AC数比例（2020年2月21日更新）]]></title>
-        <id>https://www.ak-ioi.cf/post/difficulty-of-problems/</id>
-        <link href="https://www.ak-ioi.cf/post/difficulty-of-problems/">
-        </link>
-        <updated>2020-02-21T09:58:29.000Z</updated>
-        <content type="html"><![CDATA[<p>灰//尚无评定：3.9531478770131771595900439238653%（27题）<br>
-红//入门难度：39.970717423133235724743777452416‬%（273题）<br>
-橙//普及-：23.42606149341142020497803806735‬%（160题）<br>
-黄//普及/提高-：19.619326500732064421669106881406‬%（134题）<br>
-绿//普及+/提高：5.7101024890190336749633967789165%（39题）<br>
-蓝//提高+/省选-：6.0029282576866764275256222547584%（41题）<br>
-紫//省选/NOI-：0.87847730600292825768667642752562‬%（6题）<br>
-黑//NOI/NOI+/CTSC：0.43923865300146412884333821376281‬%（3题）<br>
-总数//总数：100%（683题）</p>
 ]]></content>
     </entry>
 </feed>
