@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.ak-ioi.cf</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-14T04:55:03.220Z</updated>
+    <updated>2020-03-14T04:59:24.805Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.ak-ioi.cf"/>
     <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
@@ -11,13 +11,16 @@
     <icon>https://www.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
     <entry>
-        <title type="html"><![CDATA[近期AC题目简要题解（upd：2020/03/12）]]></title>
+        <title type="html"><![CDATA[近期AC题目简要题解（upd：2020/03/14）]]></title>
         <id>https://www.ak-ioi.cf/post/solutions-recent-ac-problems/</id>
         <link href="https://www.ak-ioi.cf/post/solutions-recent-ac-problems/">
         </link>
         <updated>2020-03-12T10:12:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="前言">前言</h1>
 <p>由于这篇文章主要用于自己复习时了解大概思路，因此不会写的很详细，如果您需要题解，请自行到洛谷题解区查看。</p>
+<h1 id="20200314国际数学日">2020/03/14（国际数学日）</h1>
+<h2 id="p3387">P3387</h2>
+<p>Tarjan缩点+拓扑排序+DAG dp。</p>
 <h1 id="20200313">2020/03/13</h1>
 <h2 id="uva12167-sp4644">UVA12167 &amp; SP4644</h2>
 <p>跑一遍Tarjan缩点，统计出入度。</p>
