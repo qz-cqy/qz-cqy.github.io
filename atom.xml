@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.ak-ioi.cf</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-15T08:07:43.209Z</updated>
+    <updated>2020-03-16T00:44:38.297Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.ak-ioi.cf"/>
     <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
@@ -191,13 +191,16 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[近期AC题目简要题解（upd：2020/03/14）]]></title>
+        <title type="html"><![CDATA[近期AC题目简要题解（upd：2020/03/16）]]></title>
         <id>https://www.ak-ioi.cf/post/solutions-recent-ac-problems/</id>
         <link href="https://www.ak-ioi.cf/post/solutions-recent-ac-problems/">
         </link>
         <updated>2020-03-12T10:12:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="前言">前言</h1>
 <p>由于这篇文章主要用于自己复习时了解大概思路，因此不会写的很详细，如果您需要题解，请自行到洛谷题解区查看。</p>
+<h1 id="20200316">2020/03/16</h1>
+<h2 id="p6065">P6065</h2>
+<p>列几个数找规律即可。</p>
 <h1 id="20200314国际数学日">2020/03/14（国际数学日）</h1>
 <h2 id="p3387">P3387</h2>
 <p>Tarjan缩点+拓扑排序+DAG dp。</p>
