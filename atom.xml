@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.ak-ioi.cf</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-16T12:46:44.929Z</updated>
+    <updated>2020-03-17T00:19:33.615Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.ak-ioi.cf"/>
     <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,86 @@
     <logo>https://www.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://www.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er | I AK IOI</rights>
+    <entry>
+        <title type="html"><![CDATA[大事祭[TOP]]]></title>
+        <id>https://www.ak-ioi.cf/post/da-shi-ji/</id>
+        <link href="https://www.ak-ioi.cf/post/da-shi-ji/">
+        </link>
+        <updated>2020-03-17T00:13:45.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li><em><strong>2018年8月15日12时33分</strong></em> 注册，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="grey"><mtext mathvariant="monospace">灰名</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{grey}\texttt{灰名}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:grey;"><span class="mord texttt cjk_fallback" style="color:grey;">灰名</span></span></span></span></span>祭</li>
+<li><em><strong>2018年8月18日</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="blue"><mtext mathvariant="monospace">蓝名</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{blue}\texttt{蓝名}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:blue;"><span class="mord texttt cjk_fallback" style="color:blue;">蓝名</span></span></span></span></span>祭</li>
+<li><em><strong>NOIP2018</strong></em> 普二祭</li>
+<li><em><strong>2018年12月8日</strong></em> AC50+祭</li>
+<li><em><strong>2018年12月8日</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="green"><mtext mathvariant="monospace">绿名</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{green}\texttt{绿名}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:green;"><span class="mord texttt cjk_fallback" style="color:green;">绿名</span></span></span></span></span>祭</li>
+<li><em><strong>2019年1月1日</strong></em> 发帖“还有365天就要跨年了，回想起上一次跨年，仿佛就在昨天一样。在这里，我提前祝大家2020年快乐。”祭</li>
+<li><em><strong>2019年1月4日</strong></em> 第一篇通过的题解祭</li>
+<li><em><strong>2019年1月9日</strong></em> 大牛祭</li>
+<li><em><strong>2019年1月10日</strong></em> AC80+祭</li>
+<li><em><strong>2019年1月18日</strong></em> AC90+祭</li>
+<li><em><strong>2019年1月28日</strong></em> AC100+大祭</li>
+<li><em><strong>2019年2月2日</strong></em> 咕值100大祭</li>
+<li><em><strong>2019年2月7日</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="blue"><mtext mathvariant="monospace">掉蓝</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{blue}\texttt{掉蓝}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:blue;"><span class="mord texttt cjk_fallback" style="color:blue;">掉蓝</span></span></span></span></span>祭</li>
+<li><em><strong>2019年2月14日</strong></em> 大犇祭</li>
+<li><em><strong>2019年2月14日</strong></em> AC120+祭</li>
+<li><em><strong>2019年2月17日</strong></em> 提交400祭</li>
+<li><em><strong>2019年2月17日</strong></em> 第一道交互题大祭</li>
+<li><em><strong>2019年3月10日</strong></em> 连签100天祭</li>
+<li><em><strong>2019年3月14日</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="green"><mtext mathvariant="monospace">回绿</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{green}\texttt{回绿}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:green;"><span class="mord texttt cjk_fallback" style="color:green;">回绿</span></span></span></span></span>祭</li>
+<li><em><strong>2019年3月22日</strong></em> 红题破百祭</li>
+<li><em><strong>2019年3月23日</strong></em> 三月月赛II #716 祭</li>
+<li><em><strong>2019年4月1日</strong></em> 排名首进1k祭</li>
+<li><em><strong>2019年4月5日</strong></em> 神牛祭</li>
+<li><em><strong>2019年4月6日</strong></em> AC200+祭</li>
+<li><em><strong>2019年4月11日</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mtext mathvariant="monospace">红名</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{red}\texttt{红名}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:red;"><span class="mord texttt cjk_fallback" style="color:red;">红名</span></span></span></span></span>大祭</li>
+<li><em><strong>2019年4月21日</strong></em> AC233+祭 <img src="https://cdn.luogu.com.cn/upload/pic/57108.png" alt="" loading="lazy"></li>
+<li><em><strong>2019年4月21日</strong></em> 尚无评定3祭（以前有一道尚无评定被评分了就没算）</li>
+<li><em><strong>2019年4月23日</strong></em> AC251+祭</li>
+<li><em><strong>2019年4月30日</strong></em> 第一篇通过的翻译祭 <a href="https://www.luogu.org/problemnew/show/AT3538">AT3538</a> <img src="https://cdn.luogu.com.cn/upload/pic/57729.png" alt="" loading="lazy"></li>
+<li><em><strong>2019年5月13日</strong></em> 排名首进500祭</li>
+<li><em><strong>2019年5月14日</strong></em> 提交800祭</li>
+<li><em><strong>2019年5月16日</strong></em> AC300+大祭</li>
+<li><em><strong>2019年5月25日</strong></em> 神犇大祭 <img src="https://cdn.luogu.com.cn/upload/pic/59385.png" alt="" loading="lazy"></li>
+<li><em><strong>2019年6月22日</strong></em> 提交1k+祭（我这一个月都干啥了？！）</li>
+<li><em><strong>2019年7月12日</strong></em> 成为<a href="http://47.104.147.153:818/">这个</a>的管理员祭</li>
+<li><em><strong>2019年7月14日</strong></em> 小学毕业祭</li>
+<li><em><strong>2019年7月15日</strong></em> “祭过没都月个3了调试调，时小1了花码代写，时小1了学树衡平”祭</li>
+<li><em><strong>2019年7月16日</strong></em> 第二道交互题大祭</li>
+<li><em><strong>2019年7月17日</strong></em> 连签200天祭</li>
+<li><em><strong>2019年7月19日</strong></em> 第二篇通过的翻译祭 <a href="https://www.luogu.org/problemnew/show/AT702">AT702</a></li>
+<li><em><strong>2019年7月22日</strong></em> AC400+祭</li>
+<li><em><strong>2019年7月??日</strong></em> 通过13篇题解祭（日期不太确定，原因：致远星，好久没关注，后补上去的）</li>
+<li><em><strong>2019年7月23日</strong></em> 第一次被管理员（hh0592821）at祭 <img src="https://cdn.luogu.com.cn/upload/pic/65265.png" alt="" loading="lazy"> <img src="https://cdn.luogu.com.cn/upload/pic/65266.png" alt="" loading="lazy"></li>
+<li><em><strong>2019年8月1日</strong></em> 开始使用氩洛谷祭</li>
+<li><em><strong>2019年8月31日</strong></em> AK新手村祭（其实早就能AK，只是懒得做）</li>
+<li><em><strong>2019年11月15日</strong></em> AC500+大祭（QAQ我怎么咕了这么久）</li>
+<li><em><strong>2019年12月6日</strong></em> 黄题破百祭</li>
+<li><em><strong>CSP2019</strong></em> 普一祭</li>
+<li><em><strong>2019年12月15日</strong></em> 签到300天祭</li>
+<li><em><strong>2020年1月1日</strong></em> “还有366天就要跨年了，回想起上一次跨年，仿佛就在昨天一样。在这里，我预祝大家2021年快乐！”祭</li>
+<li><em><strong>2020年1月5日</strong></em> 第二次被管理员（xht37）at，懒得截图了，贴一个<a href="https://www.luogu.com.cn/discuss/show/180122?page=2">地址</a>祭</li>
+<li><em><strong>2020年1月6日</strong></em> 搭建自己的<a href="https://qz-cqy.github.io">博客</a>祭</li>
+<li><em><strong>2020年1月8日</strong></em> 第一次投稿<a href="https://www.luogu.com.cn/discuss/show/47327?page=703">洛谷日报</a> <a href="https://ak-ioi.blog.luogu.org/building-a-blog#">文章</a>祭</li>
+<li><em><strong>2020年1月30日</strong></em> 第n次被管理员at祭</li>
+<li><em><strong>2020年1月30日</strong></em> AC600+祭</li>
+<li><em><strong>2020年1月31日</strong></em> 第一次被站长at祭</li>
+<li><em><strong>2020年2月13日</strong></em> 洛谷用户名改规则祭</li>
+<li><em><strong>2020年2月13日</strong></em> 因为改规则而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="orange"><mtext mathvariant="monospace">橙名</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{orange}\texttt{橙名}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:orange;"><span class="mord texttt cjk_fallback" style="color:orange;">橙名</span></span></span></span></span>祭//好难看</li>
+<li><em><strong>2020年2月15日</strong></em> 第一次打CF祭</li>
+<li><em><strong>2020年2月22日</strong></em> 你已经在洛谷连续打卡了 365 天 祭</li>
+<li><em><strong>2020年2月23日</strong></em> 你已经在洛谷连续打卡了 366 天 祭</li>
+<li><em><strong>2020年2月25日</strong></em> 第一个置顶帖子大祭 证据：<img src="https://cdn.luogu.com.cn/upload/image_hosting/mz6kbm1i.png" alt="" loading="lazy"></li>
+<li><em><strong>2020年2月25日</strong></em> 第一次日报投稿通过大祭 证据：<img src="https://cdn.luogu.com.cn/upload/image_hosting/mz6kbm1i.png" alt="" loading="lazy"></li>
+<li><em><strong>2020年3月2日</strong></em> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mtext mathvariant="monospace">红名</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{red}\texttt{红名}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text" style="color:red;"><span class="mord texttt cjk_fallback" style="color:red;">红名</span></span></span></span></span>祭</li>
+<li><em><strong>2020年3月10日</strong></em> AC700+大祭</li>
+<li><em><strong>2020年3月12日</strong></em> <a href="https://www.ak-ioi.cf">博客</a>（1月6日那个）换域名祭</li>
+<li><em><strong>2020年3月17日</strong></em> 大事祭搬家祭</li>
+</ol>
+<blockquote>
+<p>未完待续……</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Codeforces游玩攻略[TOP]]]></title>
         <id>https://www.ak-ioi.cf/post/cf-guide/</id>
@@ -674,21 +754,6 @@ int main()
 <li><a href="/post/first-cf">2.14第一场CF</a></li>
 <li><a href="/post/second-cf">2.23第二场CF</a></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[nazo开始大厅]]></title>
-        <id>https://www.ak-ioi.cf/post/nazo-begin/</id>
-        <link href="https://www.ak-ioi.cf/post/nazo-begin/">
-        </link>
-        <updated>2020-02-24T10:51:56.000Z</updated>
-        <content type="html"><![CDATA[<p>这里是qz-cqy的nazo游戏。在这里，你可以享受解密过关的快乐。当然，你可以通过到GitHub上面查看源码来获得过关答案甚至直接传到结束大厅，但是这样是没有意义的。另外，请不要尝试在Archive或者Tag中查询，因为剩余地点均为隐藏状态，无法再上述两个位置找到。</p>
-<p>后面的关卡如果博主认为比较难，可能会有按照如下格式<code>hint: $\color{white}\colorbox{white}{hint}$</code>的提示，请先自己思考后再查看。</p>
-<p>样例：</p>
-<p>hint: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="white"><menclose mathbackground="white"><mtext>这一关这么简单还看提示</mtext></menclose></mstyle></mrow><annotation encoding="application/x-tex">\color{white}\colorbox{white}{这一关这么简单还看提示}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2833299999999999em;vertical-align:-0.3em;"></span><span class="mord" style="color:white;"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9833299999999998em;"><span style="top:-2.98333em;"><span class="pstrut" style="height:3.28333em;"></span><span class="stretchy colorbox" style="color:white;height:1.2833299999999999em;background-color:white;"></span></span><span style="top:-3.28333em;"><span class="pstrut" style="height:3.28333em;"></span><span class="mord boxpad" style="color:white;"><span class="mord cjk_fallback" style="color:white;">这</span><span class="mord cjk_fallback" style="color:white;">一</span><span class="mord cjk_fallback" style="color:white;">关</span><span class="mord cjk_fallback" style="color:white;">这</span><span class="mord cjk_fallback" style="color:white;">么</span><span class="mord cjk_fallback" style="color:white;">简</span><span class="mord cjk_fallback" style="color:white;">单</span><span class="mord cjk_fallback" style="color:white;">还</span><span class="mord cjk_fallback" style="color:white;">看</span><span class="mord cjk_fallback" style="color:white;">提</span><span class="mord cjk_fallback" style="color:white;">示</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3em;"><span></span></span></span></span></span></span></span></span></p>
-<p><strong>请随时把当前关网址保存到本地，暂时作者还没有写记录你闯关状态的cookie。</strong></p>
-<p>下一关地址：<a href="/post/first">点我</a></p>
-<p>有空格请用<code>-</code>代替。</p>
 ]]></content>
     </entry>
 </feed>
