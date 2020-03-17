@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.ak-ioi.cf</id>
     <title>rui_er | I AK IOI</title>
-    <updated>2020-03-17T00:19:33.615Z</updated>
+    <updated>2020-03-17T00:23:23.998Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.ak-ioi.cf"/>
     <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
@@ -58,7 +58,6 @@
 <li><em><strong>2019年7月17日</strong></em> 连签200天祭</li>
 <li><em><strong>2019年7月19日</strong></em> 第二篇通过的翻译祭 <a href="https://www.luogu.org/problemnew/show/AT702">AT702</a></li>
 <li><em><strong>2019年7月22日</strong></em> AC400+祭</li>
-<li><em><strong>2019年7月??日</strong></em> 通过13篇题解祭（日期不太确定，原因：致远星，好久没关注，后补上去的）</li>
 <li><em><strong>2019年7月23日</strong></em> 第一次被管理员（hh0592821）at祭 <img src="https://cdn.luogu.com.cn/upload/pic/65265.png" alt="" loading="lazy"> <img src="https://cdn.luogu.com.cn/upload/pic/65266.png" alt="" loading="lazy"></li>
 <li><em><strong>2019年8月1日</strong></em> 开始使用氩洛谷祭</li>
 <li><em><strong>2019年8月31日</strong></em> AK新手村祭（其实早就能AK，只是懒得做）</li>
