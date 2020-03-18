@@ -2,16 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-18T09:45:22.137Z</updated>
+    <updated>2020-03-18T09:48:43.962Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.ak-ioi.cf"/>
     <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
-    <subtitle>三思而后码
-
-本站访问量&lt;div align=&apos;center&apos;&gt;&lt;a href=&apos;https://www.hit-counts.com/&apos;&gt;&lt;img src=&apos;http://www.hit-counts.com/counter.php?t=MTQ0NjY1Mg==&apos; border=&apos;0&apos; alt=&apos;logo design&apos;&gt;&lt;/a&gt;&lt;BR&gt;&lt;a href=&apos;https://www.glowgraphics.co.uk/&apos;&gt;logo design&lt;/a&gt;&lt;/div&gt;</subtitle>
+    <subtitle>三思而后码</subtitle>
     <logo>https://www.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://www.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[本站主页访问量统计]]></title>
+        <id>https://www.ak-ioi.cf/post/ben-zhan-zhu-ye-fang-wen-liang-tong-ji/</id>
+        <link href="https://www.ak-ioi.cf/post/ben-zhan-zhu-ye-fang-wen-liang-tong-ji/">
+        </link>
+        <updated>2020-03-18T09:47:41.000Z</updated>
+        <content type="html"><![CDATA[<p>本站访问量：</p>
+<div align='center'><a href='https://www.hit-counts.com/'><img src='http://www.hit-counts.com/counter.php?t=MTQ0NjY1Mg==' border='0' alt='logo design'></a><BR><a href='https://www.glowgraphics.co.uk/'>logo design</a></div>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[本站主页访问量统计[TOP]]]></title>
+        <id>https://www.ak-ioi.cf/post/visits/</id>
+        <link href="https://www.ak-ioi.cf/post/visits/">
+        </link>
+        <updated>2020-03-18T09:47:41.000Z</updated>
+        <content type="html"><![CDATA[<p>本站访问量：</p>
+<div align='center'><a href='https://www.hit-counts.com/'><img src='http://www.hit-counts.com/counter.php?t=MTQ0NjY1Mg==' border='0' alt='logo design'></a><BR><a href='https://www.glowgraphics.co.uk/'>logo design</a></div>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[大事祭[TOP]]]></title>
         <id>https://www.ak-ioi.cf/post/da-shi-ji/</id>
@@ -560,202 +576,6 @@ int main()
 <ul>
 <li>第一个置顶讨论帖</li>
 <li>第一篇通过审核的洛谷日报</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[洛谷词条]]></title>
-        <id>https://www.ak-ioi.cf/post/luogu-description/</id>
-        <link href="https://www.ak-ioi.cf/post/luogu-description/">
-        </link>
-        <updated>2020-02-25T03:51:49.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>部分内容来自网络</strong></p>
-<h1 id="洛谷定律">洛谷定律</h1>
-<ol>
-<li>洛谷第一定律：如果你装弱，肯定有人说你fAKe；如果你装强，肯定有人会膜拜你。</li>
-<li>洛谷第二定律：如果你膜别人，别人看到了必定反膜；如果你被膜，一定还会有人继续膜你。</li>
-<li>洛谷第三定律：水犇犇可以提高知名度，如果有睿智言论更好；知名度可以一夜形成，但不会一夜消失。</li>
-<li>洛谷第四定律：头像不能反映真实性别，事实上，大多数时候都是相反的。</li>
-<li>洛谷第五定律：当你有足够的知名度时，别人会给你起外号（例如：<a href="https://www.luogu.com.cn/user/87393">AH</a>）。</li>
-<li>洛谷第六定律：冒泡一定会被戳。</li>
-</ol>
-<hr>
-<h1 id="女装定律">女装定律</h1>
-<ol>
-<li>女装第一定律：一切关于女装的约定或flag，都源于对女装的渴望。</li>
-<li>女装第二定律：女装只有零次和无限次。</li>
-</ol>
-<hr>
-<h1 id="其他定律">其他定律</h1>
-<ol>
-<li>讨论版定律：当你发出一个新闻类或新闻类的帖子，一定有很多人来催更，而你一定会拖更。</li>
-<li>熵增定律：一句话的熵被定义为这句话的表达效果与笔画数的比值，随着时间的推移，一句话的熵永远是增加的。特别地，对于同一个表达效果，它必定会被简化（例如：删前留名→山前留名→留名/刘明→sqlm→lm）。</li>
-</ol>
-<hr>
-<h1 id="词语释义">词语释义</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">序号</th>
-<th style="text-align:center">词语</th>
-<th style="text-align:center">词性</th>
-<th style="text-align:center">解释</th>
-<th style="text-align:center">例句</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">OIer</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">学OI的人</td>
-<td style="text-align:center">rui_er是一个OIer。</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">膜、orz、STO、OTZ、%%%等</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8A%A8%E8%AF%8D-e67e22.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">膜拜</td>
-<td style="text-align:center">您AK IOI太强了orz。</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">fAKe</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">假，同FAKE、fake</td>
-<td style="text-align:center">你太fAKe了，你明明AK IOI。</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">蒟蒻</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">本义：植物界被子植物门单子叶植物纲泽泻目天南星科魔芋属蒟蒻种植物；引申义：“巨弱”变种，谦辞，形容自己很弱</td>
-<td style="text-align:center">rui_er是一个蒟蒻。</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">神犇</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">“蒟蒻”的反义词，敬辞，形容别人很强</td>
-<td style="text-align:center">除了rui_er都是神犇。</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">机惨、JC、JFCA</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%8A%A8%E8%AF%8D-e67e22.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">本义：名词，机房惨案，指在机房由于未锁账号导致的一系列可能或已经导致严重后果的事件；引申义：动词，指实施这一过程</td>
-<td style="text-align:center">——I AK IOI!——orz您竟然被机惨了。</td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center">I AK IOI</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8F%A5%E5%AD%90-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">实施机房惨案时常用语句</td>
-<td style="text-align:center">——I AK IOI!——orz您竟然被机惨了。</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">文文新闻、今日说法、犇犇茶馆（犇茶）</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">洛谷中的一系列神贴</td>
-<td style="text-align:center">弱弱地问一句：犇犇茶馆网址？</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td style="text-align:center">说句闲话、出言不逊、臭名昭著、外环等</td>
-<td style="text-align:center">略</td>
-<td style="text-align:center">详见<a href="/post/luogu-geng">洛谷神梗收录</a></td>
-<td style="text-align:center">说句闲话：研究珂学的最好方法是</td>
-</tr>
-<tr>
-<td style="text-align:center">10</td>
-<td style="text-align:center">毒瘤</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">原指很难的题，现指很难的题的出题人，有时特指@noip</td>
-<td style="text-align:center">这题毒瘤吧！</td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">main包</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">原指洛谷原管理员@扩散性百万甜面包，现指面包（mian包）变种（玩梗成分：main大家都知道是什么吧）</td>
-<td style="text-align:center">前排兜售烤main包。</td>
-</tr>
-<tr>
-<td style="text-align:center">12</td>
-<td style="text-align:center">神鱼、鱼神、鰰、神兔、兔神</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">前三个指大佬@NaCly_Fish，后两个指大佬@小粉兔</td>
-<td style="text-align:center">前排%鰰</td>
-</tr>
-<tr>
-<td style="text-align:center">13</td>
-<td style="text-align:center">你号没了、nhml</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8F%A5%E5%AD%90-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">字面意思。一般用在对方违反社区规则的时候</td>
-<td style="text-align:center">高危，你号没了。</td>
-</tr>
-<tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">关于SPFA，他死了</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8F%A5%E5%AD%90-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">NOI2018时的梗，出题人讲题时公开宣布SPFA死了，详见【附录】</td>
-<td style="text-align:center">——SPFA求助。——关于SPFA，他死了。</td>
-</tr>
-</tbody>
-</table>
-<p>欢迎补充。</p>
-<hr>
-<h1 id="附录">附录</h1>
-<p>关于SPFA，他死了：</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/pic/25108.png" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CF记录[TOP]]]></title>
-        <id>https://www.ak-ioi.cf/post/cf-mark/</id>
-        <link href="https://www.ak-ioi.cf/post/cf-mark/">
-        </link>
-        <updated>2020-02-24T11:58:22.000Z</updated>
-        <content type="html"><![CDATA[<table>
-<thead>
-<tr>
-<th style="text-align:center">日期</th>
-<th style="text-align:center">大号/rui_er</th>
-<th style="text-align:center">小号/PP-Automation</th>
-<th style="text-align:center">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">2018.12.*</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
-<td style="text-align:center">尚未注册</td>
-<td style="text-align:center">注册大号rui_er</td>
-</tr>
-<tr>
-<td style="text-align:center">2020.2.14</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201456-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
-<td style="text-align:center">尚未注册</td>
-<td style="text-align:center">大号第一场CF</td>
-</tr>
-<tr>
-<td style="text-align:center">2020.2.21</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201456-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/PP--Automation-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/PP-Automation" alt="" loading="lazy"></td>
-<td style="text-align:center">注册小号PP-Automation</td>
-</tr>
-<tr>
-<td style="text-align:center">2020.2.23</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/rui_er-Specialist%20%201559-03a89e.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/rui_er" alt="" loading="lazy"></td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/PP--Automation-Unrated%20%201500-black.svg?longCache=true&amp;style=for-the-badge&amp;logo=Codeforces&amp;link=https://codeforces.com/profile/PP-Automation" alt="" loading="lazy"></td>
-<td style="text-align:center">大号第二场CF</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><a href="/post/first-cf">2.14第一场CF</a></li>
-<li><a href="/post/second-cf">2.23第二场CF</a></li>
 </ul>
 ]]></content>
     </entry>
