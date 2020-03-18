@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://www.ak-ioi.cf</id>
+    <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-18T09:58:13.778Z</updated>
+    <updated>2020-03-18T10:41:47.207Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://www.ak-ioi.cf"/>
-    <link rel="self" href="https://www.ak-ioi.cf/atom.xml"/>
+    <link rel="alternate" href="https://blog.ak-ioi.cf"/>
+    <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
     <subtitle>三思而后码</subtitle>
-    <logo>https://www.ak-ioi.cf/images/avatar.png</logo>
-    <icon>https://www.ak-ioi.cf/favicon.ico</icon>
+    <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
+    <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
     <entry>
         <title type="html"><![CDATA[本站主页访问量统计[TOP]]]></title>
-        <id>https://www.ak-ioi.cf/post/visits/</id>
-        <link href="https://www.ak-ioi.cf/post/visits/">
+        <id>https://blog.ak-ioi.cf/post/visits/</id>
+        <link href="https://blog.ak-ioi.cf/post/visits/">
         </link>
         <updated>2020-03-18T09:47:41.000Z</updated>
         <content type="html"><![CDATA[<p>本站访问量：</p>
@@ -21,8 +21,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[大事祭[TOP]]]></title>
-        <id>https://www.ak-ioi.cf/post/da-shi-ji/</id>
-        <link href="https://www.ak-ioi.cf/post/da-shi-ji/">
+        <id>https://blog.ak-ioi.cf/post/da-shi-ji/</id>
+        <link href="https://blog.ak-ioi.cf/post/da-shi-ji/">
         </link>
         <updated>2020-03-17T00:13:45.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -102,8 +102,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Codeforces游玩攻略[TOP]]]></title>
-        <id>https://www.ak-ioi.cf/post/cf-guide/</id>
-        <link href="https://www.ak-ioi.cf/post/cf-guide/">
+        <id>https://blog.ak-ioi.cf/post/cf-guide/</id>
+        <link href="https://blog.ak-ioi.cf/post/cf-guide/">
         </link>
         <updated>2020-03-15T06:36:04.000Z</updated>
         <summary type="html"><![CDATA[<p>本文介绍了Codeforces的使用方法。</p>
@@ -282,8 +282,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[近期AC题目简要题解（upd：2020/03/16）]]></title>
-        <id>https://www.ak-ioi.cf/post/solutions-recent-ac-problems/</id>
-        <link href="https://www.ak-ioi.cf/post/solutions-recent-ac-problems/">
+        <id>https://blog.ak-ioi.cf/post/solutions-recent-ac-problems/</id>
+        <link href="https://blog.ak-ioi.cf/post/solutions-recent-ac-problems/">
         </link>
         <updated>2020-03-12T10:12:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="前言">前言</h1>
@@ -320,8 +320,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[NOI Online2020游记]]></title>
-        <id>https://www.ak-ioi.cf/post/i-ak-noi-online2020/</id>
-        <link href="https://www.ak-ioi.cf/post/i-ak-noi-online2020/">
+        <id>https://blog.ak-ioi.cf/post/i-ak-noi-online2020/</id>
+        <link href="https://blog.ak-ioi.cf/post/i-ak-noi-online2020/">
         </link>
         <updated>2020-03-07T04:07:55.000Z</updated>
         <summary type="html"><![CDATA[<p>NOI Online 2020 提高组比赛游记</p>
@@ -341,8 +341,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷模板大全（upd：2020/03/10）[TOP]]]></title>
-        <id>https://www.ak-ioi.cf/post/luogu-mu-ban/</id>
-        <link href="https://www.ak-ioi.cf/post/luogu-mu-ban/">
+        <id>https://blog.ak-ioi.cf/post/luogu-mu-ban/</id>
+        <link href="https://blog.ak-ioi.cf/post/luogu-mu-ban/">
         </link>
         <updated>2020-03-05T04:51:43.000Z</updated>
         <summary type="html"><![CDATA[<p>这里记录了洛谷的全部模板与我的通过情况。</p>
@@ -430,8 +430,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[多线程学习笔记（非最终版，更新于2020.2.29）]]></title>
-        <id>https://www.ak-ioi.cf/post/learning-multi-thread/</id>
-        <link href="https://www.ak-ioi.cf/post/learning-multi-thread/">
+        <id>https://blog.ak-ioi.cf/post/learning-multi-thread/</id>
+        <link href="https://blog.ak-ioi.cf/post/learning-multi-thread/">
         </link>
         <updated>2020-02-29T10:56:43.000Z</updated>
         <summary type="html"><![CDATA[<p>多线程是什么？有什么用？怎么用？</p>
@@ -485,7 +485,7 @@ int main()
 <p>我：学会了吗？</p>
 <p>你：等等，你只给我看了代码，可是并不能体现多线程的作用！</p>
 <p>我：再给你看个输出。</p>
-<figure data-type="image" tabindex="1"><img src="https://www.ak-ioi.cf/post-images/1582975475068.PNG" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://blog.ak-ioi.cf/post-images/1582975475068.PNG" alt="" loading="lazy"></figure>
 <p>可以看出，线程1与线程2是交替执行的。</p>
 <h1 id="3-参考文献">3 参考文献</h1>
 <ol>
@@ -495,8 +495,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF1313A@洛谷 | 1313A@Codeforces 【Fast Food Restaurant】]]></title>
-        <id>https://www.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/</id>
-        <link href="https://www.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/">
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/">
         </link>
         <updated>2020-02-26T02:07:54.000Z</updated>
         <content type="html"><![CDATA[<p>这题数据这么小，<strong>就直接暴力吧！</strong></p>
@@ -535,8 +535,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[【[洛谷日报#254]五分钟搭建自己的博客】发布有感]]></title>
-        <id>https://www.ak-ioi.cf/post/luogu-ri-bao-254-passed/</id>
-        <link href="https://www.ak-ioi.cf/post/luogu-ri-bao-254-passed/">
+        <id>https://blog.ak-ioi.cf/post/luogu-ri-bao-254-passed/</id>
+        <link href="https://blog.ak-ioi.cf/post/luogu-ri-bao-254-passed/">
         </link>
         <updated>2020-02-25T08:06:35.000Z</updated>
         <content type="html"><![CDATA[<h1 id="0-先上图">0 先上图</h1>
@@ -572,8 +572,8 @@ int main()
     </entry>
     <entry>
         <title type="html"><![CDATA[洛谷词条]]></title>
-        <id>https://www.ak-ioi.cf/post/luogu-description/</id>
-        <link href="https://www.ak-ioi.cf/post/luogu-description/">
+        <id>https://blog.ak-ioi.cf/post/luogu-description/</id>
+        <link href="https://blog.ak-ioi.cf/post/luogu-description/">
         </link>
         <updated>2020-02-25T03:51:49.000Z</updated>
         <content type="html"><![CDATA[<p><strong>部分内容来自网络</strong></p>
