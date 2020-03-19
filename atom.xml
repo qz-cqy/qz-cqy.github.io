@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-18T10:43:17.031Z</updated>
+    <updated>2020-03-19T00:33:20.045Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -11,13 +11,26 @@
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
     <entry>
-        <title type="html"><![CDATA[本站主页访问量统计[TOP]]]></title>
-        <id>https://blog.ak-ioi.cf/post/visits/</id>
-        <link href="https://blog.ak-ioi.cf/post/visits/">
+        <title type="html"><![CDATA[成就[TOP]]]></title>
+        <id>https://blog.ak-ioi.cf/post/record/</id>
+        <link href="https://blog.ak-ioi.cf/post/record/">
         </link>
-        <updated>2020-03-18T09:47:41.000Z</updated>
-        <content type="html"><![CDATA[<p>本站访问量：</p>
-<div align='center'><a href='https://www.hit-counts.com/'><img src='http://www.hit-counts.com/counter.php?t=MTQ0NjY1Mg==' border='0' alt='logo design'></a><BR><a href='https://www.glowgraphics.co.uk/'>logo design</a></div>]]></content>
+        <updated>2020-03-19T00:10:35.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_szfKcPoC.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_qYPGGpwB.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_LHpjBUup.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_qApjvqUC.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_RMoFfGRC.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_jzeoxLfY.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_TMRUXJsS.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_oOvwWrCS.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_inGGXRIL.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_XiynohPT.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_onaXAYHZ.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_HvalzsqC.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_drbiWsFN.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://www.mcmod.cn/pages/tools/achievements/images/achievements/107546_NfJzXhCr.png" alt="" loading="lazy"></figure>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[大事祭[TOP]]]></title>
