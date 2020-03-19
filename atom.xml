@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-19T01:33:01.502Z</updated>
+    <updated>2020-03-19T01:59:17.612Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -351,6 +351,7 @@
 <p>这什么玩意！写了个暴力，预估40分，洛谷爆零。</p>
 <h1 id="后续">后续</h1>
 <p>啊哈哈哈哈哈哈哈哈哈我爆零了啊哈哈哈哈哈哈哈哈哈</p>
+<p>大起大落：自估 110→洛谷自测 20→CCF官方 0</p>
 ]]></content>
     </entry>
     <entry>
