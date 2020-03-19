@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-19T00:52:36.151Z</updated>
+    <updated>2020-03-19T01:33:01.502Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -107,6 +107,7 @@
 <li><em><strong>2020年3月17日</strong></em> 大事祭搬家祭</li>
 <li><em><strong>2020年3月17日</strong></em> 删除所有犇犇祭（手麻了祭）</li>
 <li><em><strong>2020年3月18日</strong></em> 第一道<a href="https://www.luogu.com.cn/problem/P5524">Ynoi</a>祭</li>
+<li><em><strong>NOI Online 2020-S</strong></em> 爆零祭</li>
 </ol>
 <blockquote>
 <p>未完待续……</p>
@@ -114,7 +115,7 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Codeforces游玩攻略[TOP]]]></title>
+        <title type="html"><![CDATA[Codeforces游玩攻略]]></title>
         <id>https://blog.ak-ioi.cf/post/cf-guide/</id>
         <link href="https://blog.ak-ioi.cf/post/cf-guide/">
         </link>
