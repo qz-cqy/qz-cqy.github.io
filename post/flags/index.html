@@ -7,7 +7,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 P1044@洛谷 【栈】  | rui_er 的博客</title>
+<title>Flags[TOP] | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1584704288984">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -27,8 +27,8 @@
 
 
 
-    <meta name="description" content="题解 P1044@洛谷 【栈】 " />
-    <meta name="keywords" content="数学,打表,算法,题解,OI,洛谷" />
+    <meta name="description" content="Flags[TOP]" />
+    <meta name="keywords" content="成就,重要,置顶,OI,洛谷" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -166,8 +166,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://blog.ak-ioi.cf/images/avatar.png"/>
@@ -265,177 +264,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%BB%E8%A6%81%E5%8E%9F%E7%90%86%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0">主要原理：卡特兰数</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -523,16 +351,22 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-p1044/">
-      题解 P1044@洛谷 【栈】 
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/flags/">
+      Flags[TOP]
     </a>
   </h1>
   <div class="post-meta">
     
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-04-20</span>
+      <span>2020-03-20</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -541,26 +375,20 @@ window.addEventListener('load', function() {
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://blog.ak-ioi.cf/tag/7IKLNdSii/">
-              <span>数学</span>
+            <a href="https://blog.ak-ioi.cf/tag/8KtjEmM6N/">
+              <span>成就</span>
             </a>、
           
         
           
-            <a href="https://blog.ak-ioi.cf/tag/ARwT1hdHRj/">
-              <span>打表</span>
+            <a href="https://blog.ak-ioi.cf/tag/FwuHJNNKD/">
+              <span>重要</span>
             </a>、
           
         
           
-            <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-              <span>算法</span>
-            </a>、
-          
-        
-          
-            <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
-              <span>题解</span>
+            <a href="https://blog.ak-ioi.cf/tag/LsGynlhxT/">
+              <span>置顶</span>
             </a>、
           
         
@@ -586,10 +414,10 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>202<span class="pc-show">字数</span></span>
+      <span>67<span class="pc-show">字数</span></span>
     </span>
     
-      <span id="/post/solution-luogu-p1044/" class="meta-item pc-show leancloud_visitors">
+      <span id="/post/flags/" class="meta-item pc-show leancloud_visitors">
         <span class="post-meta-divider">|</span>
         <i class="fa fa-eye"></i>
         <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
@@ -598,30 +426,20 @@ window.addEventListener('load', function() {
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <h1 id="主要原理卡特兰数">主要原理：卡特兰数</h1>
-<p>首先，根据题意，自己枚举了一些比较小的时候的结果，感觉很熟悉，突然发现——</p>
-<blockquote>
-<p>这不就是卡特兰数吗？！</p>
-</blockquote>
-<p>紧接着我<s>企图</s>上<a href="https://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/6125746?fr=aladdin">百度百科</a>找到<s>题解</s>卡特兰数数列，用于打表输出。</p>
-<p>这是<s>被我打了的</s>表：</p>
-<pre><code>const long long catalan[] = {1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452};
-</code></pre>
-<p>综合题意，得程序：</p>
-<pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-const long long catalan[] = {1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452};
-
-int main()
-{
-	int n;
-	cin&gt;&gt;n;
-	cout&lt;&lt;catalan[n]&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-<p>打表数据出处：https://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/6125746?fr=aladdin#1</p>
+                <p>短期目标：</p>
+<ul>
+<li><s>2020/04/01 通过一篇日报</s> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="green"><mtext>已完成</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{green}{\text{已完成}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:green;"><span class="mord text" style="color:green;"><span class="mord cjk_fallback" style="color:green;">已完成</span></span></span></span></span></span></li>
+<li>2020/04/01 50蓝</li>
+<li>2020/04/01 10紫</li>
+<li>2020/06/01 AC 800+</li>
+<li>2020/08/01 出一场团队公开赛</li>
+</ul>
+<p>中期目标：</p>
+<ul>
+<li>NOIP2020 省一 &amp; 蓝勾</li>
+</ul>
+<p>长期目标：</p>
+<p>暂无</p>
 
               </div>
               <div class="post-footer">
@@ -632,7 +450,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-p1044/" title="题解 P1044@洛谷 【栈】 ">题解 P1044@洛谷 【栈】 </a>
+      <a href="https://blog.ak-ioi.cf/post/flags/" title="Flags[TOP]">Flags[TOP]</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -641,13 +459,11 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/7IKLNdSii/"># 数学</a>
+      <a href="https://blog.ak-ioi.cf/tag/8KtjEmM6N/"># 成就</a>
     
-      <a href="https://blog.ak-ioi.cf/tag/ARwT1hdHRj/"># 打表</a>
+      <a href="https://blog.ak-ioi.cf/tag/FwuHJNNKD/"># 重要</a>
     
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
+      <a href="https://blog.ak-ioi.cf/tag/LsGynlhxT/"># 置顶</a>
     
       <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
     
@@ -657,15 +473,11 @@ int main()
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 AT3538@洛谷 | 3538@Atcoder 【Credits】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at3538-atcoder-3538/">题解 AT3538@洛谷 | 3538@Atcoder 【Credits】 </a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 AT3538@洛谷 | 3538@Atcoder 【Credits】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at3538-atcoder-3538/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf677a-codeforces-677a/">题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 </a>
-        <a class="nav-mobile-next" title="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf677a-codeforces-677a/">下一篇</a>
+        <a class="nav-pc-next" title="成就[TOP]" href="https://blog.ak-ioi.cf/post/record/">成就[TOP]</a>
+        <a class="nav-mobile-next" title="成就[TOP]" href="https://blog.ak-ioi.cf/post/record/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
