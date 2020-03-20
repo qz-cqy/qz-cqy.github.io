@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-20T11:38:18.321Z</updated>
+    <updated>2020-03-20T12:55:45.249Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -19,7 +19,7 @@
         <content type="html"><![CDATA[<p>短期目标：</p>
 <ul>
 <li><s>2020/04/01 通过一篇日报</s> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="green"><mtext>已完成</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{green}{\text{已完成}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:green;"><span class="mord text" style="color:green;"><span class="mord cjk_fallback" style="color:green;">已完成</span></span></span></span></span></span></li>
-<li>2020/04/01 50蓝</li>
+<li><s>2020/04/01 50蓝</s> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="green"><mtext>已完成</mtext></mstyle></mrow><annotation encoding="application/x-tex">\color{green}{\text{已完成}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:green;"><span class="mord text" style="color:green;"><span class="mord cjk_fallback" style="color:green;">已完成</span></span></span></span></span></span></li>
 <li>2020/04/01 10紫</li>
 <li>2020/06/01 AC 800+</li>
 <li>2020/08/01 出一场团队公开赛</li>
