@@ -7,7 +7,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>第四关 | rui_er 的博客</title>
+<title>珂朵莉树学习笔记[新文章暂时置顶] | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1585191725297">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -27,8 +27,8 @@
 
 
 
-    <meta name="description" content="第四关" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="珂朵莉树学习笔记[新文章暂时置顶]" />
+    <meta name="keywords" content="珂朵莉树/老司机树/ODT,学习笔记,OI,洛谷" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -166,7 +166,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://blog.ak-ioi.cf/images/avatar.png"/>
@@ -268,6 +269,190 @@
   </div>
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#0xff-%E7%8F%82%E6%9C%B5%E8%8E%89%E7%BE%8E%E5%9B%BE%E6%AC%A3%E8%B5%8F">0XFF 珂朵莉美图欣赏</a></li>
+<li><a href="#0x00-%E7%AE%80%E4%BB%8B">0X00 简介</a></li>
+<li><a href="#0x01-%E6%A8%A1%E6%9D%BF%E9%A2%98-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">0X01 模板题 - 基本操作</a>
+<ul>
+<li><a href="#0x01-1-%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89">0X01-1 结构体定义</a></li>
+<li><a href="#0x01-2-split">0X01-2 split</a></li>
+<li><a href="#0x01-3-%E5%8C%BA%E9%97%B4%E5%8A%A0">0X01-3 区间加</a></li>
+<li><a href="#0x01-4-%E5%8C%BA%E9%97%B4%E8%B5%8B%E5%80%BC">0X01-4 区间赋值</a></li>
+<li><a href="#0x01-5-%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E6%8E%92%E5%90%8D%E4%B8%BAk%E7%9A%84%E6%95%B0">0X01-5 求区间内排名为k的数</a></li>
+<li><a href="#0x01-6-%E6%B1%82%E5%8C%BA%E9%97%B4%E6%89%80%E6%9C%89%E6%95%B0%E4%B9%98k%E6%AC%A1%E5%B9%82%E7%9A%84%E5%92%8C">0X01-6 求区间所有数乘k次幂的和</a></li>
+<li><a href="#0x01-7-%E5%AE%8C%E6%95%B4%E7%A8%8B%E5%BA%8F">0X01-7 完整程序</a></li>
+</ul>
+</li>
+<li><a href="#0x02-%E5%85%B6%E4%BB%96%E9%A2%98%E7%9B%AE">0X02 其他题目</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    lList.push(elem);
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop + 10;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+addTocNumber(tocContent, '');
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+            </div>
           
         
       </div>
@@ -355,30 +540,67 @@
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/122461/">
-      第四关
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute/">
+      珂朵莉树学习笔记[新文章暂时置顶]
     </a>
   </h1>
   <div class="post-meta">
     
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-24</span>
+      <span>2020-03-26</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/qwUp8nS23/">
+              <span>珂朵莉树/老司机树/ODT</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/Wj08bbbmrW/">
+              <span>学习笔记</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
+              <span>OI</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
+              <span>洛谷</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>8分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>18<span class="pc-show">字数</span></span>
+      <span>1504<span class="pc-show">字数</span></span>
     </span>
     
-      <span id="/post/122461/" class="meta-item pc-show leancloud_visitors">
+      <span id="/post/chtholly-is-so-cute/" class="meta-item pc-show leancloud_visitors">
         <span class="post-meta-divider">|</span>
         <i class="fa fa-eye"></i>
         <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
@@ -387,10 +609,224 @@
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <p>&gt;&gt;&gt; print(int(input()))<br>
-8<br>
-&gt;&gt;&gt; 8</p>
-<p>有空格请用<code>-</code>代替。</p>
+                <h1 id="0xff-珂朵莉美图欣赏">0XFF 珂朵莉美图欣赏</h1>
+<figure data-type="image" tabindex="1"><img src="http://i0.hdslb.com/bfs/article/cb255233d3909df38d355f77d443dd2d987124be.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://i0.hdslb.com/bfs/article/3713354d3b0ff4816afe242da659e4079754f436.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://imgsrc.baidu.com/forum/w=580/sign=f3b7a7fd094f78f0800b9afb49300a83/dfa2c1399b504fc2dd3889acefdde71191ef6d45.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="http://i2.hdslb.com/bfs/archive/3c52f87d55716ab3cb282d9d70425ab1a65437a9.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://imgsrc.baidu.com/baike/pic/item/cf1b9d16fdfaaf51c812fca1815494eef01f7a3e.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://b-ssl.duitang.com/uploads/item/201801/23/20180123113519_lewge.thumb.224_0.png" alt="" loading="lazy"></figure>
+<p><a href="https://www.chtholly.ac.cn/">中国珂学院</a></p>
+<p><s>行了别看了赶紧进入正题</s></p>
+<h1 id="0x00-简介">0X00 简介</h1>
+<p>设计一个数据结构，区间加？</p>
+<p>简单，线段树！</p>
+<p>求区间第k小值？</p>
+<p>平衡树板子题！</p>
+<p>区间推平赋值？还要查询区间k次幂的和？</p>
+<p>……</p>
+<p>不知道怎么办了吧！这四个操作是珂朵莉树最经典的操作。下面让我们跟着题目往下看。</p>
+<h1 id="0x01-模板题-基本操作">0X01 模板题 - 基本操作</h1>
+<p>总结一下上面说的操作：区间加、区间赋值、查询区间第k小、查询区间幂次和。</p>
+<p>下面看一道模板题：<a href="https://www.luogu.com.cn/problem/CF896C">传送门</a></p>
+<p><s>不要一看是黑题就害怕，<strong>珂朵莉树的本质其实就是拿一个set瞎暴力！</strong></s></p>
+<h2 id="0x01-1-结构体定义">0X01-1 结构体定义</h2>
+<pre><code class="language-cpp">typedef long long ll;
+struct Node
+{
+    ll l, r;
+    mutable ll v;
+    Node(ll x, ll y=-1, ll z=0) : l(x), r(y), v(z) {}
+    bool operator &lt; (const Node &amp;a) const {return l &lt; a.l;}
+}
+set&lt;Node&gt; ODT;
+typedef set&lt;Node&gt;::iterator IT;
+</code></pre>
+<p>l、r表示区间左右端点，v是区间权值。下面那行定义了一个构造函数，方便以后使用。最后重载了小于运算符，按照区间左端点顺序排序，因为后面用的时候区间不存在重叠，所以其实就是让区间依次排序。</p>
+<h2 id="0x01-2-split">0X01-2 split</h2>
+<p>split操作用于将整段在pos的位置拆分为两小段，方便后续操作。</p>
+<pre><code class="language-cpp">IT split(ll pos)
+{
+	IT iter = ODT.lower_bound(Node(pos));
+	if(iter != ODT.end() &amp;&amp; iter-&gt;l == pos) return iter;//不需要拆分
+	--iter;//一定在前一区间内
+	ll L = iter-&gt;l, R = iter-&gt;r, V = iter-&gt;v;//把值取出
+	ODT.erase(iter);//删除待拆分的原区间
+	ODT.insert(Node(L, pos-1, V));//插入新区间，Node(L, pos-1, V)利用构造函数生成Node类
+	return ODT.insert(Node(pos, R, V)).first;//插入新区间并返回目标位置
+}
+</code></pre>
+<h2 id="0x01-3-区间加">0X01-3 区间加</h2>
+<p>区间加法其实就是把要加的段取出来暴力加。<strong>注意这里必须先split右边再split左边！</strong></p>
+<pre><code class="language-cpp">void update(ll l, ll r, ll dt)
+{
+	IT iterR = split(r+1), iterL = split(l);//必须先split右边再split左边
+	for(iterL;iterL!=iterR;++iterL) iterL-&gt;v += dt;//暴力加整个区间
+}
+</code></pre>
+<h2 id="0x01-4-区间赋值">0X01-4 区间赋值</h2>
+<p>区间赋值也是取出要用的区间，把所有范围内的区间删掉，然后重新插入一个新区间。</p>
+<pre><code class="language-cpp">void assign_val(ll l, ll r, ll w)
+{
+	IT iterR = split(r+1), iterL = split(l);
+	ODT.erase(iterL, iterR);//删除赋值范围内所有区间
+	ODT.insert(Node(l, r, w));//添加被删除的区间，权值直接改成要赋的值
+}
+</code></pre>
+<h2 id="0x01-5-求区间内排名为k的数">0X01-5 求区间内排名为k的数</h2>
+<p>就是求区间第k小，把区间所有数压进vector，然后排序即可。</p>
+<pre><code class="language-cpp">ll ranking(ll l, ll r, ll k)
+{
+	vector&lt;pair&lt;ll, ll&gt; &gt; v;//声明vector，pair-&gt;first是值，pair-&gt;second是个数
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL) v.push_back(make_pair(iterL-&gt;v, iterL-&gt;r-iterL-&gt;l+1));//把区间内所有数push进vector
+	sort(v.begin(), v.end());//vector排序
+	for(vector&lt;pair&lt;ll, ll&gt; &gt;::iterator iter=v.begin();iter!=v.end();++iter)
+	{
+		k -= iter-&gt;second;
+		if(k &lt;= 0) return iter-&gt;first;//不断降低k，直到k&lt;=0，输出
+	}
+}
+</code></pre>
+<h2 id="0x01-6-求区间所有数乘k次幂的和">0X01-6 求区间所有数乘k次幂的和</h2>
+<p>区间幂次和，暴力算出所有的幂次和，加起来即可，<strong>这里需要使用快速幂。</strong></p>
+<pre><code class="language-cpp">ll qpow(ll x, ll y, ll MOD)//快速幂，相信你们都会，不用解释了
+{
+	ll ret = 1;
+	ll ans = x % MOD;
+	while(y)
+	{
+		if(y&amp;1) ret = ret * ans % MOD;
+		ans = ans * ans % MOD;
+		y &gt;&gt;= 1;
+	}
+	return ret;
+}
+
+ll sum(ll l, ll r, ll x, ll y)//区间幂次和
+{
+	ll ans = 0;
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL)//枚举所有区间，算出幂次和
+		ans = (ans + (iterL-&gt;r - iterL-&gt;l + 1) * qpow(iterL-&gt;v, x, y)) % y;
+	return ans;
+}
+</code></pre>
+<h2 id="0x01-7-完整程序">0X01-7 完整程序</h2>
+<p>下面就是完整程序了。怎么样？是不是感觉<s>很暴力</s>很容易理解？</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const ll mod = 1000000007LL;
+const ll MAXN = 100001;
+
+ll n, m, seed, vmax;
+ll a[MAXN];
+struct Node
+{
+	ll l, r;
+	mutable ll v;
+	Node(ll x, ll y = -1, ll z = 0): l(x), r(y), v(z) {}
+	bool operator &lt; (const Node &amp;a) const {return l &lt; a.l;}
+};
+typedef set&lt;Node&gt;::iterator IT;
+set&lt;Node&gt; ODT;
+
+ll rnd() //题目中要求的随机函数
+{
+	ll ret = seed;
+	seed = (seed * 7 + 13) % mod;
+	return ret;
+}
+
+IT split(ll pos)
+{
+	IT iter = ODT.lower_bound(Node(pos));
+	if(iter != ODT.end() &amp;&amp; iter-&gt;l == pos) return iter;
+	--iter;
+	ll L = iter-&gt;l, R = iter-&gt;r, V = iter-&gt;v;
+	ODT.erase(iter);
+	ODT.insert(Node(L, pos-1, V));
+	return ODT.insert(Node(pos, R, V)).first;
+}
+
+void update(ll l, ll r, ll dt)
+{
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL) iterL-&gt;v += dt;
+}
+
+void assign_val(ll l, ll r, ll w)
+{
+	IT iterR = split(r+1), iterL = split(l);
+	ODT.erase(iterL, iterR);
+	ODT.insert(Node(l, r, w));
+}
+
+ll ranking(ll l, ll r, ll k)
+{
+	vector&lt;pair&lt;ll, ll&gt; &gt; v;
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL) v.push_back(make_pair(iterL-&gt;v, iterL-&gt;r-iterL-&gt;l+1));
+	sort(v.begin(), v.end());
+	for(vector&lt;pair&lt;ll, ll&gt; &gt;::iterator iter=v.begin();iter!=v.end();++iter)
+	{
+		k -= iter-&gt;second;
+		if(k &lt;= 0) return iter-&gt;first;
+	}
+}
+
+ll qpow(ll x, ll y, ll MOD)
+{
+	ll ret = 1;
+	ll ans = x % MOD;
+	while(y)
+	{
+		if(y&amp;1) ret = ret * ans % MOD;
+		ans = ans * ans % MOD;
+		y &gt;&gt;= 1;
+	}
+	return ret;
+}
+
+ll sum(ll l, ll r, ll x, ll y)
+{
+	ll ans = 0;
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL)
+		ans = (ans + (iterL-&gt;r - iterL-&gt;l + 1) * qpow(iterL-&gt;v, x, y)) % y;
+	return ans;
+}
+
+int main()
+{
+	scanf(&quot;%lld%lld%lld%lld&quot;, &amp;n, &amp;m, &amp;seed, &amp;vmax);
+	for(ll i=1;i&lt;=n;i++)
+	{
+		a[i] = (rnd() % vmax) + 1;
+		ODT.insert(Node(i, i, a[i]));
+	}
+	for(ll i=1;i&lt;=m;i++)
+	{
+		ll op = rnd() % 4 + 1;
+		ll l = rnd() % n + 1;
+		ll r = rnd() % n + 1;
+		if(l &gt; r) swap(l, r);
+		ll x, y;
+		if(op == 3) x = rnd() % (r - l + 1) + 1;
+		else x = rnd() % vmax + 1;
+		if(op == 4) y = rnd() % vmax + 1;
+		if(op == 1) update(l, r, x);
+		else if(op == 2) assign_val(l, r, x);
+		else if(op == 3) printf(&quot;%lld\n&quot;, ranking(l, r, x));
+		else printf(&quot;%lld\n&quot;, sum(l, r, x, y));
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="0x02-其他题目">0X02 其他题目</h1>
+<p>看这个<a href="https://www.luogu.com.cn/training/3592">题单</a>，另外P2894可以通过珂朵莉树拿到<a href="https://www.luogu.com.cn/record/30955717">92分</a>（别问我怎么知道的）。</p>
 
               </div>
               <div class="post-footer">
@@ -401,7 +837,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/122461/" title="第四关">第四关</a>
+      <a href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute/" title="珂朵莉树学习笔记[新文章暂时置顶]">珂朵莉树学习笔记[新文章暂时置顶]</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -410,12 +846,24 @@
   </ul>
   <div class="tags">
     
+      <a href="https://blog.ak-ioi.cf/tag/qwUp8nS23/"># 珂朵莉树/老司机树/ODT</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/Wj08bbbmrW/"># 学习笔记</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
+    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="洛谷原试炼场记录[TOP]" href="https://blog.ak-ioi.cf/post/luogu-training-slc/">洛谷原试炼场记录[TOP]</a>
+        <a class="nav-mobile-next" title="洛谷原试炼场记录[TOP]" href="https://blog.ak-ioi.cf/post/luogu-training-slc/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>

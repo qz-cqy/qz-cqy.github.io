@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-26T00:27:04.201Z</updated>
+    <updated>2020-03-26T03:02:15.889Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,232 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[珂朵莉树学习笔记[新文章暂时置顶]]]></title>
+        <id>https://blog.ak-ioi.cf/post/chtholly-is-so-cute/</id>
+        <link href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute/">
+        </link>
+        <updated>2020-03-26T02:31:18.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="0xff-珂朵莉美图欣赏">0XFF 珂朵莉美图欣赏</h1>
+<figure data-type="image" tabindex="1"><img src="http://i0.hdslb.com/bfs/article/cb255233d3909df38d355f77d443dd2d987124be.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://i0.hdslb.com/bfs/article/3713354d3b0ff4816afe242da659e4079754f436.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://imgsrc.baidu.com/forum/w=580/sign=f3b7a7fd094f78f0800b9afb49300a83/dfa2c1399b504fc2dd3889acefdde71191ef6d45.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="http://i2.hdslb.com/bfs/archive/3c52f87d55716ab3cb282d9d70425ab1a65437a9.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://imgsrc.baidu.com/baike/pic/item/cf1b9d16fdfaaf51c812fca1815494eef01f7a3e.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://b-ssl.duitang.com/uploads/item/201801/23/20180123113519_lewge.thumb.224_0.png" alt="" loading="lazy"></figure>
+<p><a href="https://www.chtholly.ac.cn/">中国珂学院</a></p>
+<p><s>行了别看了赶紧进入正题</s></p>
+<h1 id="0x00-简介">0X00 简介</h1>
+<p>设计一个数据结构，区间加？</p>
+<p>简单，线段树！</p>
+<p>求区间第k小值？</p>
+<p>平衡树板子题！</p>
+<p>区间推平赋值？还要查询区间k次幂的和？</p>
+<p>……</p>
+<p>不知道怎么办了吧！这四个操作是珂朵莉树最经典的操作。下面让我们跟着题目往下看。</p>
+<h1 id="0x01-模板题-基本操作">0X01 模板题 - 基本操作</h1>
+<p>总结一下上面说的操作：区间加、区间赋值、查询区间第k小、查询区间幂次和。</p>
+<p>下面看一道模板题：<a href="https://www.luogu.com.cn/problem/CF896C">传送门</a></p>
+<p><s>不要一看是黑题就害怕，<strong>珂朵莉树的本质其实就是拿一个set瞎暴力！</strong></s></p>
+<h2 id="0x01-1-结构体定义">0X01-1 结构体定义</h2>
+<pre><code class="language-cpp">typedef long long ll;
+struct Node
+{
+    ll l, r;
+    mutable ll v;
+    Node(ll x, ll y=-1, ll z=0) : l(x), r(y), v(z) {}
+    bool operator &lt; (const Node &amp;a) const {return l &lt; a.l;}
+}
+set&lt;Node&gt; ODT;
+typedef set&lt;Node&gt;::iterator IT;
+</code></pre>
+<p>l、r表示区间左右端点，v是区间权值。下面那行定义了一个构造函数，方便以后使用。最后重载了小于运算符，按照区间左端点顺序排序，因为后面用的时候区间不存在重叠，所以其实就是让区间依次排序。</p>
+<h2 id="0x01-2-split">0X01-2 split</h2>
+<p>split操作用于将整段在pos的位置拆分为两小段，方便后续操作。</p>
+<pre><code class="language-cpp">IT split(ll pos)
+{
+	IT iter = ODT.lower_bound(Node(pos));
+	if(iter != ODT.end() &amp;&amp; iter-&gt;l == pos) return iter;//不需要拆分
+	--iter;//一定在前一区间内
+	ll L = iter-&gt;l, R = iter-&gt;r, V = iter-&gt;v;//把值取出
+	ODT.erase(iter);//删除待拆分的原区间
+	ODT.insert(Node(L, pos-1, V));//插入新区间，Node(L, pos-1, V)利用构造函数生成Node类
+	return ODT.insert(Node(pos, R, V)).first;//插入新区间并返回目标位置
+}
+</code></pre>
+<h2 id="0x01-3-区间加">0X01-3 区间加</h2>
+<p>区间加法其实就是把要加的段取出来暴力加。<strong>注意这里必须先split右边再split左边！</strong></p>
+<pre><code class="language-cpp">void update(ll l, ll r, ll dt)
+{
+	IT iterR = split(r+1), iterL = split(l);//必须先split右边再split左边
+	for(iterL;iterL!=iterR;++iterL) iterL-&gt;v += dt;//暴力加整个区间
+}
+</code></pre>
+<h2 id="0x01-4-区间赋值">0X01-4 区间赋值</h2>
+<p>区间赋值也是取出要用的区间，把所有范围内的区间删掉，然后重新插入一个新区间。</p>
+<pre><code class="language-cpp">void assign_val(ll l, ll r, ll w)
+{
+	IT iterR = split(r+1), iterL = split(l);
+	ODT.erase(iterL, iterR);//删除赋值范围内所有区间
+	ODT.insert(Node(l, r, w));//添加被删除的区间，权值直接改成要赋的值
+}
+</code></pre>
+<h2 id="0x01-5-求区间内排名为k的数">0X01-5 求区间内排名为k的数</h2>
+<p>就是求区间第k小，把区间所有数压进vector，然后排序即可。</p>
+<pre><code class="language-cpp">ll ranking(ll l, ll r, ll k)
+{
+	vector&lt;pair&lt;ll, ll&gt; &gt; v;//声明vector，pair-&gt;first是值，pair-&gt;second是个数
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL) v.push_back(make_pair(iterL-&gt;v, iterL-&gt;r-iterL-&gt;l+1));//把区间内所有数push进vector
+	sort(v.begin(), v.end());//vector排序
+	for(vector&lt;pair&lt;ll, ll&gt; &gt;::iterator iter=v.begin();iter!=v.end();++iter)
+	{
+		k -= iter-&gt;second;
+		if(k &lt;= 0) return iter-&gt;first;//不断降低k，直到k&lt;=0，输出
+	}
+}
+</code></pre>
+<h2 id="0x01-6-求区间所有数乘k次幂的和">0X01-6 求区间所有数乘k次幂的和</h2>
+<p>区间幂次和，暴力算出所有的幂次和，加起来即可，<strong>这里需要使用快速幂。</strong></p>
+<pre><code class="language-cpp">ll qpow(ll x, ll y, ll MOD)//快速幂，相信你们都会，不用解释了
+{
+	ll ret = 1;
+	ll ans = x % MOD;
+	while(y)
+	{
+		if(y&amp;1) ret = ret * ans % MOD;
+		ans = ans * ans % MOD;
+		y &gt;&gt;= 1;
+	}
+	return ret;
+}
+
+ll sum(ll l, ll r, ll x, ll y)//区间幂次和
+{
+	ll ans = 0;
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL)//枚举所有区间，算出幂次和
+		ans = (ans + (iterL-&gt;r - iterL-&gt;l + 1) * qpow(iterL-&gt;v, x, y)) % y;
+	return ans;
+}
+</code></pre>
+<h2 id="0x01-7-完整程序">0X01-7 完整程序</h2>
+<p>下面就是完整程序了。怎么样？是不是感觉<s>很暴力</s>很容易理解？</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const ll mod = 1000000007LL;
+const ll MAXN = 100001;
+
+ll n, m, seed, vmax;
+ll a[MAXN];
+struct Node
+{
+	ll l, r;
+	mutable ll v;
+	Node(ll x, ll y = -1, ll z = 0): l(x), r(y), v(z) {}
+	bool operator &lt; (const Node &amp;a) const {return l &lt; a.l;}
+};
+typedef set&lt;Node&gt;::iterator IT;
+set&lt;Node&gt; ODT;
+
+ll rnd() //题目中要求的随机函数
+{
+	ll ret = seed;
+	seed = (seed * 7 + 13) % mod;
+	return ret;
+}
+
+IT split(ll pos)
+{
+	IT iter = ODT.lower_bound(Node(pos));
+	if(iter != ODT.end() &amp;&amp; iter-&gt;l == pos) return iter;
+	--iter;
+	ll L = iter-&gt;l, R = iter-&gt;r, V = iter-&gt;v;
+	ODT.erase(iter);
+	ODT.insert(Node(L, pos-1, V));
+	return ODT.insert(Node(pos, R, V)).first;
+}
+
+void update(ll l, ll r, ll dt)
+{
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL) iterL-&gt;v += dt;
+}
+
+void assign_val(ll l, ll r, ll w)
+{
+	IT iterR = split(r+1), iterL = split(l);
+	ODT.erase(iterL, iterR);
+	ODT.insert(Node(l, r, w));
+}
+
+ll ranking(ll l, ll r, ll k)
+{
+	vector&lt;pair&lt;ll, ll&gt; &gt; v;
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL) v.push_back(make_pair(iterL-&gt;v, iterL-&gt;r-iterL-&gt;l+1));
+	sort(v.begin(), v.end());
+	for(vector&lt;pair&lt;ll, ll&gt; &gt;::iterator iter=v.begin();iter!=v.end();++iter)
+	{
+		k -= iter-&gt;second;
+		if(k &lt;= 0) return iter-&gt;first;
+	}
+}
+
+ll qpow(ll x, ll y, ll MOD)
+{
+	ll ret = 1;
+	ll ans = x % MOD;
+	while(y)
+	{
+		if(y&amp;1) ret = ret * ans % MOD;
+		ans = ans * ans % MOD;
+		y &gt;&gt;= 1;
+	}
+	return ret;
+}
+
+ll sum(ll l, ll r, ll x, ll y)
+{
+	ll ans = 0;
+	IT iterR = split(r+1), iterL = split(l);
+	for(iterL;iterL!=iterR;++iterL)
+		ans = (ans + (iterL-&gt;r - iterL-&gt;l + 1) * qpow(iterL-&gt;v, x, y)) % y;
+	return ans;
+}
+
+int main()
+{
+	scanf(&quot;%lld%lld%lld%lld&quot;, &amp;n, &amp;m, &amp;seed, &amp;vmax);
+	for(ll i=1;i&lt;=n;i++)
+	{
+		a[i] = (rnd() % vmax) + 1;
+		ODT.insert(Node(i, i, a[i]));
+	}
+	for(ll i=1;i&lt;=m;i++)
+	{
+		ll op = rnd() % 4 + 1;
+		ll l = rnd() % n + 1;
+		ll r = rnd() % n + 1;
+		if(l &gt; r) swap(l, r);
+		ll x, y;
+		if(op == 3) x = rnd() % (r - l + 1) + 1;
+		else x = rnd() % vmax + 1;
+		if(op == 4) y = rnd() % vmax + 1;
+		if(op == 1) update(l, r, x);
+		else if(op == 2) assign_val(l, r, x);
+		else if(op == 3) printf(&quot;%lld\n&quot;, ranking(l, r, x));
+		else printf(&quot;%lld\n&quot;, sum(l, r, x, y));
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="0x02-其他题目">0X02 其他题目</h1>
+<p>看这个<a href="https://www.luogu.com.cn/training/3592">题单</a>，另外P2894可以通过珂朵莉树拿到<a href="https://www.luogu.com.cn/record/30955717">92分</a>（别问我怎么知道的）。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[洛谷原试炼场记录[TOP]]]></title>
         <id>https://blog.ak-ioi.cf/post/luogu-training-slc/</id>
@@ -1431,46 +1657,6 @@ int main()
 <ol>
 <li><a href="https://blog.csdn.net/sevenjoin/article/details/82187127">C++ thread用法总结(整理)</a></li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF1313A@洛谷 | 1313A@Codeforces 【Fast Food Restaurant】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/">
-        </link>
-        <updated>2020-02-26T02:07:54.000Z</updated>
-        <content type="html"><![CDATA[<p>这题数据这么小，<strong>就直接暴力吧！</strong></p>
-<p>如果可以选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> ，选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">AB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 肯定不合适。先排个序，把原数组变成降序，然后枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span> 种情况判断是否可以即可。</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int t; 
-int a[3]; 
-int ans;
-
-int main()
-{
-	cin&gt;&gt;t;
-	while(t--)
-	{
-		ans = 0;
-		cin&gt;&gt;a[0]&gt;&gt;a[1]&gt;&gt;a[2];
-		if(a[0] &lt; a[1]) swap(a[0], a[1]);
-		if(a[0] &lt; a[2]) swap(a[0], a[2]);
-		if(a[1] &lt; a[2]) swap(a[1], a[2]);
-		if(a[0]) --a[0], ++ans;
-		if(a[1]) --a[1], ++ans;
-		if(a[2]) --a[2], ++ans;
-		if(a[0] &amp;&amp; a[1]) --a[0], --a[1], ++ans;
-		if(a[0] &amp;&amp; a[2]) --a[0], --a[2], ++ans;
-		if(a[1] &amp;&amp; a[2]) --a[1], --a[2], ++ans;
-		if(a[0] &amp;&amp; a[1] &amp;&amp; a[2]) --a[0], --a[1], --a[2], ++ans;
-		cout&lt;&lt;ans&lt;&lt;endl;
-	}
-	return 0;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>
