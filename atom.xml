@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-26T03:07:50.844Z</updated>
+    <updated>2020-03-26T03:10:50.605Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -30,7 +30,7 @@
 <p>设计一个数据结构，区间加？</p>
 <p>简单，线段树！</p>
 <p>求区间第k小值？</p>
-<p>平衡树板子题！</p>
+<p>主席树板子题！</p>
 <p>区间推平赋值？还要查询区间k次幂的和？</p>
 <p>……</p>
 <p>不知道怎么办了吧！这四个操作是珂朵莉树最经典的操作。下面让我们跟着题目往下看。</p>
