@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-27T00:09:10.941Z</updated>
+    <updated>2020-03-27T00:37:33.827Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -1140,7 +1140,7 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Flags[TOP]]]></title>
+        <title type="html"><![CDATA[Flags]]></title>
         <id>https://blog.ak-ioi.cf/post/flags/</id>
         <link href="https://blog.ak-ioi.cf/post/flags/">
         </link>
