@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-28T10:57:13.252Z</updated>
+    <updated>2020-03-30T03:16:38.085Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,459 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[Splay学习笔记[新文章暂时置顶]（upd：2020.03.30）]]></title>
+        <id>https://blog.ak-ioi.cf/post/learning-splay/</id>
+        <link href="https://blog.ak-ioi.cf/post/learning-splay/">
+        </link>
+        <updated>2020-03-26T03:16:46.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="0xfe-本文持续更新中">0XFE 本文持续更新中</h1>
+<p>已完成更新：普通平衡树</p>
+<p>下一步更新：文艺平衡树</p>
+<p>队列中更新：LCT</p>
+<h1 id="0xff-伸展树简介">0XFF 伸展树简介</h1>
+<p>伸展树是一种二叉搜索树（二叉排序树），通过旋转（多次Splay操作）保持平衡，主要用于维护LCT（动态树，Link-Cut Tree）。LCT将在以后的学习笔记中详细讲解。</p>
+<h1 id="0x00-伸展树能干什么">0X00 伸展树能干什么</h1>
+<p>最基础的：</p>
+<ul>
+<li>插入节点k</li>
+<li>删除节点k</li>
+<li>求全局的k小值（根据排名求数）</li>
+<li>求k的全局排名（根据数求排名）</li>
+<li>求k的前驱（严格小于k的最大的数）</li>
+<li>求k的后继（严格大于k的最小的数）</li>
+</ul>
+<p>详见：<a href="https://www.luogu.com.cn/problem/P3369">离线模板</a>、<a href="https://www.luogu.com.cn/problem/P6136">强制在线模板</a>。（本人已经使用无旋fhq-Treap、带旋Treap、Splay三种方式AC离线版，下面将详细介绍Splay方法）</p>
+<p>进阶版（加tag）：</p>
+<ul>
+<li>给定一个初始数列</li>
+<li>每次操作将区间 [l, r] 翻转</li>
+</ul>
+<p>详见：<a href="https://www.luogu.com.cn/problem/P3391">文艺平衡树</a></p>
+<p>但其实进阶版比模板要短，大概是因为进阶版操作少，去掉了一系列不必要的操作。</p>
+<h1 id="0x01-普通平衡树">0X01 普通平衡树</h1>
+<h2 id="0x01-01-数据存储">0X01-01 数据存储</h2>
+<pre><code class="language-cpp">const int MAXN = 100001;
+int fa[MAXN], key[MAXN], son[MAXN][2], size[MAXN], cnt[MAXN];
+int rt, sz;
+</code></pre>
+<p>fa数组存每个节点当前的父亲，key是节点权值，son的0和1分别表示左儿子和右儿子，size是以该节点为根的子树的大小，cnt是该数的数量。</p>
+<p>rt存当前的根，sz是点的个数。</p>
+<h2 id="0x01-02-清空一棵子树">0X01-02 清空一棵子树</h2>
+<p>清空以x为根的子树，只需要把所有数据都清零即可。</p>
+<pre><code class="language-cpp">inline void clear(int x) {fa[x] = key[x] = son[x][0] = son[x][1] = size[x] = cnt[x] = 0;}
+</code></pre>
+<h2 id="0x01-03-获取节点与父亲的关系">0X01-03 获取节点与父亲的关系</h2>
+<p>这里用于获取节点x与父亲的关系，即是左儿子还是右儿子。</p>
+<pre><code class="language-cpp">inline bool get(int x) {return son[fa[x]][1] == x;}
+</code></pre>
+<h2 id="0x01-04-更新子树大小">0X01-04 更新子树大小</h2>
+<p>这里是更新子树大小的操作，<strong>因为需要用到儿子的size，所以每次更新前请确保所有孩子的值都是最新的！</strong></p>
+<pre><code class="language-cpp">void update(int x)
+{
+	if(!x) return;//数据不合法
+	size[x] = cnt[x];
+	if(son[x][0]) size[x] += size[son[x][0]];
+	if(son[x][1]) size[x] += size[son[x][1]];
+}
+</code></pre>
+<h2 id="0x01-05-连边">0X01-05 连边</h2>
+<p>将x设为y的关系为z的儿子。</p>
+<pre><code class="language-cpp">void connect(int x, int y, int z)
+{
+	if(x) fa[x] = y;//把x的父亲设为y
+	if(y) son[y][z] = x;//把y的关系为z的儿子设为x
+}
+</code></pre>
+<h2 id="0x01-06-上旋">0X01-06 上旋</h2>
+<p>这个操作是将节点x上旋，详见注释。</p>
+<pre><code class="language-cpp">void rotate(int x)
+{
+	int f = fa[x], ff = fa[f], p = get(x), q = get(f);//获取父亲、爷爷、自己与父亲关系、父亲与爷爷关系
+	connect(son[x][p^1], f, p);//把自己的p^1儿子连边到父亲，关系为p
+	connect(f, x, p^1);//把父亲下旋到自己，关系为p^1
+	connect(x, ff, q);//把自己上旋到爷爷，关系为q
+	update(f);//为什么是这个顺序？因为这次操作把父亲旋转为自己的儿子，更新顺序就是原父亲到自己
+	update(x);
+}
+</code></pre>
+<p>上旋操作不太好理解，这里放几张图上来。</p>
+<p>下面这个是旋转前的树，边权标的是关系。</p>
+<figure data-type="image" tabindex="1"><img src="https://blog.ak-ioi.cf/post-images/1585533226259.png" alt="" loading="lazy"></figure>
+<p>现在假设我们要上旋3号点，可以看到，3号点与父亲（2号点）的关系为0，异或为1，于是把3号点的右儿子（5号点）给父亲，此时因为父亲的儿子更新，3号点孤立：</p>
+<figure data-type="image" tabindex="2"><img src="https://blog.ak-ioi.cf/post-images/1585533463733.png" alt="" loading="lazy"></figure>
+<p>把父亲连到自己，成为自己的右儿子，因为父亲的fa被更新，1号点孤立：</p>
+<figure data-type="image" tabindex="3"><img src="https://blog.ak-ioi.cf/post-images/1585533613373.png" alt="" loading="lazy"></figure>
+<p>把自己连到爷爷，关系为0：</p>
+<figure data-type="image" tabindex="4"><img src="https://blog.ak-ioi.cf/post-images/1585533738334.png" alt="" loading="lazy"></figure>
+<p>可以看到3号点被上旋。</p>
+<h2 id="0x01-07-splay操作维护平衡">0X01-07 splay操作维护平衡</h2>
+<p>在这里，每次把节点旋转到根即可，但是在文艺平衡树中要指定旋转终点。这次为了省事，直接写旋转到根的即可：</p>
+<pre><code class="language-cpp">void splay(int x)
+{
+	for(int f;f=fa[x];rotate(x)) if(fa[f]) rotate(get(x)==get(f)?f:x);
+	rt = x;
+}
+</code></pre>
+<p>一直上旋点x直到上旋到跟，把root（rt）改为当前点。</p>
+<p>splay操作维护平衡性，写平衡树记得<strong>有事没事splay一下</strong>，毕竟splay多了用不了多长时间，splay少了会出错。</p>
+<h2 id="0x01-08-插入节点">0X01-08 插入节点</h2>
+<ul>
+<li>情况1：如果不存在根（即一个数都没有），直接在根插入。</li>
+<li>情况2：按照排序树性质向下查找，发现有过该权值的点，更新大小即可，记得需要splay。</li>
+<li>情况3：查找到空节点发现不存在该节点，在最后那里加入这个点，更新信息即可，也需要splay。</li>
+</ul>
+<pre><code class="language-cpp">void insert(int x)
+{
+	if(!rt)//case 1
+	{
+		rt = ++sz;
+		key[rt] = x;
+		cnt[rt] = size[rt] = 1;
+		son[rt][0] = son[rt][1] = 0;
+		return;
+	}
+	int u = rt, f = 0;
+	while(true)
+	{
+		if(key[u] == x)//case 2
+		{
+			++cnt[u];
+			update(u);
+			update(f);
+			splay(u);
+			return;
+		}
+		f = u, u = son[u][x&gt;key[u]];//排序树性质
+		if(!u)//case 3
+		{
+			key[++sz] = x;
+			cnt[sz] = size[sz] = 1;
+			fa[sz] = f;
+			son[f][x&gt;key[f]] = sz;
+			update(f);
+			splay(sz);
+			return;
+		}
+	}
+}
+</code></pre>
+<h2 id="0x01-09-查询数的排名">0X01-09 查询数的排名</h2>
+<p>查询数的排名根据排序树性质判断是否在左子树，之后累加size即可。</p>
+<pre><code class="language-cpp">int find(int x)
+{
+	int u = rt, ans = 0;
+	while(true)
+	{
+		if(x &lt; key[u])//在左子树，当前点走到左儿子
+		{
+			u = son[u][0];
+			continue;
+		}
+		ans += size[son[u][0]];//不在左子树，ans加上左子树大小
+		if(x == key[u])//找到该节点，splay维持平衡，返回答案
+		{
+			splay(u);
+			return ans + 1;
+		}
+		ans += cnt[u];//在右子树，ans加上当前位置数个数，向右查找
+		u = son[u][1];
+	}
+}
+</code></pre>
+<h2 id="0x01-10-查询排名对应的数">0X01-10 查询排名对应的数</h2>
+<p>这个操作与上一个类似，每次把要查的排名减少，查找子树即可。</p>
+<pre><code class="language-cpp">int kth(int x)
+{
+	int u = rt;
+	while(true)
+	{
+		if(son[u][0] &amp;&amp; x &lt;= size[son[u][0]])
+		{
+			u = son[u][0];
+			continue;
+		}
+		if(son[u][0]) x -= size[son[u][0]];
+		if(x &lt;= cnt[u])
+		{
+			splay(u);
+			return key[u];
+		}
+		x -= cnt[u];
+		u = son[u][1];
+	}
+}
+</code></pre>
+<h2 id="0x01-11-前驱">0X01-11 前驱</h2>
+<p>根据前驱定义与排序树性质，找到左儿子并一直向右走即可。</p>
+<pre><code class="language-cpp">int pre()
+{
+	int u = son[rt][0];
+	while(son[u][1]) u = son[u][1];
+	return u;
+}
+</code></pre>
+<h2 id="0x01-12-后继">0X01-12 后继</h2>
+<p>后继同理。</p>
+<pre><code class="language-cpp">int suc()
+{
+	int u = son[rt][1];
+	while(son[u][0]) u = son[u][0];
+	return u;
+}
+</code></pre>
+<h2 id="0x01-13-删除节点">0X01-13 删除节点</h2>
+<ul>
+<li>情况1：当前值有多个数，cnt更新即可。</li>
+<li>情况2：没有左右儿子，直接删除。</li>
+<li>情况3：只有右儿子，右儿子取代当前节点，把当前节点删除。</li>
+<li>情况4：只有左儿子同理。</li>
+<li>情况5：左右儿子都有，把前驱转到根节点，右儿子连到前驱成为前驱的右儿子，左儿子在旋转过程中旋转到其他地方，直接清除即可。</li>
+</ul>
+<pre><code class="language-cpp">void del(int x)
+{
+	int useless = find(x);//find把当前点转到根，方便操作
+	if(cnt[rt] &gt; 1)//case 1
+	{
+		--cnt[rt];
+		update(rt);
+		return;
+	}
+	if(!son[rt][0] &amp;&amp; !son[rt][1])//case 2
+	{
+		clear(rt);
+		rt = 0;
+		return;
+	}
+	if(!son[rt][0])//case 3
+	{
+		int tmp = rt;
+		fa[rt=son[rt][1]] = 0;
+		clear(tmp);
+		return;
+	}
+	if(!son[rt][1])//case 4
+	{
+		int tmp = rt;
+		fa[rt=son[rt][0]] = 0;
+		clear(tmp);
+		return;
+	}
+	int tmp = rt, p = pre();//case 5
+	splay(p);
+	connect(son[tmp][1], rt, 1);
+	clear(tmp);
+	update(rt);
+}
+</code></pre>
+<h2 id="0x01-14-完整程序">0X01-14 完整程序</h2>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int MAXN = 100001;
+
+int fa[MAXN], key[MAXN], son[MAXN][2], size[MAXN], cnt[MAXN];
+int rt, sz;
+
+inline int read()
+{
+	char c;
+	int s = 1, w = 0;
+	c = getchar();
+	for(;!isdigit(c);c=getchar()) if(c == '-') s = -1;
+	for(;isdigit(c);c=getchar()) w = (w &lt;&lt; 3) + (w &lt;&lt; 1) + (c ^ 48);
+	return s * w; 
+}
+
+inline void clear(int x) {fa[x] = key[x] = son[x][0] = son[x][1] = size[x] = cnt[x] = 0;}
+inline bool get(int x) {return son[fa[x]][1] == x;}
+
+void update(int x)
+{
+	if(!x) return;
+	size[x] = cnt[x];
+	if(son[x][0]) size[x] += size[son[x][0]];
+	if(son[x][1]) size[x] += size[son[x][1]];
+}
+
+void connect(int x, int y, int z)
+{
+	if(x) fa[x] = y;
+	if(y) son[y][z] = x;
+}
+
+void rotate(int x)
+{
+	int f = fa[x], ff = fa[f], p = get(x), q = get(f);
+	connect(son[x][p^1], f, p);
+	connect(f, x, p^1);
+	connect(x, ff, q);
+	update(f);
+	update(x);
+}
+
+void splay(int x)
+{
+	for(int f;f=fa[x];rotate(x)) if(fa[f]) rotate(get(x)==get(f)?f:x);
+	rt = x;
+}
+
+void insert(int x)
+{
+	if(!rt)
+	{
+		rt = ++sz;
+		key[rt] = x;
+		cnt[rt] = size[rt] = 1;
+		son[rt][0] = son[rt][1] = 0;
+		return;
+	}
+	int u = rt, f = 0;
+	while(true)
+	{
+		if(key[u] == x)
+		{
+			++cnt[u];
+			update(u);
+			update(f);
+			splay(u);
+			return;
+		}
+		f = u, u = son[u][x&gt;key[u]];
+		if(!u)
+		{
+			key[++sz] = x;
+			cnt[sz] = size[sz] = 1;
+			fa[sz] = f;
+			son[f][x&gt;key[f]] = sz;
+			update(f);
+			splay(sz);
+			return;
+		}
+	}
+}
+
+int find(int x)
+{
+	int u = rt, ans = 0;
+	while(true)
+	{
+		if(x &lt; key[u])
+		{
+			u = son[u][0];
+			continue;
+		}
+		ans += size[son[u][0]];
+		if(x == key[u])
+		{
+			splay(u);
+			return ans + 1;
+		}
+		ans += cnt[u];
+		u = son[u][1];
+	}
+}
+
+int kth(int x)
+{
+	int u = rt;
+	while(true)
+	{
+		if(son[u][0] &amp;&amp; x &lt;= size[son[u][0]])
+		{
+			u = son[u][0];
+			continue;
+		}
+		if(son[u][0]) x -= size[son[u][0]];
+		if(x &lt;= cnt[u])
+		{
+			splay(u);
+			return key[u];
+		}
+		x -= cnt[u];
+		u = son[u][1];
+	}
+}
+
+int pre()
+{
+	int u = son[rt][0];
+	while(son[u][1]) u = son[u][1];
+	return u;
+}
+
+int suc()
+{
+	int u = son[rt][1];
+	while(son[u][0]) u = son[u][0];
+	return u;
+}
+
+void del(int x)
+{
+	int useless = find(x);
+	if(cnt[rt] &gt; 1)
+	{
+		--cnt[rt];
+		update(rt);
+		return;
+	}
+	if(!son[rt][0] &amp;&amp; !son[rt][1])
+	{
+		clear(rt);
+		rt = 0;
+		return;
+	}
+	if(!son[rt][0])
+	{
+		int tmp = rt;
+		fa[rt=son[rt][1]] = 0;
+		clear(tmp);
+		return;
+	}
+	if(!son[rt][1])
+	{
+		int tmp = rt;
+		fa[rt=son[rt][0]] = 0;
+		clear(tmp);
+		return;
+	}
+	int tmp = rt, p = pre();
+	splay(p);
+	connect(son[tmp][1], rt, 1);
+	clear(tmp);
+	update(rt);
+}
+
+int main()
+{
+	int n = read();
+	while(n--)
+	{
+		int opt = read(), x = read();
+		if(opt == 1) insert(x);
+		else if(opt == 2) del(x);
+		else if(opt == 3) printf(&quot;%d\n&quot;, find(x));
+		else if(opt == 4) printf(&quot;%d\n&quot;, kth(x));
+		else if(opt == 5)
+		{
+			insert(x);
+			printf(&quot;%d\n&quot;, key[pre()]);
+			del(x);
+		}
+		else
+		{
+			insert(x);
+			printf(&quot;%d\n&quot;, key[suc()]);
+			del(x);
+		}
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="0x02-文艺平衡树待更新">0X02 文艺平衡树（待更新）</h1>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[珂朵莉树学习笔记[新文章暂时置顶]]]></title>
         <id>https://blog.ak-ioi.cf/post/chtholly-is-so-cute/</id>
@@ -1638,46 +2091,6 @@ int main()
 <ol>
 <li><a href="https://blog.csdn.net/sevenjoin/article/details/82187127">C++ thread用法总结(整理)</a></li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF1313A@洛谷 | 1313A@Codeforces 【Fast Food Restaurant】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1313a-codeforces-1313a/">
-        </link>
-        <updated>2020-02-26T02:07:54.000Z</updated>
-        <content type="html"><![CDATA[<p>这题数据这么小，<strong>就直接暴力吧！</strong></p>
-<p>如果可以选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> ，选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>B</mi></mrow><annotation encoding="application/x-tex">AB</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span> 肯定不合适。先排个序，把原数组变成降序，然后枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span> 种情况判断是否可以即可。</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int t; 
-int a[3]; 
-int ans;
-
-int main()
-{
-	cin&gt;&gt;t;
-	while(t--)
-	{
-		ans = 0;
-		cin&gt;&gt;a[0]&gt;&gt;a[1]&gt;&gt;a[2];
-		if(a[0] &lt; a[1]) swap(a[0], a[1]);
-		if(a[0] &lt; a[2]) swap(a[0], a[2]);
-		if(a[1] &lt; a[2]) swap(a[1], a[2]);
-		if(a[0]) --a[0], ++ans;
-		if(a[1]) --a[1], ++ans;
-		if(a[2]) --a[2], ++ans;
-		if(a[0] &amp;&amp; a[1]) --a[0], --a[1], ++ans;
-		if(a[0] &amp;&amp; a[2]) --a[0], --a[2], ++ans;
-		if(a[1] &amp;&amp; a[2]) --a[1], --a[2], ++ans;
-		if(a[0] &amp;&amp; a[1] &amp;&amp; a[2]) --a[0], --a[1], --a[2], ++ans;
-		cout&lt;&lt;ans&lt;&lt;endl;
-	}
-	return 0;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

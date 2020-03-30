@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="三思而后码">
+<meta name="theme-color" content="#000">
+<title>Splay学习笔记[新文章暂时置顶]（upd：2020.03.30） | rui_er 的博客</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1585538188538">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/gemini.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css" rel="stylesheet">  
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+
+    <meta name="description" content="Splay学习笔记[新文章暂时置顶]（upd：2020.03.30）" />
+    <meta name="keywords" content="伸展树/Splay,学习笔记,算法,OI,洛谷" />
+  </head>
+  <body>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      
+<div class=" gemini">
+  <header class="header bg-color ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>rui_er 的博客</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">三思而后码</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 主页
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/archives" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/tags" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/list" target="_self">
+                  <i class="fa fa-globe"></i> 比赛游记
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/message-box" target="_self">
+                  <i class="fa fa-globe"></i> 留言板
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          <li class="nav-item">
+            <a>
+              <i class="fa fa-search"></i> 搜索
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+    </div>
+    <div class="main-continer">
+      
+      <div class="section-layout gemini ">
+        <div class="section-layout-wrapper">
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://blog.ak-ioi.cf/images/avatar.png"/>
+    <p class="site-author-name">rui_er 的博客</p>
+    <p class="site-description right-motion">三思而后码</p>
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">61</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">34</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">34</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://blog.ak-ioi.cf/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://www.github.com/qz-cqy">
+              <i class="fa fa-github-alt"></i> github
+            </a>
+          
+            <a href="https://vk.com/id585734755">
+              <i class="fa fa-vk"></i> vk
+            </a>
+          
+            <a href="mailto:caiqiyu_cwxx@sina.com">
+              <i class="fa fa-envelope-open"></i> email
+            </a>
+          
+            <a href="https://www.luogu.com.cn/user/122461">
+              <i class="fa fa-rocket"></i> 洛谷账号
+            </a>
+          
+        
+        
+          
+            <a class="social-img" href="#">
+              <img src="\media\images\custom-array-imgSocials-1585008802853-socialImg.jpg" />
+              <i class="fa fa-qq"></i> QQ
+            </a>
+          
+            <a class="social-img" href="#">
+              <img src="\media\images\custom-array-imgSocials-1585008802857-socialImg.png" />
+              <i class="fa fa-wechat"></i> 微信
+            </a>
+          
+        
+      </div>
+    </div>
+  
+
+
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="https://www.luogu.com.cn">【洛谷】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.henrytb.ml">【henrytb的博客】</a>
+        </p>
+      
+        <p>
+          <a href="https://ac-automation27.github.io">【AC_Automation的博客】</a>
+        </p>
+      
+        <p>
+          <a href="http://bbs.oiermikec.xyz">【OierBBS】</a>
+        </p>
+      
+    </div>
+  </div>
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#0xfe-%E6%9C%AC%E6%96%87%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD">0XFE 本文持续更新中</a></li>
+<li><a href="#0xff-%E4%BC%B8%E5%B1%95%E6%A0%91%E7%AE%80%E4%BB%8B">0XFF 伸展树简介</a></li>
+<li><a href="#0x00-%E4%BC%B8%E5%B1%95%E6%A0%91%E8%83%BD%E5%B9%B2%E4%BB%80%E4%B9%88">0X00 伸展树能干什么</a></li>
+<li><a href="#0x01-%E6%99%AE%E9%80%9A%E5%B9%B3%E8%A1%A1%E6%A0%91">0X01 普通平衡树</a>
+<ul>
+<li><a href="#0x01-01-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8">0X01-01 数据存储</a></li>
+<li><a href="#0x01-02-%E6%B8%85%E7%A9%BA%E4%B8%80%E6%A3%B5%E5%AD%90%E6%A0%91">0X01-02 清空一棵子树</a></li>
+<li><a href="#0x01-03-%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9%E4%B8%8E%E7%88%B6%E4%BA%B2%E7%9A%84%E5%85%B3%E7%B3%BB">0X01-03 获取节点与父亲的关系</a></li>
+<li><a href="#0x01-04-%E6%9B%B4%E6%96%B0%E5%AD%90%E6%A0%91%E5%A4%A7%E5%B0%8F">0X01-04 更新子树大小</a></li>
+<li><a href="#0x01-05-%E8%BF%9E%E8%BE%B9">0X01-05 连边</a></li>
+<li><a href="#0x01-06-%E4%B8%8A%E6%97%8B">0X01-06 上旋</a></li>
+<li><a href="#0x01-07-splay%E6%93%8D%E4%BD%9C%E7%BB%B4%E6%8A%A4%E5%B9%B3%E8%A1%A1">0X01-07 splay操作维护平衡</a></li>
+<li><a href="#0x01-08-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9">0X01-08 插入节点</a></li>
+<li><a href="#0x01-09-%E6%9F%A5%E8%AF%A2%E6%95%B0%E7%9A%84%E6%8E%92%E5%90%8D">0X01-09 查询数的排名</a></li>
+<li><a href="#0x01-10-%E6%9F%A5%E8%AF%A2%E6%8E%92%E5%90%8D%E5%AF%B9%E5%BA%94%E7%9A%84%E6%95%B0">0X01-10 查询排名对应的数</a></li>
+<li><a href="#0x01-11-%E5%89%8D%E9%A9%B1">0X01-11 前驱</a></li>
+<li><a href="#0x01-12-%E5%90%8E%E7%BB%A7">0X01-12 后继</a></li>
+<li><a href="#0x01-13-%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9">0X01-13 删除节点</a></li>
+<li><a href="#0x01-14-%E5%AE%8C%E6%95%B4%E7%A8%8B%E5%BA%8F">0X01-14 完整程序</a></li>
+</ul>
+</li>
+<li><a href="#0x02-%E6%96%87%E8%89%BA%E5%B9%B3%E8%A1%A1%E6%A0%91%E5%BE%85%E6%9B%B4%E6%96%B0">0X02 文艺平衡树（待更新）</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    lList.push(elem);
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop + 10;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+addTocNumber(tocContent, '');
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/learning-splay/">
+      Splay学习笔记[新文章暂时置顶]（upd：2020.03.30）
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-03-26</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/Znuy9EVnT/">
+              <span>伸展树/Splay</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/Wj08bbbmrW/">
+              <span>学习笔记</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
+              <span>算法</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
+              <span>OI</span>
+            </a>、
+          
+        
+          
+            <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
+              <span>洛谷</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>12分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>2357<span class="pc-show">字数</span></span>
+    </span>
+    
+      <span id="/post/learning-splay/" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
+      </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <h1 id="0xfe-本文持续更新中">0XFE 本文持续更新中</h1>
+<p>已完成更新：普通平衡树</p>
+<p>下一步更新：文艺平衡树</p>
+<p>队列中更新：LCT</p>
+<h1 id="0xff-伸展树简介">0XFF 伸展树简介</h1>
+<p>伸展树是一种二叉搜索树（二叉排序树），通过旋转（多次Splay操作）保持平衡，主要用于维护LCT（动态树，Link-Cut Tree）。LCT将在以后的学习笔记中详细讲解。</p>
+<h1 id="0x00-伸展树能干什么">0X00 伸展树能干什么</h1>
+<p>最基础的：</p>
+<ul>
+<li>插入节点k</li>
+<li>删除节点k</li>
+<li>求全局的k小值（根据排名求数）</li>
+<li>求k的全局排名（根据数求排名）</li>
+<li>求k的前驱（严格小于k的最大的数）</li>
+<li>求k的后继（严格大于k的最小的数）</li>
+</ul>
+<p>详见：<a href="https://www.luogu.com.cn/problem/P3369">离线模板</a>、<a href="https://www.luogu.com.cn/problem/P6136">强制在线模板</a>。（本人已经使用无旋fhq-Treap、带旋Treap、Splay三种方式AC离线版，下面将详细介绍Splay方法）</p>
+<p>进阶版（加tag）：</p>
+<ul>
+<li>给定一个初始数列</li>
+<li>每次操作将区间 [l, r] 翻转</li>
+</ul>
+<p>详见：<a href="https://www.luogu.com.cn/problem/P3391">文艺平衡树</a></p>
+<p>但其实进阶版比模板要短，大概是因为进阶版操作少，去掉了一系列不必要的操作。</p>
+<h1 id="0x01-普通平衡树">0X01 普通平衡树</h1>
+<h2 id="0x01-01-数据存储">0X01-01 数据存储</h2>
+<pre><code class="language-cpp">const int MAXN = 100001;
+int fa[MAXN], key[MAXN], son[MAXN][2], size[MAXN], cnt[MAXN];
+int rt, sz;
+</code></pre>
+<p>fa数组存每个节点当前的父亲，key是节点权值，son的0和1分别表示左儿子和右儿子，size是以该节点为根的子树的大小，cnt是该数的数量。</p>
+<p>rt存当前的根，sz是点的个数。</p>
+<h2 id="0x01-02-清空一棵子树">0X01-02 清空一棵子树</h2>
+<p>清空以x为根的子树，只需要把所有数据都清零即可。</p>
+<pre><code class="language-cpp">inline void clear(int x) {fa[x] = key[x] = son[x][0] = son[x][1] = size[x] = cnt[x] = 0;}
+</code></pre>
+<h2 id="0x01-03-获取节点与父亲的关系">0X01-03 获取节点与父亲的关系</h2>
+<p>这里用于获取节点x与父亲的关系，即是左儿子还是右儿子。</p>
+<pre><code class="language-cpp">inline bool get(int x) {return son[fa[x]][1] == x;}
+</code></pre>
+<h2 id="0x01-04-更新子树大小">0X01-04 更新子树大小</h2>
+<p>这里是更新子树大小的操作，<strong>因为需要用到儿子的size，所以每次更新前请确保所有孩子的值都是最新的！</strong></p>
+<pre><code class="language-cpp">void update(int x)
+{
+	if(!x) return;//数据不合法
+	size[x] = cnt[x];
+	if(son[x][0]) size[x] += size[son[x][0]];
+	if(son[x][1]) size[x] += size[son[x][1]];
+}
+</code></pre>
+<h2 id="0x01-05-连边">0X01-05 连边</h2>
+<p>将x设为y的关系为z的儿子。</p>
+<pre><code class="language-cpp">void connect(int x, int y, int z)
+{
+	if(x) fa[x] = y;//把x的父亲设为y
+	if(y) son[y][z] = x;//把y的关系为z的儿子设为x
+}
+</code></pre>
+<h2 id="0x01-06-上旋">0X01-06 上旋</h2>
+<p>这个操作是将节点x上旋，详见注释。</p>
+<pre><code class="language-cpp">void rotate(int x)
+{
+	int f = fa[x], ff = fa[f], p = get(x), q = get(f);//获取父亲、爷爷、自己与父亲关系、父亲与爷爷关系
+	connect(son[x][p^1], f, p);//把自己的p^1儿子连边到父亲，关系为p
+	connect(f, x, p^1);//把父亲下旋到自己，关系为p^1
+	connect(x, ff, q);//把自己上旋到爷爷，关系为q
+	update(f);//为什么是这个顺序？因为这次操作把父亲旋转为自己的儿子，更新顺序就是原父亲到自己
+	update(x);
+}
+</code></pre>
+<p>上旋操作不太好理解，这里放几张图上来。</p>
+<p>下面这个是旋转前的树，边权标的是关系。</p>
+<figure data-type="image" tabindex="1"><img src="https://blog.ak-ioi.cf/post-images/1585533226259.png" alt="" loading="lazy"></figure>
+<p>现在假设我们要上旋3号点，可以看到，3号点与父亲（2号点）的关系为0，异或为1，于是把3号点的右儿子（5号点）给父亲，此时因为父亲的儿子更新，3号点孤立：</p>
+<figure data-type="image" tabindex="2"><img src="https://blog.ak-ioi.cf/post-images/1585533463733.png" alt="" loading="lazy"></figure>
+<p>把父亲连到自己，成为自己的右儿子，因为父亲的fa被更新，1号点孤立：</p>
+<figure data-type="image" tabindex="3"><img src="https://blog.ak-ioi.cf/post-images/1585533613373.png" alt="" loading="lazy"></figure>
+<p>把自己连到爷爷，关系为0：</p>
+<figure data-type="image" tabindex="4"><img src="https://blog.ak-ioi.cf/post-images/1585533738334.png" alt="" loading="lazy"></figure>
+<p>可以看到3号点被上旋。</p>
+<h2 id="0x01-07-splay操作维护平衡">0X01-07 splay操作维护平衡</h2>
+<p>在这里，每次把节点旋转到根即可，但是在文艺平衡树中要指定旋转终点。这次为了省事，直接写旋转到根的即可：</p>
+<pre><code class="language-cpp">void splay(int x)
+{
+	for(int f;f=fa[x];rotate(x)) if(fa[f]) rotate(get(x)==get(f)?f:x);
+	rt = x;
+}
+</code></pre>
+<p>一直上旋点x直到上旋到跟，把root（rt）改为当前点。</p>
+<p>splay操作维护平衡性，写平衡树记得<strong>有事没事splay一下</strong>，毕竟splay多了用不了多长时间，splay少了会出错。</p>
+<h2 id="0x01-08-插入节点">0X01-08 插入节点</h2>
+<ul>
+<li>情况1：如果不存在根（即一个数都没有），直接在根插入。</li>
+<li>情况2：按照排序树性质向下查找，发现有过该权值的点，更新大小即可，记得需要splay。</li>
+<li>情况3：查找到空节点发现不存在该节点，在最后那里加入这个点，更新信息即可，也需要splay。</li>
+</ul>
+<pre><code class="language-cpp">void insert(int x)
+{
+	if(!rt)//case 1
+	{
+		rt = ++sz;
+		key[rt] = x;
+		cnt[rt] = size[rt] = 1;
+		son[rt][0] = son[rt][1] = 0;
+		return;
+	}
+	int u = rt, f = 0;
+	while(true)
+	{
+		if(key[u] == x)//case 2
+		{
+			++cnt[u];
+			update(u);
+			update(f);
+			splay(u);
+			return;
+		}
+		f = u, u = son[u][x&gt;key[u]];//排序树性质
+		if(!u)//case 3
+		{
+			key[++sz] = x;
+			cnt[sz] = size[sz] = 1;
+			fa[sz] = f;
+			son[f][x&gt;key[f]] = sz;
+			update(f);
+			splay(sz);
+			return;
+		}
+	}
+}
+</code></pre>
+<h2 id="0x01-09-查询数的排名">0X01-09 查询数的排名</h2>
+<p>查询数的排名根据排序树性质判断是否在左子树，之后累加size即可。</p>
+<pre><code class="language-cpp">int find(int x)
+{
+	int u = rt, ans = 0;
+	while(true)
+	{
+		if(x &lt; key[u])//在左子树，当前点走到左儿子
+		{
+			u = son[u][0];
+			continue;
+		}
+		ans += size[son[u][0]];//不在左子树，ans加上左子树大小
+		if(x == key[u])//找到该节点，splay维持平衡，返回答案
+		{
+			splay(u);
+			return ans + 1;
+		}
+		ans += cnt[u];//在右子树，ans加上当前位置数个数，向右查找
+		u = son[u][1];
+	}
+}
+</code></pre>
+<h2 id="0x01-10-查询排名对应的数">0X01-10 查询排名对应的数</h2>
+<p>这个操作与上一个类似，每次把要查的排名减少，查找子树即可。</p>
+<pre><code class="language-cpp">int kth(int x)
+{
+	int u = rt;
+	while(true)
+	{
+		if(son[u][0] &amp;&amp; x &lt;= size[son[u][0]])
+		{
+			u = son[u][0];
+			continue;
+		}
+		if(son[u][0]) x -= size[son[u][0]];
+		if(x &lt;= cnt[u])
+		{
+			splay(u);
+			return key[u];
+		}
+		x -= cnt[u];
+		u = son[u][1];
+	}
+}
+</code></pre>
+<h2 id="0x01-11-前驱">0X01-11 前驱</h2>
+<p>根据前驱定义与排序树性质，找到左儿子并一直向右走即可。</p>
+<pre><code class="language-cpp">int pre()
+{
+	int u = son[rt][0];
+	while(son[u][1]) u = son[u][1];
+	return u;
+}
+</code></pre>
+<h2 id="0x01-12-后继">0X01-12 后继</h2>
+<p>后继同理。</p>
+<pre><code class="language-cpp">int suc()
+{
+	int u = son[rt][1];
+	while(son[u][0]) u = son[u][0];
+	return u;
+}
+</code></pre>
+<h2 id="0x01-13-删除节点">0X01-13 删除节点</h2>
+<ul>
+<li>情况1：当前值有多个数，cnt更新即可。</li>
+<li>情况2：没有左右儿子，直接删除。</li>
+<li>情况3：只有右儿子，右儿子取代当前节点，把当前节点删除。</li>
+<li>情况4：只有左儿子同理。</li>
+<li>情况5：左右儿子都有，把前驱转到根节点，右儿子连到前驱成为前驱的右儿子，左儿子在旋转过程中旋转到其他地方，直接清除即可。</li>
+</ul>
+<pre><code class="language-cpp">void del(int x)
+{
+	int useless = find(x);//find把当前点转到根，方便操作
+	if(cnt[rt] &gt; 1)//case 1
+	{
+		--cnt[rt];
+		update(rt);
+		return;
+	}
+	if(!son[rt][0] &amp;&amp; !son[rt][1])//case 2
+	{
+		clear(rt);
+		rt = 0;
+		return;
+	}
+	if(!son[rt][0])//case 3
+	{
+		int tmp = rt;
+		fa[rt=son[rt][1]] = 0;
+		clear(tmp);
+		return;
+	}
+	if(!son[rt][1])//case 4
+	{
+		int tmp = rt;
+		fa[rt=son[rt][0]] = 0;
+		clear(tmp);
+		return;
+	}
+	int tmp = rt, p = pre();//case 5
+	splay(p);
+	connect(son[tmp][1], rt, 1);
+	clear(tmp);
+	update(rt);
+}
+</code></pre>
+<h2 id="0x01-14-完整程序">0X01-14 完整程序</h2>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int MAXN = 100001;
+
+int fa[MAXN], key[MAXN], son[MAXN][2], size[MAXN], cnt[MAXN];
+int rt, sz;
+
+inline int read()
+{
+	char c;
+	int s = 1, w = 0;
+	c = getchar();
+	for(;!isdigit(c);c=getchar()) if(c == '-') s = -1;
+	for(;isdigit(c);c=getchar()) w = (w &lt;&lt; 3) + (w &lt;&lt; 1) + (c ^ 48);
+	return s * w; 
+}
+
+inline void clear(int x) {fa[x] = key[x] = son[x][0] = son[x][1] = size[x] = cnt[x] = 0;}
+inline bool get(int x) {return son[fa[x]][1] == x;}
+
+void update(int x)
+{
+	if(!x) return;
+	size[x] = cnt[x];
+	if(son[x][0]) size[x] += size[son[x][0]];
+	if(son[x][1]) size[x] += size[son[x][1]];
+}
+
+void connect(int x, int y, int z)
+{
+	if(x) fa[x] = y;
+	if(y) son[y][z] = x;
+}
+
+void rotate(int x)
+{
+	int f = fa[x], ff = fa[f], p = get(x), q = get(f);
+	connect(son[x][p^1], f, p);
+	connect(f, x, p^1);
+	connect(x, ff, q);
+	update(f);
+	update(x);
+}
+
+void splay(int x)
+{
+	for(int f;f=fa[x];rotate(x)) if(fa[f]) rotate(get(x)==get(f)?f:x);
+	rt = x;
+}
+
+void insert(int x)
+{
+	if(!rt)
+	{
+		rt = ++sz;
+		key[rt] = x;
+		cnt[rt] = size[rt] = 1;
+		son[rt][0] = son[rt][1] = 0;
+		return;
+	}
+	int u = rt, f = 0;
+	while(true)
+	{
+		if(key[u] == x)
+		{
+			++cnt[u];
+			update(u);
+			update(f);
+			splay(u);
+			return;
+		}
+		f = u, u = son[u][x&gt;key[u]];
+		if(!u)
+		{
+			key[++sz] = x;
+			cnt[sz] = size[sz] = 1;
+			fa[sz] = f;
+			son[f][x&gt;key[f]] = sz;
+			update(f);
+			splay(sz);
+			return;
+		}
+	}
+}
+
+int find(int x)
+{
+	int u = rt, ans = 0;
+	while(true)
+	{
+		if(x &lt; key[u])
+		{
+			u = son[u][0];
+			continue;
+		}
+		ans += size[son[u][0]];
+		if(x == key[u])
+		{
+			splay(u);
+			return ans + 1;
+		}
+		ans += cnt[u];
+		u = son[u][1];
+	}
+}
+
+int kth(int x)
+{
+	int u = rt;
+	while(true)
+	{
+		if(son[u][0] &amp;&amp; x &lt;= size[son[u][0]])
+		{
+			u = son[u][0];
+			continue;
+		}
+		if(son[u][0]) x -= size[son[u][0]];
+		if(x &lt;= cnt[u])
+		{
+			splay(u);
+			return key[u];
+		}
+		x -= cnt[u];
+		u = son[u][1];
+	}
+}
+
+int pre()
+{
+	int u = son[rt][0];
+	while(son[u][1]) u = son[u][1];
+	return u;
+}
+
+int suc()
+{
+	int u = son[rt][1];
+	while(son[u][0]) u = son[u][0];
+	return u;
+}
+
+void del(int x)
+{
+	int useless = find(x);
+	if(cnt[rt] &gt; 1)
+	{
+		--cnt[rt];
+		update(rt);
+		return;
+	}
+	if(!son[rt][0] &amp;&amp; !son[rt][1])
+	{
+		clear(rt);
+		rt = 0;
+		return;
+	}
+	if(!son[rt][0])
+	{
+		int tmp = rt;
+		fa[rt=son[rt][1]] = 0;
+		clear(tmp);
+		return;
+	}
+	if(!son[rt][1])
+	{
+		int tmp = rt;
+		fa[rt=son[rt][0]] = 0;
+		clear(tmp);
+		return;
+	}
+	int tmp = rt, p = pre();
+	splay(p);
+	connect(son[tmp][1], rt, 1);
+	clear(tmp);
+	update(rt);
+}
+
+int main()
+{
+	int n = read();
+	while(n--)
+	{
+		int opt = read(), x = read();
+		if(opt == 1) insert(x);
+		else if(opt == 2) del(x);
+		else if(opt == 3) printf(&quot;%d\n&quot;, find(x));
+		else if(opt == 4) printf(&quot;%d\n&quot;, kth(x));
+		else if(opt == 5)
+		{
+			insert(x);
+			printf(&quot;%d\n&quot;, key[pre()]);
+			del(x);
+		}
+		else
+		{
+			insert(x);
+			printf(&quot;%d\n&quot;, key[suc()]);
+			del(x);
+		}
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="0x02-文艺平衡树待更新">0X02 文艺平衡树（待更新）</h1>
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      rui_er 的博客
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.ak-ioi.cf/post/learning-splay/" title="Splay学习笔记[新文章暂时置顶]（upd：2020.03.30）">Splay学习笔记[新文章暂时置顶]（upd：2020.03.30）</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://blog.ak-ioi.cf/tag/Znuy9EVnT/"># 伸展树/Splay</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/Wj08bbbmrW/"># 学习笔记</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="珂朵莉树学习笔记[新文章暂时置顶]" href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute/">珂朵莉树学习笔记[新文章暂时置顶]</a>
+        <a class="nav-mobile-next" title="珂朵莉树学习笔记[新文章暂时置顶]" href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+              
+                
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+<script>
+new Valine({
+    el: '#vcomments' ,
+    appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz',
+    appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
+    notify: 'true' === 'true', 
+    avatar:'', 
+    placeholder: '',
+    pageSize: '10',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+});
+</script>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By HsxyHao
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+    <link rel="stylesheet" href="/media/live2d/histoire/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left:5px;bottom:0px;" data-key="4e3a1759264749a8b6d10a20067dccdc">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    <div class="live_talk_input_body">
+      <div class="live_talk_input_name_body">
+        <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off" placeholder="你的名字" />
+      </div>
+      <div class="live_talk_input_text_body">
+        <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off" placeholder="要和我聊什么呀？"/>
+        <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+      </div>
+    </div>
+    <input name="live_talk" id="live_talk" value="1" type="hidden" />
+    <div class="live_ico_box">
+      <div class="live_ico_item type_info" id="showInfoBtn"></div>
+      <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+      
+      <div class="live_ico_item type_youdu" id="youduButton"></div>
+      <div class="live_ico_item type_quit" id="hideButton"></div>
+      <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+      <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+      <input id="duType" value="douqilai" type="hidden">
+      
+    </div>
+  </div>
+</div>
+<div id="open_live2d">召唤伊斯特瓦尔</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+var message_Path = '/media/live2d/histoire/';
+let landlord = document.querySelector('#landlord');
+var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/histoire/js/live2d.js"></script>
+<script type="text/javascript" src="/media/live2d/histoire/js/message.js"></script>
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+    </div>
+  </body>
+  <script src="/media/js/motion.js"></script>
+</html>
