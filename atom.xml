@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-01T01:01:37.633Z</updated>
+    <updated>2020-04-01T01:06:45.490Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -29,6 +29,41 @@
 <td style="text-align:center">实际</td>
 <td style="text-align:center">橙</td>
 <td style="text-align:center">蓝</td>
+</tr>
+<tr>
+<td style="text-align:center">0:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">1:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">2:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">3:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">4:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">5:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">6:00</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">*</td>
 </tr>
 <tr>
 <td style="text-align:center">7:00</td>
