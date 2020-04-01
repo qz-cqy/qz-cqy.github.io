@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-01T00:43:11.544Z</updated>
+    <updated>2020-04-01T00:46:58.946Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -12,13 +12,37 @@
     <rights>All rights reserved 2020, rui_er 的博客</rights>
     <entry>
         <title type="html"><![CDATA[2020愚人节名字颜色变化]]></title>
-        <id>https://blog.ak-ioi.cf/post/2020-yu-ren-jie-ming-zi-yan-se-bian-hua/</id>
-        <link href="https://blog.ak-ioi.cf/post/2020-yu-ren-jie-ming-zi-yan-se-bian-hua/">
+        <id>https://blog.ak-ioi.cf/post/2020-april-fool/</id>
+        <link href="https://blog.ak-ioi.cf/post/2020-april-fool/">
         </link>
         <updated>2020-04-01T00:42:26.000Z</updated>
-        <content type="html"><![CDATA[<p>实际 橙<br>
-7:00 橙<br>
-8:00 红</p>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:center">时间</th>
+<th style="text-align:center">大号@rui_er</th>
+<th style="text-align:center">小号@akioi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">实际</td>
+<td style="text-align:center">橙</td>
+<td style="text-align:center">蓝</td>
+</tr>
+<tr>
+<td style="text-align:center">7:00</td>
+<td style="text-align:center">橙</td>
+<td style="text-align:center">*</td>
+</tr>
+<tr>
+<td style="text-align:center">8:00</td>
+<td style="text-align:center">红</td>
+<td style="text-align:center">橙</td>
+</tr>
+</tbody>
+</table>
+<p>注：*表示没看</p>
 ]]></content>
     </entry>
     <entry>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8"/>
+      <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>我的第二场CF比赛2.23 | rui_er 的博客</title>
+<title>rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1585702008403">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -27,8 +27,6 @@
 
 
 
-    <meta name="description" content="我的第二场CF比赛2.23" />
-    <meta name="keywords" content="CF比赛,游记,Codeforces,OI" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -148,25 +146,10 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout gemini ">
+      <div class="section-layout  gemini">
         <div class="section-layout-wrapper">
-          
-
-<div class="sidebar">
-  
-    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
-      
-        <div class="post-list-sidebar">
-          <div class="sidebar-title">
-            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
-            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
-          </div>
-        </div>
-      
-      <div class="sidebar-body gemini" id="sidebar_body">
-        
-          
-            
+          <div id="sidebarMeta" class="sidebar">
+    
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://blog.ak-ioi.cf/images/avatar.png"/>
@@ -268,277 +251,720 @@
   </div>
 
 </div>
-          
-        
-      </div>
-    </div>
-  
 </div>
 <script>
-  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
-  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
-  const SLIDE_UP_IN = 'slide-up-in';
-
-  let sidebar = document.querySelector('#sidebar'),
-  tocSideBar = document.querySelector('#tocSideBar'),
-  metaSideBar = document.querySelector('#metaSideBar'),
-  postToc = document.querySelector('#post_toc'),
-  postSiteMeta = document.querySelector('#post_side_meta'),
-  sidebarTitle = document.querySelector('.sidebar-title'),
-  sidebarBody = document.querySelector('#sidebar_body');
-
-  tocSideBar && tocSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  metaSideBar && metaSideBar.addEventListener('click', (e) => {
-    toggleSidebar(e);
-  });
-
-  function toggleSidebar(e) {
-    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
-    if (currentTitle == e.srcElement) {
-      return ;
-    }
-    let current, showElement, hideElement;
-    if (e.srcElement == metaSideBar) {
-      showElement = postSiteMeta;
-      hideElement = postToc;
-    } else if (e.srcElement == tocSideBar){
-      showElement = postToc;
-      hideElement = postSiteMeta;
-    }
-    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
-    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
-
-    window.Velocity(hideElement, 'stop');
-    window.Velocity(hideElement, 'transition.slideUpOut', {
-      display: 'none',
-      duration: 200,
-      complete: function () {
-        window.Velocity(showElement, 'transition.slideDownIn', {
-          duration: 200
-        });
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
       }
-    })
-    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
-    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+    });
   }
-
-  postToc && postToc.addEventListener('transitionend', function() {
-    this.classList.remove(SLIDE_UP_IN);
-  });
-
-  if (sidebarBody) {
-    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
-      let hasFix = false;
-      let scrollEl = document.querySelector('.main-continer');
-      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
-      window.addEventListener('scroll', function(e) {
-        if (document.scrollingElement.scrollTop >= limitTop) {
-          if (!hasFix) {
-            sidebar.classList.add('sidebar-fixed');
-            hasFix = true;
-          }
-        } else {
-          if (hasFix) {
-            sidebar.classList.remove('sidebar-fixed');
-            hasFix = false;
-          }
-        }
-      });
-    }
-  }
-  
-</script>
-          <div class="section-box box-shadow-wrapper">
-            <div class="section bg-color post post-page">
-              <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/second-cf/">
-      我的第二场CF比赛2.23
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-24</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-      <span class="meta-item">
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
+  </script>
+            <div class="section-box tag-line">
+              <div class="box-shadow-wrapper">
+                <div class="bg-color">
+                  <section class="section posts-expand">
+                    <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
+          愚人节
+          <small>标签</small>
+        </h2>
+      </div>
+      
         
           
-            <a href="https://blog.ak-ioi.cf/tag/VyDl9Z2Vr/">
-              <span>CF比赛</span>
-            </a>、
-          
-        
-          
-            <a href="https://blog.ak-ioi.cf/tag/XcOUHe17O0/">
-              <span>游记</span>
-            </a>、
-          
-        
-          
-            <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/">
-              <span>Codeforces</span>
-            </a>、
-          
-        
-          
-            <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-              <span>OI</span>
+            <a href="https://blog.ak-ioi.cf/post/2020-april-fool/">
+              <div class="motion-warpper">
+                <div class="tag-post-node">
+                  <h1>
+                    04-01
+                    <small>2020愚人节名字颜色变化</small>
+                  </h1>
+                </div>  
+              </div>
             </a>
           
         
-      </span>
-      <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>464<span class="pc-show">字数</span></span>
-    </span>
-    
-      <span id="/post/second-cf/" class="meta-item pc-show leancloud_visitors">
-        <span class="post-meta-divider">|</span>
-        <i class="fa fa-eye"></i>
-        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
-      </span>
-    
-  </div>
-</header>
-              <div class="post-body next-md-body" id="post_body">
-                <p>2月23日，这天有一场17点开始的比赛（CF1313）！机不可失！时不再来！这场比赛必须打！</p>
-<p>比赛开始后，看了一眼A题，这什么玩意，乱七八糟的，还好数据不大，直接写个暴力<s>膜你</s>模拟，PP了。</p>
-<p>B题，今天的CF怎么回事，全是怪题。这题怕不是要数学大法推式子？！算了，一会再说。</p>
-<p>C1题，n方，这么简单？结果忘开long long见祖宗。我立刻意识到了这一点，很快就PP了。</p>
-<p>C2题，nlogn，这个怎么做？想了半天线段树，没有思路。最后你谷大佬说是用两遍单调栈？不管了，反正没想出来。</p>
-<p>D题，nlogn？我的方法过不了所有数据，CF要求要过所有数据，算了吧。</p>
-<p>懒得看E题了，反正也不会。返回去看B题，推了十几分钟，得到了这两个式子：</p>
-<pre><code>Min=min(max(x+y-n, 0)+1, n)
-Max=min(x+y-1, n)
-</code></pre>
-<p>不知道对不对，反正自己测了几个都没问题，交上去，PP了。（后来发现这么简单一题同班大佬AC-Automation说没做出来，还比D还难，要知道我不会D题）据说洛谷里有问这题结论的讨论，还得到了答案 <s>，可惜发完就删了，我没看到。</s></p>
-<p>PP三道题之后，看一眼CF-ml-Predictor，说+106？太棒了！然而每过一段时间就往下掉一点，真的是第一次希望比赛快点结束。</p>
-<p>最后还剩十几分钟，我去洛谷水了会儿讨论和犇犇。</p>
-<p>比赛结束时，只剩+95了。最后，CF给我+103，特别高兴。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">题目</th>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">赛后查看时状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">PP</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">PP</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">C1</td>
-<td style="text-align:center">PP(-1)</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">C2</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-</tbody>
-</table>
-
-              </div>
-              <div class="post-footer">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-      <strong>本文作者：</strong>
-      rui_er 的博客
-    </li>
-    <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/second-cf/" title="我的第二场CF比赛2.23">我的第二场CF比赛2.23</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明： </strong>
-      本博客所有文章除特别声明外，转载请注明出处！
-    </li>
-  </ul>
-  <div class="tags">
-    
-      <a href="https://blog.ak-ioi.cf/tag/VyDl9Z2Vr/"># CF比赛</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/XcOUHe17O0/"># 游记</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/"># Codeforces</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
-    
-  </div>
-  <div class="nav">
-    <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="nazo开始大厅" href="https://blog.ak-ioi.cf/post/nazo-begin/">nazo开始大厅</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="nazo开始大厅" href="https://blog.ak-ioi.cf/post/nazo-begin/">上一篇</a>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
-    </div>
-    <div class="nav-next">
+        
+          
+        
+          
+        
+          
+        
       
-        <a class="nav-pc-next" title="AC题目统计（2020年3月27日更新）[TOP]" href="https://blog.ak-ioi.cf/post/difficulty-of-problems/">AC题目统计（2020年3月27日更新）[TOP]</a>
-        <a class="nav-mobile-next" title="AC题目统计（2020年3月27日更新）[TOP]" href="https://blog.ak-ioi.cf/post/difficulty-of-problems/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+          
+        
+          
+        
+      
+        
+          
+        
+      
+        
       
     </div>
   </div>
 </div>
-              
-                
-<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
-<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
-<script>
-new Valine({
-    el: '#vcomments' ,
-    appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz',
-    appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
-    notify: 'true' === 'true', 
-    avatar:'', 
-    placeholder: '',
-    pageSize: '10',
-    lang: 'zh-cn',
-    visitor: 'true' === 'true',
-    highlight: 'true' === 'true',
-    avatarForce: 'true' === 'false',
-});
-</script>
-              
-            </div>
+                  </section>
+                </div>
+              </div>
           </div>
         </div>
       </div>
