@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-03-31T10:58:56.871Z</updated>
+    <updated>2020-04-01T00:43:11.544Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[2020愚人节名字颜色变化]]></title>
+        <id>https://blog.ak-ioi.cf/post/2020-yu-ren-jie-ming-zi-yan-se-bian-hua/</id>
+        <link href="https://blog.ak-ioi.cf/post/2020-yu-ren-jie-ming-zi-yan-se-bian-hua/">
+        </link>
+        <updated>2020-04-01T00:42:26.000Z</updated>
+        <content type="html"><![CDATA[<p>实际 橙<br>
+7:00 橙<br>
+8:00 红</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【REOI2020R1】rui_er的水题大赛赛后题解]]></title>
         <id>https://blog.ak-ioi.cf/post/reoi2020r1-solution/</id>
@@ -1935,28 +1946,6 @@ int main()
 <h1 id="20200308">2020/03/08</h1>
 <h2 id="cf896c">CF896C</h2>
 <p>珂朵莉太可爱啦！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[NOI Online2020游记]]></title>
-        <id>https://blog.ak-ioi.cf/post/i-ak-noi-online2020/</id>
-        <link href="https://blog.ak-ioi.cf/post/i-ak-noi-online2020/">
-        </link>
-        <updated>2020-03-07T04:07:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>NOI Online 2020 提高组比赛游记</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>NOI Online 2020 提高组比赛游记</p>
-<!-- more -->
-<p>今天参加NOI Online 2020的提高组，被那毒瘤<strong>NOI</strong> ONLINE吊打qwq。（其实是NO<strong>I</strong> <strong>O</strong>NL<strong>I</strong>NE</p>
-<h1 id="t1">T1</h1>
-<p>这什么玩意，写了个暴力，预估50分，洛谷爆零。</p>
-<h1 id="t2">T2</h1>
-<p>这什么玩意。写了个暴力，预估20分，洛谷20分。</p>
-<h1 id="t3">T3</h1>
-<p>这什么玩意！写了个暴力，预估40分，洛谷爆零。</p>
-<h1 id="后续">后续</h1>
-<p>啊哈哈哈哈哈哈哈哈哈我爆零了啊哈哈哈哈哈哈哈哈哈</p>
-<p>大起大落：自估 110→洛谷自测 20→CCF官方 0</p>
 ]]></content>
     </entry>
 </feed>
