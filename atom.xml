@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-03T02:28:33.895Z</updated>
+    <updated>2020-04-03T06:07:34.788Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -69,43 +69,12 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[【重要】文章转载须知（2020年4月2日更新）[TOP]]]></title>
+        <title type="html"><![CDATA[【重要】文章转载须知（2020年4月3日更新，许可协议改变，请务必注意）[TOP]]]></title>
         <id>https://blog.ak-ioi.cf/post/zhuan-zai/</id>
         <link href="https://blog.ak-ioi.cf/post/zhuan-zai/">
         </link>
         <updated>2020-04-02T05:34:17.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="0-商业用途">0 商业用途</h1>
-<p>本博客所有文章禁止以任何方式用于商业用途。</p>
-<h1 id="1-部分引用">1 部分引用</h1>
-<h2 id="11-文段引用">1.1 文段引用</h2>
-<p>如果您需要部分引用本博客的文章，请先与博客主取得联系。在获得授权后，请在引用地址后面加上指向原文的链接，例子如下：</p>
-<blockquote>
-<p>原文：珂朵莉太可爱啦！<br>
-引用：为什么要学习珂朵莉树呢？当然是因为——珂朵莉太可爱啦！<a href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute">[1]</a></p>
-</blockquote>
-<h2 id="12-图片引用">1.2 图片引用</h2>
-<p>引用图片时，请在图片后备注图片来源，并给出指向原文的链接。例子：</p>
-<blockquote>
-<p>原文：下面详细讲解splay。假设旋转前的树是这个：<img src="https://blog.ak-ioi.cf/post-images/1585533226259.png" alt="" loading="lazy"><br>
-引用：我们画个图来详细了解一下：<img src="https://blog.ak-ioi.cf/post-images/1585533226259.png" alt="" loading="lazy"><a href="https://blog.ak-ioi.cf/post/learning-splay">图片来源</a></p>
-</blockquote>
-<h1 id="2-全文转载">2 全文转载</h1>
-<p>在全文转载时，请先与博客主取得联系。在获得授权后，在文章开头与结尾处加上如下的声明并给出链接：</p>
-<blockquote>
-<p>本文转载自<a href="https://blog.ak-ioi.cf/post/learning-splay">rui_er的博客-Splay学习笔记</a><br>
-已获得授权<br>
-未经原作者许可禁止二次转载或演绎</p>
-</blockquote>
-<h1 id="3-演绎转载">3 演绎转载</h1>
-<p>如果您想以本博客内文章为基础进行扩展，或在原文基础上进行演绎，请先与博客主取得联系。在获得授权后，在文章开头与结尾处加上如下的声明并给出链接：</p>
-<blockquote>
-<p>本文演绎自原文：<a href="https://blog.ak-ioi.cf/post/learning-splay">rui_er的博客-Splay学习笔记</a><br>
-已获得授权<br>
-未经原作者许可禁止二次转载或演绎</p>
-</blockquote>
-<h1 id="4-联系方式">4 联系方式</h1>
-<p>邮箱：<a href="mailto:caiqiyu_cwxx@sina.com">caiqiyu_cwxx@sina.com</a></p>
-<p>QQ：2132851892</p>
+        <content type="html"><![CDATA[<p>此博客所有文章（除特殊说明外）均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a>许可协议。</p>
 ]]></content>
     </entry>
     <entry>

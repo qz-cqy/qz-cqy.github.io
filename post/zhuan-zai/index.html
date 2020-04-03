@@ -7,8 +7,8 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>【重要】文章转载须知（2020年4月2日更新）[TOP] | rui_er 的博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1585880903574">
+<title>【重要】文章转载须知（2020年4月3日更新，许可协议改变，请务必注意）[TOP] | rui_er 的博客</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1585894045182">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -27,7 +27,7 @@
 
 
 
-    <meta name="description" content="【重要】文章转载须知（2020年4月2日更新）[TOP]" />
+    <meta name="description" content="【重要】文章转载须知（2020年4月3日更新，许可协议改变，请务必注意）[TOP]" />
     <meta name="keywords" content="声明/公告,重要,置顶" />
   </head>
   <body>
@@ -166,8 +166,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://blog.ak-ioi.cf/images/avatar.png"/>
@@ -273,186 +272,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#0-%E5%95%86%E4%B8%9A%E7%94%A8%E9%80%94">0 商业用途</a></li>
-<li><a href="#1-%E9%83%A8%E5%88%86%E5%BC%95%E7%94%A8">1 部分引用</a>
-<ul>
-<li><a href="#11-%E6%96%87%E6%AE%B5%E5%BC%95%E7%94%A8">1.1 文段引用</a></li>
-<li><a href="#12-%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8">1.2 图片引用</a></li>
-</ul>
-</li>
-<li><a href="#2-%E5%85%A8%E6%96%87%E8%BD%AC%E8%BD%BD">2 全文转载</a></li>
-<li><a href="#3-%E6%BC%94%E7%BB%8E%E8%BD%AC%E8%BD%BD">3 演绎转载</a></li>
-<li><a href="#4-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F">4 联系方式</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -541,7 +360,7 @@ window.addEventListener('load', function() {
               <header class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://blog.ak-ioi.cf/post/zhuan-zai/">
-      【重要】文章转载须知（2020年4月2日更新）[TOP]
+      【重要】文章转载须知（2020年4月3日更新，许可协议改变，请务必注意）[TOP]
     </a>
   </h1>
   <div class="post-meta">
@@ -586,12 +405,12 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>1分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>397<span class="pc-show">字数</span></span>
+      <span>44<span class="pc-show">字数</span></span>
     </span>
     
       <span id="/post/zhuan-zai/" class="meta-item pc-show leancloud_visitors">
@@ -603,38 +422,7 @@ window.addEventListener('load', function() {
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <h1 id="0-商业用途">0 商业用途</h1>
-<p>本博客所有文章禁止以任何方式用于商业用途。</p>
-<h1 id="1-部分引用">1 部分引用</h1>
-<h2 id="11-文段引用">1.1 文段引用</h2>
-<p>如果您需要部分引用本博客的文章，请先与博客主取得联系。在获得授权后，请在引用地址后面加上指向原文的链接，例子如下：</p>
-<blockquote>
-<p>原文：珂朵莉太可爱啦！<br>
-引用：为什么要学习珂朵莉树呢？当然是因为——珂朵莉太可爱啦！<a href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute">[1]</a></p>
-</blockquote>
-<h2 id="12-图片引用">1.2 图片引用</h2>
-<p>引用图片时，请在图片后备注图片来源，并给出指向原文的链接。例子：</p>
-<blockquote>
-<p>原文：下面详细讲解splay。假设旋转前的树是这个：<img src="https://blog.ak-ioi.cf/post-images/1585533226259.png" alt="" loading="lazy"><br>
-引用：我们画个图来详细了解一下：<img src="https://blog.ak-ioi.cf/post-images/1585533226259.png" alt="" loading="lazy"><a href="https://blog.ak-ioi.cf/post/learning-splay">图片来源</a></p>
-</blockquote>
-<h1 id="2-全文转载">2 全文转载</h1>
-<p>在全文转载时，请先与博客主取得联系。在获得授权后，在文章开头与结尾处加上如下的声明并给出链接：</p>
-<blockquote>
-<p>本文转载自<a href="https://blog.ak-ioi.cf/post/learning-splay">rui_er的博客-Splay学习笔记</a><br>
-已获得授权<br>
-未经原作者许可禁止二次转载或演绎</p>
-</blockquote>
-<h1 id="3-演绎转载">3 演绎转载</h1>
-<p>如果您想以本博客内文章为基础进行扩展，或在原文基础上进行演绎，请先与博客主取得联系。在获得授权后，在文章开头与结尾处加上如下的声明并给出链接：</p>
-<blockquote>
-<p>本文演绎自原文：<a href="https://blog.ak-ioi.cf/post/learning-splay">rui_er的博客-Splay学习笔记</a><br>
-已获得授权<br>
-未经原作者许可禁止二次转载或演绎</p>
-</blockquote>
-<h1 id="4-联系方式">4 联系方式</h1>
-<p>邮箱：<a href="mailto:caiqiyu_cwxx@sina.com">caiqiyu_cwxx@sina.com</a></p>
-<p>QQ：2132851892</p>
+                <p>此博客所有文章（除特殊说明外）均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a>许可协议。</p>
 
               </div>
               <div class="post-footer">
@@ -645,7 +433,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/zhuan-zai/" title="【重要】文章转载须知（2020年4月2日更新）[TOP]">【重要】文章转载须知（2020年4月2日更新）[TOP]</a>
+      <a href="https://blog.ak-ioi.cf/post/zhuan-zai/" title="【重要】文章转载须知（2020年4月3日更新，许可协议改变，请务必注意）[TOP]">【重要】文章转载须知（2020年4月3日更新，许可协议改变，请务必注意）[TOP]</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -708,7 +496,8 @@ new Valine({
       Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By HsxyHao
     </div>
     <div class="poweredby">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+      <p>此博客所有文章（除特殊说明外）采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) </a>许可协议</p>
+Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
     </div>
   </footer>
   
