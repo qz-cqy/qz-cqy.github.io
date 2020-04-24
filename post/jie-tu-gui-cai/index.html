@@ -7,7 +7,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP] | rui_er 的博客</title>
+<title>截 图 鬼 才 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1587698493779">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -27,8 +27,8 @@
 
 
 
-    <meta name="description" content="洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]" />
-    <meta name="keywords" content="置顶,洛谷" />
+    <meta name="description" content="截 图 鬼 才" />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -166,8 +166,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://blog.ak-ioi.cf/images/avatar.png"/>
@@ -277,179 +276,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E5%B8%B8%E5%B9%B4%E7%AE%A1%E7%90%86%E5%91%98">常年管理员</a></li>
-<li><a href="#%E9%A2%98%E7%9B%AE%E7%AE%A1%E7%90%86%E5%BF%97%E6%84%BF%E8%80%85%E8%BD%AE%E6%8D%A2%E7%AE%A1%E7%90%86%E5%91%98">题目管理志愿者（轮换管理员）</a></li>
-<li><a href="#%E6%9B%BE%E7%BB%8F%E7%9A%84%E7%AE%A1%E7%90%86%E5%91%98%E5%8F%AF%E8%83%BD%E4%B8%8D%E5%85%A8%E9%9D%A2">曾经的管理员（可能不全面）</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -537,49 +363,36 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/luogu-admin/">
-      洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/jie-tu-gui-cai/">
+      截 图 鬼 才
     </a>
   </h1>
   <div class="post-meta">
     
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-14</span>
+      <span>2020-04-24</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
-      <span class="meta-item">
-        <i class="fa fa-folder-o"></i>
-        <span class="pc-show">分类于</span>
-        
-          
-            <a href="https://blog.ak-ioi.cf/tag/LsGynlhxT/">
-              <span>置顶</span>
-            </a>、
-          
-        
-          
-            <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-              <span>洛谷</span>
-            </a>
-          
-        
-      </span>
-      <span class="post-meta-divider">|</span>
-    
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>0分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>405<span class="pc-show">字数</span></span>
+      <span>0<span class="pc-show">字数</span></span>
     </span>
     
-      <span id="/post/luogu-admin/" class="meta-item pc-show leancloud_visitors">
+      <span id="/post/jie-tu-gui-cai/" class="meta-item pc-show leancloud_visitors">
         <span class="post-meta-divider">|</span>
         <i class="fa fa-eye"></i>
         <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
@@ -588,404 +401,11 @@ window.addEventListener('load', function() {
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <h1 id="常年管理员">常年管理员</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">标签</th>
-<th style="text-align:left">粉丝</th>
-<th style="text-align:center">活跃度</th>
-<th style="text-align:center">颜色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:center">洛谷</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">5.13k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">绿</td>
-</tr>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:center">kkksc03</td>
-<td style="text-align:center">吉祥物</td>
-<td style="text-align:left">5.94k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">8457</td>
-<td style="text-align:center">chen_zhe</td>
-<td style="text-align:center">Aya</td>
-<td style="text-align:left">5.67k</td>
-<td style="text-align:center">超级活跃</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">256</td>
-<td style="text-align:center">lin_toto</td>
-<td style="text-align:center">ユメミ</td>
-<td style="text-align:left">3.13k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">141</td>
-<td style="text-align:center">w</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">355</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">1492</td>
-<td style="text-align:center">HansBug</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">578</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">401</td>
-<td style="text-align:center">soha</td>
-<td style="text-align:center">空气</td>
-<td style="text-align:left">1.13k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">3711</td>
-<td style="text-align:center">laosb</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">282</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">11171</td>
-<td style="text-align:center">ddd</td>
-<td style="text-align:center">求关注</td>
-<td style="text-align:left">566</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">14</td>
-<td style="text-align:center">xmyzwls</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">352</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">灰</td>
-</tr>
-<tr>
-<td style="text-align:left">51185</td>
-<td style="text-align:center">darkflames</td>
-<td style="text-align:center">Hasselblad</td>
-<td style="text-align:left">944</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">5088</td>
-<td style="text-align:center">yjjr</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">695</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">2978</td>
-<td style="text-align:center">zcysky</td>
-<td style="text-align:center">白羽</td>
-<td style="text-align:left">1.29k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">42102</td>
-<td style="text-align:center">yanQval</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">237</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">15326</td>
-<td style="text-align:center">will7101</td>
-<td style="text-align:center">可爱</td>
-<td style="text-align:left">520</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">12621</td>
-<td style="text-align:center">fstqwq</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">580</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">52177</td>
-<td style="text-align:center">hqy2000</td>
-<td style="text-align:center">スイカ</td>
-<td style="text-align:left">356</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">53062</td>
-<td style="text-align:center">Anguei</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">1.16k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">53495</td>
-<td style="text-align:center">memset0</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">2.17k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">29</td>
-<td style="text-align:center">yeszy</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">962</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">绿</td>
-</tr>
-<tr>
-<td style="text-align:left">11751</td>
-<td style="text-align:center">ComeIntoPower</td>
-<td style="text-align:center">小圆</td>
-<td style="text-align:left">823</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">36482</td>
-<td style="text-align:center">龟龟号打捞船</td>
-<td style="text-align:center">铲屎官</td>
-<td style="text-align:left">1.61k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">2674</td>
-<td style="text-align:center">「QQ红包」</td>
-<td style="text-align:center">发红包了</td>
-<td style="text-align:left">977</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">5846</td>
-<td style="text-align:center">yyy2015c01</td>
-<td style="text-align:center">嘤嘤嘤</td>
-<td style="text-align:left">1.35k</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">829</td>
-<td style="text-align:center">Scarlet</td>
-<td style="text-align:center">芙兰朵露</td>
-<td style="text-align:left">547</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">96686</td>
-<td style="text-align:center">hh0592821</td>
-<td style="text-align:center">PM</td>
-<td style="text-align:left">629</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">3296</td>
-<td style="text-align:center">noip</td>
-<td style="text-align:center">毒瘤</td>
-<td style="text-align:left">1.75k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">绿</td>
-</tr>
-<tr>
-<td style="text-align:left">173989</td>
-<td style="text-align:center">岭上团子</td>
-<td style="text-align:center">聪团</td>
-<td style="text-align:left">445</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">15289</td>
-<td style="text-align:center">阮行止</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">702</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">3182</td>
-<td style="text-align:center">Created_equal1</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">769</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">100544</td>
-<td style="text-align:center">xht37</td>
-<td style="text-align:center">ET</td>
-<td style="text-align:left">1.45k</td>
-<td style="text-align:center">超级活跃</td>
-<td style="text-align:center">红</td>
-</tr>
-<tr>
-<td style="text-align:left">5130</td>
-<td style="text-align:center">mcfx</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">357</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">橙</td>
-</tr>
-<tr>
-<td style="text-align:left">9433</td>
-<td style="text-align:center">FlierKing</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">523</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">397</td>
-<td style="text-align:center">洛谷网校</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">176</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<h1 id="题目管理志愿者轮换管理员">题目管理志愿者（轮换管理员）</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">标签</th>
-<th style="text-align:left">粉丝</th>
-<th style="text-align:center">活跃度</th>
-<th style="text-align:center">颜色</th>
-<th style="text-align:center">是否现任</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">10703</td>
-<td style="text-align:center">小粉兔</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">2.02k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">22030</td>
-<td style="text-align:center">StudyingFather</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">717</td>
-<td style="text-align:center">超级活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">115864</td>
-<td style="text-align:center">NaCly_Fish</td>
-<td style="text-align:center">绒布球</td>
-<td style="text-align:left">3.47k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:left">65363</td>
-<td style="text-align:center">一扶苏一</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">543</td>
-<td style="text-align:center">潜水</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:left">6813</td>
-<td style="text-align:center">mrsrz</td>
-<td style="text-align:center">珂愛</td>
-<td style="text-align:left">1.01k</td>
-<td style="text-align:center">活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">49093</td>
-<td style="text-align:center">_sys</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">334</td>
-<td style="text-align:center">活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">是</td>
-</tr>
-<tr>
-<td style="text-align:left">20218</td>
-<td style="text-align:center">zhouwc</td>
-<td style="text-align:center">legends</td>
-<td style="text-align:left">803</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-<tr>
-<td style="text-align:left">20782</td>
-<td style="text-align:center">CYJian</td>
-<td style="text-align:center"></td>
-<td style="text-align:left">1.14k</td>
-<td style="text-align:center">活跃</td>
-<td style="text-align:center">红</td>
-<td style="text-align:center">否</td>
-</tr>
-</tbody>
-</table>
-<h1 id="曾经的管理员可能不全面">曾经的管理员（可能不全面）</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ID</th>
-<th style="text-align:center">名字</th>
-<th style="text-align:center">标签</th>
-<th style="text-align:left">粉丝</th>
-<th style="text-align:center">活跃度</th>
-<th style="text-align:center">颜色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">8943</td>
-<td style="text-align:center">老K</td>
-<td style="text-align:center">QAQ</td>
-<td style="text-align:left">1.48k</td>
-<td style="text-align:center">冒泡</td>
-<td style="text-align:center">红</td>
-</tr>
-</tbody>
-</table>
+                <figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/z0f4av3z.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9sgvon60.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/dlqd7zth.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ew69di7g.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/39yqt70z.png" alt="" loading="lazy"></figure>
 
               </div>
               <div class="post-footer">
@@ -996,7 +416,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/luogu-admin/" title="洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]">洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]</a>
+      <a href="https://blog.ak-ioi.cf/post/jie-tu-gui-cai/" title="截 图 鬼 才">截 图 鬼 才</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -1005,23 +425,15 @@ window.addEventListener('load', function() {
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/LsGynlhxT/"># 置顶</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="积分法求圆面积" href="https://blog.ak-ioi.cf/post/calculating-size-of-circle/">积分法求圆面积</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="积分法求圆面积" href="https://blog.ak-ioi.cf/post/calculating-size-of-circle/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】" href="https://blog.ak-ioi.cf/post/solution-luogu-at4164-atcoder-4164/">题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】</a>
-        <a class="nav-mobile-next" title="题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】" href="https://blog.ak-ioi.cf/post/solution-luogu-at4164-atcoder-4164/">下一篇</a>
+        <a class="nav-pc-next" title="新年+年中愿望集合" href="https://blog.ak-ioi.cf/post/new-year-mid-year/">新年+年中愿望集合</a>
+        <a class="nav-mobile-next" title="新年+年中愿望集合" href="https://blog.ak-ioi.cf/post/new-year-mid-year/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
