@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-28T06:08:01.645Z</updated>
+    <updated>2020-04-28T07:04:08.439Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -457,7 +457,7 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Splay学习笔记[新文章暂时置顶]（upd：2020.03.30）]]></title>
+        <title type="html"><![CDATA[Splay学习笔记[新文章暂时置顶]]]></title>
         <id>https://blog.ak-ioi.cf/post/learning-splay/</id>
         <link href="https://blog.ak-ioi.cf/post/learning-splay/">
         </link>
@@ -906,11 +906,149 @@ int main()
 	return 0;
 }
 </code></pre>
-<h1 id="0x02-文艺平衡树待更新">0X02 文艺平衡树（待更新）</h1>
+<h1 id="0x02-文艺平衡树">0X02 文艺平衡树</h1>
+<p>文艺平衡树只需要维护一个 tag 即可。</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int MAXN = 100005;
+
+int n, m;
+
+namespace Splay
+{
+	int fa[MAXN] = {0}, key[MAXN] = {0}, son[MAXN][2] = {{0, 0}}, size[MAXN] = {0};
+	int que[MAXN] = {0}, tag[MAXN] = {0};
+	int rt, sz;
+	inline int read()
+	{
+		char c;
+		int s = 1, w = 0;
+		c = getchar();
+		for(;!isdigit(c);c=getchar()) if(c == '-') s = -1;
+		for(;isdigit(c);c=getchar()) w = (w &lt;&lt; 3) + (w &lt;&lt; 1) + (c ^ 48);
+		return s * w; 
+	}
+	inline void clear(int x) {fa[x] = key[x] = son[x][0] = son[x][1] = size[x] = 0;}
+	inline bool get(int x) {return son[fa[x]][1] == x;}
+	void update(int x)
+	{
+		if(!x) return;
+		size[x] = 1;
+		if(son[x][0]) size[x] += size[son[x][0]];
+		if(son[x][1]) size[x] += size[son[x][1]];
+	}
+	void pushdown(int x)
+	{
+		if(tag[x])
+		{
+			tag[x] = 0;
+			tag[son[x][0]] ^= 1;
+			tag[son[x][1]] ^= 1;
+			swap(son[x][0], son[x][1]);
+		}
+	}
+	void connect(int x, int y, int z) {fa[x] = y, son[y][z] = x;}
+	void rotate(int x)
+	{
+		int f = fa[x], ff = fa[f], p = get(x), q = get(f);
+		connect(x, ff, q);
+		connect(son[x][p^1], f, p);
+		connect(f, x, p^1);
+		update(f);
+		update(x);
+	}
+	void splay(int x, int y)
+	{
+//		cout&lt;&lt;&quot;splay(): begin&quot;&lt;&lt;endl;
+		int len = 0;
+		for(int i=x;i;i=fa[i]) que[++len] = i;
+//		cout&lt;&lt;&quot;splay(): get queue&quot;&lt;&lt;endl;
+		for(int i=len;i;i--) pushdown(que[i]);
+//		cout&lt;&lt;&quot;splay(): after pushdown()&quot;&lt;&lt;endl;
+		while(fa[x] != y)
+		{
+			int f = fa[x];
+			if(fa[f] != y) rotate(get(f)==get(x)?f:x);
+			rotate(x);
+//			cout&lt;&lt;&quot;splay(): rotating---f: &quot;&lt;&lt;f&lt;&lt;&quot;, x: &quot;&lt;&lt;x&lt;&lt;&quot;, y: &quot;&lt;&lt;y&lt;&lt;&quot;, fa[f]: &quot;&lt;&lt;fa[f]
+//				&lt;&lt;endl;
+		}
+//		cout&lt;&lt;&quot;splay(): after rotated&quot;&lt;&lt;endl;
+		if(!y) rt = x;
+//		cout&lt;&lt;&quot;splay(): end&quot;&lt;&lt;endl;
+	}
+	void insert(int x)
+	{
+		int u = rt, f = 0;
+		while(u) f = u, u = son[u][x&gt;key[u]];
+		u = ++sz;
+		key[u] = x;
+		fa[u] = f;
+		if(f) son[f][x&gt;key[f]] = u;
+		size[u] = 1;
+		son[u][0] = son[u][1] = 0;
+		splay(u, 0);
+	}
+	int kth(int x)
+	{
+		int u = rt;
+		while(true)
+		{
+			pushdown(u);
+			if(size[son[u][0]] &gt;= x) u = son[u][0];
+			else
+			{
+				x -= size[son[u][0]];
+				if(x == 1) return u;
+				--x;
+				u = son[u][1];
+			}
+		}
+	}
+	void reverse(int l, int r)
+	{
+//		cout&lt;&lt;&quot;reverse(): begin&quot;&lt;&lt;endl;
+		l = kth(l), r = kth(r+2);
+//		cout&lt;&lt;&quot;reverse(): after kth()&quot;&lt;&lt;endl;
+		splay(l, 0);
+//		cout&lt;&lt;&quot;reverse(): after splay(l, 0)&quot;&lt;&lt;endl;
+		splay(r, l);
+//		cout&lt;&lt;&quot;reverse(): after splay(r, l)&quot;&lt;&lt;endl;
+		tag[son[r][0]] ^= 1;
+//		cout&lt;&lt;&quot;reverse(): end&quot;&lt;&lt;endl;
+	}
+	void print(int x)
+	{
+//		cout&lt;&lt;&quot;print(): begin&quot;&lt;&lt;endl;
+		pushdown(x);
+		if(son[x][0]) print(son[x][0]);
+		if(key[x] &gt; 1 &amp;&amp; key[x] &lt; n + 2) cout&lt;&lt;key[x]-1&lt;&lt;&quot; &quot;;
+		if(son[x][1]) print(son[x][1]);
+//		cout&lt;&lt;&quot;print(): end&quot;&lt;&lt;endl;
+	}
+}
+
+using namespace Splay;
+
+int main()
+{
+	n = read(), m = read();
+	for(int i=1;i&lt;=n+2;i++) insert(i);
+//	for(int i=0;i&lt;=n;i++) cout&lt;&lt;fa[i]&lt;&lt;&quot; &quot;; cout&lt;&lt;endl;
+	for(int i=1;i&lt;=m;i++)
+	{
+		int l = read(), r = read();
+		reverse(l, r);
+	}
+	print(rt);
+	return 0;
+}
+</code></pre>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[珂朵莉树学习笔记[新文章暂时置顶]]]></title>
+        <title type="html"><![CDATA[珂朵莉树学习笔记]]></title>
         <id>https://blog.ak-ioi.cf/post/chtholly-is-so-cute/</id>
         <link href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute/">
         </link>
