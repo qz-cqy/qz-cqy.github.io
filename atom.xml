@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-28T09:41:56.804Z</updated>
+    <updated>2020-04-29T02:17:43.899Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -25,7 +25,8 @@
         <link href="https://blog.ak-ioi.cf/post/jie-tu-gui-cai/">
         </link>
         <updated>2020-04-24T03:19:12.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/z0f4av3z.png" alt="" loading="lazy"></figure>
+        <content type="html"><![CDATA[<h1 id="截图区">截图区</h1>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/z0f4av3z.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9sgvon60.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/dlqd7zth.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ew69di7g.png" alt="" loading="lazy"></figure>
@@ -39,7 +40,9 @@
 <figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0cew4da7.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/em1vpxbh.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/yeaxdzru.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="15"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
+<h1 id="f12区">F12区</h1>
+<figure data-type="image" tabindex="15"><img src="https://cdn.luogu.com.cn/upload/image_hosting/y0izztox.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
