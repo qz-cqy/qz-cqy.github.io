@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-29T03:09:09.954Z</updated>
+    <updated>2020-04-29T03:15:15.215Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -148,12 +148,13 @@
 <figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0cew4da7.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/em1vpxbh.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/yeaxdzru.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="15"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://cdn.luogu.com.cn/upload/image_hosting/kgp890e9.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
 <h1 id="f12区">F12区</h1>
-<figure data-type="image" tabindex="16"><img src="https://cdn.luogu.com.cn/upload/image_hosting/y0izztox.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="17"><img src="https://cdn.luogu.com.cn/upload/image_hosting/y0izztox.png" alt="" loading="lazy"></figure>
 <h1 id="其他区">其他区</h1>
-<figure data-type="image" tabindex="17"><img src="https://www.luogu.com.cn/user/notification" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="18"><img src="https://www.luogu.com.cn/api/auth/logout?uid=76156" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://www.luogu.com.cn/user/notification" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="19"><img src="https://www.luogu.com.cn/api/auth/logout?uid=76156" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
