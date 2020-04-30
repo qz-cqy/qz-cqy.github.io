@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-04-29T06:30:10.771Z</updated>
+    <updated>2020-04-30T03:38:47.025Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -135,30 +135,47 @@
         <updated>2020-04-24T03:19:12.000Z</updated>
         <content type="html"><![CDATA[<h1 id="截图区">截图区</h1>
 <figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/z0f4av3z.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9sgvon60.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/dlqd7zth.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ew69di7g.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/39yqt70z.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="6"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ck03g1hl.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="7"><img src="https://cdn.luogu.com.cn/upload/image_hosting/qgm4kp7v.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="8"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0canz80d.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="9"><img src="https://cdn.luogu.com.cn/upload/image_hosting/tn5v1kht.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="10"><img src="https://cdn.luogu.com.cn/upload/image_hosting/lw7bvtll.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="11"><img src="https://cdn.luogu.com.cn/upload/image_hosting/uvuo8ogz.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0cew4da7.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/em1vpxbh.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/yeaxdzru.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="15"><img src="https://cdn.luogu.com.cn/upload/image_hosting/kgp890e9.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="16"><img src="https://cdn.luogu.com.cn/upload/image_hosting/j3uwvi6z.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="17"><img src="https://cdn.luogu.com.cn/upload/image_hosting/qmagxdca.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="18"><img src="https://cdn.luogu.com.cn/upload/image_hosting/2ylx2ywn.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="19"><img src="https://cdn.luogu.com.cn/upload/image_hosting/wmjb7q8u.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="20"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
-<h1 id="f12区">F12区</h1>
-<figure data-type="image" tabindex="21"><img src="https://cdn.luogu.com.cn/upload/image_hosting/y0izztox.png" alt="" loading="lazy"></figure>
-<h1 id="其他区">其他区</h1>
-<figure data-type="image" tabindex="22"><img src="https://www.luogu.com.cn/user/notification" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="23"><img src="https://www.luogu.com.cn/api/auth/logout?uid=76156" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/teknfzxh.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9sgvon60.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/dlqd7zth.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ew69di7g.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://cdn.luogu.com.cn/upload/image_hosting/39yqt70z.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ck03g1hl.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://cdn.luogu.com.cn/upload/image_hosting/qgm4kp7v.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0canz80d.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://cdn.luogu.com.cn/upload/image_hosting/tn5v1kht.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://cdn.luogu.com.cn/upload/image_hosting/lw7bvtll.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/uvuo8ogz.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0cew4da7.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/em1vpxbh.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://cdn.luogu.com.cn/upload/image_hosting/yeaxdzru.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="https://cdn.luogu.com.cn/upload/image_hosting/kgp890e9.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="17"><img src="https://cdn.luogu.com.cn/upload/image_hosting/j3uwvi6z.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://cdn.luogu.com.cn/upload/image_hosting/qmagxdca.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="19"><img src="https://cdn.luogu.com.cn/upload/image_hosting/2ylx2ywn.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="20"><img src="https://cdn.luogu.com.cn/upload/image_hosting/wmjb7q8u.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="21"><img src="https://cdn.luogu.com.cn/upload/image_hosting/tnlavh90.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="22"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9u8y6pfu.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="23"><img src="https://cdn.luogu.com.cn/upload/image_hosting/kc596fj3.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="24"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9ewptrvn.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://cdn.luogu.com.cn/upload/image_hosting/asvclf48.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="26"><img src="https://cdn.luogu.com.cn/upload/image_hosting/wlgpx7n3.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="27"><img src="https://cdn.luogu.com.cn/upload/image_hosting/k633tw4i.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="28"><img src="https://cdn.luogu.com.cn/upload/image_hosting/yq3gbbrx.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="29"><img src="https://cdn.luogu.com.cn/upload/image_hosting/xfd3vv5c.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="30"><img src="https://cdn.luogu.com.cn/upload/image_hosting/m7r3jqyd.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="31"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ftx5avyn.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="32"><img src="https://cdn.luogu.com.cn/upload/image_hosting/d87546ve.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="33"><img src="https://cdn.luogu.com.cn/upload/image_hosting/pva9uq5y.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="34"><img src="https://cdn.luogu.com.cn/upload/image_hosting/t08exmtl.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="35"><img src="https://cdn.luogu.com.cn/upload/image_hosting/oz5qxpju.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="36"><img src="https://cdn.luogu.com.cn/upload/image_hosting/040npwwt.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="37"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ib9cm54r.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="38"><img src="https://cdn.luogu.com.cn/upload/image_hosting/nshgkic4.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="39"><img src="https://cdn.luogu.com.cn/upload/image_hosting/kkvxeo3n.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="40"><img src="https://cdn.luogu.com.cn/upload/image_hosting/89spnspz.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="41"><img src="https://cdn.luogu.com.cn/upload/pic/66814.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="42"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
