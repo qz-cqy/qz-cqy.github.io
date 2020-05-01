@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-05-01T01:28:20.727Z</updated>
+    <updated>2020-05-01T02:51:33.994Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,63 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P6503@洛谷 | SP10622@洛谷 | 10622@SPOJ 【[COCI2010-2011#3] DIFERENCIJA】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-P6503-luogu-SP10622-SPOJ-10622/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-P6503-luogu-SP10622-SPOJ-10622/">
+        </link>
+        <updated>2020-05-01T02:45:39.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="由于题解区-latex-渲染有误建议到博客中食用">由于题解区 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> 渲染有误，建议到博客中食用</h1>
+<p><s>我绝不会告诉你们这题与 SP10622 是双倍经验的</s>，好了，不扯了，下面开始正文。</p>
+<p>这题要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mi>i</mi></mrow><mi>n</mi></msubsup><msub><mi>max</mi><mo>⁡</mo><mrow><mi>i</mi><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>j</mi></mrow></msub><msub><mi>a</mi><mi>k</mi></msub><mo>−</mo><msub><mi>min</mi><mo>⁡</mo><mrow><mi>i</mi><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>j</mi></mrow></msub><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n\sum_{j=i}^n\max_{i\le k\le j}a_k-\min_{i\le k\le j}a_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24011em;vertical-align:-0.43581800000000004em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight">i</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.43581800000000004em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9539679999999999em;vertical-align:-0.286108em;"></span><span class="mop"><span class="mop">min</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，看到最小值与最大值，想到单调栈。</p>
+<p>单调栈具体可不可以呢？当然是可以的。我们这里同时维护两个单调栈，递增和递减，就可以了。</p>
+<p>代码：</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const ll N = 3e5+5;
+
+ll n, a[N], x[N], y[N], S, ans;
+stack&lt;ll&gt; mi, ma;
+
+int main()
+{
+    scanf(&quot;%lld&quot;, &amp;n);
+    for(ll i=1;i&lt;=n;i++) scanf(&quot;%lld&quot;, &amp;a[i]);
+    mi.push(a[1]);
+    ma.push(a[1]);
+	x[1] = y[1] = 1;
+	ans = S = 0;
+    for(ll i=2;i&lt;=n;i++)
+	{
+        ll tmp = 1;
+        while(!mi.empty() &amp;&amp; mi.top() &lt;= a[i])
+		{
+			S -= mi.top() * x[mi.size()];
+			tmp += x[mi.size()];
+			mi.pop();
+		}
+		mi.push(a[i]);
+		x[mi.size()] = tmp;
+		S += a[i] * tmp;
+        tmp = 1;
+        while(!ma.empty() &amp;&amp; ma.top() &gt;= a[i])
+		{
+			S += ma.top() * y[ma.size()];
+			tmp += y[ma.size()];
+			ma.pop();
+		}
+		ma.push(a[i]);
+		y[ma.size()] = tmp;
+		S -= a[i] * tmp;
+        ans += S;
+    }
+    printf(&quot;%lld\n&quot;, ans);
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[OIの光]]></title>
         <id>https://blog.ak-ioi.cf/post/OI-light/</id>
@@ -591,16 +648,6 @@ int main()
 </code></pre>
 <h2 id="26-f题">2.6 F题</h2>
 <p>F12发现“祝你成功AK”后面有个<a href="https://wtcl.blog.ak-ioi.cf">链接</a>，点进去发现什么也没有。真的什么也没有吗？想起<a href="http://nazo.one-story.cn">nazo</a>中有一关“goL elosnoC uhihZ”，于是打开F12，进入“控制台”（英文版本叫“Console”），发现<code>answer:rui_er txdy</code>，输出<code>rui_er txdy</code>即可。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【REOI2020R1】rui_er的愚人节水题大赛赛时答疑]]></title>
-        <id>https://blog.ak-ioi.cf/post/reoi2020r1-q-and-a/</id>
-        <link href="https://blog.ak-ioi.cf/post/reoi2020r1-q-and-a/">
-        </link>
-        <updated>2020-03-31T10:37:51.000Z</updated>
-        <content type="html"><![CDATA[<p>有疑问在下面评论，rui_er随时来看。十分抱歉挂晚了几个小时，之前忘记赛时答疑这件事了。</p>
-<p><strong>本帖禁止无意义回复，发现者一律删</strong></p>
 ]]></content>
     </entry>
 </feed>
