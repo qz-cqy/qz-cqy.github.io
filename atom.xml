@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-05-04T04:54:27.269Z</updated>
+    <updated>2020-05-04T06:02:23.525Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -257,8 +257,9 @@ int main()
 <figure data-type="image" tabindex="45"><img src="https://cdn.luogu.com.cn/upload/image_hosting/nc2ccyp9.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="46"><img src="https://cdn.luogu.com.cn/upload/image_hosting/nkc5ldi5.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="47"><img src="https://cdn.luogu.com.cn/upload/image_hosting/22de9d8h.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="48"><img src="https://cdn.luogu.com.cn/upload/pic/66814.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="49"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="48"><img src="https://cdn.luogu.com.cn/upload/image_hosting/8cblxvbc.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="49"><img src="https://cdn.luogu.com.cn/upload/pic/66814.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="50"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
