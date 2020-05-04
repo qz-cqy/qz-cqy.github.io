@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-05-03T05:20:09.628Z</updated>
+    <updated>2020-05-04T03:26:42.879Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -175,12 +175,32 @@ int main()
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[LCT学习笔记]]></title>
+        <title type="html"><![CDATA[LCT学习笔记（新文章暂时置顶，upd 2020.5.4）]]></title>
         <id>https://blog.ak-ioi.cf/post/learning-lct/</id>
         <link href="https://blog.ak-ioi.cf/post/learning-lct/">
         </link>
         <updated>2020-04-28T09:39:37.000Z</updated>
-        <content type="html"><![CDATA[<p>开坑，咕了</p>
+        <content type="html"><![CDATA[<h1 id="本文持续更新中">本文持续更新中</h1>
+<h1 id="0x00-前置知识">0X00 前置知识</h1>
+<p>LCT 的前置知识有：Splay（网上有用 fhq-Treap 写 LCT 的方法，不主流，在这里不作讲解）</p>
+<h1 id="0x01-介绍">0X01 介绍</h1>
+<p>LCT（Link-Cut Tree），是一个 Splay 森林。Splay 之间用虚边连接，Splay 内部用实边连接。</p>
+<p>LCT的一些经典操作有：</p>
+<ul>
+<li>连接树边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>↔</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u\leftrightarrow v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span></li>
+<li>删除树边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>↔</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u\leftrightarrow v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span></li>
+<li>链上操作，如修改、询问链上权值</li>
+</ul>
+<h1 id="0x02-基本定义">0X02 基本定义</h1>
+<pre><code class="language-cpp">int fa[MAXN], v[MAXN], s[MAXN], tag[MAXN], st[MAXN], son[MAXN][2];
+</code></pre>
+<p>fa 存每个节点的父亲，v 是点权，s 是该点以及子树的权值和，tag 是该点的翻转情况，st 是一个栈，将在下文提到，son 存左右儿子。</p>
+<h1 id="0x03-基本操作">0X03 基本操作</h1>
+<p>咕了</p>
+<h1 id="0xff-参考文献">0XFF 参考文献</h1>
+<ol>
+<li><a href="https://www.luogu.com.cn/blog/Qiu/qian-tan-link-cut-tree">浅谈Link-Cut Tree</a></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
