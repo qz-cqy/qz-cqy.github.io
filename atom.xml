@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-05-05T02:31:35.740Z</updated>
+    <updated>2020-05-07T03:41:46.349Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,64 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[手把手教你免费把内网建立外网映射]]></title>
+        <id>https://blog.ak-ioi.cf/post/ngrok/</id>
+        <link href="https://blog.ak-ioi.cf/post/ngrok/">
+        </link>
+        <updated>2020-05-07T03:40:55.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>你是否有过很想把内网的网页放到公网让大家也可以访问？你是否很想把搭建的 OJ 放到公网？今天，我来教大家内网穿透的具体操作步骤。</p>
+</blockquote>
+<h1 id="0-准备工作">0 准备工作</h1>
+<p>首先，你需要准备如下材料：</p>
+<ul>
+<li>一台电脑</li>
+<li>一个 localhost 网页（即 <code>localhost:xxx</code> 或 <code>127.0.0.1:xxx</code>）</li>
+<li>（选）一个可以解析的域名（国内服务器需要备案）</li>
+</ul>
+<h1 id="1-注册-ngrok-账号">1 注册 Ngrok 账号</h1>
+<p>去 <a href="http://www.ngrok.cc">Ngrok 官网</a>点击注册，注册一个新账号并登录，此时应该看到如下界面：</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/r8aynzvv.png" alt="" loading="lazy"></figure>
+<p>其中“开通隧道”处应为 <code>0 / 0 / 0</code>，这里有数字是因为我已经进行了后续操作。</p>
+<h1 id="2-开通隧道">2 开通隧道</h1>
+<p>点击左侧导航栏“隧道管理→开通隧道”，划到最下面“美国 Ngrok 免费服务器”，点击按钮“立即购买”。当然如果你是土豪选择买一个付费隧道也可以。</p>
+<h1 id="3-配置隧道">3 配置隧道</h1>
+<p>做完上面的操作后看到如下界面：</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/zqpy4ny1.png" alt="" loading="lazy"></figure>
+<p><strong>隧道名称</strong>栏可以随便填，只是方便记忆。<strong>隧道协议</strong>选择 http。<strong>前置域名</strong>填写一个由字母、数字、减号、下划线组成的字符串，是你想要的域名前缀地址，最后你的网站会在这个子域名显示。<strong>本地端口</strong>是你本地的访问地址，一般是 <code>localhost:80 / 127.0.0.1:80</code>，不用改；否则把冒号后面的端口号改成你的端口。<strong>http 验证用户名</strong>和 <strong>http 验证密码</strong>空着即可。</p>
+<p>配置完上面的内容，点击“确认添加”即可。</p>
+<h1 id="4-设置自定义域名">4 设置自定义域名</h1>
+<p>例如这里我的前置域名写的是 <code>akioi</code>，那么一会访问地址就会在前置域名那栏那个网址。<strong>如果您不想把网站放到自己的域名，请忽略此步骤。</strong></p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ummv7g6l.png" alt="" loading="lazy"></figure>
+<p>域名类型选择“使用自定义域名”，在自定义域名里面填写你想放到的网址，划到最下面“确认修改”。</p>
+<h1 id="5-开通映射服务">5 开通映射服务</h1>
+<p>这里作者主要讲解 Windows 与 Linux 的开通方法，其他系统也可以上网百度的到。</p>
+<p>回到隧道管理界面，看到</p>
+<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/op7nzm60.png" alt="" loading="lazy"></figure>
+<p>点击“客户端下载”，选择自己的操作系统，下载，将 zip 文件解压。</p>
+<h2 id="51-linux">5.1 Linux</h2>
+<p>作者本人是用 Linux 虚拟机搭建了一个 OJ，所以使用的是 Linux 的方法。</p>
+<p>打开命令行，cd 到解压后的文件夹里，有一个 sunny 文件。此时输入命令 <code>./sunny clientid &lt;xxx&gt;</code>，其中 <code>&lt;xxx&gt;</code> 换成你的隧道 id（见上图），看到 <code>Tunnel Status Online</code> 就代表成功了。</p>
+<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/a03y6ap4.png" alt="" loading="lazy"></figure>
+<h2 id="52-windows">5.2 Windows</h2>
+<p>打开 cmd，cd 到文件夹，输入指令 <code>ngrok -authtoken &lt;id&gt; -subdomain &lt;subdomain&gt; &lt;port&gt;</code>，其中 <code>&lt;id&gt;,&lt;subdomain&gt;,&lt;port&gt;</code> 分别是隧道 id、二级域名和端口，判定成功的条件和 Linux 一样。</p>
+<h1 id="6-尽情享用吧">6 尽情享用吧！</h1>
+<p>作者通过这种方式把虚拟机 <code>http://127.0.0.1:80</code> 映射到了 <code>http://oj.ak-ioi.cf</code>。你也可以在你的自定义域名或默认域名找到你的网站。</p>
+<h1 id="7-常见错误">7 常见错误</h1>
+<ul>
+<li>Q：我配置了隧道为什么访问不了？</li>
+<li>A：配置完隧道还要开通服务才能显示哦~</li>
+<li>Q：为什么 Tunnel Status 显示 Reconnecting？</li>
+<li>A：因为 ngrok 的服务不太稳定，大概等一小会就好了；如果没有好，可以检查一下自己的网络连接。<strong>具体可以看 ngrok 官方 wiki。</strong></li>
+<li><strong>Q：官方 wiki 没有包含我的问题怎么办？</strong></li>
+<li><strong>A：可以先到洛谷私信 rui_er，如果他也不会可以加入 ngrok QQ 群提问。</strong></li>
+</ul>
+<h1 id="8-优点缺点">8 优点缺点</h1>
+<p>优点有免费、简单；但是缺点是连接可能不太稳定，且延时较大。不过瑕不掩瑜，不影响整体运行。</p>
+<p><s>欢迎大家到我的 <a href="http://oj.ak-ioi.cf">OJ</a> 来参观！</s></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P6503@洛谷 | SP10622@洛谷 | 10622@SPOJ 【[COCI2010-2011#3] DIFERENCIJA】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-P6503-luogu-SP10622-SPOJ-10622/</id>
@@ -441,239 +499,6 @@ int main()
 </tbody>
 </table>
 <p>注：*表示没看</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【REOI2020R1】rui_er的水题大赛赛后题解&总结]]></title>
-        <id>https://blog.ak-ioi.cf/post/reoi2020r1-solution/</id>
-        <link href="https://blog.ak-ioi.cf/post/reoi2020r1-solution/">
-        </link>
-        <updated>2020-03-31T10:57:16.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="文章同步发布于洛谷博客">文章同步发布于<a href="https://www.luogu.com.cn/blog/ak-ioi/reoi2020r1">洛谷博客</a></h1>
-<h1 id="1-赛后总结与奖项公示">1 赛后总结与奖项公示</h1>
-<p>封榜统计时排名（截图）：<img src="https://cdn.luogu.com.cn/upload/image_hosting/rk798owp.png" alt="" loading="lazy"></p>
-<p>比赛报名选手：87 人。</p>
-<p>有提交记录选手：18 人。</p>
-<p>AK选手：1 人。</p>
-<p>下面为奖项统计。</p>
-<h2 id="11-全场首a">1.1 全场首A</h2>
-<p>恭喜 @wzm2007 获得全场首A，赢得￥0.3！</p>
-<h2 id="12-每题首a">1.2 每题首A</h2>
-<p>恭喜 @wzm2007 获得A题首A，赢得￥0.1！</p>
-<p>恭喜 @henrytb 获得B题首A，赢得￥0.1！</p>
-<p>恭喜 @henrytb 获得C题首A，赢得￥0.1！</p>
-<p>恭喜 @henrytb 获得D题首A，赢得￥0.1！</p>
-<p>恭喜 @henrytb 获得E题首A，赢得￥0.1！</p>
-<p>恭喜 @henrytb 获得F题首A，赢得￥0.1！</p>
-<h2 id="13-全场ak与奖励补足">1.3 全场AK与奖励补足</h2>
-<p>恭喜 @henrytb 获得全场AK，赢得￥0.5！</p>
-<p>AK人数补足，剩余两个奖励名额按照规则顺延，恭喜 @AC_Automation 和 @happydef 获得顺延奖励每人￥0.5！</p>
-<h2 id="14-bc最优解">1.4 BC最优解</h2>
-<p>由于B题只有 @henrytb AC，恭喜他获得最优解，赢得￥0.2！</p>
-<p>由于C题只有 @henrytb AC，恭喜他获得最优解，赢得￥0.2！</p>
-<h2 id="15-幸运奖">1.5 幸运奖</h2>
-<p>从全场有提交记录选手中随机抽取，恭喜 @蒟蒻跟风侠 赢得￥0.3！</p>
-<h2 id="16-赛后新增奖项">1.6 赛后新增奖项</h2>
-<h3 id="161-爆踩std">1.6.1 爆踩std</h3>
-<p>由于 @henrytb 六道题全部AC并且程序全部爆踩std，rui_er决定给予特别奖励￥0.2！</p>
-<h3 id="162-幸运奖-2">1.6.2 幸运奖-2</h3>
-<p>由于rui_er认为只设置一个幸运奖有点少，于是设立了幸运二等奖（￥0.2），恭喜 @拥抱渴望者 赢得￥0.2！</p>
-<p><strong>请上述获奖选手于 2020 年 4 月 15 日前私信 rui_er 微信号，或者付款二维码，逾期奖项自动作废！</strong></p>
-<h1 id="2-赛后题解">2 赛后题解</h1>
-<h2 id="21-a题">2.1 A题</h2>
-<p>题目描述</p>
-<pre><code class="language-plain">U2FsdGVkX1/PKGHGgf9gxZXO3tzmWSQUM5hO/Z+TEB63Oj0VR9TUPO/BAbCEHnUQ13gJFWJEDZOCh8QEsHcTtw6P+yqP9uoNHOx1k08N7t/twwyV2X009ZyryU2cJjiBAiHvfOmyRkF2PoOYIaYVVIYJINEoaxQxOQym7MWilN0adltSu56agfKQeZOLd2ye0Cpe332weyDPUpVUeQ++EY7jRSz3AOjY+kEAuAwx3npxAp4DuX4eu5VZz6xdhQ==
-</code></pre>
-<p>显然是一串密文，利用<a href="http://encode.chahuo.com/">加密解密工具</a>多试几次，发现是RC4加密。可以解密出明文：</p>
-<pre><code class="language-plain">Long long ago, there is a DALAO called rui_er. He is young, but he always AK IOI. Sometimes he also dd jxd. He is so powerful that most OIers AFO because of him. Let's % him!
-</code></pre>
-<p>输出即可。</p>
-<h2 id="22-b题">2.2 B题</h2>
-<p>使用工具画出<a href="https://www.desmos.com/calculator/i0fb4kpsf4">函数图像</a>，并列举前几个数找规律：</p>
-<p>数列 0, 1, 6, 21, 55, 120</p>
-<p>差分 ~, 1, 5, 15, 34, 65</p>
-<p>差分 ~, ~, 4, 10, 19, 31</p>
-<p>差分 ~, ~, ~, 6, 9, 12</p>
-<p>差分 ~, ~, ~, ~, 3, 3</p>
-<p>规律就出来了，很明显，不是吗？</p>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const long long MAXN = 1000001;
-
-long long a[MAXN] = {0, 1, 6, 21, 55, 120}, b[MAXN] = {0, 1, 5, 15, 34, 65}, c[MAXN] = {0, 0, 4, 10, 19, 31}, d[MAXN] = {0, 0, 0, 6, 9, 12};
-vector&lt;long long&gt; v;
-
-int main()
-{
-	long long l, r;
-	cin&gt;&gt;l&gt;&gt;r;
-	for(long long i=1;i&lt;=r;i++) 
-	{
-		if(i &lt;= 5 &amp;&amp; i &gt;= l)
-		{
-			v.push_back(a[i]);
-			continue;
-		}
-		else if(i &lt;= 5) continue;
-		d[i] = (d[i-1] + 3) % 998244353;
-		c[i] = (c[i-1] + d[i]) % 998244353;
-		b[i] = (b[i-1] + c[i]) % 998244353;
-		a[i] = (a[i-1] + b[i]) % 998244353;
-		if(i &gt;= l) v.push_back(a[i]);
-	}
-	cout&lt;&lt;v.size()&lt;&lt;endl;
-	for(int i=0;i&lt;v.size();i++) cout&lt;&lt;v[i]&lt;&lt;&quot; &quot;;
-	cout&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-<p>当然你也可以打表。</p>
-<h2 id="23-c题">2.3 C题</h2>
-<p>珂朵莉树板子题，切了切了~</p>
-<p>不会珂朵莉树的点<a href="https://blog.ak-ioi.cf/post/chtholly-is-so-cute">这里</a>，想练习珂朵莉树的点<a href="https://www.luogu.com.cn/training/3592">这里</a>。</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const ll mod = 998244353LL;
-const ll MAXN = 100001;
-
-ll n, m, seed, ans;
-ll a[MAXN];
-struct Node
-{
-	ll l, r;
-	mutable ll v;
-	Node(ll x, ll y = -1, ll z = 0): l(x), r(y), v(z) {}
-	bool operator &lt; (const Node &amp;a) const {return l &lt; a.l;}
-};
-typedef set&lt;Node&gt;::iterator IT;
-set&lt;Node&gt; ODT;
-
-ll rnd() 
-{
-	ll ret = seed;
-	seed = (seed * 5 + 2) % mod;
-	return ret;
-}
-
-IT split(ll pos)
-{
-	IT iter = ODT.lower_bound(Node(pos));
-	if(iter != ODT.end() &amp;&amp; iter-&gt;l == pos) return iter;
-	--iter;
-	ll L = iter-&gt;l, R = iter-&gt;r, V = iter-&gt;v;
-	ODT.erase(iter);
-	ODT.insert(Node(L, pos-1, V));
-	return ODT.insert(Node(pos, R, V)).first;
-}
-
-void upd1(ll l, ll r, ll dt)
-{
-	IT iterR = split(r+1), iterL = split(l);
-	for(iterL;iterL!=iterR;++iterL) iterL-&gt;v *= dt;
-}
-
-void upd2(ll l, ll r)
-{
-	IT iterR = split(r+1), iterL = split(l);
-	for(iterL;iterL!=iterR;++iterL) iterL-&gt;v = sqrt(iterL-&gt;v);
-}
-
-ll kth(ll l, ll r, ll k)
-{
-	vector&lt;pair&lt;ll, ll&gt; &gt; v;
-	IT iterR = split(r+1), iterL = split(l);
-	for(iterL;iterL!=iterR;++iterL) v.push_back(make_pair(iterL-&gt;v, iterL-&gt;r-iterL-&gt;l+1));
-	sort(v.begin(), v.end());
-	for(vector&lt;pair&lt;ll, ll&gt; &gt;::iterator iter=v.begin();iter!=v.end();++iter)
-	{
-		k -= iter-&gt;second;
-		if(k &lt;= 0) return iter-&gt;first;
-	}
-}
-
-void assign_val(ll l, ll r, ll w)
-{
-	IT iterR = split(r+1), iterL = split(l);
-	ODT.erase(iterL, iterR);
-	ODT.insert(Node(l, r, w));
-}
-
-int main()
-{
-	scanf(&quot;%lld%lld%lld&quot;, &amp;n, &amp;m, &amp;seed);
-	for(ll i=1;i&lt;=n;i++)
-	{
-		scanf(&quot;%lld&quot;, &amp;a[i]);
-		ODT.insert(Node(i, i, a[i]));
-	}
-	for(ll i=1;i&lt;=m;i++)
-	{
-		ll op = rnd() % 4 + 1;
-		ll l = rnd() % n + 1;
-		ll r = rnd() % n + 1;
-		if(l &gt; r) swap(l, r);
-		ll k;
-		if(op == 1 || op == 2) k = rnd() % 5 + 1;
-		else if(op == 3) k = rnd() % (r - l + 1) + 1;
-		else k = rnd();
-		if(op == 1) upd1(l, r, k);
-		else if(op == 2) upd2(l, r);
-		else if(op == 3) ans ^= kth(l, r, k);
-		else assign_val(l, r, k);
-	}
-	printf(&quot;%lld\n&quot;, ans);
-	return 0;
-}
-</code></pre>
-<h2 id="24-d题">2.4 D题</h2>
-<p>打开F12，发现题目描述“无”后面有个指向A+B Problem的链接，因为内容是空的，所以看不到。此题就是A+B，注意到数据范围写着<code>数据范围*=2</code>，会爆int，记得开long long。</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-long long a, b;
-
-int main()
-{
-	cin&gt;&gt;a&gt;&gt;b;
-	cout&lt;&lt;a+b&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-<h2 id="25-e题">2.5 E题</h2>
-<p>E题是一道高中物理题，不会那也没办法了QwQ。第一问根据公式送分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>p</mi></msub><mo>=</mo><mi>m</mi><mi>g</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">E_p=mgh</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">h</span></span></span></span>。第二问根据公式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>g</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">h=\frac{1}{2}gt^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>=</mo><msqrt><mfrac><mrow><mn>2.0</mn><mo>×</mo><mi>h</mi></mrow><mi>g</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">t=\sqrt{\frac{2.0\times h}{g}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.8399999999999999em;vertical-align:-0.6555000000000001em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1844999999999999em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">.</span><span class="mord mtight">0</span><span class="mbin mtight">×</span><span class="mord mathdefault mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.481108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.1445em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
-572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
--7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
-c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
-s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
--658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
-M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6555000000000001em;"><span></span></span></span></span></span></span></span></span>，所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>=</mo><mi>g</mi><mi>t</mi><mo>=</mo><mi>g</mi><msqrt><mfrac><mrow><mn>2.0</mn><mo>×</mo><mi>h</mi></mrow><mi>g</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">v=gt=g\sqrt{\frac{2.0\times h}{g}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.80952em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.8399999999999999em;vertical-align:-0.6555000000000001em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1844999999999999em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801079999999999em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">.</span><span class="mord mtight">0</span><span class="mbin mtight">×</span><span class="mord mathdefault mtight">h</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.481108em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.1445em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
-572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
--7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
-c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
-s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
--658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
-M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6555000000000001em;"><span></span></span></span></span></span></span></span></span>。</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main()
-{
-	double g, h, m;
-	cin&gt;&gt;g&gt;&gt;h&gt;&gt;m;
-	double w = m * g * h;
-	double v = g * sqrt(2.0*h/g);
-	cout&lt;&lt;setprecision(4)&lt;&lt;fixed&lt;&lt;w&lt;&lt;&quot; &quot;&lt;&lt;v&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-<h2 id="26-f题">2.6 F题</h2>
-<p>F12发现“祝你成功AK”后面有个<a href="https://wtcl.blog.ak-ioi.cf">链接</a>，点进去发现什么也没有。真的什么也没有吗？想起<a href="http://nazo.one-story.cn">nazo</a>中有一关“goL elosnoC uhihZ”，于是打开F12，进入“控制台”（英文版本叫“Console”），发现<code>answer:rui_er txdy</code>，输出<code>rui_er txdy</code>即可。</p>
 ]]></content>
     </entry>
 </feed>
