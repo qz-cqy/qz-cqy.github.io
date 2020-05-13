@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-05-13T06:43:08.485Z</updated>
+    <updated>2020-05-13T06:47:30.063Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -322,6 +322,8 @@ int main()
 <h1 id="伪犇区">伪犇区</h1>
 <figure data-type="image" tabindex="52"><img src="https://cdn.luogu.com.cn/upload/image_hosting/re2fv331.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="53"><img src="https://cdn.luogu.com.cn/upload/image_hosting/8nnr5ms0.png" alt="" loading="lazy"></figure>
+<h1 id="知乎区">知乎区</h1>
+<figure data-type="image" tabindex="54"><img src="https://cdn.luogu.com.cn/upload/image_hosting/e4qx6nl8.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
