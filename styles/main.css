@@ -2197,15 +2197,15 @@ body {
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
-      cursor: default;
+      cursor: url('/media/curs/正常选择.cur.cur'), default;
     }a {
-      cursor: pointer;
+      cursor: url('/media/curs/正常选择.cur.cur'), pointer !important;
     }input, textarea, code {
-      cursor: text;
+      cursor: url('/media/curs/正常选择.cur.cur'), text !important;
     }code > span.copy-code {
-      cursor: pointer;
+      cursor: url('/media/curs/正常选择.cur.cur'), text !important;
     }.post img {
-      cursor: zoom-in;
+      cursor: url('/media/curs/正常选择.cur.cur'), zoom-in !important;
     }.post img {
-      cursor: zoom-out;
+      cursor: url('/media/curs/正常选择.cur.cur'), zoom-out !important;
     }
