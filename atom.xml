@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-07-02T02:30:36.749Z</updated>
+    <updated>2020-07-02T04:11:56.978Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -541,14 +541,15 @@ int main()
 <figure data-type="image" tabindex="52"><img src="https://cdn.luogu.com.cn/upload/image_hosting/2evswzna.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="53"><img src="https://cdn.luogu.com.cn/upload/image_hosting/9i3ltiqk.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="54"><img src="https://cdn.luogu.com.cn/upload/image_hosting/0au735zp.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="55"><img src="https://cdn.luogu.com.cn/upload/pic/66814.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="56"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="57"><img src="https://blog.ak-ioi.cf/post-images/1592453540196.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="55"><img src="https://cdn.luogu.com.cn/upload/image_hosting/pc72h6vn.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="56"><img src="https://cdn.luogu.com.cn/upload/pic/66814.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="57"><img src="https://s1.ax1x.com/2020/04/28/J5uKht.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="58"><img src="https://blog.ak-ioi.cf/post-images/1592453540196.png" alt="" loading="lazy"></figure>
 <h1 id="伪犇区">伪犇区</h1>
-<figure data-type="image" tabindex="58"><img src="https://cdn.luogu.com.cn/upload/image_hosting/re2fv331.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="59"><img src="https://cdn.luogu.com.cn/upload/image_hosting/8nnr5ms0.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="59"><img src="https://cdn.luogu.com.cn/upload/image_hosting/re2fv331.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="60"><img src="https://cdn.luogu.com.cn/upload/image_hosting/8nnr5ms0.png" alt="" loading="lazy"></figure>
 <h1 id="知乎区">知乎区</h1>
-<figure data-type="image" tabindex="60"><img src="https://cdn.luogu.com.cn/upload/image_hosting/e4qx6nl8.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="61"><img src="https://cdn.luogu.com.cn/upload/image_hosting/e4qx6nl8.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
