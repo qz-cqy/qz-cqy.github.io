@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-07-21T02:03:27.753Z</updated>
+    <updated>2020-07-21T05:43:37.925Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,206 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[插头dp——从入门到跳楼]]></title>
+        <id>https://blog.ak-ioi.cf/post/cha-tou-dp-cong-ru-men-dao-tiao-lou/</id>
+        <link href="https://blog.ak-ioi.cf/post/cha-tou-dp-cong-ru-men-dao-tiao-lou/">
+        </link>
+        <updated>2020-07-21T04:50:12.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="前置知识">前置知识</h1>
+<ul>
+<li>动态规划</li>
+<li>括号表示法（或最小表示法）</li>
+<li>状态压缩</li>
+<li>哈希表</li>
+</ul>
+<h1 id="一些定义">一些定义</h1>
+<p>先看模板题：<a href="https://www.luogu.com.cn/problem/P5056">P5056@洛谷</a> - 【模板】插头dp</p>
+<p>插头 dp 主要用于解决网格图上的哈密顿回路相关的问题。</p>
+<h2 id="插头">插头</h2>
+<p>插头就是网格图上一个格子与另一个格子相连的位置，如图。</p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/07/21/UINaCj.png" alt="" loading="lazy"></figure>
+<h2 id="轮廓线">轮廓线</h2>
+<p>在我们指定一个当前格子时，他的下侧和右侧连接到边界的线成为轮廓线。</p>
+<p>如图，蓝色格子为当前格子，红色线为轮廓线。</p>
+<figure data-type="image" tabindex="2"><img src="https://s1.ax1x.com/2020/07/21/UINw2n.png" alt="" loading="lazy"></figure>
+<h1 id="毒瘤动规-插头-dp">毒瘤动规 - 插头 dp</h1>
+<h2 id="设计状态">设计状态</h2>
+<p>插头 dp 中状态为一条轮廓线，每次状态转移转移一个格子，轮廓线转移如图：</p>
+<figure data-type="image" tabindex="3"><img src="https://s1.ax1x.com/2020/07/21/UINXRA.png" alt="" loading="lazy"></figure>
+<h2 id="状态压缩">状态压缩</h2>
+<p>由于数据量太大，这里需要使用状态压缩。</p>
+<p>我们知道，为了形成回路，在任意时刻插头均不会相交。（红色为插头，绿色为轮廓线）</p>
+<figure data-type="image" tabindex="4"><img src="https://s1.ax1x.com/2020/07/21/UIU7yq.png" alt="" loading="lazy"></figure>
+<p>于是想到括号串。这里我们用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo></mrow><annotation encoding="application/x-tex">(</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">)</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">#</mi></mrow><annotation encoding="application/x-tex">\#</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord">#</span></span></span></span> 来表示轮廓线为在左侧的插头、在右侧的插头或没有插头。</p>
+<p>因为需要状态压缩，我们考虑使用括号表示法（最小表示法也可以，但在本文中不会涉及）。在这里我们将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0,1,2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 分别表示空插头、左侧插头和右侧插头。</p>
+<h2 id="状态转移">状态转移</h2>
+<p>状态转移有如下几种情况：</p>
+<h3 id="当前格为障碍">当前格为障碍</h3>
+<p>若当前格为障碍，直接转移即可。</p>
+<h3 id="当前格既没有上插头又没有左插头">当前格既没有上插头又没有左插头</h3>
+<p>此时为了满足经过所有格子，添加右侧和下侧的插头，即在括号串中将一对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>00</mn></mrow><annotation encoding="application/x-tex">00</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">0</span></span></span></span> 替换为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>12</mn></mrow><annotation encoding="application/x-tex">12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span></span></span></span>。</p>
+<h3 id="当前格有上插头">当前格有上插头</h3>
+<p>则有两种转移方式——直走延长插头或转弯。</p>
+<h3 id="当前格有左插头">当前格有左插头</h3>
+<p>同理。</p>
+<h3 id="当前格既有上插头又有左插头">当前格既有上插头又有左插头</h3>
+<h4 id="均为-1-或均为-2">均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 或均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></h4>
+<p>此时将两个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>）合并变为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，并向右侧（左侧）找到第一个右插头（左插头）变为左插头（右插头）。</p>
+<h4 id="左插头为-2-上插头为-1">左插头为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>、上插头为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></h4>
+<p>此时直接连起来即可。</p>
+<h4 id="左插头为-1-上插头为-2">左插头为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>、上插头为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></h4>
+<p>此时将要形成闭合回路。判断当前格是否为最后一格，是则连接并更新答案，否则状态不合法。</p>
+<h2 id="其他细节">其他细节</h2>
+<p>我们建立滚动哈希表方便压缩空间，同时 dp 只记录哈希位置的值。因为是哈希表，因此在每一行开始的时候都需要 <code>modifyQue()</code> 来滚动、更换值。</p>
+<h2 id="完整代码">完整代码</h2>
+<p>您大可先看看我 23 次才 AC 的<a href="https://www.luogu.com.cn/record/list?pid=P5056&amp;user=122461&amp;page=1">提交记录</a>。</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+#define fil(a,b) memset((a),(b),sizeof(a))
+#define in inline
+using namespace std;
+typedef long long ll;
+const ll N = 12+5, X = 3e5+5, K = 1&lt;&lt;25|5, mod = 299987;
+ll n, m, dx, dy, bit, lst, ans;
+ll a[N][N], p[N], h[X], nxt[K], que[2][K], val[2][K], cnt[2];
+in void add(ll hash, ll status, ll tot) {
+	nxt[++cnt[bit]] = h[hash];
+	h[hash] = cnt[bit];
+	que[bit][cnt[bit]] = status;
+	val[bit][cnt[bit]] = tot;
+}
+in void insert(ll status, ll tot) {
+	int hash = status % mod + 1;
+	for(ll i=h[hash];i;i=nxt[i]) {
+		if(que[bit][i] == status) {
+			val[bit][i] += tot;
+			return;
+		}
+	}
+	add(hash, status, tot);
+}
+in void modifyQue() {
+	for(ll i=1;i&lt;=cnt[bit];i++) {
+		que[bit][i] &lt;&lt;= 2;
+	}
+}
+in void dp() {
+	cnt[bit] = 1;
+	val[bit][1] = 1;
+	que[bit][1] = 0;
+	for(ll i=1;i&lt;=n;i++) {
+		modifyQue();
+		for(ll j=1;j&lt;=m;j++) {
+			fil(h, 0);
+			lst = bit;
+			bit ^= 1;
+			cnt[bit] = 0;
+			for(ll k=1;k&lt;=cnt[lst];k++) {
+				ll status = que[lst][k];
+				ll tot = val[lst][k];
+				ll P1 = (status &gt;&gt; ((j - 1) * 2)) % 4;
+				ll P2 = (status &gt;&gt; (j * 2)) % 4;
+				if(!a[i][j]) {
+					if(!P1 &amp;&amp; !P2) {
+						insert(status, tot);
+					}
+				}
+				else if(!P1 &amp;&amp; !P2) {
+					if(a[i][j+1] &amp;&amp; a[i+1][j]) {
+						ll nxtStatus = status + p[j-1] + 2 * p[j];
+						insert(nxtStatus, tot);
+					}
+				}
+				else if(!P1 &amp;&amp; P2) {
+					if(a[i][j+1]) {
+						insert(status, tot);
+					}
+					if(a[i+1][j]) {
+						ll nxtStatus = status - p[j] * P2 + p[j-1] * P2;
+						insert(nxtStatus, tot);
+					}
+				}
+				else if(P1 &amp;&amp; !P2) {
+					if(a[i+1][j]) {
+						insert(status, tot);
+					}
+					if(a[i][j+1]) {
+						ll nxtStatus = status - p[j-1] * P1 + p[j] * P1;
+						insert(nxtStatus, tot);
+					}
+				}
+				else if(P1 == 1 &amp;&amp; P2 == 1) {
+					ll tmp = 1;
+					for(ll l=j+1;l&lt;=m;l++) {
+						ll Pid = (status &gt;&gt; (l * 2)) % 4;
+						if(Pid == 1) {
+							++tmp;
+						}
+						else if(Pid == 2) {
+							--tmp;
+						}
+						if(!tmp) {
+							ll nxtStatus = status - p[j] - p[j-1] - p[l];
+							insert(nxtStatus, tot);
+							break;
+						}
+					}
+				}
+				else if(P1 == 2 &amp;&amp; P2 == 2) {
+					ll tmp = 1;
+					for(ll l=j-2;l&gt;=0;l--) {
+						ll Pid = (status &gt;&gt; (l &lt;&lt; 1)) % 4;
+						if(Pid == 1) {
+							--tmp;
+						}
+						else if(Pid == 2) {
+							++tmp;
+						}
+						if(!tmp) {
+							ll nxtStatus = status - 2 * p[j] - 2 * p[j-1] + p[l];
+							insert(nxtStatus, tot);
+							break;
+						}
+					}
+				}
+				else if(P1 == 2 &amp;&amp; P2 == 1) {
+					ll nxtStatus = status - 2 * p[j-1] - p[j];
+					insert(nxtStatus, tot);
+				}
+				else if(i == dx &amp;&amp; j == dy) {
+					ans += tot;
+				}
+			}
+		}
+	}
+}
+
+int main() {
+	scanf(&quot;%lld%lld&quot;, &amp;n, &amp;m);
+	for(ll i=1;i&lt;=n;i++) {
+		string s;
+		cin&gt;&gt;s;
+		s = ' ' + s;
+		for(ll j=1;j&lt;=m;j++) {
+			if(s[j] == '.') {
+				a[i][j] = 1;
+				dx = i;
+				dy = j;
+			}
+		}
+	}
+	p[0] = 1;
+	for(ll i=1;i&lt;=12;i++) {
+		p[i] = p[i-1] &lt;&lt; 2;
+	}
+	dp();
+	printf(&quot;%lld\n&quot;, ans);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[陈丹琪分治学习笔记]]></title>
         <id>https://blog.ak-ioi.cf/post/learning-cdq/</id>
@@ -733,35 +933,6 @@ int main()
 <p>神说，要有OI，于是有了OI。</p>
 <p>God said that if there is an OI, then there is an OI.</p>
 </blockquote>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[LCT学习笔记（新文章暂时置顶，upd 2020.5.4）]]></title>
-        <id>https://blog.ak-ioi.cf/post/learning-lct/</id>
-        <link href="https://blog.ak-ioi.cf/post/learning-lct/">
-        </link>
-        <updated>2020-04-28T09:39:37.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="本文持续更新中">本文持续更新中</h1>
-<h1 id="0x00-前置知识">0X00 前置知识</h1>
-<p>LCT 的前置知识有：Splay（网上有用 fhq-Treap 写 LCT 的方法，不主流，在这里不作讲解）</p>
-<h1 id="0x01-介绍">0X01 介绍</h1>
-<p>LCT（Link-Cut Tree），是一个 Splay 森林。Splay 之间用虚边连接，Splay 内部用实边连接。</p>
-<p>LCT的一些经典操作有：</p>
-<ul>
-<li>连接树边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>↔</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u\leftrightarrow v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span></li>
-<li>删除树边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>↔</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u\leftrightarrow v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">↔</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span></li>
-<li>链上操作，如修改、询问链上权值</li>
-</ul>
-<h1 id="0x02-基本定义">0X02 基本定义</h1>
-<pre><code class="language-cpp">int fa[MAXN], v[MAXN], s[MAXN], tag[MAXN], st[MAXN], son[MAXN][2];
-</code></pre>
-<p>fa 存每个节点的父亲，v 是点权，s 是该点以及子树的权值和，tag 是该点的翻转情况，st 是一个栈，将在下文提到，son 存左右儿子。</p>
-<h1 id="0x03-基本操作">0X03 基本操作</h1>
-<p>咕了</p>
-<h1 id="0xff-参考文献">0XFF 参考文献</h1>
-<ol>
-<li><a href="https://www.luogu.com.cn/blog/Qiu/qian-tan-link-cut-tree">浅谈Link-Cut Tree</a></li>
-</ol>
 ]]></content>
     </entry>
 </feed>
