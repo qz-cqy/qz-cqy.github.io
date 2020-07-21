@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>Hello Gridea | rui_er 的博客</title>
+<title>陈丹琪分治学习笔记 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1595296687862">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="Hello Gridea" />
-  <meta name="keywords" content="Gridea" />
+  <meta name="description" content="陈丹琪分治学习笔记" />
+  <meta name="keywords" content="陈丹琪分治,学习笔记,算法,OI,洛谷" />
 </head>
 
 <body>
@@ -280,11 +280,17 @@
   <div class="toc-wrapper auto-number auto"
     id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
+<li><a href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86">前置知识</a>
 <ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
+<li><a href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86-2">前置知识</a></li>
+<li><a href="#%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98%E7%AE%80%E8%BF%B0">偏序问题简述</a></li>
+<li><a href="#%E4%B8%80%E7%BB%B4%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98">一维偏序问题</a></li>
+<li><a href="#%E4%BA%8C%E7%BB%B4%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98">二维偏序问题</a></li>
 </ul>
 </li>
+<li><a href="#%E9%99%88%E4%B8%B9%E7%90%AA%E5%88%86%E6%B2%BB-%E4%B8%89%E7%BB%B4%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98">陈丹琪分治 - 三维偏序问题</a></li>
+<li><a href="#%E9%99%88%E4%B8%B9%E7%90%AA%E5%88%86%E6%B2%BB%E5%A5%97%E9%99%88%E4%B8%B9%E7%90%AA%E5%88%86%E6%B2%BB-%E5%9B%9B%E7%BB%B4%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98">陈丹琪分治套陈丹琪分治 - 四维偏序问题</a></li>
+<li><a href="#%E9%AB%98%E7%BB%B4%E5%81%8F%E5%BA%8F%E9%97%AE%E9%A2%98ge5">高维偏序问题（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\ge5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>）</a></li>
 </ul>
 
   </div>
@@ -550,8 +556,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/hello-gridea/">
-      Hello Gridea
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/learning-cdq/">
+      陈丹琪分治学习笔记
     </a>
   </h1>
   <div class="post-meta">
@@ -559,7 +565,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2018-12-12</span>
+      <span>2020-07-21</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -568,8 +574,32 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/4Hc_Jfc8r/">
-        <span>Gridea</span>
+      <a href="https://blog.ak-ioi.cf/tag/N3fGKkchd/">
+        <span>陈丹琪分治</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/Wj08bbbmrW/">
+        <span>学习笔记</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
+        <span>算法</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
+        <span>OI</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
+        <span>洛谷</span>
       </a>
       
       
@@ -578,17 +608,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>12分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>298<span class="pc-show">字数</span></span>
+      <span>2021<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/hello-gridea/" data-flag-title="Hello Gridea" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/learning-cdq/" data-flag-title="陈丹琪分治学习笔记" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -597,27 +627,282 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <p>先来看一道模板题：<a href="https://www.luogu.com.cn/problem/P3810">P3810@洛谷</a> - 【模板】三维偏序（陌上花开）。</p>
+<p>考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 暴力枚举，但是数据范围大到离谱，因此这种方法显然行不通。</p>
+<p>下面就来讲解陈丹琪分治算法，主要用于解决 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 维偏序问题。</p>
+<h1 id="前置知识">前置知识</h1>
+<h2 id="前置知识-2">前置知识</h2>
+<ul>
+<li>树状数组</li>
+<li>函数递归 / 分治</li>
+<li>归并排序</li>
+</ul>
+<h2 id="偏序问题简述">偏序问题简述</h2>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 维偏序，即有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 个元素，每个元素有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个属性 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>2</mn></mrow></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{i,1},a_{i,2},\cdots,a_{i,n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，求对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>∈</mo><mo>[</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">i\in[1,k]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span></span></span></span>，使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mi>j</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>≤</mo><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mi>a</mi><mrow><mi>j</mi><mo separator="true">,</mo><mn>2</mn></mrow></msub><mo>≤</mo><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mn>2</mn></mrow></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>a</mi><mrow><mi>j</mi><mo separator="true">,</mo><mi>n</mi></mrow></msub><mo>≤</mo><msub><mi>a</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{j,1}\le a_{i,1}, a_{j,2}\le a_{i,2}, \cdots, a_{j,n}\le a_{i,n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.922078em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.922078em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.922078em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mi mathvariant="normal">≠</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">j\ne i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 的元素个数。</p>
+<h2 id="一维偏序问题">一维偏序问题</h2>
+<p>一维偏序，即给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个整数，求对于数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>j</mi></msub><mo>≤</mo><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_j\le a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.922078em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mi mathvariant="normal">≠</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">j\ne i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 的整数个数。</p>
+<p>可以考虑排序，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
+<p>模板题：<a href="https://www.luogu.com.cn/problem/P1177">P1177@洛谷</a> - 【模板】快速排序。</p>
+<h2 id="二维偏序问题">二维偏序问题</h2>
+<p>二维偏序，在平面内有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个点，对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mi mathvariant="normal">≠</mi><mi>i</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>j</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>j</mi></msub><mo>≤</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">j\ne i,x_j\le x_i,y_j\le y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9456279999999999em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.922078em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，此类问题可以考虑树状数组，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
+<p>模板题：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1541">HDU1541@杭电</a> - Stars（由于很久以前做的忘记洛谷上那道题的题号了，只能从别人的博客找了外 OJ 的一道题。）</p>
+<p>代码：懒得写了，引自<a href="https://www.luogu.com.cn/blog/Owencodeisking/post-xue-xi-bi-ji-cdq-fen-zhi-hu-zheng-ti-er-fen">[学习笔记]CDQ分治和整体二分</a></p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define lowbit(x) ((x)&amp;(-(x)))
+using namespace std;
+const int maxn=100000+10;
+int n,c[maxn],ans[maxn];
+
+struct Stars{
+    int x,y;
+}a[maxn];
+
+bool cmp(Stars a,Stars b){
+    if(a.x!=b.x) return a.x&lt;b.x;
+    return a.y&lt;b.y;
+}
+
+inline int read(){
+    register int x=0,f=1;char ch=getchar();
+    while(!isdigit(ch)){if(ch=='-')f=-1;ch=getchar();}
+    while(isdigit(ch)){x=(x&lt;&lt;3)+(x&lt;&lt;1)+ch-'0';ch=getchar();}
+    return (f==1)?x:-x;
+}
+void add(int x,int y){
+    for(;x&lt;maxn;x+=lowbit(x)) c[x]+=y; 
+}
+int sum(int x){
+    int ans=0;
+    for(;x;x-=lowbit(x)) ans+=c[x];
+    return ans;
+}
+
+int main()
+{
+    n=read();
+    for(int i=1;i&lt;=n;i++) 
+        a[i].x=read(),a[i].y=read();
+    sort(a+1,a+n+1,cmp);
+    int now;
+    for(int i=1;i&lt;=n;i++){
+        now=sum(a[i].y+1);
+        ans[now]++;
+        add(a[i].y+1,1);
+    }
+    for(int i=0;i&lt;n;i++) 
+        printf(&quot;%d\n&quot;,ans[i]);
+    return 0;
+}
+</code></pre>
+<h1 id="陈丹琪分治-三维偏序问题">陈丹琪分治 - 三维偏序问题</h1>
+<p>简单来讲就只是在上面的二维偏序上面增加一个维度。</p>
+<p>我们考虑按第一个属性排序，第二个属性使用归并排序，第三个属性使用树状数组。</p>
+<p>归并排序时因为第一个属性有序，因此排序第二个属性时可以随意打乱，因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mi>j</mi><mo>∈</mo><mo>[</mo><mi>m</mi><mi>i</mi><mi>d</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow></msub><mo>≥</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>∈</mo><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>m</mi><mi>i</mi><mi>d</mi><mo>]</mo></mrow></msub></mrow><annotation encoding="application/x-tex">a_{j\in[mid+1,r]}\ge a_{i\in[l,mid]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9911699999999999em;vertical-align:-0.3551999999999999em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.5198em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">∈</span><span class="mopen mtight">[</span><span class="mord mathdefault mtight">m</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">d</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3551999999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7857599999999999em;vertical-align:-0.3551999999999999em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.5198em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">∈</span><span class="mopen mtight">[</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">m</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">d</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3551999999999999em;"><span></span></span></span></span></span></span></span></span></span>。因为此时两个属性均有序，第三维就可以使用树状数组求解了，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>2</mn></msup><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log^2 n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.148448em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
+<p>模板题：<a href="https://www.luogu.com.cn/problem/P3810">P3810@洛谷</a> - 【模板】三维偏序（陌上花开）</p>
+<p>以下是我的 AC 代码：（当时写的，码风可能不太好）</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int MAXN = 1e5+5;
+
+int n, m;
+int ans[MAXN];
+struct Node
+{
+	int a, b, c;
+	int w, f;
+	bool operator &lt; (const Node &amp;p) const
+	{
+		if(a != p.a) return a &lt; p.a;
+		if(b != p.b) return b &lt; p.b;
+		return c &lt; p.c;
+	}
+}e[MAXN], tmp[MAXN];
+
+namespace BIT
+{
+	int index[MAXN&lt;&lt;1];
+	int lowbit(int x) {return x&amp;(-x);}
+	void upd(int x, int y) {for(;x&lt;=m;x+=lowbit(x)) index[x] += y;}
+	int sum(int x) {int ans = 0; for(;x;x-=lowbit(x)) ans += index[x]; return ans;}
+}
+namespace cdq
+{
+	void mergesort(int l, int mid, int r)
+	{
+		int x = l, y = mid + 1, tot = l;
+		while(x &lt;= mid &amp;&amp; y &lt;= r)
+		{
+			if(e[x].b &lt;= e[y].b) BIT::upd(e[x].c, e[x].w), tmp[tot++] = e[x++];
+			else e[y].f += BIT::sum(e[y].c), tmp[tot++] = e[y++];
+		}
+		while(x &lt;= mid) BIT::upd(e[x].c, e[x].w), tmp[tot++] = e[x++];
+		while(y &lt;= r) e[y].f += BIT::sum(e[y].c), tmp[tot++] = e[y++];
+		for(int i=l;i&lt;=mid;i++) BIT::upd(e[i].c, -e[i].w);
+		for(int i=l;i&lt;=r;i++) e[i] = tmp[i];
+	}
+	void main(int l, int r)
+	{
+		int mid = (l + r) &gt;&gt; 1;
+		if(l == r) return;
+		main(l, mid);
+		main(mid+1, r);
+		mergesort(l, mid, r);
+	}
+}
+
+void de_weight(int &amp;cnt)
+{
+	sort(e+1, e+1+n);
+	cnt = 1;
+	for(int i=2;i&lt;=n;i++)
+	{
+		if(e[i].a == e[cnt].a &amp;&amp; e[i].b == e[cnt].b &amp;&amp; e[i].c == e[cnt].c) ++e[cnt].w;
+		else e[++cnt] = e[i];
+	}
+}
+
+int main()
+{
+	cin&gt;&gt;n&gt;&gt;m;
+	for(int i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;e[i].a&gt;&gt;e[i].b&gt;&gt;e[i].c;
+		e[i].w = 1;
+		e[i].f = 0;
+	}
+	int cnt;
+	de_weight(cnt);
+	cdq::main(1, cnt);
+	for(int i=1;i&lt;=cnt;i++) ans[e[i].w+e[i].f-1] += e[i].w;
+	for(int i=0;i&lt;n;i++) cout&lt;&lt;ans[i]&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<h1 id="陈丹琪分治套陈丹琪分治-四维偏序问题">陈丹琪分治套陈丹琪分治 - 四维偏序问题</h1>
+<p>四维偏序问题也类似，需要陈丹琪分治套陈丹琪分治套树状数组。具体思想类似，在这里不详细讲了，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msup><mi>log</mi><mo>⁡</mo><mn>3</mn></msup><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log^3 n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.148448em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984479999999999em;"><span style="top:-3.1473400000000002em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
+<p>模板题：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=5126">HDU5126@杭电</a> - Stars（没错这题也叫 Stars</p>
+<p>代码：（还是引自上面那篇博客）</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define lowbit(x) ((x)&amp;(-(x)))
+using namespace std;
+const int maxn=400000+10;
+int n,m,mp[maxn],c[maxn],ans[maxn],tot;
+
+struct Element{
+    int op,x,y,z,w,id,flag;
+}e[maxn],t[maxn],d[maxn];
+
+inline int read(){
+    register int x=0,f=1;char ch=getchar();
+    while(!isdigit(ch)){if(ch=='-')f=-1;ch=getchar();}
+    while(isdigit(ch)){x=(x&lt;&lt;3)+(x&lt;&lt;1)+ch-'0';ch=getchar();}
+    return (f==1)?x:-x;
+}
+void add(int x,int y){
+    for(;x&lt;maxn;x+=lowbit(x)) c[x]+=y;
+}
+int sum(int x){
+    int ans=0;
+    for(;x;x-=lowbit(x)) ans+=c[x];
+    return ans;
+}
+
+void CDQ3d(int l,int r){
+    if(l==r) return ;
+    int mid=(l+r)&gt;&gt;1;
+    CDQ3d(l,mid);CDQ3d(mid+1,r);
+    int p=l,q=mid+1,cnt=l;
+    while(p&lt;=mid&amp;&amp;q&lt;=r){
+        if(t[p].y&lt;=t[q].y){
+            if(t[p].op==1&amp;&amp;t[p].flag==0)
+                add(t[p].z,1);
+            d[cnt++]=t[p++];
+        }
+        else {
+            if(t[q].op==2&amp;&amp;t[q].flag==1)
+                ans[t[q].id]+=t[q].w*sum(t[q].z);
+            d[cnt++]=t[q++];
+        }
+    }
+    while(p&lt;=mid){
+        if(t[p].op==1&amp;&amp;t[p].flag==0)
+            add(t[p].z,1);
+        d[cnt++]=t[p++];
+    }
+    while(q&lt;=r){
+        if(t[q].op==2&amp;&amp;t[q].flag==1)
+            ans[t[q].id]+=t[q].w*sum(t[q].z);
+        d[cnt++]=t[q++];
+    }
+    for(int i=l;i&lt;=mid;i++){
+        if(t[i].op==1&amp;&amp;t[i].flag==0)
+            add(t[i].z,-1);
+    }
+    for(int i=l;i&lt;=r;i++) t[i]=d[i];
+}
+
+void CDQ2d(int l,int r){
+    if(l==r) return ;
+    int mid=(l+r)&gt;&gt;1;
+    CDQ2d(l,mid);CDQ2d(mid+1,r);
+    int p=l,q=mid+1,cnt=l;
+    while(p&lt;=mid&amp;&amp;q&lt;=r){
+        if(e[p].x&lt;=e[q].x){
+            t[cnt++]=e[p++];t[cnt-1].flag=0;
+        }
+        else {
+            t[cnt++]=e[q++];t[cnt-1].flag=1;
+        }
+    }
+    while(p&lt;=mid){
+        t[cnt++]=e[p++];t[cnt-1].flag=0;
+    }
+    while(q&lt;=r){
+        t[cnt++]=e[q++];t[cnt-1].flag=1;
+    }
+    for(int i=l;i&lt;=r;i++) e[i]=t[i];
+    CDQ3d(l,r);
+}
+
+int main()
+{
+    int T=read();
+    while(T--){
+        memset(ans,0,sizeof(ans));
+        m=read();tot=0;
+        int op,x1,y1,z1,x2,y2,z2,t=0;
+        for(int i=1;i&lt;=m;i++){
+            op=read();
+            if(op==1){
+                x1=read(),y1=read(),z1=read();
+                e[++tot]=(Element){1,x1,y1,z1,1,tot,0};
+            }
+            else {
+                x1=read(),y1=read(),z1=read(),x2=read(),y2=read(),z2=read();
+                t++;
+                e[++tot]=(Element){2,x2,y2,z2,1,t,0};
+                e[++tot]=(Element){2,x1-1,y2,z2,-1,t,0};
+                e[++tot]=(Element){2,x2,y1-1,z2,-1,t,0};
+                e[++tot]=(Element){2,x2,y2,z1-1,-1,t,0};
+                e[++tot]=(Element){2,x1-1,y1-1,z2,1,t,0};
+                e[++tot]=(Element){2,x1-1,y2,z1-1,1,t,0};
+                e[++tot]=(Element){2,x2,y1-1,z1-1,1,t,0};
+                e[++tot]=(Element){2,x1-1,y1-1,z1-1,-1,t,0};
+            }
+        }
+        for(int i=1;i&lt;=tot;i++) mp[i]=e[i].z;
+        sort(mp+1,mp+tot+1);
+        int cnt=unique(mp+1,mp+tot+1)-mp-1;
+        for(int i=1;i&lt;=tot;i++) e[i].z=lower_bound(mp+1,mp+cnt+1,e[i].z)-mp;
+        CDQ2d(1,tot);
+        for(int i=1;i&lt;=t;i++) printf(&quot;%d\n&quot;,ans[i]);
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="高维偏序问题ge5">高维偏序问题（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\ge5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>）</h1>
+<p>在更高维的情况下陈丹琪分治也比较慢，基本就是暴力了。可以使用 bitset 优化，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mfrac><msup><mi>n</mi><mn>2</mn></msup><mn>32</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\frac{n^2}{32})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.36292em;vertical-align:-0.345em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01792em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913142857142857em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>，这里不详细讲了。</p>
 
             </div>
             <div class="post-footer">
@@ -628,7 +913,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/hello-gridea/" title="Hello Gridea">https://blog.ak-ioi.cf/post/hello-gridea/</a>
+      <a href="https://blog.ak-ioi.cf/post/learning-cdq/" title="陈丹琪分治学习笔记">https://blog.ak-ioi.cf/post/learning-cdq/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -637,7 +922,15 @@
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/4Hc_Jfc8r/"># Gridea</a>
+      <a href="https://blog.ak-ioi.cf/tag/N3fGKkchd/"># 陈丹琪分治</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/Wj08bbbmrW/"># 学习笔记</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
     
   </div>
   <div class="nav">
@@ -645,6 +938,10 @@
       
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="题解 CF1360E@洛谷 | 1360E@Codeforces 【Polygon】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf1360e-codeforces-1360e/">题解 CF1360E@洛谷 | 1360E@Codeforces 【Polygon】</a>
+        <a class="nav-mobile-next" title="题解 CF1360E@洛谷 | 1360E@Codeforces 【Polygon】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf1360e-codeforces-1360e/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
