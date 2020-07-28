@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-07-26T06:01:21.290Z</updated>
+    <updated>2020-07-28T02:46:18.062Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,101 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[浅谈 C++ 不定参数]]></title>
+        <id>https://blog.ak-ioi.cf/post/c-han-shu-bu-ding-can-shu-xiang-jie/</id>
+        <link href="https://blog.ak-ioi.cf/post/c-han-shu-bu-ding-can-shu-xiang-jie/">
+        </link>
+        <updated>2020-07-27T12:41:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>你是否遇到过一个函数要传的参数不确定的问题？你是否想要写一个方便的函数可以处理任意多个数的最小值（最大值、加和），而不是套很多层的 min（max、+）？C++ 函数不定参数可以实现这些。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>你是否遇到过一个函数要传的参数不确定的问题？你是否想要写一个方便的函数可以处理任意多个数的最小值（最大值、加和），而不是套很多层的 min（max、+）？C++ 函数不定参数可以实现这些。</p>
+<!-- more -->
+<p>先来说说多个数最小值的函数。</p>
+<p>我们首先声明一个函数：</p>
+<pre><code class="language-cpp">int Min(int tot, ...);
+</code></pre>
+<p>这里 tot 表示要求最小值的数的个数，后面的 ... 是数的列表。</p>
+<p>我们需要调用后面的列表，在函数中定义 va_list，长度为 tot：</p>
+<pre><code class="language-cpp">int Min(int tot, ...) {
+    va_list a;
+    va_start(a, tot);
+    // Do something..
+}
+</code></pre>
+<p>然后开始写比较，每次从列表中取一个 int 元素，与当前最小值比较（这里最小值设置为 0x3f3f3f3f），取元素时使用 va_arg()，最后结束列表即可。</p>
+<pre><code class="language-cpp">int Min(int tot, ...) {
+	va_list a;
+	va_start(a, tot);
+	int res = 0x3f3f3f3f;
+	for(int i=1;i&lt;=tot;i++) {
+		res = min(res, va_arg(a, int));
+	}
+	va_end(a);
+	return res;
+}
+</code></pre>
+<p>我们试着调用 Min(4, -1, 3, 2, 0)，发现返回值为 -1，即 -1, 3, 2, 0 这四个数中的最小值。</p>
+<hr>
+<p>以上是 C++98 支持的最基本的不定参数用法，下面讲解一个 C++11 新增的技巧——可变参数模板。</p>
+<p>C++11 允许我们这样定义一个可变参数类模板：</p>
+<pre><code class="language-cpp">template&lt;typename ... Types&gt;
+class QAQ {
+    // Do something..
+};
+</code></pre>
+<p>这样我们就可以用任意数量的变量类型来初始化 QAQ：</p>
+<pre><code class="language-cpp">QAQ&lt;&gt; c1;
+QAQ&lt;int&gt; c2;
+QAQ&lt;int, char&gt; c3;
+</code></pre>
+<p>如果想要避免出现使用 0 个模板参数来初始化的情况，我们可以这么写：</p>
+<pre><code class="language-cpp">template&lt;typename T, typename ... Types&gt;
+class QAQ2 {
+    // Do something..
+};
+</code></pre>
+<p>可变参数函数模板如下（这里是一个输出不同类型的变量的函数）：</p>
+<pre><code class="language-cpp">void print() { // 这个函数啥都不用做，只是为了防止递归到最后一层后出现的函数未定义的现象，可以自行探索
+    ;
+}
+template&lt;typename T, typename ... Types&gt;
+void print(T arg, Types ... args) {
+    cout&lt;&lt;arg&lt;&lt;endl;
+    print(args ...);
+}
+</code></pre>
+<p>这样我们就可以输出一串任意长度、任意类型的列表了：</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+void print() {
+    ;
+}
+template&lt;typename T, typename ... Types&gt;
+void print(T arg, Types ... args) {
+    cout&lt;&lt;arg&lt;&lt;endl;
+    print(args ...);
+}
+
+int main() {
+    int a = 0;
+    print(1, 2, 0.18, &quot;QAQ&quot;, a, &amp;a);
+    return 0;
+}
+</code></pre>
+<p>输出结果：</p>
+<pre><code class="language-plain">1
+2
+0.18
+QAQ
+0
+0x73fe1c
+</code></pre>
+<p>（注：最后一个输出的是变量 a 的地址，可能因人而异）</p>
+<p>以上就是不定参数的基本用法，大家学会了吗？可以自己写写试试哟~</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[插头dp——从入门到跳楼]]></title>
         <id>https://blog.ak-ioi.cf/post/cha-tou-dp-cong-ru-men-dao-tiao-lou/</id>
@@ -825,114 +920,6 @@ int main()
     return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[OIの光]]></title>
-        <id>https://blog.ak-ioi.cf/post/OI-light/</id>
-        <link href="https://blog.ak-ioi.cf/post/OI-light/">
-        </link>
-        <updated>2020-04-29T02:22:35.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="https://www.luogu.com.cn/paste/9n1yh71d">原地址</a></p>
-<hr>
-<h4 id="xiaozengx">@xiaozengX</h4>
-<blockquote>
-<p>这个黑暗的世界上 ，唯有OI会发光。</p>
-<p>In this dark world,only OI will shine!</p>
-</blockquote>
-<hr>
-<h4 id="forkψkillet">@ForkΨKillet</h4>
-<blockquote>
-<p>对于成千上万的梦想家和我来说，OI就是一生。</p>
-<p>For thousands of dreamers and me, OI is the whole life.</p>
-</blockquote>
-<hr>
-<h4 id="rui_er">@rui_er</h4>
-<blockquote>
-<p>如果这世上有天堂，那一定是机房的模样。</p>
-<p>If there is heaven in this world, it must be the appearance of a computer room</p>
-</blockquote>
-<hr>
-<h4 id="流星之愿">@流星之愿</h4>
-<blockquote>
-<p>如果奇迹有颜色，那么一定是AK IOI的颜色。</p>
-<p>If the miracle has color, it must be the color of AK IOI.</p>
-</blockquote>
-<hr>
-<h4 id="forkψkillet-2">@ForkΨKillet</h4>
-<blockquote>
-<p>如果奇迹有声音，一定是AK的声音</p>
-<p>If there is a sound in the miracle, it must be the sound of AK</p>
-</blockquote>
-<hr>
-<h4 id="_sar_">@_SAR_</h4>
-<blockquote>
-<p>此后如竟没有炬火，OI便是唯一的光！</p>
-<p>If there is no torch since then, OI is the only light!</p>
-</blockquote>
-<hr>
-<h4 id="_sar_-2">@_SAR_</h4>
-<blockquote>
-<p>上帝说，要有光，于是便有了OI。</p>
-<p>God said, there must be light, so there is OI.</p>
-</blockquote>
-<hr>
-<h4 id="trinitrotoluene">@Trinitrotoluene</h4>
-<blockquote>
-<p>世上本没有信奥，学OI的人多了，也便成了信奥。</p>
-<p>There was no faith in the world, and many people who learned OI became faithful.</p>
-</blockquote>
-<hr>
-<h4 id="云浅知处">@云浅知处</h4>
-<blockquote>
-<blockquote>
-<p>起初，神创造计算机系统。</p>
-<p>由01构成的世界是空虚混沌,渊面黑暗；神的灵运行在无穷的01串上.</p>
-<p>神说，要有OI，于是有了OI。</p>
-<p>神看OI是好的，便创造了€€F。</p>
-<p>神说：OI与€€F要有蒟蒻，将OI分为神犇与蒟蒻。</p>
-<p>神就造出蒟蒻，将蒟蒻下的Hello World，蒟蒻上的神犇分开了，事就这样成了。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>At first, God created computer systems.</p>
-<p>The world composed of 01 is empty and chaotic, and the abyss is dark; the spirit of God runs on the infinite 01 string.</p>
-<p>God said that if there is an OI, then there is an OI.</p>
-<p>God saw that OI was good, so he created €€ F.</p>
-<p>God said: OI and €€ F must have Konjac, and OI is divided into Shenben and Konjac.</p>
-<p>God created Konjac, separated the Hello World under Konjac and the God Ben on Konjac, and that was all.</p>
-</blockquote>
-</blockquote>
-<hr>
-<h4 id="xiaozengx-2">@xiaozengX</h4>
-<blockquote>
-<p>至此为止，你甚可AC，但不能AK！</p>
-<p>hitherto shalt thou AC,but no AK.</p>
-</blockquote>
-<hr>
-<h4 id="jroi官方账号">@JROI官方账号</h4>
-<blockquote>
-<p>据说，上帝先创造的，便是OI，他引领着我们向前走！</p>
-<p>It is said that God first created the OI, and he led us forward!</p>
-</blockquote>
-<hr>
-<h4 id="lgk_juventudd">@Lgk_Juventudd</h4>
-<blockquote>
-<p>Put a lot of OIer in the world, separate many OIers into Shenben and Konjac, put a lot of IOI into Shenben, Shenben has AKI IOI, put a lot of Hello, World, and Konjac into self-closure.</p>
-<p>在世界上投放大量OIer，将众多OIer分离为神犇和蒟蒻，往神犇里投放大量IOI，神犇均AK了IOI，往蒟蒻里投放大量Hello， World，蒟蒻均自闭。</p>
-</blockquote>
-<hr>
-<h4 id="cheng-熙">@Cheng、熙®</h4>
-<blockquote>
-<p>OI虽没有国界，但是OIer却有他自己的国家。</p>
-<p>Although OI has no borders, OIer has his own country.</p>
-</blockquote>
-<hr>
-<h4 id="清清老大">@清清老大</h4>
-<blockquote>
-<p>神说，要有OI，于是有了OI。</p>
-<p>God said that if there is an OI, then there is an OI.</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
