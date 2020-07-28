@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-07-28T02:46:18.062Z</updated>
+    <updated>2020-07-28T03:37:17.568Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,223 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[C++ 类的继承基础]]></title>
+        <id>https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/</id>
+        <link href="https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/">
+        </link>
+        <updated>2020-07-28T02:56:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>类是 C++ 的一大特色，但是只知道类却不会类的继承是没有太大意义的。今天，我们就来聊一下类的继承。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>类是 C++ 的一大特色，但是只知道类却不会类的继承是没有太大意义的。今天，我们就来聊一下类的继承。</p>
+<!-- more -->
+<p>类，即 class，与结构体 struct 类似，同时也添加了一些新的功能。</p>
+<p>类中的元素分 public、protected 和 private 三种，在继承时有所体现：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">继承类型</th>
+<th style="text-align:center">基类 public 元素在 派生类的类别</th>
+<th style="text-align:center">基类 protected 元素在 派生类的类别</th>
+<th style="text-align:center">基类 private 元素在 派生类的类别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public 继承</td>
+<td style="text-align:center">public</td>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">不继承</td>
+</tr>
+<tr>
+<td style="text-align:center">protected 继承</td>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">不继承</td>
+</tr>
+<tr>
+<td style="text-align:center">private 继承</td>
+<td style="text-align:center">private</td>
+<td style="text-align:center">private</td>
+<td style="text-align:center">不继承</td>
+</tr>
+</tbody>
+</table>
+<p>注意继承的种类改变不了以下几点：</p>
+<ul>
+<li>private 成员只能在类内及友元中被访问，无法被派生类访问；</li>
+<li>protected 成员可以在派生类访问。</li>
+</ul>
+<p>下面看一个具体的例子：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class A { // 定义基类 A 
+public:
+	int a;
+	A() {
+		a = 1;
+		b = 2;
+		c = 3;
+		d = 4;
+	}
+	void print() {
+		cout&lt;&lt;a&lt;&lt;endl; // 正确，类中成员 
+		cout&lt;&lt;b&lt;&lt;endl; // 正确，类中成员 
+		cout&lt;&lt;c&lt;&lt;endl; // 正确，类中成员 
+		cout&lt;&lt;d&lt;&lt;endl; // 正确，类中成员 
+	}
+public:
+	int b;
+protected:
+	int c;
+private:
+	int d;
+}; 
+class B : public A { // 从 A 通过 public 继承得到派生类 B 
+public:
+	int a;
+	B(int x) {
+		A();
+		a = x;
+	}
+	void print() {
+		cout&lt;&lt;a&lt;&lt;endl; // 正确，类中成员 
+		cout&lt;&lt;b&lt;&lt;endl; // 正确，在基类中是 public 成员，在派生类依然是 public 成员 
+		cout&lt;&lt;c&lt;&lt;endl; // 正确，在基类中是 protected 成员，在派生类依然是 protected 成员 
+		cout&lt;&lt;d&lt;&lt;endl; // 错误，基类的 private 成员不能被继承 
+	}
+};
+
+int main() {
+	B b(5);
+	cout&lt;&lt;b.a&lt;&lt;endl; // 正确，类中 public 成员 
+	cout&lt;&lt;b.b&lt;&lt;endl; // 正确，继承为 public 成员 
+	cout&lt;&lt;b.c&lt;&lt;endl; // 错误，继承为 protected 成员，不能在类外访问 
+	cout&lt;&lt;b.d&lt;&lt;endl; // 错误 
+	return 0;
+}
+</code></pre>
+<p>这里是 public 继承，另外两种继承可以以此类推。</p>
+<hr>
+<p><strong>虚拟继承</strong></p>
+<p>在类 A 中的函数 f() 继承到 B 中需要重写，怎么办？</p>
+<p>! 如果只是想根据基类函数加一些代码：</p>
+<pre><code class="language-cpp">class A {
+public:
+    void f() {
+        puts(&quot;A&quot;);
+    }
+};
+class B : public A {
+public:
+    void f() {
+        A::f(); // 调用基类的 f() 函数
+        puts(&quot;B&quot;); // 需要额外添加的代码
+    }
+};
+</code></pre>
+<p>这里基类指针可以指向派生类的对象：</p>
+<pre><code class="language-cpp">class A {
+public:
+    int a;
+};
+class B : public A {
+public:
+    int b;
+};
+int main() {
+    B b;
+    b.a = 1;
+    b.b = 2;
+    A* p = &amp;b;
+    printf(&quot;%d\n&quot;, p-&gt;a);
+    return 0;
+}
+</code></pre>
+<p>! 问题</p>
+<pre><code class="language-cpp">class A {
+public:
+    void f() {
+        puts(&quot;A&quot;);
+    }
+};
+class B : public A {
+public:
+    void f() {
+        puts(&quot;B&quot;);
+    }
+};
+int main() {
+    B b;
+    A* p = &amp;b;
+    p-&gt;f(); // 这一行
+}
+</code></pre>
+<p>程序中的 p-&gt;f() 到底指哪一个？</p>
+<p>! 继承时重写函数</p>
+<p>如果一个函数需要被重写，在基类中应声明为 virtual，此时将调用子类的函数。</p>
+<pre><code class="language-cpp">class A {
+public:
+    virtual void f() {
+        puts(&quot;A&quot;);
+    }
+};
+class B : public A {
+public:
+    void f() {
+        puts(&quot;B&quot;);
+    }
+};
+int main() {
+    B b;
+    A* p = &amp;b;
+    p-&gt;f(); // 这一行
+}
+</code></pre>
+<hr>
+<p><strong>继承中的构造、析构函数问题</strong></p>
+<pre><code class="language-cpp">class A {
+public:
+    A() : a(0), b(0) {
+        puts(&quot;A()&quot;);
+    }
+    A(int x, int y) : a(x), b(y) {
+        puts(&quot;A(x, y)&quot;);
+    }
+    ~A() {
+        puts(&quot;~A()&quot;);
+    }
+private:
+    int a, b;
+};
+class B : public A {
+public:
+    B() : A(0, 1) {
+        puts(&quot;B()&quot;);
+    }
+    ~B() {
+        puts(&quot;~B()&quot;);
+    }
+};
+int main() {
+    A* p = new B();
+    delete p;
+}
+</code></pre>
+<p>在这个程序中，delete p 可能导致程序出错甚至崩溃，这里需要将 ~A() 声明为 virtual：</p>
+<pre><code class="language-cpp">virtual ~A()
+</code></pre>
+<hr>
+<p><strong>多重继承</strong></p>
+<pre><code class="language-cpp">class father {/*Do somthing..*/};
+class mother {/*Do something..*/};
+class son : public father, public mother {/*Do somthing..*/};
+</code></pre>
+<p>注意这里如果 father 和 mother 中出现同名变量可能导致错误。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浅谈 C++ 不定参数]]></title>
         <id>https://blog.ak-ioi.cf/post/c-han-shu-bu-ding-can-shu-xiang-jie/</id>
@@ -864,62 +1081,6 @@ int main() {
 <h1 id="8-优点缺点">8 优点缺点</h1>
 <p>优点有免费、简单；但是缺点是连接可能不太稳定，且延时较大。不过瑕不掩瑜，不影响整体运行。</p>
 <p><s>欢迎大家到我的 <a href="http://oj.ak-ioi.cf">OJ</a> 来参观！</s></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P6503@洛谷 | SP10622@洛谷 | 10622@SPOJ 【[COCI2010-2011#3] DIFERENCIJA】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-P6503-luogu-SP10622-SPOJ-10622/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-P6503-luogu-SP10622-SPOJ-10622/">
-        </link>
-        <updated>2020-05-01T02:45:39.000Z</updated>
-        <content type="html"><![CDATA[<p><s>我绝不会告诉你们这题与 SP10622 是双倍经验的</s>，好了，不扯了，下面开始正文。</p>
-<p>这题要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mi>i</mi></mrow><mi>n</mi></msubsup><msub><mi>max</mi><mo>⁡</mo><mrow><mi>i</mi><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>j</mi></mrow></msub><msub><mi>a</mi><mi>k</mi></msub><mo>−</mo><msub><mi>min</mi><mo>⁡</mo><mrow><mi>i</mi><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>j</mi></mrow></msub><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n\sum_{j=i}^n\max_{i\le k\le j}a_k-\min_{i\le k\le j}a_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.24011em;vertical-align:-0.43581800000000004em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mathdefault mtight">i</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.43581800000000004em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9539679999999999em;vertical-align:-0.286108em;"></span><span class="mop"><span class="mop">min</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">≤</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，看到最小值与最大值，想到单调栈。</p>
-<p>单调栈具体可不可以呢？当然是可以的。我们这里同时维护两个单调栈，递增和递减，就可以了。</p>
-<p>代码：</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const ll N = 3e5+5;
-
-ll n, a[N], x[N], y[N], S, ans;
-stack&lt;ll&gt; mi, ma;
-
-int main()
-{
-    scanf(&quot;%lld&quot;, &amp;n);
-    for(ll i=1;i&lt;=n;i++) scanf(&quot;%lld&quot;, &amp;a[i]);
-    mi.push(a[1]);
-    ma.push(a[1]);
-	x[1] = y[1] = 1;
-	ans = S = 0;
-    for(ll i=2;i&lt;=n;i++)
-	{
-        ll tmp = 1;
-        while(!mi.empty() &amp;&amp; mi.top() &lt;= a[i])
-		{
-			S -= mi.top() * x[mi.size()];
-			tmp += x[mi.size()];
-			mi.pop();
-		}
-		mi.push(a[i]);
-		x[mi.size()] = tmp;
-		S += a[i] * tmp;
-        tmp = 1;
-        while(!ma.empty() &amp;&amp; ma.top() &gt;= a[i])
-		{
-			S += ma.top() * y[ma.size()];
-			tmp += y[ma.size()];
-			ma.pop();
-		}
-		ma.push(a[i]);
-		y[ma.size()] = tmp;
-		S -= a[i] * tmp;
-        ans += S;
-    }
-    printf(&quot;%lld\n&quot;, ans);
-    return 0;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>
