@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-08-03T09:01:10.505Z</updated>
+    <updated>2020-08-03T09:24:05.258Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -18,6 +18,7 @@
         <updated>2020-08-03T07:48:50.000Z</updated>
         <content type="html"><![CDATA[<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="2.488em"><mstyle mathcolor="red"><mtext>警告</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>本文中的内容有一定危险性，请勿轻易尝试</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Huge\color{red}\text{警告}\\\Large\text{本文中的内容有一定危险性，请勿轻易尝试}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7001250399999999em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size11" style="color:red;"><span class="mord cjk_fallback" style="color:red;">警告</span></span></span><span class="mspace newline sizing reset-size6 size11" style="color:red;"></span><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size8" style="color:red;"><span class="mord cjk_fallback" style="color:red;">本文中的内容有一定危险性，请勿轻易尝试</span></span></span></span></span></span></p>
+<p><s>要尝试也请用虚拟机</s></p>
 <h1 id="前言-机惨是什么">前言 - 机惨是什么？</h1>
 <p>机惨，即机房惨案，名词或动词（常作谓语或宾语），简称 jc 或 jfca，常见于 OI（信息学竞赛/算法竞赛）圈子。一位 OIer 在另一位 OIer 的电脑上做一些奇<s>♂</s>奇<s>♂</s>怪<s>♂</s>怪<s>♂</s>的坏事的情况被称为机惨。</p>
 <p>顾名思义，机惨大多发生在机房，也有一些是通过特殊手段获取对方账号实施的。</p>
