@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】 | rui_er 的博客</title>
+<title>浅谈机惨 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1596445254774">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】" />
-  <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
+  <meta name="description" content="浅谈机惨" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -200,7 +200,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -273,6 +274,225 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E5%89%8D%E8%A8%80-%E6%9C%BA%E6%83%A8%E6%98%AF%E4%BB%80%E4%B9%88">前言 - 机惨是什么？</a></li>
+<li><a href="#%E5%89%8D%E8%A8%80-2-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%86%99%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0">前言 2 - 为什么要写这篇文章？</a></li>
+<li><a href="#%E4%B8%80%E8%88%AC%E6%93%8D%E4%BD%9C-%E8%B7%9F%E5%AF%B9%E6%96%B9%E5%BC%80%E4%B8%AA%E7%8E%A9%E7%AC%91%E4%B8%8D%E4%BC%9A%E9%80%A0%E6%88%90%E6%8D%9F%E5%A4%B1">一般操作 - 跟对方开个玩笑，不会造成损失</a>
+<ul>
+<li><a href="#i-ak-ioi">I AK IOI!</a></li>
+<li><a href="#is-it-rated">Is it rated?</a></li>
+</ul>
+</li>
+<li><a href="#%E9%AB%98%E7%BA%A7%E6%93%8D%E4%BD%9C-%E5%8F%AF%E8%83%BD%E9%80%A0%E6%88%90%E6%8D%9F%E5%A4%B1%E8%AF%B7%E6%85%8E%E7%94%A8">高级操作 - 可能造成损失，请慎用</a>
+<ul>
+<li><a href="#github-%E6%9C%BA%E6%83%A8">GitHub 机惨</a></li>
+<li><a href="#%E5%85%B3%E6%9C%BA">关机</a>
+<ul>
+<li><a href="#%E6%8E%A7%E5%88%B6%E9%94%AE%E5%BC%BA%E5%88%B6%E5%85%B3%E6%9C%BA">控制键强制关机</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E9%94%AE%E5%BC%BA%E5%88%B6%E5%85%B3%E6%9C%BA-2">控制键强制关机 2</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%85%B3%E6%9C%BA">命令行关机</a></li>
+<li><a href="#%E5%BC%BA%E5%88%B6%E5%85%B3%E6%9C%BA">强制关机</a></li>
+<li><a href="#%E8%BF%9C-%E7%A8%8B-%E5%85%B3-%E6%9C%BA">远 程 关 机</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
+</ul>
+</li>
+<li><a href="#%E8%93%9D%E5%B1%8F">蓝屏</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A5%9E%E7%BA%A7%E6%93%8D%E4%BD%9C-%E8%AF%B7%E5%8B%BF%E6%A8%A1%E4%BB%BF">神级操作 - 请勿模仿！！！</a>
+<ul>
+<li><a href="#%E8%AE%A9%E7%B3%BB%E7%BB%9F%E7%88%86%E7%82%B8">让系统爆炸</a></li>
+</ul>
+</li>
+<li><a href="#%E6%81%B6%E6%90%9E%E6%96%B9%E6%B3%95-%E6%97%A0%E5%8D%B1%E5%AE%B3">恶搞方法 - 无危害</a>
+<ul>
+<li><a href="#%E5%9B%BE%E7%89%87%E5%85%A8%E5%B1%8F">图片全屏</a></li>
+<li><a href="#%E6%A1%8C%E9%9D%A2%E8%AE%BE%E7%BD%AE">桌面设置</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -360,8 +580,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at2201-atcoder-2201/">
-      题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/jfca/">
+      浅谈机惨
     </a>
   </h1>
   <div class="post-meta">
@@ -369,60 +589,23 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-02-13</span>
+      <span>2020-08-03</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
-        <span>Atcoder</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
-        <span>题解</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>7分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>284<span class="pc-show">字数</span></span>
+      <span>1888<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/solution-luogu-at2201-atcoder-2201/" data-flag-title="题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/jfca/" data-flag-title="浅谈机惨" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -431,56 +614,109 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>首先，我们用字符串s1来进行操作，s用来对照。题目说1&lt;=|s|&lt;=10^5，因此数组开大一点。其次，容易想到，|s|是奇数时不可能满足条件，故加上：</p>
-<pre><code class="language-cpp">if(l&amp;1)
-{
-	cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>其中<code>&amp;</code>是<code>按位与运算</code></p>
-<p>之后，分两步，如题。</p>
-<p>写出下列代码：</p>
-<pre><code class="language-cpp">for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
-for(int i=0;i&lt;l;i++)
-{
-	if(s1[i] == 'b') s1[i] = 'd';
-	else if(s1[i] == 'd') s1[i] = 'b';
-	else if(s1[i] == 'p') s1[i] = 'q';
-	else s1[i] = 'p';
-}
-</code></pre>
-<p>综合以上，判断字符串相等，使用<code>strcmp()</code>。</p>
-<p>综合所有，下为完整代码：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;string.h&gt;
-using namespace std;
-
-char s[100010];
-char s1[100010];
-
-int main()
-{
-	cin&gt;&gt;s;
-	int l = strlen(s);
-	if(l&amp;1)
-	{
-		cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-		return 0;
-	}
-	for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
-	for(int i=0;i&lt;l;i++)
-	{
-		if(s1[i] == 'b') s1[i] = 'd';
-		else if(s1[i] == 'd') s1[i] = 'b';
-		else if(s1[i] == 'p') s1[i] = 'q';
-		else s1[i] = 'p';
-	}
-	if(!strcmp(s1, s)) cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
-	else cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
+              <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="2.488em"><mstyle mathcolor="red"><mtext>警告</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>本文中的内容有一定危险性，请勿轻易尝试</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Huge\color{red}\text{警告}\\\Large\text{本文中的内容有一定危险性，请勿轻易尝试}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7001250399999999em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size11" style="color:red;"><span class="mord cjk_fallback" style="color:red;">警告</span></span></span><span class="mspace newline sizing reset-size6 size11" style="color:red;"></span><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size8" style="color:red;"><span class="mord cjk_fallback" style="color:red;">本文中的内容有一定危险性，请勿轻易尝试</span></span></span></span></span></span></p>
+<h1 id="前言-机惨是什么">前言 - 机惨是什么？</h1>
+<p>机惨，即机房惨案，名词或动词（常作谓语或宾语），简称 jc 或 jfca，常见于 OI（信息学竞赛/算法竞赛）圈子。一位 OIer 在另一位 OIer 的电脑上做一些奇<s>♂</s>奇<s>♂</s>怪<s>♂</s>怪<s>♂</s>的坏事的情况被称为机惨。</p>
+<p>顾名思义，机惨大多发生在机房，也有一些是通过特殊手段获取对方账号实施的。</p>
+<h1 id="前言-2-为什么要写这篇文章">前言 2 - 为什么要写这篇文章？</h1>
+<p>从人类诞生开始，就有人会干坏事。</p>
+<p>从计算机被发明出来开始，就有人会用计算机干坏事。</p>
+<p>写这篇文章的意义在于，如果有人机惨了你，你可以通过适当的方式机惨回去。（开始胡扯</p>
+<p>请注意开玩笑一定要适度，否则导致对方在某平台的账号被封禁、或者辛辛苦苦写的代码丢失，你们大概就友尽了。</p>
+<p><s>所以这也是个友尽的好方法。</s></p>
+<h1 id="一般操作-跟对方开个玩笑不会造成损失">一般操作 - 跟对方开个玩笑，不会造成损失</h1>
+<p>（除非你故意下狠手，这要另说）</p>
+<h2 id="i-ak-ioi">I AK IOI!</h2>
+<p>难度：Easy</p>
+<p>相信各位 OIer 都知道这是什么了，但我还是要解释一遍。</p>
+<p>I，即英文中的“我”。</p>
+<p>AK，All Kill，在信息学竞赛圈一般指在比赛中获得满分。</p>
+<p>IOI，International Olympiad in Informatics，国际信息学奥林匹克竞赛缩写。</p>
+<p>I AK IOI，代表你在 IOI 比赛中取得了满分。</p>
+<p>根据 OI 圈装弱的习俗，如果你说你很强，一般会有人膜拜你。（当然也会有大佬 D 你）</p>
+<p>这样就可以达到机惨的目标。</p>
+<p><strong>可行性分析</strong></p>
+<p>前面说过，机惨大多发生在机房。在机房中，经常有人图省事在上厕所（或其他原因离开机房）时忘记锁定账号。在这一过程中，可以到他的电脑前，在未登出的平台实施。</p>
+<p><strong>提示与警告</strong></p>
+<p>这一方式一般发生在洛谷、vijos 等有社区功能的 Online Judge。</p>
+<p>注意近期洛谷加强社区质量管控，发一次无意义帖子即可禁言。<s>不过依然可以在下方的“犇犇”发。</s></p>
+<h2 id="is-it-rated">Is it rated?</h2>
+<p>难度：Easy</p>
+<p>在 Codeforces （一个以比赛为主的 oj）中，每一场比赛都会在主页放出公告。例如：<a href="https://codeforces.com/blog/entry/80682">https://codeforces.com/blog/entry/80682</a>。</p>
+<p>在公告下（其实是全部博客文章下）的评论将会被 CFer 投票（vote），票数过低（一般为 -20）就会被浅写或隐藏，须手动点击才可查看。vote 值将会被计算为 contribution，在个人主页显示。</p>
+<p>评论“Is it rated?”将会被广大 CFer down vote，甚至到 -50 / -100，将会大大影响你的 contribution。原因是一般的比赛公告中都会写出是否 rated，凭借经验也知道大多数都是 rated。</p>
+<p>如果有人的 Codeforces 账号没有登出，也可以通过此方式实施机惨。</p>
+<p><strong>可行性分析</strong></p>
+<p>同上。</p>
+<p><strong>提示与警告</strong></p>
+<p>无。</p>
+<h1 id="高级操作-可能造成损失请慎用">高级操作 - 可能造成损失，请慎用</h1>
+<h2 id="github-机惨">GitHub 机惨</h2>
+<p>难度：Easy / Medium</p>
+<p>在 GitHub 中存储量大量的代码，很多人也会把博客搭建在 GitHub。如果你登入到其他人的 GitHub 账号，就可以获得对这些代码的管理权。陈他没有回来，你可以随意添、删、改代码。如果你知道他的密码，或者他勾选了记住密码选项，你可以将仓库在公有/私有之间切换，甚至永久删除仓库。</p>
+<p><strong>可行性分析</strong></p>
+<p>没啥好分析的。</p>
+<p><strong>提示与警告</strong></p>
+<p>如果是重要代码，建议你不要手贱。</p>
+<h2 id="关机">关机</h2>
+<p>难度：见具体类别</p>
+<p>你可以趁他离开的时间把他的电脑关闭。具体方法在下面。</p>
+<p><strong>可行性分析</strong></p>
+<p>也没啥好分析的。</p>
+<p><strong>提示与警告</strong></p>
+<p>请在关机前看看有没有未保存的文件，如果文件因为你的手贱而丢失，后果我可保证不了。</p>
+<h3 id="控制键强制关机">控制键强制关机</h3>
+<p>难度：Easy</p>
+<p>对于有 End 键的电脑，你可以按 Ctrl+Alt+End 来强制关机。这种方法可以瞬间关机，但是对硬盘损伤较大。</p>
+<h3 id="控制键强制关机-2">控制键强制关机 2</h3>
+<p>难度：Easy</p>
+<p>某些电脑的 Fn+F1 也是关机的快捷键，操作方式同上。</p>
+<h3 id="命令行关机">命令行关机</h3>
+<p>难度：Easy</p>
+<p>Win+R 输入 cmd，回车，写 <code>shutdown -s -t 0</code>。</p>
+<h3 id="强制关机">强制关机</h3>
+<p>难度：Easy</p>
+<p><s>这么麻烦干啥，那么大一个电源键看不到吗？</s></p>
+<p>直接按电源键。有些电脑可能要长按。</p>
+<h3 id="远-程-关-机">远 程 关 机</h3>
+<p>难度：Medium / Hard</p>
+<p>偷偷溜到他的座位上，打开文件夹，右键此电脑，点属性，看到如下界面。</p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/03/aandr4.png" alt="" loading="lazy"></figure>
+<p>注意圈出的位置，特别是计算机全名。</p>
+<p>这时你可以溜回自己的座位，输入 Win+R cmd，写 <code>shutdown -i</code>，会弹出一个窗口。这时不要关闭 cmd，否则那个窗口也会没。</p>
+<p>在最上方“计算机”右侧，点击“添加”，输入上面记下来的<strong>计算机全名</strong>。下面的大家应该都能看懂，最下方注释是将会显示在对方计算机屏幕上的提示信息。选好后点确认，就可以愉快的看他懵*了。</p>
+<h3 id="解决方案">解决方案</h3>
+<p>为了防止你被别人用这些方式关机，在这里添加一条解决方案。</p>
+<p>在关机前打开 cmd 输入 <code>shutdown -a</code>，就可以取消一切暂定的关机、重启任务。如果已经关机了，那就看你人品了。</p>
+<h2 id="蓝屏">蓝屏</h2>
+<p>难度：Medium</p>
+<p>打开 cmd，输入 <code>taskkill -f -im csrss.exe</code>，就会蓝屏，大概是因为 windows 系统的文件被强制关闭了。</p>
+<p>解决方法也很简单，重启就好了。</p>
+<p><strong>可行性分析</strong></p>
+<p>。</p>
+<p><strong>提示与警告</strong></p>
+<p>还是看一下有没有未保存的文件。</p>
+<h1 id="神级操作-请勿模仿">神级操作 - 请勿模仿！！！</h1>
+<h2 id="让系统爆炸">让系统爆炸</h2>
+<p>难度：Hard</p>
+<p>打开 cmd（或者建一个 bat 文件也可以，上面也是一样），输入 <code>%0|%0</code>，就能体验到内存瞬间占满，电脑直接卡炸的欢乐了。</p>
+<p>千万不要模仿！！！效果可以看<a href="https://www.bilibili.com/video/av43405502/">这个视频</a>。</p>
+<p><strong>可行性分析</strong></p>
+<p>。</p>
+<p><strong>提示与警告</strong></p>
+<p>这个方法可能损害系统，一般情况千万不要用。</p>
+<h1 id="恶搞方法-无危害">恶搞方法 - 无危害</h1>
+<h2 id="图片全屏">图片全屏</h2>
+<p>难度：Medium</p>
+<p>在桌面截屏，截全（包括任务栏），打开浏览器将图片全屏显示，然后坐等他一脸懵*即可。</p>
+<p>退出方法：F11 或 Fn+F11，如果没有用，将鼠标移动到屏幕上方，出现一个黑色的叉。</p>
+<p>无危害就不警告了吧。也懒得分析啥了。</p>
+<h2 id="桌面设置">桌面设置</h2>
+<p>难度：Medium / Hard</p>
+<p>打开浏览器，进入游戏界面（越花越好，后面解释原因），全屏截图（包括任务栏、浏览器的一些标识、网址栏等），退出，在设置中将这张图片设置为桌面背景，然后清除所有桌面图标（具体方法可以百度，这里就不详细讲了），他回来后肯定会一脸懵，怎么按叉号都退不出去。</p>
+<p>如果你是学生党，还可以触发额外效果：老师走了过来，以为他在玩游戏，就会把他骂一顿。</p>
+<p>懒得分析了，<strong>警告：</strong> 请格外注意，防止友尽。</p>
 
             </div>
             <div class="post-footer">
@@ -491,7 +727,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-at2201-atcoder-2201/" title="题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】">https://blog.ak-ioi.cf/post/solution-luogu-at2201-atcoder-2201/</a>
+      <a href="https://blog.ak-ioi.cf/post/jfca/" title="浅谈机惨">https://blog.ak-ioi.cf/post/jfca/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -500,29 +736,15 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/"># Atcoder</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf914a-codeforces-914a/">题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf914a-codeforces-914a/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf4a-codeforces-4a/">题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </a>
-        <a class="nav-mobile-next" title="题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf4a-codeforces-4a/">下一篇</a>
+        <a class="nav-pc-next" title="C++ 类的继承基础" href="https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/">C++ 类的继承基础</a>
+        <a class="nav-mobile-next" title="C++ 类的继承基础" href="https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

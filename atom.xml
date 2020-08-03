@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-07-31T00:10:26.294Z</updated>
+    <updated>2020-08-03T09:01:10.505Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,117 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[浅谈机惨]]></title>
+        <id>https://blog.ak-ioi.cf/post/jfca/</id>
+        <link href="https://blog.ak-ioi.cf/post/jfca/">
+        </link>
+        <updated>2020-08-03T07:48:50.000Z</updated>
+        <content type="html"><![CDATA[<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="2.488em"><mstyle mathcolor="red"><mtext>警告</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>本文中的内容有一定危险性，请勿轻易尝试</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Huge\color{red}\text{警告}\\\Large\text{本文中的内容有一定危险性，请勿轻易尝试}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7001250399999999em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size11" style="color:red;"><span class="mord cjk_fallback" style="color:red;">警告</span></span></span><span class="mspace newline sizing reset-size6 size11" style="color:red;"></span><span class="base"><span class="strut" style="height:0.9839952em;vertical-align:0em;"></span><span class="mord text sizing reset-size6 size8" style="color:red;"><span class="mord cjk_fallback" style="color:red;">本文中的内容有一定危险性，请勿轻易尝试</span></span></span></span></span></span></p>
+<h1 id="前言-机惨是什么">前言 - 机惨是什么？</h1>
+<p>机惨，即机房惨案，名词或动词（常作谓语或宾语），简称 jc 或 jfca，常见于 OI（信息学竞赛/算法竞赛）圈子。一位 OIer 在另一位 OIer 的电脑上做一些奇<s>♂</s>奇<s>♂</s>怪<s>♂</s>怪<s>♂</s>的坏事的情况被称为机惨。</p>
+<p>顾名思义，机惨大多发生在机房，也有一些是通过特殊手段获取对方账号实施的。</p>
+<h1 id="前言-2-为什么要写这篇文章">前言 2 - 为什么要写这篇文章？</h1>
+<p>从人类诞生开始，就有人会干坏事。</p>
+<p>从计算机被发明出来开始，就有人会用计算机干坏事。</p>
+<p>写这篇文章的意义在于，如果有人机惨了你，你可以通过适当的方式机惨回去。（开始胡扯</p>
+<p>请注意开玩笑一定要适度，否则导致对方在某平台的账号被封禁、或者辛辛苦苦写的代码丢失，你们大概就友尽了。</p>
+<p><s>所以这也是个友尽的好方法。</s></p>
+<h1 id="一般操作-跟对方开个玩笑不会造成损失">一般操作 - 跟对方开个玩笑，不会造成损失</h1>
+<p>（除非你故意下狠手，这要另说）</p>
+<h2 id="i-ak-ioi">I AK IOI!</h2>
+<p>难度：Easy</p>
+<p>相信各位 OIer 都知道这是什么了，但我还是要解释一遍。</p>
+<p>I，即英文中的“我”。</p>
+<p>AK，All Kill，在信息学竞赛圈一般指在比赛中获得满分。</p>
+<p>IOI，International Olympiad in Informatics，国际信息学奥林匹克竞赛缩写。</p>
+<p>I AK IOI，代表你在 IOI 比赛中取得了满分。</p>
+<p>根据 OI 圈装弱的习俗，如果你说你很强，一般会有人膜拜你。（当然也会有大佬 D 你）</p>
+<p>这样就可以达到机惨的目标。</p>
+<p><strong>可行性分析</strong></p>
+<p>前面说过，机惨大多发生在机房。在机房中，经常有人图省事在上厕所（或其他原因离开机房）时忘记锁定账号。在这一过程中，可以到他的电脑前，在未登出的平台实施。</p>
+<p><strong>提示与警告</strong></p>
+<p>这一方式一般发生在洛谷、vijos 等有社区功能的 Online Judge。</p>
+<p>注意近期洛谷加强社区质量管控，发一次无意义帖子即可禁言。<s>不过依然可以在下方的“犇犇”发。</s></p>
+<h2 id="is-it-rated">Is it rated?</h2>
+<p>难度：Easy</p>
+<p>在 Codeforces （一个以比赛为主的 oj）中，每一场比赛都会在主页放出公告。例如：<a href="https://codeforces.com/blog/entry/80682">https://codeforces.com/blog/entry/80682</a>。</p>
+<p>在公告下（其实是全部博客文章下）的评论将会被 CFer 投票（vote），票数过低（一般为 -20）就会被浅写或隐藏，须手动点击才可查看。vote 值将会被计算为 contribution，在个人主页显示。</p>
+<p>评论“Is it rated?”将会被广大 CFer down vote，甚至到 -50 / -100，将会大大影响你的 contribution。原因是一般的比赛公告中都会写出是否 rated，凭借经验也知道大多数都是 rated。</p>
+<p>如果有人的 Codeforces 账号没有登出，也可以通过此方式实施机惨。</p>
+<p><strong>可行性分析</strong></p>
+<p>同上。</p>
+<p><strong>提示与警告</strong></p>
+<p>无。</p>
+<h1 id="高级操作-可能造成损失请慎用">高级操作 - 可能造成损失，请慎用</h1>
+<h2 id="github-机惨">GitHub 机惨</h2>
+<p>难度：Easy / Medium</p>
+<p>在 GitHub 中存储量大量的代码，很多人也会把博客搭建在 GitHub。如果你登入到其他人的 GitHub 账号，就可以获得对这些代码的管理权。陈他没有回来，你可以随意添、删、改代码。如果你知道他的密码，或者他勾选了记住密码选项，你可以将仓库在公有/私有之间切换，甚至永久删除仓库。</p>
+<p><strong>可行性分析</strong></p>
+<p>没啥好分析的。</p>
+<p><strong>提示与警告</strong></p>
+<p>如果是重要代码，建议你不要手贱。</p>
+<h2 id="关机">关机</h2>
+<p>难度：见具体类别</p>
+<p>你可以趁他离开的时间把他的电脑关闭。具体方法在下面。</p>
+<p><strong>可行性分析</strong></p>
+<p>也没啥好分析的。</p>
+<p><strong>提示与警告</strong></p>
+<p>请在关机前看看有没有未保存的文件，如果文件因为你的手贱而丢失，后果我可保证不了。</p>
+<h3 id="控制键强制关机">控制键强制关机</h3>
+<p>难度：Easy</p>
+<p>对于有 End 键的电脑，你可以按 Ctrl+Alt+End 来强制关机。这种方法可以瞬间关机，但是对硬盘损伤较大。</p>
+<h3 id="控制键强制关机-2">控制键强制关机 2</h3>
+<p>难度：Easy</p>
+<p>某些电脑的 Fn+F1 也是关机的快捷键，操作方式同上。</p>
+<h3 id="命令行关机">命令行关机</h3>
+<p>难度：Easy</p>
+<p>Win+R 输入 cmd，回车，写 <code>shutdown -s -t 0</code>。</p>
+<h3 id="强制关机">强制关机</h3>
+<p>难度：Easy</p>
+<p><s>这么麻烦干啥，那么大一个电源键看不到吗？</s></p>
+<p>直接按电源键。有些电脑可能要长按。</p>
+<h3 id="远-程-关-机">远 程 关 机</h3>
+<p>难度：Medium / Hard</p>
+<p>偷偷溜到他的座位上，打开文件夹，右键此电脑，点属性，看到如下界面。</p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/03/aandr4.png" alt="" loading="lazy"></figure>
+<p>注意圈出的位置，特别是计算机全名。</p>
+<p>这时你可以溜回自己的座位，输入 Win+R cmd，写 <code>shutdown -i</code>，会弹出一个窗口。这时不要关闭 cmd，否则那个窗口也会没。</p>
+<p>在最上方“计算机”右侧，点击“添加”，输入上面记下来的<strong>计算机全名</strong>。下面的大家应该都能看懂，最下方注释是将会显示在对方计算机屏幕上的提示信息。选好后点确认，就可以愉快的看他懵*了。</p>
+<h3 id="解决方案">解决方案</h3>
+<p>为了防止你被别人用这些方式关机，在这里添加一条解决方案。</p>
+<p>在关机前打开 cmd 输入 <code>shutdown -a</code>，就可以取消一切暂定的关机、重启任务。如果已经关机了，那就看你人品了。</p>
+<h2 id="蓝屏">蓝屏</h2>
+<p>难度：Medium</p>
+<p>打开 cmd，输入 <code>taskkill -f -im csrss.exe</code>，就会蓝屏，大概是因为 windows 系统的文件被强制关闭了。</p>
+<p>解决方法也很简单，重启就好了。</p>
+<p><strong>可行性分析</strong></p>
+<p>。</p>
+<p><strong>提示与警告</strong></p>
+<p>还是看一下有没有未保存的文件。</p>
+<h1 id="神级操作-请勿模仿">神级操作 - 请勿模仿！！！</h1>
+<h2 id="让系统爆炸">让系统爆炸</h2>
+<p>难度：Hard</p>
+<p>打开 cmd（或者建一个 bat 文件也可以，上面也是一样），输入 <code>%0|%0</code>，就能体验到内存瞬间占满，电脑直接卡炸的欢乐了。</p>
+<p>千万不要模仿！！！效果可以看<a href="https://www.bilibili.com/video/av43405502/">这个视频</a>。</p>
+<p><strong>可行性分析</strong></p>
+<p>。</p>
+<p><strong>提示与警告</strong></p>
+<p>这个方法可能损害系统，一般情况千万不要用。</p>
+<h1 id="恶搞方法-无危害">恶搞方法 - 无危害</h1>
+<h2 id="图片全屏">图片全屏</h2>
+<p>难度：Medium</p>
+<p>在桌面截屏，截全（包括任务栏），打开浏览器将图片全屏显示，然后坐等他一脸懵*即可。</p>
+<p>退出方法：F11 或 Fn+F11，如果没有用，将鼠标移动到屏幕上方，出现一个黑色的叉。</p>
+<p>无危害就不警告了吧。也懒得分析啥了。</p>
+<h2 id="桌面设置">桌面设置</h2>
+<p>难度：Medium / Hard</p>
+<p>打开浏览器，进入游戏界面（越花越好，后面解释原因），全屏截图（包括任务栏、浏览器的一些标识、网址栏等），退出，在设置中将这张图片设置为桌面背景，然后清除所有桌面图标（具体方法可以百度，这里就不详细讲了），他回来后肯定会一脸懵，怎么按叉号都退不出去。</p>
+<p>如果你是学生党，还可以触发额外效果：老师走了过来，以为他在玩游戏，就会把他骂一顿。</p>
+<p>懒得分析了，<strong>警告：</strong> 请格外注意，防止友尽。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C++ 类的继承基础]]></title>
         <id>https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/</id>
@@ -1023,64 +1134,6 @@ int main() {
 	return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[手把手教你免费内网穿透]]></title>
-        <id>https://blog.ak-ioi.cf/post/ngrok/</id>
-        <link href="https://blog.ak-ioi.cf/post/ngrok/">
-        </link>
-        <updated>2020-05-07T03:40:55.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>你是否有过很想把内网的网页放到公网让大家也可以访问？你是否很想把搭建的 OJ 放到公网？今天，我来教大家内网穿透的具体操作步骤。</p>
-</blockquote>
-<h1 id="0-准备工作">0 准备工作</h1>
-<p>首先，你需要准备如下材料：</p>
-<ul>
-<li>一台电脑</li>
-<li>一个 localhost 网页（即 <code>localhost:xxx</code> 或 <code>127.0.0.1:xxx</code>）</li>
-<li>（选）一个可以解析的域名（国内服务器需要备案）</li>
-</ul>
-<h1 id="1-注册-ngrok-账号">1 注册 Ngrok 账号</h1>
-<p>去 <a href="http://www.ngrok.cc">Ngrok 官网</a>点击注册，注册一个新账号并登录，此时应该看到如下界面：</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/r8aynzvv.png" alt="" loading="lazy"></figure>
-<p>其中“开通隧道”处应为 <code>0 / 0 / 0</code>，这里有数字是因为我已经进行了后续操作。</p>
-<h1 id="2-开通隧道">2 开通隧道</h1>
-<p>点击左侧导航栏“隧道管理→开通隧道”，划到最下面“美国 Ngrok 免费服务器”，点击按钮“立即购买”。当然如果你是土豪选择买一个付费隧道也可以。</p>
-<h1 id="3-配置隧道">3 配置隧道</h1>
-<p>做完上面的操作后看到如下界面：</p>
-<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/zqpy4ny1.png" alt="" loading="lazy"></figure>
-<p><strong>隧道名称</strong>栏可以随便填，只是方便记忆。<strong>隧道协议</strong>选择 http。<strong>前置域名</strong>填写一个由字母、数字、减号、下划线组成的字符串，是你想要的域名前缀地址，最后你的网站会在这个子域名显示。<strong>本地端口</strong>是你本地的访问地址，一般是 <code>localhost:80 / 127.0.0.1:80</code>，不用改；否则把冒号后面的端口号改成你的端口。<strong>http 验证用户名</strong>和 <strong>http 验证密码</strong>空着即可。</p>
-<p>配置完上面的内容，点击“确认添加”即可。</p>
-<h1 id="4-设置自定义域名">4 设置自定义域名</h1>
-<p>例如这里我的前置域名写的是 <code>akioi</code>，那么一会访问地址就会在前置域名那栏那个网址。<strong>如果您不想把网站放到自己的域名，请忽略此步骤。</strong></p>
-<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ummv7g6l.png" alt="" loading="lazy"></figure>
-<p>域名类型选择“使用自定义域名”，在自定义域名里面填写你想放到的网址，划到最下面“确认修改”。</p>
-<h1 id="5-开通映射服务">5 开通映射服务</h1>
-<p>这里作者主要讲解 Windows 与 Linux 的开通方法，其他系统也可以上网百度的到。</p>
-<p>回到隧道管理界面，看到</p>
-<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/op7nzm60.png" alt="" loading="lazy"></figure>
-<p>点击“客户端下载”，选择自己的操作系统，下载，将 zip 文件解压。</p>
-<h2 id="51-linux">5.1 Linux</h2>
-<p>作者本人是用 Linux 虚拟机搭建了一个 OJ，所以使用的是 Linux 的方法。</p>
-<p>打开命令行，cd 到解压后的文件夹里，有一个 sunny 文件。此时输入命令 <code>./sunny clientid &lt;xxx&gt;</code>，其中 <code>&lt;xxx&gt;</code> 换成你的隧道 id（见上图），看到 <code>Tunnel Status Online</code> 就代表成功了。</p>
-<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/a03y6ap4.png" alt="" loading="lazy"></figure>
-<h2 id="52-windows">5.2 Windows</h2>
-<p>打开 cmd，cd 到文件夹，输入指令 <code>ngrok -authtoken &lt;id&gt; -subdomain &lt;subdomain&gt; &lt;port&gt;</code>，其中 <code>&lt;id&gt;,&lt;subdomain&gt;,&lt;port&gt;</code> 分别是隧道 id、二级域名和端口，判定成功的条件和 Linux 一样。</p>
-<h1 id="6-尽情享用吧">6 尽情享用吧！</h1>
-<p>作者通过这种方式把虚拟机 <code>http://127.0.0.1:80</code> 映射到了 <code>http://oj.ak-ioi.cf</code>。你也可以在你的自定义域名或默认域名找到你的网站。</p>
-<h1 id="7-常见错误">7 常见错误</h1>
-<ul>
-<li>Q：我配置了隧道为什么访问不了？</li>
-<li>A：配置完隧道还要开通服务才能显示哦~</li>
-<li>Q：为什么 Tunnel Status 显示 Reconnecting？</li>
-<li>A：因为 ngrok 的服务不太稳定，大概等一小会就好了；如果没有好，可以检查一下自己的网络连接。<strong>具体可以看 ngrok 官方 wiki。</strong></li>
-<li><strong>Q：官方 wiki 没有包含我的问题怎么办？</strong></li>
-<li><strong>A：可以先到洛谷私信 rui_er，如果他也不会可以加入 ngrok QQ 群提问。</strong></li>
-</ul>
-<h1 id="8-优点缺点">8 优点缺点</h1>
-<p>优点有免费、简单；但是缺点是连接可能不太稳定，且延时较大。不过瑕不掩瑜，不影响整体运行。</p>
-<p><s>欢迎大家到我的 <a href="http://oj.ak-ioi.cf">OJ</a> 来参观！</s></p>
 ]]></content>
     </entry>
 </feed>
