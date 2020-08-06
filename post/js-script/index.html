@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>我的第一场CF比赛2.14 | rui_er 的博客</title>
+<title>js 插件开发——从卡服到跑路（持续更新） | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1596685946191">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="我的第一场CF比赛2.14" />
-  <meta name="keywords" content="CF比赛,游记,Codeforces,OI" />
+  <meta name="description" content="js 插件开发——从卡服到跑路（持续更新）" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -200,7 +200,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -273,6 +274,210 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#js-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">js 基本语法</a>
+<ul>
+<li><a href="#%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89">变量定义</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E8%BF%90%E7%AE%97">变量运算</a></li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF">条件分支</a></li>
+<li><a href="#for-%E5%BE%AA%E7%8E%AF">for 循环</a></li>
+<li><a href="#for-in-%E5%BE%AA%E7%8E%AF">for-in 循环</a></li>
+<li><a href="#while-%E5%BE%AA%E7%8E%AF">while 循环</a></li>
+<li><a href="#continue-break">continue-break</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89">函数定义</a></li>
+<li><a href="#%E8%87%AA%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0">自调用函数</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E8%BE%93%E5%87%BA">常用输出</a></li>
+<li><a href="#%E5%86%99%E5%85%A5-html-div">写入 html <div></a></li>
+<li><a href="#%E4%BB%8E%E8%BE%93%E5%85%A5%E6%A1%86%E8%8E%B7%E5%8F%96%E8%BE%93%E5%85%A5%E5%86%85%E5%AE%B9">从输入框获取输入内容</a></li>
+<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%8F%98%E9%87%8F">浏览器本地存储变量</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%BB%B6%E6%97%B6%E5%A4%84%E7%90%86">设置延时处理</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%AF%8F%E9%9A%94%E4%B8%80%E6%AE%B5%E6%97%B6%E9%97%B4%E9%87%8D%E5%A4%8D%E5%A4%84%E7%90%86">设置每隔一段时间重复处理</a></li>
+<li><a href="#%E6%9A%82%E6%97%A0%E6%9B%B4%E5%A4%9A%E6%9B%B4%E6%96%B0">暂无更多更新</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -360,8 +565,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/first-cf/">
-      我的第一场CF比赛2.14
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/js-script/">
+      js 插件开发——从卡服到跑路（持续更新）
     </a>
   </h1>
   <div class="post-meta">
@@ -369,54 +574,23 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-20</span>
+      <span>2020-08-06</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/VyDl9Z2Vr/">
-        <span>CF比赛</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/XcOUHe17O0/">
-        <span>游记</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/">
-        <span>Codeforces</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>6分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>147<span class="pc-show">字数</span></span>
+      <span>1238<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/first-cf/" data-flag-title="我的第一场CF比赛2.14" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/js-script/" data-flag-title="js 插件开发——从卡服到跑路（持续更新）" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -425,51 +599,191 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>2月14日晚上21:05，发现有一场CF比赛（CF1304），就点进去打。</p>
-<p>A题超简单，很快就PP了。B题也差不多。可是C、D、E、F1/2就死活也不会。突然发现@henrytb 提供的题目【G同学与h**h】和E题重了！！！于是等到比赛结束就写了<a href="https://qz-cqy.github.io/post/qzjr-henrytb-problem">这个</a>。堪称2020年2月最大笑料。</p>
-<p>整个比赛：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">题目</th>
-<th style="text-align:center">状态</th>
-<th style="text-align:center">赛后查看时状态</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">PP</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">PP</td>
-<td style="text-align:center">AC</td>
-</tr>
-<tr>
-<td style="text-align:center">C</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-<tr>
-<td style="text-align:center">D</td>
-<td style="text-align:center">-1</td>
-<td style="text-align:center">WA on pretest 2</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-<tr>
-<td style="text-align:center">F1/2</td>
-<td style="text-align:center">未提交</td>
-<td style="text-align:center">未提交</td>
-</tr>
-</tbody>
-</table>
-<p>结果：rating-=44（unrated1500→specialist1456） QAQ。</p>
+              <p>标题纯属搞笑（不过我真的差一点把服务器卡了）。本文将简单介绍 js 插件开发的基础语法和模板。</p>
+<!-- more -->
+<h1 id="js-基本语法">js 基本语法</h1>
+<h2 id="变量定义">变量定义</h2>
+<pre><code class="language-js">var a = 1; // 整数
+var b = 0.33; // 浮点数
+var c = &quot;string&quot;; // 字符串
+var d = new RegExp(&quot;[0-9]&quot;); // 正则表达式
+var e = /[0-9]/; // 正则表达式
+var f = /\d/; // 正则表达式
+var g = {&quot;name&quot;:&quot;Tom&quot;,&quot;id&quot;:&quot;1&quot;}; // json
+var h = function() {alert(&quot;This is a function&quot;);}; // 函数，使用 h() 调用
+</code></pre>
+<p>从上面的例子可以看出，js 中的变量使用 var 声明，有很多用途。</p>
+<h2 id="变量运算">变量运算</h2>
+<p>下面的例子可以看出各类型变量的加法：</p>
+<pre><code class="language-js">var a = 1;
+var b = 0.33;
+var c = &quot;QAQ&quot;;
+var d = &quot;1&quot;;
+a+b; // 1.33
+a+c; // &quot;1QAQ&quot;
+a+d; // &quot;11&quot;
+b+c; // &quot;0.33QAQ&quot;
+b+d; // &quot;0.331&quot;
+c+d; // &quot;QAQ1&quot;
+</code></pre>
+<p>可以看出如果有字符串，则会将另一个变量转化为字符串；否则为整数/实数运算。</p>
+<p>下面是整数运算的例子：</p>
+<pre><code class="language-js">var a = 1;
+var b = 2;
+a+b; // 3
+a-b; // -1
+a*b; // 2
+a/b; /* 0.5 */
+a%b; // 1
+</code></pre>
+<p>可以看到，与其他一些语言不同，这里的除号为实数除法，并非整除。要想取整，可以参考如下代码：</p>
+<pre><code class="language-js">var a = 5;
+var b = 2;
+/* 向下取整 */
+var x = parseInt(a/b);
+var y = Math.floor(a/b);
+/* 向上取整 */
+var z = Math.ceil(a/b);
+/* 四舍五入 */
+var w = Math.round(a/b);
+</code></pre>
+<h2 id="条件分支">条件分支</h2>
+<p>js 的条件分支使用 if / else if / else，下面是一个例子：</p>
+<pre><code class="language-js">var a = 2;
+if(a &lt; 0) {
+    console.log(&quot;Case 1. &quot;);
+}
+else if(a &lt; 1) {
+    console.log(&quot;Case 2.&quot;);
+}
+else {
+    console.log(&quot;Case 3&quot;);
+}
+</code></pre>
+<h2 id="for-循环">for 循环</h2>
+<p>js 的 for 循环有三个参数：</p>
+<pre><code class="language-js">for(/*语句1*/;/*语句2*/;/*语句3*/)
+</code></pre>
+<p>语句 1 在开始前执行，语句 2 是运行循环代码块的条件，语句 3 在循环代码块运行后执行。</p>
+<p>例子：</p>
+<pre><code class="language-js">for(var i=0;i&lt;5;i++) {
+    console.log(&quot;The number is &quot;+i);
+}
+</code></pre>
+<p>结果：</p>
+<pre><code class="language-plain">The number is 0
+The number is 1
+The number is 2
+The number is 3
+The number is 4
+</code></pre>
+<h2 id="for-in-循环">for-in 循环</h2>
+<pre><code class="language-js">var a = {&quot;fname&quot;:&quot;Bill&quot;,&quot;lname&quot;:&quot;Gates&quot;};
+var txt = &quot;&quot;;
+for(var x in a) {
+    txt = txt + a[x];
+}
+console.log(txt);
+</code></pre>
+<p>使用 for-in 循环来遍历 a 中的元素，结果：</p>
+<pre><code class="language-plain">BillGates
+</code></pre>
+<h2 id="while-循环">while 循环</h2>
+<pre><code class="language-js">while(/*条件*/) {
+    /*执行的代码*/
+}
+</code></pre>
+<p>例如：</p>
+<pre><code class="language-js">var a = 5;
+while(a &gt; 0) {
+    console.log(a);
+    a --;
+}
+</code></pre>
+<h2 id="continue-break">continue-break</h2>
+<p>break 语句将直接跳出循环，continue 将会结束这次循环，运行下一次循环。</p>
+<h2 id="函数定义">函数定义</h2>
+<pre><code class="language-js">function f() {
+    console.log(&quot;calling function f()&quot;);
+}
+var g = function(x, y) {
+    while(x&gt;0) {
+        console.log(y);
+    }
+}
+f();
+g();
+</code></pre>
+<h2 id="自调用函数">自调用函数</h2>
+<pre><code class="language-js">(function() {
+    console.log(&quot;我可以调用自己&quot;);
+})();
+</code></pre>
+<h1 id="常用输出">常用输出</h1>
+<pre><code class="language-js">console.log(&quot;向控制台输出一行文字&quot;);
+console.warn(&quot;向控制台输出一行警告&quot;);
+console.error(&quot;想控制台输出一条错误&quot;);
+alert(&quot;弹出窗口&quot;);
+</code></pre>
+<h1 id="写入-html-div">写入 html <div></h1>
+<p>我们可以使用 document.getElementById() 来获取指定 id 的元素，不限于 div。</p>
+<p>由于不方便展示效果，我们推荐一个<a href="http://www.jsons.cn/htmldebug/">网站</a>，将下面代码 copy 进去即可预览效果。</p>
+<pre><code class="language-html">&lt;script&gt;
+    function f() {
+        document.getElementById(&quot;output&quot;).innerHTML = &quot;&lt;p&gt;替换文字&lt;/p&gt;&quot;;
+    }
+&lt;/script&gt;
+&lt;div id=&quot;output&quot;&gt;&lt;/div&gt;
+&lt;button onclick=&quot;f()&quot;&gt;替换&lt;/button&gt;
+</code></pre>
+<h1 id="从输入框获取输入内容">从输入框获取输入内容</h1>
+<p>同样的，我们按照 id 获取。</p>
+<pre><code class="language-html">&lt;script&gt;
+    function submit() {
+        document.getElementById(&quot;watch&quot;).innerHTML = &quot;&lt;p&gt;你的名字是：&quot;+document.getElementById(&quot;name&quot;).value+&quot;&lt;/p&gt;&quot;;
+    }
+&lt;/script&gt;
+&lt;input id=&quot;name&quot; placeholder=&quot;你的名字&quot;&gt;&lt;/input&gt;
+&lt;button onclick=&quot;submit()&quot;&gt;提交&lt;/button&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;div id=&quot;watch&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h1 id="浏览器本地存储变量">浏览器本地存储变量</h1>
+<p>浏览器本地存储变量，刷新或关闭浏览器均可。</p>
+<p>这里，我们使用 localStorage。需要注意的是，localStorage 默认以字符串形式存储，访问时注意强制类型转换。</p>
+<p><strong>注意：大多数浏览器均支持，但仍有少输浏览器不支持，可以采取其他方法。</strong></p>
+<pre><code class="language-html">&lt;script&gt;
+    function submit() {
+        localStorage.yourName = document.getElementById(&quot;name&quot;).value;
+    }
+    function watchSubmit() {
+        document.getElementById(&quot;watch&quot;).innerHTML = &quot;&lt;p&gt;浏览器存储的名字是：&quot;+localStorage.yourName+&quot;&lt;/p&gt;&quot;;
+    }
+&lt;/script&gt;
+&lt;input id=&quot;name&quot; placeholder=&quot;你的名字&quot;&gt;&lt;/input&gt;
+&lt;button onclick=&quot;submit()&quot;&gt;提交&lt;/button&gt;
+&lt;button onclick=&quot;watchSubmit()&quot;&gt;显示预览&lt;/button&gt;
+&lt;p&gt;预览：（可以刷新网页或退出浏览器试试）&lt;/p&gt;
+&lt;div id=&quot;watch&quot;&gt;&lt;/div&gt;
+</code></pre>
+<h1 id="设置延时处理">设置延时处理</h1>
+<pre><code class="language-js">var a = setTimeout(function() {
+    alert(&quot;时间到&quot;);
+}, 5000);
+</code></pre>
+<p>意思是延时 5000 毫秒（5 秒）执行该函数。想要清除延时的进程，可以用</p>
+<pre><code class="language-js">clearTimeout(a);
+</code></pre>
+<h1 id="设置每隔一段时间重复处理">设置每隔一段时间重复处理</h1>
+<pre><code class="language-js">var a = setInterval(function() {
+    console.log(&quot;时间到&quot;);
+}, 5000);
+</code></pre>
+<p>每隔 5 秒处理一遍该函数。想要结束，可以用</p>
+<pre><code class="language-js">clearInterval(a);
+</code></pre>
+<hr>
+<h1 id="暂无更多更新">暂无更多更新</h1>
 
             </div>
             <div class="post-footer">
@@ -480,7 +794,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/first-cf/" title="我的第一场CF比赛2.14">https://blog.ak-ioi.cf/post/first-cf/</a>
+      <a href="https://blog.ak-ioi.cf/post/js-script/" title="js 插件开发——从卡服到跑路（持续更新）">https://blog.ak-ioi.cf/post/js-script/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -489,27 +803,15 @@
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/VyDl9Z2Vr/"># CF比赛</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/XcOUHe17O0/"># 游记</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/"># Codeforces</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="洛谷神梗收录" href="https://blog.ak-ioi.cf/post/luogu-geng/">洛谷神梗收录</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="洛谷神梗收录" href="https://blog.ak-ioi.cf/post/luogu-geng/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="关于qz-cqy.github.io恢复访问的公告" href="https://blog.ak-ioi.cf/post/blog-back/">关于qz-cqy.github.io恢复访问的公告</a>
-        <a class="nav-mobile-next" title="关于qz-cqy.github.io恢复访问的公告" href="https://blog.ak-ioi.cf/post/blog-back/">下一篇</a>
+        <a class="nav-pc-next" title="浅谈机惨" href="https://blog.ak-ioi.cf/post/jfca/">浅谈机惨</a>
+        <a class="nav-mobile-next" title="浅谈机惨" href="https://blog.ak-ioi.cf/post/jfca/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
