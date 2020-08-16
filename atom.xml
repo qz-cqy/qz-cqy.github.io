@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-08-11T03:17:22.490Z</updated>
+    <updated>2020-08-16T04:35:59.463Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,99 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[APIO2020 —— 从报名到爆零 & 总结]]></title>
+        <id>https://blog.ak-ioi.cf/post/i-ak-apio2020/</id>
+        <link href="https://blog.ak-ioi.cf/post/i-ak-apio2020/">
+        </link>
+        <updated>2020-08-16T04:34:13.000Z</updated>
+        <content type="html"><![CDATA[<p>URL 只是按照惯例写的。</p>
+<p>根据 APIO 官方要求，本博客在 <code>Monday, 17 August 2020 (08:00 UTC+7)</code>（北京时间 2020.08.17 9:00）前不会涉及到任何有关 APIO2020 题目、题解及相关算法的内容，必要内容将在以后进行补充。</p>
+<p><s>抱铃 awa</s></p>
+<hr>
+<h1 id="day-n">Day -n</h1>
+<p>看到了 <a href="http://www.noi.cn/newsview.html?id=1287&amp;hash=08109C&amp;type=1">CCF 关于 APIO2020（中国区）的报名通知</a>，然后就报名了一下，成功通过审核，成为 B 类选手。</p>
+<p>看到 <a href="https://apio2020.id/rules.html">Competition Rules</a> 中说是 IOI 赛制，但是 CCF 公告说是赛后统一评测，感到非常不爽。</p>
+<p>好多同学都报名了 qwq。</p>
+<h1 id="day-3-2-1">Day -3 / -2 / -1</h1>
+<p>（具体时间忘了）收到学校的通知：APIO 去学校机房统一监考。</p>
+<p><s>可以面基了（大喜。</s></p>
+<h1 id="day-0">Day 0</h1>
+<p>收到了 CCF 发的密码，结果试机锅了，账号密码第二天（比赛当天）才重发。算了，不练习就不练习吧，准备了五十几个模板，希望能用上。</p>
+<p>期望：Cu。</p>
+<h1 id="day-1比赛当天">Day 1（比赛当天）</h1>
+<p>去机房和神仙同学面基惹 /kk。</p>
+<p>用的自己电脑，连的学校机房无线网。顺便来你谷祭一下，求 rp++。</p>
+<p>考试开始，下载毒瘤试卷，打开，发现 A 题好像是个【】问题模板。主要是被题目中的【】误导，想成了【】。再加上脑子突然瓦特了，就非常期待可以 AC，开始写正解。</p>
+<p>写了好久，交了一发，发现 AC 了好多点，但是最后还是 TLE 了，才发现自己复杂度假了。但是我怎么可能轻易放弃呢？继续优化，花了好长时间，才意识到我的思路完全是错的，应该是一道【】题。</p>
+<p>没办法，写 A 部分分，结果没啥思路，去看 B、C 题面。</p>
+<p>C 交互题大毒瘤！然后就去做 B 了，没啥思路，时间好像也快到了，觉得 Subtask 2 可以玩♂一♂玩♂，写出来了，WA，调了好久一直都 WA，但是怎么都找不到错。题面读了好多遍，重构了几次代码，没有用。大概是我语文太差了理解错了吧。但是考场上特别紧张，其他的部分分好像一点思路没有，尤其是发现旁边同学开始玩 dino 了，心态彻底崩溃。</p>
+<p>最后坚持到了考试结束，成功地爆零了 /dk，证明了我的菜。</p>
+<ul>
+<li>%%% @AC_Automation @2x6_81，拿了 60~80 分</li>
+<li>%%% @henrytb，分数起码比我高（</li>
+<li>%%% @wzm2007，故意放水和我分数一样（？</li>
+</ul>
+<h1 id="day-2考后总结">Day 2（考后总结）</h1>
+<ul>
+<li>NOIWC2020，贵到离谱，觉得自己太菜，没报。</li>
+<li>APIO2020，报了，爆零。</li>
+<li>NOI2020 线上同步赛，肯定爆零，没报。</li>
+<li>NOIP2020，还有两个多月。</li>
+</ul>
+<p>这场比赛主要是太自信，以为可以写出 A 正解，结果思路错了，浪费好多时间，最后 B 无脑 Subtask 都没有拿下。<s>抱铃 awa</s></p>
+<p>希望可以在 NOIP2020 制定好策略，拿下省一线+50 分。同时在以后的 APIO / NOIWC / BJOI 等大型比赛能够稳定发挥。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 P4643@洛谷 【[国家集训队]阿狸和桃子的游戏】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-p4643/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p4643/">
+        </link>
+        <updated>2020-08-11T08:26:04.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>题意简述</strong></p>
+<p>我们有一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 边的无向图，有点权和边权。现在两个人将它按照自己的最优方案每次取一个点，分为两部分，求出此时他们的分差。</p>
+<hr>
+<p><strong>方法分析</strong></p>
+<p>边权不好处理，我们想到将它与点权合并。最容易想到的方法就是两个端点各加一半边权，这个方法也是正确的，正确性将在下方证明。</p>
+<p>因为每个人都会按照自己的当前最优策略取，所以将整个权值排序后，编号为奇数的是一个人取的，偶数的是另一个人取的，我们只需要按照奇偶数分别算出总权值即可。</p>
+<p><strong>正确性证明</strong></p>
+<p>这里主要证明上面说的将边权与点权合并的正确性。</p>
+<p>对于一条边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo separator="true">,</mo><mi>w</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">e(u,v,w)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">e</span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mclose">)</span></span></span></span>，设两端点的初始权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>u</mi></msub><mo separator="true">,</mo><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">a_u,a_v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，我们这里将两端点的权值改为了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>u</mi></msub><mo>+</mo><mfrac><mi>w</mi><mn>2</mn></mfrac><mo separator="true">,</mo><msub><mi>a</mi><mi>v</mi></msub><mo>+</mo><mfrac><mi>w</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">a_u+\frac{w}{2},a_v+\frac{w}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。</p>
+<p>情况一：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 被同一个人取到。</p>
+<p>此时，这个人的总权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>u</mi></msub><mo>+</mo><msub><mi>a</mi><mi>v</mi></msub><mo>+</mo><mn>2</mn><mo>×</mo><mfrac><mi>w</mi><mn>2</mn></mfrac><mo>=</mo><msub><mi>a</mi><mi>u</mi></msub><mo>+</mo><msub><mi>a</mi><mi>v</mi></msub><mo>+</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">a_u+a_v+2\times\frac{w}{2}=a_u+a_v+w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span>，符合题意。</p>
+<p>情况二：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 被两人分别取到。</p>
+<p>不妨设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 被第一个人取到。</p>
+<p>此时，第一个人权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>u</mi></msub><mo>+</mo><mfrac><mi>w</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">a_u+\frac{w}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>，第二个人权值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>v</mi></msub><mo>+</mo><mfrac><mi>w</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">a_v+\frac{w}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.02691em;">w</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。最后要将答案相减，得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>u</mi></msub><mo>−</mo><msub><mi>a</mi><mi>v</mi></msub></mrow><annotation encoding="application/x-tex">a_u-a_v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">v</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，符合题意。</p>
+<p>综上所述，这种方法正确。</p>
+<hr>
+<p><strong>代码与备注</strong></p>
+<p>在这份代码中，我们排序后按照从小到大顺序循环取值。由于题面保证 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为偶数，因此这个方法也没有问题。</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 1e4+5;
+
+int n, m; 
+double a[N], s[2];
+
+int main() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	for(int i=1;i&lt;=n;i++) scanf(&quot;%lf&quot;, &amp;a[i]);
+	for(int i=1;i&lt;=m;i++) {
+		int u, v, w;
+		scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+		a[u] += w / 2.0;
+		a[v] += w / 2.0; 
+	}
+	sort(a+1, a+1+n);
+	for(int i=1;i&lt;=n;i++) s[i&amp;1] += a[i];
+	printf(&quot;%.0lf\n&quot;, s[0]-s[1]);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF1167B@洛谷 | 1167B@Codeforces 【Lost Numbers】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1167b-codeforces-1167b/</id>
@@ -1217,106 +1310,6 @@ int main() {
 		}
 		if(book) puts(&quot;YES&quot;);
 		else puts(&quot;NO&quot;);
-	}
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF1360D@洛谷 | 1360D@Codeforces 【Buying Shovels】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1360d-codeforces-1360d/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1360d-codeforces-1360d/">
-        </link>
-        <updated>2020-05-25T05:48:31.000Z</updated>
-        <content type="html"><![CDATA[<p>这一题数据不大，想到暴力 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.23972em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span></span></span></span> 求出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 以内的最大因数，然后输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>÷</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">n\div k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 即可。</p>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int T, n, k;
-
-int main() {
-	scanf(&quot;%d&quot;, &amp;T);
-	while(T--) {
-		scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
-		int ma = 1;
-		for(int i=sqrt(n);i&gt;=1;i--) {
-//			printf(&quot;%d %d %d %d\n&quot;, i, n%i, n/i, k);
-			if(n % i != 0) continue;
-			int a = i, b = n / i;
-			if(a &lt;= k) ma = max(ma, a);
-			if(b &lt;= k) ma = max(ma, b);
-		}
-		printf(&quot;%d\n&quot;, n/ma);
-	}
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF1360C@洛谷 | 1360C@Codeforces 【Similar Pairs】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1360c-codeforces-1360c/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1360c-codeforces-1360c/">
-        </link>
-        <updated>2020-05-25T05:47:06.000Z</updated>
-        <content type="html"><![CDATA[<p>结论题。</p>
-<p>自己列了几次找了一下规律，发现有两个数差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 则必定可以，否则看奇偶数的个数。</p>
-<p>找规律思考过程：</p>
-<ol>
-<li>如果有两个数差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，则必有一奇一偶。</li>
-<li>奇数个数与偶数个数的奇偶性必然相同。（因为总数是偶数个）</li>
-<li>去掉所有差为一的数，剩余的数仍然满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>。</li>
-<li>如果剩余的数中奇数个数和偶数个数均为奇数，则将一对差为一的数拿出用于奇偶数对。（如果没有差为一的数，就不可能完成）</li>
-<li>否则将剩余的数按照奇数、偶数分组即可。</li>
-</ol>
-<p>综上，如果有差为一的数，肯定能完成任务；否则如果奇偶数个数为奇数，不能完成，为偶数可以完成。</p>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int T, n, a[51];
-
-int main() {
-	scanf(&quot;%d&quot;, &amp;T);
-	while(T--) {
-		scanf(&quot;%d&quot;, &amp;n);
-		int odd = 0, even = 0;
-		for(int i=1;i&lt;=n;i++) {
-			scanf(&quot;%d&quot;, &amp;a[i]);
-			if(a[i] &amp; 1) {
-				++odd;
-			}
-			else {
-				++even;
-			}
-		}
-		sort(a+1, a+1+n);
-		bool book = false;
-		for(int i=2;i&lt;=n;i++) {
-			if(a[i] - a[i-1] == 1) {
-				book = true;
-				break;
-			}
-		}
-		if(book) {
-			puts(&quot;YES&quot;);
-		}
-		else if(even % 2 == 0 &amp;&amp; odd % 2 == 0) {
-			puts(&quot;YES&quot;);
-		}
-		else {
-			puts(&quot;NO&quot;);
-		}
 	}
 	return 0;
 }
