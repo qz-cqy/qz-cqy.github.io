@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-08-16T04:35:59.463Z</updated>
+    <updated>2020-08-16T04:38:25.199Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -39,8 +39,9 @@
 <p>C 交互题大毒瘤！然后就去做 B 了，没啥思路，时间好像也快到了，觉得 Subtask 2 可以玩♂一♂玩♂，写出来了，WA，调了好久一直都 WA，但是怎么都找不到错。题面读了好多遍，重构了几次代码，没有用。大概是我语文太差了理解错了吧。但是考场上特别紧张，其他的部分分好像一点思路没有，尤其是发现旁边同学开始玩 dino 了，心态彻底崩溃。</p>
 <p>最后坚持到了考试结束，成功地爆零了 /dk，证明了我的菜。</p>
 <ul>
-<li>%%% @AC_Automation @2x6_81，拿了 60~80 分</li>
-<li>%%% @henrytb，分数起码比我高（</li>
+<li>%%% @AC_Automation，NOIWC Cu，APIO 拿了 60~80 分</li>
+<li>%%% @2x6_81，APIO 拿了 60~80 分</li>
+<li>%%% @henrytb，NOIWC Cu，APIO 分数起码比我高（</li>
 <li>%%% @wzm2007，故意放水和我分数一样（？</li>
 </ul>
 <h1 id="day-2考后总结">Day 2（考后总结）</h1>
