@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】 | rui_er 的博客</title>
+<title>uTools —— 多功能、简洁、好用的插件集，你值得拥有！ | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1597708272118">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】" />
-  <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
+  <meta name="description" content="uTools —— 多功能、简洁、好用的插件集，你值得拥有！" />
+  <meta name="keywords" content="utools,博客" />
 </head>
 
 <body>
@@ -200,7 +200,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -273,6 +274,208 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#windows10-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">Windows10 操作系统</a></li>
+<li><a href="#ubuntu18043-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">Ubuntu18.04.3 操作系统</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E5%BA%94%E7%94%A8%E6%90%9C%E7%B4%A2">快捷应用搜索</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6%E4%B8%AD%E5%BF%83">插件中心</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E6%8F%92%E4%BB%B6">管理插件</a>
+<ul>
+<li><a href="#%E5%89%AA%E5%88%87%E6%9D%BF">剪切板</a></li>
+<li><a href="#%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F">内网穿透</a></li>
+<li><a href="#linux-%E5%91%BD%E4%BB%A4%E6%96%87%E6%A1%A3">Linux 命令文档</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E7%A8%BF%E7%BA%B8">计算稿纸</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6">开发插件</a></li>
+<li><a href="#%E7%BB%93%E8%AF%AD-faq">结语 &amp; FAQ</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -360,8 +563,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at2201-atcoder-2201/">
-      题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/utools/">
+      uTools —— 多功能、简洁、好用的插件集，你值得拥有！
     </a>
   </h1>
   <div class="post-meta">
@@ -369,7 +572,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-02-13</span>
+      <span>2020-08-17</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -378,32 +581,14 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
-        <span>Atcoder</span>
+      <a href="https://blog.ak-ioi.cf/tag/BUR1Xwqdw/">
+        <span>utools</span>
       </a>、
       
       
       
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
-        <span>题解</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
+      <a href="https://blog.ak-ioi.cf/tag/KdGX_R7Ny/">
+        <span>博客</span>
       </a>
       
       
@@ -412,17 +597,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>5分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>284<span class="pc-show">字数</span></span>
+      <span>1351<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/solution-luogu-at2201-atcoder-2201/" data-flag-title="题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/utools/" data-flag-title="uTools —— 多功能、简洁、好用的插件集，你值得拥有！" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -431,56 +616,69 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>首先，我们用字符串s1来进行操作，s用来对照。题目说1&lt;=|s|&lt;=10^5，因此数组开大一点。其次，容易想到，|s|是奇数时不可能满足条件，故加上：</p>
-<pre><code class="language-cpp">if(l&amp;1)
-{
-	cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
-<p>其中<code>&amp;</code>是<code>按位与运算</code></p>
-<p>之后，分两步，如题。</p>
-<p>写出下列代码：</p>
-<pre><code class="language-cpp">for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
-for(int i=0;i&lt;l;i++)
-{
-	if(s1[i] == 'b') s1[i] = 'd';
-	else if(s1[i] == 'd') s1[i] = 'b';
-	else if(s1[i] == 'p') s1[i] = 'q';
-	else s1[i] = 'p';
-}
-</code></pre>
-<p>综合以上，判断字符串相等，使用<code>strcmp()</code>。</p>
-<p>综合所有，下为完整代码：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;string.h&gt;
-using namespace std;
-
-char s[100010];
-char s1[100010];
-
-int main()
-{
-	cin&gt;&gt;s;
-	int l = strlen(s);
-	if(l&amp;1)
-	{
-		cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-		return 0;
-	}
-	for(int i=0;i&lt;l;i++) s1[i] = s[l-i-1]; 
-	for(int i=0;i&lt;l;i++)
-	{
-		if(s1[i] == 'b') s1[i] = 'd';
-		else if(s1[i] == 'd') s1[i] = 'b';
-		else if(s1[i] == 'p') s1[i] = 'q';
-		else s1[i] = 'p';
-	}
-	if(!strcmp(s1, s)) cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
-	else cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
+              <p>你是否感觉 Windows 自带的应用搜索功能使用繁琐？你是否希望获得各种各样的实用插件并只想简单配置？网络开发时，有不懂的 CSS / js 内容？始终找不到你想用的 linux 指令？</p>
+<p>别担心，uTools 插件集可以满足你！</p>
+<!-- more -->
+<p>由于洛谷图床的限制可能导致图片无法加载，建议前往洛谷博客查看（未发布）。</p>
+<h1 id="安装">安装</h1>
+<p>uTools 目前支持的操作系统有：Windows（Win7 及以上，32 位或 64 位）、macOS（OS X 10.10 Yosemite 及以上）和 Linux（Deepin 15 或 Ubuntu 18 及以上）。笔者写这篇文章时版本号为 1.2.0。</p>
+<p>首先，进入 <a href="http://u.tools">uTools 官网</a>，点击“免费下载”，即可看到三种操作系统的下载选项。下面以 Windows10 物理机和 Ubuntu18.04.3 虚拟机为例：</p>
+<h2 id="windows10-操作系统">Windows10 操作系统</h2>
+<p>点击 Windows 下载后，会下载一个叫做 <code>uTools-1.2.0.exe</code> 的文件，双击安装。</p>
+<p>安装过后，根据提示，按 Alt+Space 打开如下图的一个窗口：<img src="https://cdn.luogu.com.cn/upload/image_hosting/v22lpvmu.png" alt="" loading="lazy"></p>
+<p>即为安装成功。</p>
+<h2 id="ubuntu18043-操作系统">Ubuntu18.04.3 操作系统</h2>
+<p>以同样的方式下载，得到文件 <code>utools_1.2.0_amd64.deb</code>。</p>
+<p>打开命令行（终端），输入 <code>sudo su</code> ，输入密码，进入管理员（超级用户）权限。使用 cd 命令进入下载到的文件夹中，输入 <code>dpkg -i utools_1.2.0_amd64.deb</code>，在左下方点击 show applications，在列表中可以找到 utools，点击或按 Alt+Space 发开同样的窗口即为成功。</p>
+<h1 id="快捷应用搜索">快捷应用搜索</h1>
+<p>下面以 Windows 为例演示快捷应用搜索：使用 Windows 自带的搜索功能打开记事本，一般需要 Win+R 或在下方搜索栏输入 <code>notepad</code> 或 <code>jishiben</code> 才可以打开，但是在 Alt+Space 打开 uTools 后，输入 <code>jsb</code> 即可搜索到，其他应用同理。</p>
+<p>uTools 的搜索功能更加方便中国用户的汉字 / 拼音搜索，只需要输入首字母即可显示所有可以与之匹配的应用或插件，可以说方便得多。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/j9qs9ota.png" alt="" loading="lazy"></figure>
+<h1 id="插件中心">插件中心</h1>
+<p>还是在这个页面，点击右侧的图标即可进入 uTools 的插件中心。若要返回，只需要在上方输入框中按退格键。</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p33xmgki.png" alt="" loading="lazy"></figure>
+<p>在这个界面，点击你想下载的插件，即可弹出“插件详情”窗口，在右侧有一个“下载”按钮，如果下载后想要卸载，也是在这个界面。（下图为下载过插件后的样子）</p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rofjleg3.png" alt="" loading="lazy"></figure>
+<p>当然，插件可不止你看到的这么一点！把界面拉到最下方，点击“查看全部插件”里面有更多的可用插件，这里面也有很多好用的插件，千万不要错过了！</p>
+<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rba7rj2x.png" alt="" loading="lazy"></figure>
+<h1 id="管理插件">管理插件</h1>
+<p>下载了插件，怎么进行配置呢？下面以几个插件为例，讲解配置方法。</p>
+<h2 id="剪切板">剪切板</h2>
+<p>在插件详情界面点击“功能关键字”，点击下方的一个标签，即可查看这个标签下的所有下载过的插件。</p>
+<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p2h8cu48.png" alt="" loading="lazy"></figure>
+<p>这个插件的功能是保存下载插件后的剪切板内容历史记录。下图是截止目前为了写这篇文章笔者保存的剪切板的一部分。</p>
+<figure data-type="image" tabindex="6"><img src="https://cdn.luogu.com.cn/upload/image_hosting/uhm06pqe.png" alt="" loading="lazy"></figure>
+<p>想要返回前几步，在输入栏按退格键即可。</p>
+<h2 id="内网穿透">内网穿透</h2>
+<p>这里我没有在内网设置网站，且用于演示的外网地址已经关闭。</p>
+<p>同样的方法进入内网穿透的管理面板，如下配置：</p>
+<figure data-type="image" tabindex="7"><img src="https://cdn.luogu.com.cn/upload/image_hosting/hoa177qh.png" alt="" loading="lazy"></figure>
+<p>点击连接按钮，看到如下提示即为成功，否则请按照提示更改配置：</p>
+<figure data-type="image" tabindex="8"><img src="https://cdn.luogu.com.cn/upload/image_hosting/jqb2zi3z.png" alt="" loading="lazy"></figure>
+<p>这里可以选择 TCP / 本地目录 / HTTP 三种隧道类型，uTools 的限制为最多开通三条隧道，且不支持绑定自定义域名。</p>
+<h2 id="linux-命令文档">Linux 命令文档</h2>
+<p>进入 Linux 命令文档，可以看到如下界面：</p>
+<figure data-type="image" tabindex="9"><img src="https://cdn.luogu.com.cn/upload/image_hosting/gyqo6zpe.png" alt="" loading="lazy"></figure>
+<p>左侧的目录按照字典序排列，从 ab 到 cat，剩余命令要通过搜索功能找到，搜索方法与上方应用搜索相同。</p>
+<figure data-type="image" tabindex="10"><img src="https://cdn.luogu.com.cn/upload/image_hosting/5uledbio.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://cdn.luogu.com.cn/upload/image_hosting/nj1gmais.png" alt="" loading="lazy"></figure>
+<p>当然，我们也可以通过关键字进行搜索：</p>
+<figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/t1hefq0l.png" alt="" loading="lazy"></figure>
+<p>每一栏中都有详细的用法解释。</p>
+<h2 id="计算稿纸">计算稿纸</h2>
+<p>计算稿纸是一个数学的草稿纸插件，我们可以写数学公式，自动计算出结果。</p>
+<p>例如下面这个式子：<code>19260817-114514-1919810+998244353</code></p>
+<figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p5at9hvk.png" alt="" loading="lazy"></figure>
+<p>这个工具的功能可不止这些！里面还有一些函数也可以使用：<code>sqrt(100)+2^12-log(e^5)+pi</code></p>
+<figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/wsjvc2st.png" alt="" loading="lazy"></figure>
+<p>但他也有一些缺点，例如不能设未知数、函数等。</p>
+<h1 id="开发插件">开发插件</h1>
+<p>在 uTools 的官方 wiki 中，有关于开发插件的详细介绍 <a href="http://u.tools/docs/developer/welcome.html#plugin-json">地址</a>。</p>
+<p>本人并没有尝试过，因为对于平常使用来说，这个功能基本是不需要的，因此在这里也不做另外说明了，感兴趣的话可以去 wiki 查看官方的解释。</p>
+<h1 id="结语-faq">结语 &amp; FAQ</h1>
+<p>以上就是 uTools 的基本功能了，是否感觉非常实用呢？可以下载一个使用哦~</p>
+<p>码字不易，如果您觉得这篇文章介绍的内容对您有帮助，就给个赞吧 QwQ~</p>
+<p>如果对本文介绍到的功能有问题，欢迎在评论区或私信留言！不保证所有问题均可以在我这里得到解答，可以尝试阅读<a href="http://u.tools/docs/guide/about-uTools.html#utools%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">官方文档</a>，或在<a href="https://yuanliao.info/">官方论坛</a>提出你的问题，等待官方或其他人的解决。</p>
 
             </div>
             <div class="post-footer">
@@ -491,7 +689,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-at2201-atcoder-2201/" title="题解 AT2201@洛谷 | 2201@Atcoder 【鏡文 / Mirror String】">https://blog.ak-ioi.cf/post/solution-luogu-at2201-atcoder-2201/</a>
+      <a href="https://blog.ak-ioi.cf/post/utools/" title="uTools —— 多功能、简洁、好用的插件集，你值得拥有！">https://blog.ak-ioi.cf/post/utools/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -500,29 +698,19 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/"># Atcoder</a>
+      <a href="https://blog.ak-ioi.cf/tag/BUR1Xwqdw/"># utools</a>
     
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
+      <a href="https://blog.ak-ioi.cf/tag/KdGX_R7Ny/"># 博客</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf914a-codeforces-914a/">题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 CF914A@洛谷 | 914A@Codeforces 【Perfect Squares】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf914a-codeforces-914a/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf4a-codeforces-4a/">题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 </a>
-        <a class="nav-mobile-next" title="题解 CF4A@洛谷 | 4A@Codeforces 【Watermelon】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf4a-codeforces-4a/">下一篇</a>
+        <a class="nav-pc-next" title="APIO2020 —— 从报名到爆零 &amp; 总结" href="https://blog.ak-ioi.cf/post/i-ak-apio2020/">APIO2020 —— 从报名到爆零 &amp; 总结</a>
+        <a class="nav-mobile-next" title="APIO2020 —— 从报名到爆零 &amp; 总结" href="https://blog.ak-ioi.cf/post/i-ak-apio2020/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

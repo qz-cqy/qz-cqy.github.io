@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-08-17T02:00:18.209Z</updated>
+    <updated>2020-08-17T23:53:52.682Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -11,6 +11,80 @@
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
     <entry>
+        <title type="html"><![CDATA[uTools —— 多功能、简洁、好用的插件集，你值得拥有！]]></title>
+        <id>https://blog.ak-ioi.cf/post/utools/</id>
+        <link href="https://blog.ak-ioi.cf/post/utools/">
+        </link>
+        <updated>2020-08-17T06:23:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>你是否感觉 Windows 自带的应用搜索功能使用繁琐？你是否希望获得各种各样的实用插件并只想简单配置？网络开发时，有不懂的 CSS / js 内容？始终找不到你想用的 linux 指令？</p>
+<p>别担心，uTools 插件集可以满足你！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>你是否感觉 Windows 自带的应用搜索功能使用繁琐？你是否希望获得各种各样的实用插件并只想简单配置？网络开发时，有不懂的 CSS / js 内容？始终找不到你想用的 linux 指令？</p>
+<p>别担心，uTools 插件集可以满足你！</p>
+<!-- more -->
+<p>由于洛谷图床的限制可能导致图片无法加载，建议前往洛谷博客查看（未发布）。</p>
+<h1 id="安装">安装</h1>
+<p>uTools 目前支持的操作系统有：Windows（Win7 及以上，32 位或 64 位）、macOS（OS X 10.10 Yosemite 及以上）和 Linux（Deepin 15 或 Ubuntu 18 及以上）。笔者写这篇文章时版本号为 1.2.0。</p>
+<p>首先，进入 <a href="http://u.tools">uTools 官网</a>，点击“免费下载”，即可看到三种操作系统的下载选项。下面以 Windows10 物理机和 Ubuntu18.04.3 虚拟机为例：</p>
+<h2 id="windows10-操作系统">Windows10 操作系统</h2>
+<p>点击 Windows 下载后，会下载一个叫做 <code>uTools-1.2.0.exe</code> 的文件，双击安装。</p>
+<p>安装过后，根据提示，按 Alt+Space 打开如下图的一个窗口：<img src="https://cdn.luogu.com.cn/upload/image_hosting/v22lpvmu.png" alt="" loading="lazy"></p>
+<p>即为安装成功。</p>
+<h2 id="ubuntu18043-操作系统">Ubuntu18.04.3 操作系统</h2>
+<p>以同样的方式下载，得到文件 <code>utools_1.2.0_amd64.deb</code>。</p>
+<p>打开命令行（终端），输入 <code>sudo su</code> ，输入密码，进入管理员（超级用户）权限。使用 cd 命令进入下载到的文件夹中，输入 <code>dpkg -i utools_1.2.0_amd64.deb</code>，在左下方点击 show applications，在列表中可以找到 utools，点击或按 Alt+Space 发开同样的窗口即为成功。</p>
+<h1 id="快捷应用搜索">快捷应用搜索</h1>
+<p>下面以 Windows 为例演示快捷应用搜索：使用 Windows 自带的搜索功能打开记事本，一般需要 Win+R 或在下方搜索栏输入 <code>notepad</code> 或 <code>jishiben</code> 才可以打开，但是在 Alt+Space 打开 uTools 后，输入 <code>jsb</code> 即可搜索到，其他应用同理。</p>
+<p>uTools 的搜索功能更加方便中国用户的汉字 / 拼音搜索，只需要输入首字母即可显示所有可以与之匹配的应用或插件，可以说方便得多。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/j9qs9ota.png" alt="" loading="lazy"></figure>
+<h1 id="插件中心">插件中心</h1>
+<p>还是在这个页面，点击右侧的图标即可进入 uTools 的插件中心。若要返回，只需要在上方输入框中按退格键。</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p33xmgki.png" alt="" loading="lazy"></figure>
+<p>在这个界面，点击你想下载的插件，即可弹出“插件详情”窗口，在右侧有一个“下载”按钮，如果下载后想要卸载，也是在这个界面。（下图为下载过插件后的样子）</p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rofjleg3.png" alt="" loading="lazy"></figure>
+<p>当然，插件可不止你看到的这么一点！把界面拉到最下方，点击“查看全部插件”里面有更多的可用插件，这里面也有很多好用的插件，千万不要错过了！</p>
+<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rba7rj2x.png" alt="" loading="lazy"></figure>
+<h1 id="管理插件">管理插件</h1>
+<p>下载了插件，怎么进行配置呢？下面以几个插件为例，讲解配置方法。</p>
+<h2 id="剪切板">剪切板</h2>
+<p>在插件详情界面点击“功能关键字”，点击下方的一个标签，即可查看这个标签下的所有下载过的插件。</p>
+<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p2h8cu48.png" alt="" loading="lazy"></figure>
+<p>这个插件的功能是保存下载插件后的剪切板内容历史记录。下图是截止目前为了写这篇文章笔者保存的剪切板的一部分。</p>
+<figure data-type="image" tabindex="6"><img src="https://cdn.luogu.com.cn/upload/image_hosting/uhm06pqe.png" alt="" loading="lazy"></figure>
+<p>想要返回前几步，在输入栏按退格键即可。</p>
+<h2 id="内网穿透">内网穿透</h2>
+<p>这里我没有在内网设置网站，且用于演示的外网地址已经关闭。</p>
+<p>同样的方法进入内网穿透的管理面板，如下配置：</p>
+<figure data-type="image" tabindex="7"><img src="https://cdn.luogu.com.cn/upload/image_hosting/hoa177qh.png" alt="" loading="lazy"></figure>
+<p>点击连接按钮，看到如下提示即为成功，否则请按照提示更改配置：</p>
+<figure data-type="image" tabindex="8"><img src="https://cdn.luogu.com.cn/upload/image_hosting/jqb2zi3z.png" alt="" loading="lazy"></figure>
+<p>这里可以选择 TCP / 本地目录 / HTTP 三种隧道类型，uTools 的限制为最多开通三条隧道，且不支持绑定自定义域名。</p>
+<h2 id="linux-命令文档">Linux 命令文档</h2>
+<p>进入 Linux 命令文档，可以看到如下界面：</p>
+<figure data-type="image" tabindex="9"><img src="https://cdn.luogu.com.cn/upload/image_hosting/gyqo6zpe.png" alt="" loading="lazy"></figure>
+<p>左侧的目录按照字典序排列，从 ab 到 cat，剩余命令要通过搜索功能找到，搜索方法与上方应用搜索相同。</p>
+<figure data-type="image" tabindex="10"><img src="https://cdn.luogu.com.cn/upload/image_hosting/5uledbio.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://cdn.luogu.com.cn/upload/image_hosting/nj1gmais.png" alt="" loading="lazy"></figure>
+<p>当然，我们也可以通过关键字进行搜索：</p>
+<figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/t1hefq0l.png" alt="" loading="lazy"></figure>
+<p>每一栏中都有详细的用法解释。</p>
+<h2 id="计算稿纸">计算稿纸</h2>
+<p>计算稿纸是一个数学的草稿纸插件，我们可以写数学公式，自动计算出结果。</p>
+<p>例如下面这个式子：<code>19260817-114514-1919810+998244353</code></p>
+<figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p5at9hvk.png" alt="" loading="lazy"></figure>
+<p>这个工具的功能可不止这些！里面还有一些函数也可以使用：<code>sqrt(100)+2^12-log(e^5)+pi</code></p>
+<figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/wsjvc2st.png" alt="" loading="lazy"></figure>
+<p>但他也有一些缺点，例如不能设未知数、函数等。</p>
+<h1 id="开发插件">开发插件</h1>
+<p>在 uTools 的官方 wiki 中，有关于开发插件的详细介绍 <a href="http://u.tools/docs/developer/welcome.html#plugin-json">地址</a>。</p>
+<p>本人并没有尝试过，因为对于平常使用来说，这个功能基本是不需要的，因此在这里也不做另外说明了，感兴趣的话可以去 wiki 查看官方的解释。</p>
+<h1 id="结语-faq">结语 &amp; FAQ</h1>
+<p>以上就是 uTools 的基本功能了，是否感觉非常实用呢？可以下载一个使用哦~</p>
+<p>码字不易，如果您觉得这篇文章介绍的内容对您有帮助，就给个赞吧 QwQ~</p>
+<p>如果对本文介绍到的功能有问题，欢迎在评论区或私信留言！不保证所有问题均可以在我这里得到解答，可以尝试阅读<a href="http://u.tools/docs/guide/about-uTools.html#utools%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">官方文档</a>，或在<a href="https://yuanliao.info/">官方论坛</a>提出你的问题，等待官方或其他人的解决。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[APIO2020 —— 从报名到爆零 & 总结]]></title>
         <id>https://blog.ak-ioi.cf/post/i-ak-apio2020/</id>
         <link href="https://blog.ak-ioi.cf/post/i-ak-apio2020/">
@@ -18,6 +92,7 @@
         <updated>2020-08-16T04:34:13.000Z</updated>
         <content type="html"><![CDATA[<p>URL 只是按照惯例写的。</p>
 <p>根据 APIO 官方要求，本博客在 <code>Monday, 17 August 2020 (08:00 UTC+7)</code>（北京时间 2020.08.17 9:00）前不会涉及到任何有关 APIO2020 题目、题解及相关算法的内容，必要内容将在以后进行补充。</p>
+<p><strong>upd (2020.8.18 7:50)：隐藏内容已经公开。</strong></p>
 <p><s>抱铃 awa</s></p>
 <hr>
 <h1 id="day-n">Day -n</h1>
@@ -33,8 +108,8 @@
 <h1 id="day-1比赛当天">Day 1（比赛当天）</h1>
 <p>去机房和神仙同学面基惹 /kk。</p>
 <p>用的自己电脑，连的学校机房无线网。顺便来你谷祭一下，求 rp++。</p>
-<p>考试开始，下载毒瘤试卷，打开，发现 A 题好像是个【】问题模板。主要是被题目中的【】误导，想成了【】。再加上脑子突然瓦特了，就非常期待可以 AC，开始写正解。</p>
-<p>写了好久，交了一发，发现 AC 了好多点，但是最后还是 TLE 了，才发现自己复杂度假了。但是我怎么可能轻易放弃呢？继续优化，花了好长时间，才意识到我的思路完全是错的，应该是一道【】题。</p>
+<p>考试开始，下载毒瘤试卷，打开，发现 A 题好像是个二分图 / 网络流问题模板，还特别庆幸前一天刚写过一下 Dinic。主要是被题目中的“喜欢的颜色”以及每人最多粉刷一次误导，想成了建二分图后跑二分图匹配。再加上脑子突然瓦特了，就非常期待可以 AC，开始写正解。</p>
+<p>写了好久，交了一发，发现 AC 了好多点，但是最后还是 TLE 了，才发现自己复杂度假了。但是我怎么可能轻易放弃呢？继续优化，花了好长时间，才意识到我的思路完全是错的，应该是一道 dp 题。</p>
 <p>没办法，写 A 部分分，结果没啥思路，去看 B、C 题面。</p>
 <p>C 交互题大毒瘤！然后就去做 B 了，没啥思路，时间好像也快到了，觉得 Subtask 2 可以玩♂一♂玩♂，写出来了，WA，调了好久一直都 WA，但是怎么都找不到错。题面读了好多遍，重构了几次代码，没有用。大概是我语文太差了理解错了吧。但是考场上特别紧张，其他的部分分好像一点思路没有，尤其是发现旁边同学开始玩 dino 了，心态彻底崩溃。</p>
 <p>最后坚持到了考试结束，成功地爆零了 /dk，证明了我的菜。</p>
@@ -1262,59 +1337,6 @@ int main()
 </code></pre>
 <h1 id="高维偏序问题ge5">高维偏序问题（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">\ge5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span>）</h1>
 <p>在更高维的情况下陈丹琪分治也比较慢，基本就是暴力了。可以使用 bitset 优化，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mfrac><msup><mi>n</mi><mn>2</mn></msup><mn>32</mn></mfrac><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\frac{n^2}{32})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.36292em;vertical-align:-0.345em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01792em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913142857142857em;"><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span>，这里不详细讲了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF1360E@洛谷 | 1360E@Codeforces 【Polygon】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1360e-codeforces-1360e/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1360e-codeforces-1360e/">
-        </link>
-        <updated>2020-05-25T05:49:39.000Z</updated>
-        <content type="html"><![CDATA[<p>拿到这题一头雾水，找找规律。</p>
-<p>按照游戏规则，一个数的右侧和下侧必须有数才可能被大炮发射到这里。</p>
-<p>看到样例，发现如果去掉最后一行以及最后一列，剩余的所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的右侧或下侧的格子有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，就是可以完成；反之不能。</p>
-<p>大胆猜测：除了最右列与最下行，如果每个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 右侧或下侧都有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，则可以完成；有一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 右侧下侧均没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 就不能完成。</p>
-<p>考试时直接交了，没有证明正确性，发现 PP 了。现在口胡一个，不是特别严谨，可以画画图试着理解：</p>
-<ul>
-<li>如果一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 右侧有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，可以通过左侧大炮发射过来。</li>
-<li>如果一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 下侧有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，可以通过上方大炮发射过来。</li>
-<li>最右列和最下行一定可以达到。</li>
-</ul>
-<p>类似数学归纳法的思想，证明上面的猜测。</p>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int T, n, a[55][55];
-
-int main() {
-	scanf(&quot;%d&quot;, &amp;T);
-	while(T--) {
-		scanf(&quot;%d&quot;, &amp;n);
-		for(int i=1;i&lt;=n;i++) {
-			for(int j=1;j&lt;=n;j++) {
-				char c = getchar();
-				while(!isdigit(c)) c = getchar();
-				a[i][j] = c - '0';
-			}
-		}
-		bool book = true;
-		for(int i=1;i&lt;n;i++) {
-			for(int j=1;j&lt;n;j++) {
-				if(a[i][j] &amp;&amp; !a[i][j+1] &amp;&amp; !a[i+1][j]) {
-					book = false;
-					break;
-				}
-			}
-			if(!book) break;
-		}
-		if(book) puts(&quot;YES&quot;);
-		else puts(&quot;NO&quot;);
-	}
-	return 0;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>
