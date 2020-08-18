@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-08-17T23:53:52.682Z</updated>
+    <updated>2020-08-18T00:01:16.267Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -22,7 +22,7 @@
         <content type="html"><![CDATA[<p>你是否感觉 Windows 自带的应用搜索功能使用繁琐？你是否希望获得各种各样的实用插件并只想简单配置？网络开发时，有不懂的 CSS / js 内容？始终找不到你想用的 linux 指令？</p>
 <p>别担心，uTools 插件集可以满足你！</p>
 <!-- more -->
-<p>由于洛谷图床的限制可能导致图片无法加载，建议前往洛谷博客查看（未发布）。</p>
+<p>由于洛谷图床的限制可能导致图片无法加载，建议前往<a href="https://www.luogu.com.cn/blog/ak-ioi/utools">洛谷博客</a>查看。</p>
 <h1 id="安装">安装</h1>
 <p>uTools 目前支持的操作系统有：Windows（Win7 及以上，32 位或 64 位）、macOS（OS X 10.10 Yosemite 及以上）和 Linux（Deepin 15 或 Ubuntu 18 及以上）。笔者写这篇文章时版本号为 1.2.0。</p>
 <p>首先，进入 <a href="http://u.tools">uTools 官网</a>，点击“免费下载”，即可看到三种操作系统的下载选项。下面以 Windows10 物理机和 Ubuntu18.04.3 虚拟机为例：</p>
