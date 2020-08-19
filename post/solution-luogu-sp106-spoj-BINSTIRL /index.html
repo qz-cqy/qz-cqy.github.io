@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>洛谷词条 | rui_er 的博客</title>
+<title>题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1597833295977">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="洛谷词条" />
-  <meta name="keywords" content="洛谷" />
+  <meta name="description" content="题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】" />
+  <meta name="keywords" content="结论题,SPOJ,数学,题解,OI,洛谷" />
 </head>
 
 <body>
@@ -200,8 +200,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -274,195 +273,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E6%B4%9B%E8%B0%B7%E5%AE%9A%E5%BE%8B">洛谷定律</a></li>
-<li><a href="#%E5%A5%B3%E8%A3%85%E5%AE%9A%E5%BE%8B">女装定律</a></li>
-<li><a href="#%E5%85%B6%E4%BB%96%E5%AE%9A%E5%BE%8B">其他定律</a></li>
-<li><a href="#%E8%AF%8D%E8%AF%AD%E9%87%8A%E4%B9%89">词语释义</a></li>
-<li><a href="#%E9%99%84%E5%BD%95">附录</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -550,8 +360,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/luogu-description/">
-      洛谷词条
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-sp106-spoj-BINSTIRL /">
+      题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】
     </a>
   </h1>
   <div class="post-meta">
@@ -559,13 +369,43 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-25</span>
+      <span>2020-08-19</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
       <i class="fa fa-folder-o"></i>
       <span class="pc-show">分类于</span>
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/I1IWdTl4D/">
+        <span>结论题</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/aqkZXLnKs/">
+        <span>SPOJ</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/7IKLNdSii/">
+        <span>数学</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
+        <span>题解</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
+        <span>OI</span>
+      </a>、
+      
       
       
       <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
@@ -583,12 +423,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>872<span class="pc-show">字数</span></span>
+      <span>737<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/luogu-description/" data-flag-title="洛谷词条" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/solution-luogu-sp106-spoj-BINSTIRL /" data-flag-title="题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -597,146 +437,55 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p><strong>部分内容来自网络</strong></p>
-<h1 id="洛谷定律">洛谷定律</h1>
-<ol>
-<li>洛谷第一定律：如果你装弱，肯定有人说你fAKe；如果你装强，肯定有人会膜拜你。</li>
-<li>洛谷第二定律：如果你膜别人，别人看到了必定反膜；如果你被膜，一定还会有人继续膜你。</li>
-<li>洛谷第三定律：水犇犇可以提高知名度，如果有睿智言论更好；知名度可以一夜形成，但不会一夜消失。</li>
-<li>洛谷第四定律：头像不能反映真实性别，事实上，大多数时候都是相反的。</li>
-<li>洛谷第五定律：当你有足够的知名度时，别人会给你起外号（例如：<a href="https://www.luogu.com.cn/user/87393">AH</a>）。</li>
-<li>洛谷第六定律：冒泡一定会被戳。</li>
-</ol>
-<hr>
-<h1 id="女装定律">女装定律</h1>
-<ol>
-<li>女装第一定律：一切关于女装的约定或flag，都源于对女装的渴望。</li>
-<li>女装第二定律：女装只有零次和无限次。</li>
-</ol>
-<hr>
-<h1 id="其他定律">其他定律</h1>
-<ol>
-<li>讨论版定律：当你发出一个新闻类或新闻类的帖子，一定有很多人来催更，而你一定会拖更。</li>
-<li>熵增定律：一句话的熵被定义为这句话的表达效果与笔画数的比值，随着时间的推移，一句话的熵永远是增加的。特别地，对于同一个表达效果，它必定会被简化（例如：删前留名→山前留名→留名/刘明→sqlm→lm）。</li>
-</ol>
-<hr>
-<h1 id="词语释义">词语释义</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">序号</th>
-<th style="text-align:center">词语</th>
-<th style="text-align:center">词性</th>
-<th style="text-align:center">解释</th>
-<th style="text-align:center">例句</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">OIer</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">学OI的人</td>
-<td style="text-align:center">rui_er是一个OIer。</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">膜、orz、STO、OTZ、%%%等</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8A%A8%E8%AF%8D-e67e22.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">膜拜</td>
-<td style="text-align:center">您AK IOI太强了orz。</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">fAKe</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">假，同FAKE、fake</td>
-<td style="text-align:center">你太fAKe了，你明明AK IOI。</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">蒟蒻</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">本义：植物界被子植物门单子叶植物纲泽泻目天南星科魔芋属蒟蒻种植物；引申义：“巨弱”变种，谦辞，形容自己很弱</td>
-<td style="text-align:center">rui_er是一个蒟蒻。</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">神犇</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">“蒟蒻”的反义词，敬辞，形容别人很强</td>
-<td style="text-align:center">除了rui_er都是神犇。</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">机惨、JC、JFCA</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%8A%A8%E8%AF%8D-e67e22.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">本义：名词，机房惨案，指在机房由于未锁账号导致的一系列可能或已经导致严重后果的事件；引申义：动词，指实施这一过程</td>
-<td style="text-align:center">——I AK IOI!——orz您竟然被机惨了。</td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center">I AK IOI</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8F%A5%E5%AD%90-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">实施机房惨案时常用语句</td>
-<td style="text-align:center">——I AK IOI!——orz您竟然被机惨了。</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">文文新闻、今日说法、犇犇茶馆（犇茶）</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">洛谷中的一系列神贴</td>
-<td style="text-align:center">弱弱地问一句：犇犇茶馆网址？</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td style="text-align:center">说句闲话、出言不逊、臭名昭著、外环等</td>
-<td style="text-align:center">略</td>
-<td style="text-align:center">详见<a href="/post/luogu-geng">洛谷神梗收录</a></td>
-<td style="text-align:center">说句闲话：研究珂学的最好方法是</td>
-</tr>
-<tr>
-<td style="text-align:center">10</td>
-<td style="text-align:center">毒瘤</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E5%BD%A2%E5%AE%B9%E8%AF%8D-f1c40f.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">原指很难的题，现指很难的题的出题人，有时特指@noip</td>
-<td style="text-align:center">这题毒瘤吧！</td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">main包</td>
-<td style="text-align:center">根据不同语境<img src="https://img.shields.io/badge/%E5%90%8D%E8%AF%8D-5eb95e.svg" alt="" loading="lazy"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">原指洛谷原管理员@扩散性百万甜面包，现指面包（mian包）变种（玩梗成分：main大家都知道是什么吧）</td>
-<td style="text-align:center">前排兜售烤main包。</td>
-</tr>
-<tr>
-<td style="text-align:center">12</td>
-<td style="text-align:center">神鱼、鱼神、鰰、神兔、兔神</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E4%BB%A3%E8%AF%8D-e74c3c.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">前三个指大佬@NaCly_Fish，后两个指大佬@小粉兔</td>
-<td style="text-align:center">前排%鰰</td>
-</tr>
-<tr>
-<td style="text-align:center">13</td>
-<td style="text-align:center">你号没了、nhml</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8F%A5%E5%AD%90-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">字面意思。一般用在对方违反社区规则的时候</td>
-<td style="text-align:center">高危，你号没了。</td>
-</tr>
-<tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">关于SPFA，他死了</td>
-<td style="text-align:center"><img src="https://img.shields.io/badge/%E5%8F%A5%E5%AD%90-3498db.svg" alt="" loading="lazy"></td>
-<td style="text-align:center">NOI2018时的梗，出题人讲题时公开宣布SPFA死了，详见【附录】</td>
-<td style="text-align:center">——SPFA求助。——关于SPFA，他死了。</td>
-</tr>
-</tbody>
-</table>
-<p>欢迎补充。</p>
-<hr>
-<h1 id="附录">附录</h1>
-<p>关于SPFA，他死了：</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/pic/25108.png" alt="" loading="lazy"></figure>
+              <p>给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">S(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 是第二类斯特林数。</p>
+<p>如果你不知道第二类斯特林数是啥，可以看看<a href="https://baike.baidu.com/item/%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0/4938529?fr=aladdin">百度</a>：（经过一些修改）</p>
+<blockquote>
+<p>第二类斯特林数实际上是集合的一个拆分，表示将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个不同的元素拆分成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 个集合的方案数，记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">S(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> 或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>n</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>m</mi></mstyle></mtd></mtr></mtable><mo fence="true">}</mo></mrow><annotation encoding="application/x-tex">\begin{Bmatrix}n\\m\end{Bmatrix}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">{</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9500000000000004em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">}</span></span></span></span></span></span>。</p>
+</blockquote>
+<p>看到下面的递推式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo>=</mo><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>+</mo><mi>m</mi><mo>×</mo><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">S(n+1,m)=S(n,m-1)+m\times S(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>。</p>
+<p>我们对其进行一些变形：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>+</mo><mi>m</mi><mo>×</mo><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>+</mo><mi>m</mi><mo>×</mo><mi>S</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo>≡</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>m</mi><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mn>2</mn><mo>=</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>+</mo><mi>S</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">otherwise</mi><mo>⁡</mo></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mspace></mspace><mspace width="1em"/><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333333333333333em"/><mn>2</mn><mo>)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+S(n+1,m)=&amp;S(n,m-1)+m\times S(n,m)&amp;\\
+S(n,m)=&amp;S(n-1,m-1)+m\times S(n-1,m)&amp;\\
+S(n,m)\equiv&amp;\begin{cases}S(n-1,m-1),&amp;m\mod 2=0\\S(n-1,m-1)+S(n-1,m),&amp;\operatorname{otherwise}\end{cases}&amp;\pmod{2}
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:6.3000300000000005em;vertical-align:-2.9000150000000007em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.400015em;"><span style="top:-6.310015em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span><span style="top:-4.810014999999999em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span><span style="top:-2.4000149999999993em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.9000150000000007em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.400015em;"><span style="top:-6.310015em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span><span style="top:-4.810014999999999em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span><span style="top:-2.4000149999999993em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mop"><span class="mord mathrm">o</span><span class="mord mathrm">t</span><span class="mord mathrm">h</span><span class="mord mathrm">e</span><span class="mord mathrm">r</span><span class="mord mathrm" style="margin-right:0.01389em;">w</span><span class="mord mathrm">i</span><span class="mord mathrm">s</span><span class="mord mathrm">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.9000150000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.400015em;"><span style="top:-6.310015em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"></span></span><span style="top:-4.810014999999999em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"></span></span><span style="top:-2.4000149999999993em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.3333333333333333em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.9000150000000007em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>就可以根据上面的表达式大致画出一个转移图：</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/f8gydte6.png" alt="" loading="lazy"></figure>
+<p>图中对于一个点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span> 经过蓝边（向右）和粉边（向右上）到达 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span> 的路径条数即为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">S(n,m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span>，注意黑边不能经过，蓝边和粉边只能单向经过。因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mspace></mspace><mspace width="0.6666666666666666em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mn>2</mn></mrow><annotation encoding="application/x-tex">S(n,m)\mod 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.6666666666666666em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span></span></span></span> 就等于路径条数对二取模的余数。</p>
+<p>路径条数怎么算呢？我们根据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>∼</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">0\sim m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 之间的蓝色边条数来分类讨论，运用一些数学计算就可以得到，发现路径条数的奇偶性与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{m+1}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 有关（因为蓝边数量仅与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 相关）。最后就可以得到结论：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>)</mo><mspace></mspace><mspace width="1em"/><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mtext> </mtext><mtext> </mtext><mn>2</mn><mo>=</mo><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>1</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mrow><mo fence="true">(</mo><mi>n</mi><mo>=</mo><mi>m</mi><mo>=</mo><mn>0</mn><mo fence="true">)</mo></mrow><mo>∨</mo><mrow><mo fence="true">(</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow><mi mathvariant="normal">and</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mi>n</mi><mo>−</mo><mi>m</mi><mo>+</mo><mfrac><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo>−</mo><mn>1</mn><mo fence="true">)</mo></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mn>0</mn><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mi mathvariant="normal">otherwise</mi><mo>⁡</mo></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">S(n,m)\mod 2=\begin{cases}1,&amp;\left(n=m=0\right)\lor\left(\left(\frac{m+1}{2}-1\right)\operatorname{and}\left(n-m+\frac{m+1}{2}-1\right)=\frac{m+1}{2}-1\right)\\0,&amp;\operatorname{otherwise}\end{cases}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:1em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">0</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∨</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">a</span><span class="mord mathrm">n</span><span class="mord mathrm">d</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mop"><span class="mord mathrm">o</span><span class="mord mathrm">t</span><span class="mord mathrm">h</span><span class="mord mathrm">e</span><span class="mord mathrm">r</span><span class="mord mathrm" style="margin-right:0.01389em;">w</span><span class="mord mathrm">i</span><span class="mord mathrm">s</span><span class="mord mathrm">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>这里我们特判一下几个特殊情况，就可以得到最终结论。</p>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+#define f(a,b) (\
+(a &amp; b) == a\
+)
+
+int T, n, m; 
+
+int main() {
+	scanf(&quot;%d&quot;, &amp;T);
+	while(T--) {
+		scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+		if(!n &amp;&amp; !m) {
+			puts(&quot;1&quot;);
+			continue;
+		}
+		if(!n || !m || n &lt; m) {
+			puts(&quot;0&quot;);
+			continue;
+		}
+		int a = (m + 1) / 2 - 1;
+		printf(&quot;%d\n&quot;, f(a, n-m+a));
+	}
+	return 0;
+}
+</code></pre>
 
             </div>
             <div class="post-footer">
@@ -747,7 +496,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/luogu-description/" title="洛谷词条">https://blog.ak-ioi.cf/post/luogu-description/</a>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-sp106-spoj-BINSTIRL /" title="题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】">https://blog.ak-ioi.cf/post/solution-luogu-sp106-spoj-BINSTIRL /</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -756,21 +505,27 @@
   </ul>
   <div class="tags">
     
+      <a href="https://blog.ak-ioi.cf/tag/I1IWdTl4D/"># 结论题</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/aqkZXLnKs/"># SPOJ</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/7IKLNdSii/"># 数学</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
+    
       <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【[洛谷日报#254]五分钟搭建自己的博客】发布有感" href="https://blog.ak-ioi.cf/post/luogu-ri-bao-254-passed/">【[洛谷日报#254]五分钟搭建自己的博客】发布有感</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【[洛谷日报#254]五分钟搭建自己的博客】发布有感" href="https://blog.ak-ioi.cf/post/luogu-ri-bao-254-passed/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="nazo开始大厅" href="https://blog.ak-ioi.cf/post/nazo-begin/">nazo开始大厅</a>
-        <a class="nav-mobile-next" title="nazo开始大厅" href="https://blog.ak-ioi.cf/post/nazo-begin/">下一篇</a>
+        <a class="nav-pc-next" title="题解 SP8001@洛谷 | FIBOSUM@SPOJ 【FIBOSUM - Fibonacci Sum】" href="https://blog.ak-ioi.cf/post/solution-luogu-sp8001-spoj-fibosum/">题解 SP8001@洛谷 | FIBOSUM@SPOJ 【FIBOSUM - Fibonacci Sum】</a>
+        <a class="nav-mobile-next" title="题解 SP8001@洛谷 | FIBOSUM@SPOJ 【FIBOSUM - Fibonacci Sum】" href="https://blog.ak-ioi.cf/post/solution-luogu-sp8001-spoj-fibosum/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
