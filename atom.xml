@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-08-28T02:01:11.285Z</updated>
+    <updated>2020-09-01T10:48:08.917Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,70 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P2652@洛谷 【同花顺】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-p2652/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p2652/">
+        </link>
+        <updated>2020-09-01T10:46:51.000Z</updated>
+        <content type="html"><![CDATA[<p>本题是一个有趣（？）的思维题，题意：要替换尽量少的牌，使得整套牌成为一个同花顺。</p>
+<hr>
+<p>思路：容易想到，我们保留现有的最长的一条同花顺，将剩余的牌替换掉即可。</p>
+<p>具体做法：</p>
+<ul>
+<li>读入数据先按照花色、数字进行排序和去重。</li>
+<li>枚举每一个点作为同花顺的右端点。</li>
+<li>找到左侧可以连成同花顺的第一张牌，计算同花顺长度，更新最长的长度。</li>
+<li>计算剩余的牌的数量，输出即可。</li>
+</ul>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 1e5+5;
+
+int n, diff, ans;
+struct Node {
+	int col, val;
+	bool operator &lt; (const Node &amp;a) const {
+		if(this-&gt;col != a.col) return this-&gt;col &lt; a.col;
+		return this-&gt;val &lt; a.val;
+	}
+	bool operator == (const Node &amp;a) const {return (this-&gt;col == a.col) &amp;&amp; (this-&gt;val == a.val);}
+	bool operator != (const Node &amp;a) const {return !(*this == a);}
+	Node() {}
+	Node(int a, int b) : col(a), val(b) {}
+	~Node() {}
+}a[N], b[N];
+int col[N], val[N];
+
+void discretization() {
+	sort(a+1, a+1+n);
+	b[++diff] = a[1];
+	for(int i=2;i&lt;=n;i++) {
+		if(a[i] != a[i-1]) b[++diff] = a[i];
+	}
+	for(int i=1;i&lt;=diff;i++) {
+		col[i] = b[i].col;
+		val[i] = b[i].val;
+	}
+}
+
+int main() {
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;, &amp;a[i].col, &amp;a[i].val);
+	discretization();
+	for(int i=2;i&lt;=diff;i++) {
+		int uPos = lower_bound(val+(lower_bound(col+1, col+1+i, col[i])-col), val+i, val[i]-n+1) - val;
+		ans = max(ans, i-uPos+1);
+	}
+	printf(&quot;%d\n&quot;, n-ans);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ABC174 (2020.8.2) 全场题解]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-abc174/</id>
@@ -769,201 +833,6 @@ int main() {
 	return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[js 插件开发——从卡服到跑路（持续更新）]]></title>
-        <id>https://blog.ak-ioi.cf/post/js-script/</id>
-        <link href="https://blog.ak-ioi.cf/post/js-script/">
-        </link>
-        <updated>2020-08-06T02:45:53.000Z</updated>
-        <summary type="html"><![CDATA[<p>标题纯属搞笑（不过我真的差一点把服务器卡了）。本文将简单介绍 js 插件开发的基础语法和模板。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>标题纯属搞笑（不过我真的差一点把服务器卡了）。本文将简单介绍 js 插件开发的基础语法和模板。</p>
-<!-- more -->
-<h1 id="js-基本语法">js 基本语法</h1>
-<h2 id="变量定义">变量定义</h2>
-<pre><code class="language-js">var a = 1; // 整数
-var b = 0.33; // 浮点数
-var c = &quot;string&quot;; // 字符串
-var d = new RegExp(&quot;[0-9]&quot;); // 正则表达式
-var e = /[0-9]/; // 正则表达式
-var f = /\d/; // 正则表达式
-var g = {&quot;name&quot;:&quot;Tom&quot;,&quot;id&quot;:&quot;1&quot;}; // json
-var h = function() {alert(&quot;This is a function&quot;);}; // 函数，使用 h() 调用
-</code></pre>
-<p>从上面的例子可以看出，js 中的变量使用 var 声明，有很多用途。</p>
-<h2 id="变量运算">变量运算</h2>
-<p>下面的例子可以看出各类型变量的加法：</p>
-<pre><code class="language-js">var a = 1;
-var b = 0.33;
-var c = &quot;QAQ&quot;;
-var d = &quot;1&quot;;
-a+b; // 1.33
-a+c; // &quot;1QAQ&quot;
-a+d; // &quot;11&quot;
-b+c; // &quot;0.33QAQ&quot;
-b+d; // &quot;0.331&quot;
-c+d; // &quot;QAQ1&quot;
-</code></pre>
-<p>可以看出如果有字符串，则会将另一个变量转化为字符串；否则为整数/实数运算。</p>
-<p>下面是整数运算的例子：</p>
-<pre><code class="language-js">var a = 1;
-var b = 2;
-a+b; // 3
-a-b; // -1
-a*b; // 2
-a/b; /* 0.5 */
-a%b; // 1
-</code></pre>
-<p>可以看到，与其他一些语言不同，这里的除号为实数除法，并非整除。要想取整，可以参考如下代码：</p>
-<pre><code class="language-js">var a = 5;
-var b = 2;
-/* 向下取整 */
-var x = parseInt(a/b);
-var y = Math.floor(a/b);
-/* 向上取整 */
-var z = Math.ceil(a/b);
-/* 四舍五入 */
-var w = Math.round(a/b);
-</code></pre>
-<h2 id="条件分支">条件分支</h2>
-<p>js 的条件分支使用 if / else if / else，下面是一个例子：</p>
-<pre><code class="language-js">var a = 2;
-if(a &lt; 0) {
-    console.log(&quot;Case 1. &quot;);
-}
-else if(a &lt; 1) {
-    console.log(&quot;Case 2.&quot;);
-}
-else {
-    console.log(&quot;Case 3&quot;);
-}
-</code></pre>
-<h2 id="for-循环">for 循环</h2>
-<p>js 的 for 循环有三个参数：</p>
-<pre><code class="language-js">for(/*语句1*/;/*语句2*/;/*语句3*/)
-</code></pre>
-<p>语句 1 在开始前执行，语句 2 是运行循环代码块的条件，语句 3 在循环代码块运行后执行。</p>
-<p>例子：</p>
-<pre><code class="language-js">for(var i=0;i&lt;5;i++) {
-    console.log(&quot;The number is &quot;+i);
-}
-</code></pre>
-<p>结果：</p>
-<pre><code class="language-plain">The number is 0
-The number is 1
-The number is 2
-The number is 3
-The number is 4
-</code></pre>
-<h2 id="for-in-循环">for-in 循环</h2>
-<pre><code class="language-js">var a = {&quot;fname&quot;:&quot;Bill&quot;,&quot;lname&quot;:&quot;Gates&quot;};
-var txt = &quot;&quot;;
-for(var x in a) {
-    txt = txt + a[x];
-}
-console.log(txt);
-</code></pre>
-<p>使用 for-in 循环来遍历 a 中的元素，结果：</p>
-<pre><code class="language-plain">BillGates
-</code></pre>
-<h2 id="while-循环">while 循环</h2>
-<pre><code class="language-js">while(/*条件*/) {
-    /*执行的代码*/
-}
-</code></pre>
-<p>例如：</p>
-<pre><code class="language-js">var a = 5;
-while(a &gt; 0) {
-    console.log(a);
-    a --;
-}
-</code></pre>
-<h2 id="continue-break">continue-break</h2>
-<p>break 语句将直接跳出循环，continue 将会结束这次循环，运行下一次循环。</p>
-<h2 id="函数定义">函数定义</h2>
-<pre><code class="language-js">function f() {
-    console.log(&quot;calling function f()&quot;);
-}
-var g = function(x, y) {
-    while(x&gt;0) {
-        console.log(y);
-    }
-}
-f();
-g();
-</code></pre>
-<h2 id="自调用函数">自调用函数</h2>
-<pre><code class="language-js">(function() {
-    console.log(&quot;我可以调用自己&quot;);
-})();
-</code></pre>
-<h1 id="常用输出">常用输出</h1>
-<pre><code class="language-js">console.log(&quot;向控制台输出一行文字&quot;);
-console.warn(&quot;向控制台输出一行警告&quot;);
-console.error(&quot;想控制台输出一条错误&quot;);
-alert(&quot;弹出窗口&quot;);
-</code></pre>
-<h1 id="写入-html-div">写入 html <div></h1>
-<p>我们可以使用 document.getElementById() 来获取指定 id 的元素，不限于 div。</p>
-<p>由于不方便展示效果，我们推荐一个<a href="http://www.jsons.cn/htmldebug/">网站</a>，将下面代码 copy 进去即可预览效果。</p>
-<pre><code class="language-html">&lt;script&gt;
-    function f() {
-        document.getElementById(&quot;output&quot;).innerHTML = &quot;&lt;p&gt;替换文字&lt;/p&gt;&quot;;
-    }
-&lt;/script&gt;
-&lt;div id=&quot;output&quot;&gt;&lt;/div&gt;
-&lt;button onclick=&quot;f()&quot;&gt;替换&lt;/button&gt;
-</code></pre>
-<h1 id="从输入框获取输入内容">从输入框获取输入内容</h1>
-<p>同样的，我们按照 id 获取。</p>
-<pre><code class="language-html">&lt;script&gt;
-    function submit() {
-        document.getElementById(&quot;watch&quot;).innerHTML = &quot;&lt;p&gt;你的名字是：&quot;+document.getElementById(&quot;name&quot;).value+&quot;&lt;/p&gt;&quot;;
-    }
-&lt;/script&gt;
-&lt;input id=&quot;name&quot; placeholder=&quot;你的名字&quot;&gt;&lt;/input&gt;
-&lt;button onclick=&quot;submit()&quot;&gt;提交&lt;/button&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;div id=&quot;watch&quot;&gt;&lt;/div&gt;
-</code></pre>
-<h1 id="浏览器本地存储变量">浏览器本地存储变量</h1>
-<p>浏览器本地存储变量，刷新或关闭浏览器均可。</p>
-<p>这里，我们使用 localStorage。需要注意的是，localStorage 默认以字符串形式存储，访问时注意强制类型转换。</p>
-<p><strong>注意：大多数浏览器均支持，但仍有少输浏览器不支持，可以采取其他方法。</strong></p>
-<pre><code class="language-html">&lt;script&gt;
-    function submit() {
-        localStorage.yourName = document.getElementById(&quot;name&quot;).value;
-    }
-    function watchSubmit() {
-        document.getElementById(&quot;watch&quot;).innerHTML = &quot;&lt;p&gt;浏览器存储的名字是：&quot;+localStorage.yourName+&quot;&lt;/p&gt;&quot;;
-    }
-&lt;/script&gt;
-&lt;input id=&quot;name&quot; placeholder=&quot;你的名字&quot;&gt;&lt;/input&gt;
-&lt;button onclick=&quot;submit()&quot;&gt;提交&lt;/button&gt;
-&lt;button onclick=&quot;watchSubmit()&quot;&gt;显示预览&lt;/button&gt;
-&lt;p&gt;预览：（可以刷新网页或退出浏览器试试）&lt;/p&gt;
-&lt;div id=&quot;watch&quot;&gt;&lt;/div&gt;
-</code></pre>
-<h1 id="设置延时处理">设置延时处理</h1>
-<pre><code class="language-js">var a = setTimeout(function() {
-    alert(&quot;时间到&quot;);
-}, 5000);
-</code></pre>
-<p>意思是延时 5000 毫秒（5 秒）执行该函数。想要清除延时的进程，可以用</p>
-<pre><code class="language-js">clearTimeout(a);
-</code></pre>
-<h1 id="设置每隔一段时间重复处理">设置每隔一段时间重复处理</h1>
-<pre><code class="language-js">var a = setInterval(function() {
-    console.log(&quot;时间到&quot;);
-}, 5000);
-</code></pre>
-<p>每隔 5 秒处理一遍该函数。想要结束，可以用</p>
-<pre><code class="language-js">clearInterval(a);
-</code></pre>
-<hr>
-<h1 id="暂无更多更新">暂无更多更新</h1>
 ]]></content>
     </entry>
 </feed>

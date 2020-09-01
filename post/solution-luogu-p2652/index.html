@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】  | rui_er 的博客</title>
+<title>题解 P2652@洛谷 【同花顺】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1598957271734">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 " />
-  <meta name="keywords" content="Codeforces,算法,题解,OI,洛谷" />
+  <meta name="description" content="题解 P2652@洛谷 【同花顺】" />
+  <meta name="keywords" content="思维题,贪心,题解,OI,洛谷" />
 </head>
 
 <body>
@@ -200,8 +200,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -274,192 +273,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E5%A4%B4%E6%96%87%E4%BB%B6">头文件</a></li>
-<li><a href="#%E4%B8%BB%E7%A8%8B%E5%BA%8F">主程序</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -547,8 +360,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-cf677a-codeforces-677a/">
-      题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-p2652/">
+      题解 P2652@洛谷 【同花顺】
     </a>
   </h1>
   <div class="post-meta">
@@ -556,7 +369,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-04-02</span>
+      <span>2020-09-01</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -565,14 +378,14 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/">
-        <span>Codeforces</span>
+      <a href="https://blog.ak-ioi.cf/tag/kp3p4KSAg/">
+        <span>思维题</span>
       </a>、
       
       
       
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
+      <a href="https://blog.ak-ioi.cf/tag/XmOlmGG78/">
+        <span>贪心</span>
       </a>、
       
       
@@ -599,17 +412,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>2分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>175<span class="pc-show">字数</span></span>
+      <span>372<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/solution-luogu-cf677a-codeforces-677a/" data-flag-title="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 " class="meta-item pc-show leancloud_visitors">
+    <span id="/post/solution-luogu-p2652/" data-flag-title="题解 P2652@洛谷 【同花顺】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -618,43 +431,59 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>首先，没看题的回去看题！</p>
-<p>这是一道模拟题</p>
-<h1 id="头文件">头文件</h1>
-<p>只需要iostream</p>
-<blockquote>
-<p>哦，对了，这里是C++党领地</p>
-</blockquote>
-<h1 id="主程序">主程序</h1>
-<p>观察一下，答案每次要么加1，要么加2，所以只需要先加上1，然后如果输入的数（a）大于k，则再加1即可。</p>
-<pre><code class="language-cpp">if(a &gt; k) c++;
-c++;
-</code></pre>
-<p>因为有n次循环，所以把上面的放入循环中：</p>
-<pre><code class="language-cpp">while(n--)
-{
-	cin&gt;&gt;a;
-    if(a &gt; k) c++;
-    c++'
-}
-</code></pre>
-<p>在前面加上输入和输出，得到程序：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
+              <p>本题是一个有趣（？）的思维题，题意：要替换尽量少的牌，使得整套牌成为一个同花顺。</p>
+<hr>
+<p>思路：容易想到，我们保留现有的最长的一条同花顺，将剩余的牌替换掉即可。</p>
+<p>具体做法：</p>
+<ul>
+<li>读入数据先按照花色、数字进行排序和去重。</li>
+<li>枚举每一个点作为同花顺的右端点。</li>
+<li>找到左侧可以连成同花顺的第一张牌，计算同花顺长度，更新最长的长度。</li>
+<li>计算剩余的牌的数量，输出即可。</li>
+</ul>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
+const int N = 1e5+5;
 
-int main()
-{
-	int n, k;
-	cin&gt;&gt;n&gt;&gt;k;
-	int a;
-	int c = 0;
-	while(n--)
-	{
-		cin&gt;&gt;a;
-		if(a &gt; k) c++;
-		c++;
+int n, diff, ans;
+struct Node {
+	int col, val;
+	bool operator &lt; (const Node &amp;a) const {
+		if(this-&gt;col != a.col) return this-&gt;col &lt; a.col;
+		return this-&gt;val &lt; a.val;
 	}
-	cout&lt;&lt;c&lt;&lt;endl;
+	bool operator == (const Node &amp;a) const {return (this-&gt;col == a.col) &amp;&amp; (this-&gt;val == a.val);}
+	bool operator != (const Node &amp;a) const {return !(*this == a);}
+	Node() {}
+	Node(int a, int b) : col(a), val(b) {}
+	~Node() {}
+}a[N], b[N];
+int col[N], val[N];
+
+void discretization() {
+	sort(a+1, a+1+n);
+	b[++diff] = a[1];
+	for(int i=2;i&lt;=n;i++) {
+		if(a[i] != a[i-1]) b[++diff] = a[i];
+	}
+	for(int i=1;i&lt;=diff;i++) {
+		col[i] = b[i].col;
+		val[i] = b[i].val;
+	}
+}
+
+int main() {
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;, &amp;a[i].col, &amp;a[i].val);
+	discretization();
+	for(int i=2;i&lt;=diff;i++) {
+		int uPos = lower_bound(val+(lower_bound(col+1, col+1+i, col[i])-col), val+i, val[i]-n+1) - val;
+		ans = max(ans, i-uPos+1);
+	}
+	printf(&quot;%d\n&quot;, n-ans);
 	return 0;
 }
 </code></pre>
@@ -668,7 +497,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-cf677a-codeforces-677a/" title="题解 CF677A@洛谷 | 677A@Codeforces 【Vanya and Fence】 ">https://blog.ak-ioi.cf/post/solution-luogu-cf677a-codeforces-677a/</a>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-p2652/" title="题解 P2652@洛谷 【同花顺】">https://blog.ak-ioi.cf/post/solution-luogu-p2652/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -677,9 +506,9 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/"># Codeforces</a>
+      <a href="https://blog.ak-ioi.cf/tag/kp3p4KSAg/"># 思维题</a>
     
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
+      <a href="https://blog.ak-ioi.cf/tag/XmOlmGG78/"># 贪心</a>
     
       <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
     
@@ -691,15 +520,11 @@ int main()
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 P1044@洛谷 【栈】 " href="https://blog.ak-ioi.cf/post/solution-luogu-p1044/">题解 P1044@洛谷 【栈】 </a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 P1044@洛谷 【栈】 " href="https://blog.ak-ioi.cf/post/solution-luogu-p1044/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf791a-codeforces-791a/">题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 </a>
-        <a class="nav-mobile-next" title="题解 CF791A@洛谷 | 791A@Codeforces 【Bear and Big Brother】 " href="https://blog.ak-ioi.cf/post/solution-luogu-cf791a-codeforces-791a/">下一篇</a>
+        <a class="nav-pc-next" title="ABC174 (2020.8.2) 全场题解" href="https://blog.ak-ioi.cf/post/solution-abc174/">ABC174 (2020.8.2) 全场题解</a>
+        <a class="nav-mobile-next" title="ABC174 (2020.8.2) 全场题解" href="https://blog.ak-ioi.cf/post/solution-abc174/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
