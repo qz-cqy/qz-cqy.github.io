@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 P1305@洛谷 【新二叉树】  | rui_er 的博客</title>
+<title>题解 CF414B@洛谷 | 414B@Codeforces 【Mashmokh and ACM】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1599043889245">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="题解 P1305@洛谷 【新二叉树】 " />
-  <meta name="keywords" content="树,图论,算法,题解,OI,洛谷" />
+  <meta name="description" content="题解 CF414B@洛谷 | 414B@Codeforces 【Mashmokh and ACM】" />
+  <meta name="keywords" content="Codeforces,题解,动态规划/DP,OI,洛谷" />
 </head>
 
 <body>
@@ -200,8 +200,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -274,195 +273,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E6%96%B9%E6%B3%95%E7%AE%80%E8%BF%B0">方法简述</a></li>
-<li><a href="#%E5%A4%B4%E6%96%87%E4%BB%B6">头文件</a></li>
-<li><a href="#%E5%BB%BA%E6%A0%91">建树</a></li>
-<li><a href="#%E9%81%8D%E5%8E%86">遍历</a></li>
-<li><a href="#%E7%A8%8B%E5%BA%8F">程序</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -550,8 +360,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-p1305/">
-      题解 P1305@洛谷 【新二叉树】 
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-cf414b-codeforces-414b/">
+      题解 CF414B@洛谷 | 414B@Codeforces 【Mashmokh and ACM】
     </a>
   </h1>
   <div class="post-meta">
@@ -559,7 +369,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-05-23</span>
+      <span>2020-09-02</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -568,26 +378,20 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/Ku4f4mt2C/">
-        <span>树</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/P33QCO5aCZ/">
-        <span>图论</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
+      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/">
+        <span>Codeforces</span>
       </a>、
       
       
       
       <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
         <span>题解</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/p4MY2Ni7Jp/">
+        <span>动态规划/DP</span>
       </a>、
       
       
@@ -608,17 +412,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>3分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>397<span class="pc-show">字数</span></span>
+      <span>433<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/solution-luogu-p1305/" data-flag-title="题解 P1305@洛谷 【新二叉树】 " class="meta-item pc-show leancloud_visitors">
+    <span id="/post/solution-luogu-cf414b-codeforces-414b/" data-flag-title="题解 CF414B@洛谷 | 414B@Codeforces 【Mashmokh and ACM】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -627,93 +431,38 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <h1 id="方法简述">方法简述</h1>
-<p>虽然不用建树，我还是建了一个，用的是顺序存储结构（数组）</p>
-<pre><code class="language-cpp">char tree[501];
-</code></pre>
-<h1 id="头文件">头文件</h1>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;memory.h&gt;
-#include &lt;map&gt;
+              <p>一道小清新动规题。</p>
+<p>题意：求长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的、最大数不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的数列，满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>=</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>×</mo><mi>m</mi><mi>u</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">a_i=a_{i-1}\times mul</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.791661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2\le i\le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.79549em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>u</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">mul</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 为正整数）。</p>
+<hr>
+<p>思路：</p>
+<p>容易想到设计状态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 时最大数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 的方案总数。</p>
+<p>转移方程也比较好想，根据数列要求，枚举所有可能的倍数，加上对应方案的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 值即可。即：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><munder><mo>∑</mo><mrow><mi>k</mi><mtext> 是 </mtext><mi>j</mi><mtext> 的因数</mtext></mrow></munder><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi></mrow></msub></mstyle></mrow><annotation encoding="application/x-tex">dp_{i,j}=\displaystyle\sum_{k\ \text{是}\ j\ \text{的因数}}dp_{i-1,k}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.488226em;vertical-align:-1.438221em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8478869999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord text mtight"><span class="mord cjk_fallback mtight">是</span></span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mspace mtight"><span class="mtight"> </span></span><span class="mord text mtight"><span class="mord cjk_fallback mtight">的因数</span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.438221em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>。由于因数不好统计，我们根据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i,k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 来反推即可。</p>
+<p>但是还没有结束，虽然我们可以通过此题，但是作为一个优（du）秀（liu）的 OIer，你不觉得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 数组这么大很多余吗？我们对于每一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，只用到了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">i-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 值，显然可以压缩空间啊！</p>
+<p>考虑将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">dp_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 定义为最大数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 的方案总数，原本的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 是没有必要存的。转移方程也没有特别大的变化。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
-</code></pre>
-<p>其中memory.h是为memset做准备的</p>
-<h1 id="建树">建树</h1>
-<pre><code class="language-cpp">char tree[501];
-map&lt;char, int&gt; k;
+typedef long long ll;
+const ll N = 2005, mod = 1e9+7;
 
-memset(tree, '*', 501);
-int n;
-cin&gt;&gt;n;
-char a, b, c;
-for(int i=0;i&lt;n;i++)
-{
-    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-    if(!i)
-    {
-        tree[1] = a;
-        k[a] = 1;
-    }
-    k[b] = k[a] * 2;
-    tree[k[b]] = b;
-    k[c] = k[a] * 2 + 1;
-    tree[k[c]] = c;
-}
-</code></pre>
-<p>memset行用于给tree赋值。</p>
-<blockquote>
-<p>听说第一行就是有关根节点的一行</p>
-</blockquote>
-<p>if行用于判断是否为第一行，将根节点写入。k用于存字符出现的下标地址，方便查询一个节点的位置。</p>
-<h1 id="遍历">遍历</h1>
-<pre><code class="language-cpp">void DLR(int n)
-{
-    if(tree[n] == '*') return;
-    cout&lt;&lt;tree[n];
-    DLR(n*2);
-    DLR(n*2+1);
-}
-</code></pre>
-<p>还记得前文的memset吗？输入的空结点用<code>*</code>表示，所以方便起见把树初始化成<code>*</code>。如果遇到<code>*</code>，则代表该结点不存在，自然就可以退出那个结点了。</p>
-<p>根据前序遍历的定义，写出递归函数即可。</p>
-<h1 id="程序">程序</h1>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;memory.h&gt;
-#include &lt;map&gt;
-using namespace std;
+ll n, k;
+ll dp[N], tmp[N], ans;
 
-char tree[501];
-map&lt;char, int&gt; k;
-
-void DLR(int n)
-{
-    if(tree[n] == '*') return;
-    cout&lt;&lt;tree[n];
-    DLR(n*2);
-    DLR(n*2+1);
-}
-
-int main()
-{
-    memset(tree, '*', 501);
-    int n;
-    cin&gt;&gt;n;
-    char a, b, c;
-    for(int i=0;i&lt;n;i++)
-    {
-        cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
-        if(!i)
-        {
-            tree[1] = a;
-            k[a] = 1;
-        }
-        k[b] = k[a] * 2;
-        tree[k[b]] = b;
-        k[c] = k[a] * 2 + 1;
-        tree[k[c]] = c;
-    }
-    DLR(1);
-    return 0;
+int main() {
+	scanf(&quot;%lld%lld&quot;, &amp;n, &amp;k);
+	for(ll i=1;i&lt;=n;i++) dp[i] = 1;
+	for(ll cnts=2;cnts&lt;=k;cnts++) {
+		for(ll i=1;i&lt;=n;i++) tmp[i] = 0;
+		for(ll i=1;i&lt;=n;i++) {
+			for(ll j=1,_=i*j;_&lt;=n;j++,_=i*j) tmp[_] = (tmp[_] + dp[i]) % mod;
+		}
+		for(ll i=1;i&lt;=n;i++) dp[i] = tmp[i];
+	}
+	for(ll i=1;i&lt;=n;i++) ans = (ans + dp[i]) % mod;
+	printf(&quot;%lld\n&quot;, ans);
+	return 0;
 }
 </code></pre>
 
@@ -726,7 +475,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-p1305/" title="题解 P1305@洛谷 【新二叉树】 ">https://blog.ak-ioi.cf/post/solution-luogu-p1305/</a>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-cf414b-codeforces-414b/" title="题解 CF414B@洛谷 | 414B@Codeforces 【Mashmokh and ACM】">https://blog.ak-ioi.cf/post/solution-luogu-cf414b-codeforces-414b/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -735,13 +484,11 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/Ku4f4mt2C/"># 树</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/P33QCO5aCZ/"># 图论</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
+      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/"># Codeforces</a>
     
       <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/p4MY2Ni7Jp/"># 动态规划/DP</a>
     
       <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
     
@@ -751,15 +498,11 @@ int main()
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="骗分导论" href="https://blog.ak-ioi.cf/post/How-to-get-score/">骗分导论</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="骗分导论" href="https://blog.ak-ioi.cf/post/How-to-get-score/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at3530-atcoder-3530/">题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 </a>
-        <a class="nav-mobile-next" title="题解 AT3530@洛谷 | 3530@Atcoder 【Write and Erase】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at3530-atcoder-3530/">下一篇</a>
+        <a class="nav-pc-next" title="题解 P2652@洛谷 【同花顺】" href="https://blog.ak-ioi.cf/post/solution-luogu-p2652/">题解 P2652@洛谷 【同花顺】</a>
+        <a class="nav-mobile-next" title="题解 P2652@洛谷 【同花顺】" href="https://blog.ak-ioi.cf/post/solution-luogu-p2652/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
