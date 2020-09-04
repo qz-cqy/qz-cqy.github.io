@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-09-04T09:04:07.310Z</updated>
+    <updated>2020-09-04T15:13:04.375Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF787B@洛谷 | 787B@Codeforces 【Not Afraid】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf787b-codeforces-787b/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf787b-codeforces-787b/">
+        </link>
+        <updated>2020-09-04T15:11:57.000Z</updated>
+        <content type="html"><![CDATA[<p>题意简述：有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2\times n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个人，编号分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>n</mi><mo separator="true">,</mo><mo>−</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">-n,-n+1,\cdots,-1,1,2,\cdots,n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord">−</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>，其中编号为相反数的两个人中有一个叛徒和一个好人。现在有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 个团队，知道团队成员的编号，问是否可能存在一个团队，所有人都是叛徒。</p>
+<hr>
+<p>思路：</p>
+<p>怎么保证一个团队至少有一个好人呢？我们知道编号为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">-i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathdefault">i</span></span></span></span> 的两个人中有一个叛徒、一个好人，因此如果<strong>存在</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>∈</mo><mrow><mo fence="true">[</mo><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">i\in\left[1,n\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span>，满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">-i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathdefault">i</span></span></span></span> 编号的两个人在同一个团队里，那个团队就会有好人。</p>
+<p>反过来，如果对于<strong>所有</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>∈</mo><mrow><mo fence="true">[</mo><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">i\in\left[1,n\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69862em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">-i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord mathdefault">i</span></span></span></span> 不同时在一个团队里，那么那个团队有可能全部都是叛徒——让团队中的那些人全为叛徒，相反数编号不在团队里，全为好人，即可构造。</p>
+<p>因此，本问题转换为：求每一个团队中是否存在一对相反数。我们用一个映射（map）来记录出现过的数，然后统计即可。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int n, m;
+map&lt;int, int&gt; mp;
+
+int main() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	for(int i=1;i&lt;=m;i++) {
+		int _;
+		scanf(&quot;%d&quot;, &amp;_);
+		mp.clear();
+		bool ok = false;
+		while(_--) {
+			int x;
+			scanf(&quot;%d&quot;, &amp;x);
+			if(mp[-x]) ok = true;
+			mp[x] = 1;
+		}
+		if(!ok) return puts(&quot;YES&quot;), 0;
+	}
+	puts(&quot;NO&quot;);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF893A@洛谷 | 893A@Codeforces 【Chess For Three】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-cf893a-codeforces-893a/</id>
@@ -734,80 +776,6 @@ int main() {
 	return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[uTools —— 多功能、简洁、好用的插件集，你值得拥有！]]></title>
-        <id>https://blog.ak-ioi.cf/post/utools/</id>
-        <link href="https://blog.ak-ioi.cf/post/utools/">
-        </link>
-        <updated>2020-08-17T06:23:51.000Z</updated>
-        <summary type="html"><![CDATA[<p>你是否感觉 Windows 自带的应用搜索功能使用繁琐？你是否希望获得各种各样的实用插件并只想简单配置？网络开发时，有不懂的 CSS / js 内容？始终找不到你想用的 linux 指令？</p>
-<p>别担心，uTools 插件集可以满足你！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>你是否感觉 Windows 自带的应用搜索功能使用繁琐？你是否希望获得各种各样的实用插件并只想简单配置？网络开发时，有不懂的 CSS / js 内容？始终找不到你想用的 linux 指令？</p>
-<p>别担心，uTools 插件集可以满足你！</p>
-<!-- more -->
-<p>由于洛谷图床的限制可能导致图片无法加载，建议前往<a href="https://www.luogu.com.cn/blog/ak-ioi/utools">洛谷博客</a>查看。</p>
-<h1 id="安装">安装</h1>
-<p>uTools 目前支持的操作系统有：Windows（Win7 及以上，32 位或 64 位）、macOS（OS X 10.10 Yosemite 及以上）和 Linux（Deepin 15 或 Ubuntu 18 及以上）。笔者写这篇文章时版本号为 1.2.0。</p>
-<p>首先，进入 <a href="http://u.tools">uTools 官网</a>，点击“免费下载”，即可看到三种操作系统的下载选项。下面以 Windows10 物理机和 Ubuntu18.04.3 虚拟机为例：</p>
-<h2 id="windows10-操作系统">Windows10 操作系统</h2>
-<p>点击 Windows 下载后，会下载一个叫做 <code>uTools-1.2.0.exe</code> 的文件，双击安装。</p>
-<p>安装过后，根据提示，按 Alt+Space 打开如下图的一个窗口：<img src="https://cdn.luogu.com.cn/upload/image_hosting/v22lpvmu.png" alt="" loading="lazy"></p>
-<p>即为安装成功。</p>
-<h2 id="ubuntu18043-操作系统">Ubuntu18.04.3 操作系统</h2>
-<p>以同样的方式下载，得到文件 <code>utools_1.2.0_amd64.deb</code>。</p>
-<p>打开命令行（终端），输入 <code>sudo su</code> ，输入密码，进入管理员（超级用户）权限。使用 cd 命令进入下载到的文件夹中，输入 <code>dpkg -i utools_1.2.0_amd64.deb</code>，在左下方点击 show applications，在列表中可以找到 utools，点击或按 Alt+Space 发开同样的窗口即为成功。</p>
-<h1 id="快捷应用搜索">快捷应用搜索</h1>
-<p>下面以 Windows 为例演示快捷应用搜索：使用 Windows 自带的搜索功能打开记事本，一般需要 Win+R 或在下方搜索栏输入 <code>notepad</code> 或 <code>jishiben</code> 才可以打开，但是在 Alt+Space 打开 uTools 后，输入 <code>jsb</code> 即可搜索到，其他应用同理。</p>
-<p>uTools 的搜索功能更加方便中国用户的汉字 / 拼音搜索，只需要输入首字母即可显示所有可以与之匹配的应用或插件，可以说方便得多。</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/j9qs9ota.png" alt="" loading="lazy"></figure>
-<h1 id="插件中心">插件中心</h1>
-<p>还是在这个页面，点击右侧的图标即可进入 uTools 的插件中心。若要返回，只需要在上方输入框中按退格键。</p>
-<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p33xmgki.png" alt="" loading="lazy"></figure>
-<p>在这个界面，点击你想下载的插件，即可弹出“插件详情”窗口，在右侧有一个“下载”按钮，如果下载后想要卸载，也是在这个界面。（下图为下载过插件后的样子）</p>
-<figure data-type="image" tabindex="3"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rofjleg3.png" alt="" loading="lazy"></figure>
-<p>当然，插件可不止你看到的这么一点！把界面拉到最下方，点击“查看全部插件”里面有更多的可用插件，这里面也有很多好用的插件，千万不要错过了！</p>
-<figure data-type="image" tabindex="4"><img src="https://cdn.luogu.com.cn/upload/image_hosting/rba7rj2x.png" alt="" loading="lazy"></figure>
-<h1 id="管理插件">管理插件</h1>
-<p>下载了插件，怎么进行配置呢？下面以几个插件为例，讲解配置方法。</p>
-<h2 id="剪切板">剪切板</h2>
-<p>在插件详情界面点击“功能关键字”，点击下方的一个标签，即可查看这个标签下的所有下载过的插件。</p>
-<figure data-type="image" tabindex="5"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p2h8cu48.png" alt="" loading="lazy"></figure>
-<p>这个插件的功能是保存下载插件后的剪切板内容历史记录。下图是截止目前为了写这篇文章笔者保存的剪切板的一部分。</p>
-<figure data-type="image" tabindex="6"><img src="https://cdn.luogu.com.cn/upload/image_hosting/uhm06pqe.png" alt="" loading="lazy"></figure>
-<p>想要返回前几步，在输入栏按退格键即可。</p>
-<h2 id="内网穿透">内网穿透</h2>
-<p>这里我没有在内网设置网站，且用于演示的外网地址已经关闭。</p>
-<p>同样的方法进入内网穿透的管理面板，如下配置：</p>
-<figure data-type="image" tabindex="7"><img src="https://cdn.luogu.com.cn/upload/image_hosting/hoa177qh.png" alt="" loading="lazy"></figure>
-<p>点击连接按钮，看到如下提示即为成功，否则请按照提示更改配置：</p>
-<figure data-type="image" tabindex="8"><img src="https://cdn.luogu.com.cn/upload/image_hosting/jqb2zi3z.png" alt="" loading="lazy"></figure>
-<p>这里可以选择 TCP / 本地目录 / HTTP 三种隧道类型，uTools 的限制为最多开通三条隧道，且不支持绑定自定义域名。</p>
-<h2 id="linux-命令文档">Linux 命令文档</h2>
-<p>进入 Linux 命令文档，可以看到如下界面：</p>
-<figure data-type="image" tabindex="9"><img src="https://cdn.luogu.com.cn/upload/image_hosting/gyqo6zpe.png" alt="" loading="lazy"></figure>
-<p>左侧的目录按照字典序排列，从 ab 到 cat，剩余命令要通过搜索功能找到，搜索方法与上方应用搜索相同。</p>
-<figure data-type="image" tabindex="10"><img src="https://cdn.luogu.com.cn/upload/image_hosting/5uledbio.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="11"><img src="https://cdn.luogu.com.cn/upload/image_hosting/nj1gmais.png" alt="" loading="lazy"></figure>
-<p>当然，我们也可以通过关键字进行搜索：</p>
-<figure data-type="image" tabindex="12"><img src="https://cdn.luogu.com.cn/upload/image_hosting/t1hefq0l.png" alt="" loading="lazy"></figure>
-<p>每一栏中都有详细的用法解释。</p>
-<h2 id="计算稿纸">计算稿纸</h2>
-<p>计算稿纸是一个数学的草稿纸插件，我们可以写数学公式，自动计算出结果。</p>
-<p>例如下面这个式子：<code>19260817-114514-1919810+998244353</code></p>
-<figure data-type="image" tabindex="13"><img src="https://cdn.luogu.com.cn/upload/image_hosting/p5at9hvk.png" alt="" loading="lazy"></figure>
-<p>这个工具的功能可不止这些！里面还有一些函数也可以使用：<code>sqrt(100)+2^12-log(e^5)+pi</code></p>
-<figure data-type="image" tabindex="14"><img src="https://cdn.luogu.com.cn/upload/image_hosting/wsjvc2st.png" alt="" loading="lazy"></figure>
-<p>但他也有一些缺点，例如不能设未知数、函数等。</p>
-<h1 id="开发插件">开发插件</h1>
-<p>在 uTools 的官方 wiki 中，有关于开发插件的详细介绍 <a href="http://u.tools/docs/developer/welcome.html#plugin-json">地址</a>。</p>
-<p>本人并没有尝试过，因为对于平常使用来说，这个功能基本是不需要的，因此在这里也不做另外说明了，感兴趣的话可以去 wiki 查看官方的解释。</p>
-<h1 id="结语-faq">结语 &amp; FAQ</h1>
-<p>以上就是 uTools 的基本功能了，是否感觉非常实用呢？可以下载一个使用哦~</p>
-<p>码字不易，如果您觉得这篇文章介绍的内容对您有帮助，就给个赞吧 QwQ~</p>
-<p>如果对本文介绍到的功能有问题，欢迎在评论区或私信留言！不保证所有问题均可以在我这里得到解答，可以尝试阅读<a href="http://u.tools/docs/guide/about-uTools.html#utools%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">官方文档</a>，或在<a href="https://yuanliao.info/">官方论坛</a>提出你的问题，等待官方或其他人的解决。</p>
 ]]></content>
     </entry>
 </feed>
