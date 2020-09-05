@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>浅谈 C++ 不定参数 | rui_er 的博客</title>
+<title>题解 CF1114D@洛谷 | 1114D@Codeforces 【Flood Fill】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1599319932614">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="浅谈 C++ 不定参数" />
-  <meta name="keywords" content="" />
+  <meta name="description" content="题解 CF1114D@洛谷 | 1114D@Codeforces 【Flood Fill】" />
+  <meta name="keywords" content="Codeforces,题解,动态规划/DP,OI,洛谷" />
 </head>
 
 <body>
@@ -360,8 +360,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/c-han-shu-bu-ding-can-shu-xiang-jie/">
-      浅谈 C++ 不定参数
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-cf1114d-codeforces-1114d/">
+      题解 CF1114D@洛谷 | 1114D@Codeforces 【Flood Fill】
     </a>
   </h1>
   <div class="post-meta">
@@ -369,23 +369,60 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-07-27</span>
+      <span>2020-09-05</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show">分类于</span>
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/">
+        <span>Codeforces</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
+        <span>题解</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/p4MY2Ni7Jp/">
+        <span>动态规划/DP</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
+        <span>OI</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
+        <span>洛谷</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3分钟</span>
+      <span>4分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>640<span class="pc-show">字数</span></span>
+      <span>831<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/c-han-shu-bu-ding-can-shu-xiang-jie/" data-flag-title="浅谈 C++ 不定参数" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/solution-luogu-cf1114d-codeforces-1114d/" data-flag-title="题解 CF1114D@洛谷 | 1114D@Codeforces 【Flood Fill】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -394,91 +431,59 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>你是否遇到过一个函数要传的参数不确定的问题？你是否想要写一个方便的函数可以处理任意多个数的最小值（最大值、加和），而不是套很多层的 min（max、+）？C++ 函数不定参数可以实现这些。</p>
-<!-- more -->
-<p>先来说说多个数最小值的函数。</p>
-<p>我们首先声明一个函数：</p>
-<pre><code class="language-cpp">int Min(int tot, ...);
-</code></pre>
-<p>这里 tot 表示要求最小值的数的个数，后面的 ... 是数的列表。</p>
-<p>我们需要调用后面的列表，在函数中定义 va_list，长度为 tot：</p>
-<pre><code class="language-cpp">int Min(int tot, ...) {
-    va_list a;
-    va_start(a, tot);
-    // Do something..
-}
-</code></pre>
-<p>然后开始写比较，每次从列表中取一个 int 元素，与当前最小值比较（这里最小值设置为 0x3f3f3f3f），取元素时使用 va_arg()，最后结束列表即可。</p>
-<pre><code class="language-cpp">int Min(int tot, ...) {
-	va_list a;
-	va_start(a, tot);
-	int res = 0x3f3f3f3f;
-	for(int i=1;i&lt;=tot;i++) {
-		res = min(res, va_arg(a, int));
-	}
-	va_end(a);
-	return res;
-}
-</code></pre>
-<p>我们试着调用 Min(4, -1, 3, 2, 0)，发现返回值为 -1，即 -1, 3, 2, 0 这四个数中的最小值。</p>
+              <p>又是一道小清新 dp 题。</p>
+<p>题意简述：有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个位置，初始颜色已知。每一次可以将与一个格子相邻的所有颜色相同的格子的颜色更改为任意数。要在尽可能少的步数内将所有格子染成同一个颜色，求这个步数。</p>
 <hr>
-<p>以上是 C++98 支持的最基本的不定参数用法，下面讲解一个 C++11 新增的技巧——可变参数模板。</p>
-<p>C++11 允许我们这样定义一个可变参数类模板：</p>
-<pre><code class="language-cpp">template&lt;typename ... Types&gt;
-class QAQ {
-    // Do something..
-};
-</code></pre>
-<p>这样我们就可以用任意数量的变量类型来初始化 QAQ：</p>
-<pre><code class="language-cpp">QAQ&lt;&gt; c1;
-QAQ&lt;int&gt; c2;
-QAQ&lt;int, char&gt; c3;
-</code></pre>
-<p>如果想要避免出现使用 0 个模板参数来初始化的情况，我们可以这么写：</p>
-<pre><code class="language-cpp">template&lt;typename T, typename ... Types&gt;
-class QAQ2 {
-    // Do something..
-};
-</code></pre>
-<p>可变参数函数模板如下（这里是一个输出不同类型的变量的函数）：</p>
-<pre><code class="language-cpp">void print() { // 这个函数啥都不用做，只是为了防止递归到最后一层后出现的函数未定义的现象，可以自行探索
-    ;
-}
-template&lt;typename T, typename ... Types&gt;
-void print(T arg, Types ... args) {
-    cout&lt;&lt;arg&lt;&lt;endl;
-    print(args ...);
-}
-</code></pre>
-<p>这样我们就可以输出一串任意长度、任意类型的列表了：</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+<p>思路：</p>
+<p>我最开始的思路和原题官方题解的解法 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 比较相似。</p>
+<p>首先设计状态，像这种区间进行染色的问题容易想到设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>∼</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i\sim j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 格子全部染成相同颜色所需的步数。但是这里比较特殊，需要添加一个维度，表示染成最左侧的颜色还是最右侧的颜色。</p>
+<p>为什么只考虑左右两种颜色呢？我们的每次合并都在上次的基础上添加了一个数，由于上次的区间是合并好了的，因此除了新添加的数以外，其他的数的颜色均相同。只有这两种颜色，还恰好位于两侧，就只考虑这两种情况即可。</p>
+<p>最终设计好的状态：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>b</mi><mi>i</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{i,j,bit}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>∼</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i\sim j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span> 全部染成同一种颜色（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>i</mi><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">bit=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 表示最左侧的颜色，否则是最右侧的颜色）所需的最少步数。</p>
+<p>根据这个定义，我们得到初始值：对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi mathvariant="normal">≠</mi><mi>j</mi></mrow><annotation encoding="application/x-tex">i\ne j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>=</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>inf</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">dp_{i,j,0}=dp_{i,j,1}=\inf</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mop">in<span style="margin-right:0.07778em;">f</span></span></span></span></span>；否则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>=</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">dp_{i,j,0}=dp_{i,j,1}=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
+<p>状态的转移：我们枚举当前区间的右端点，从右端点向左枚举左端点，得到当前区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo fence="true">]</mo></mrow><annotation encoding="application/x-tex">\left[l,r\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span>，使用当前区间向左或向右更新两侧 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 的值。</p>
+<p>设当前颜色为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">col</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>（根据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">dp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span></span></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>i</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">bit</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span></span></span></span> 值获取左侧或右侧），初始颜色数组为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">a_{1,2,\cdots n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">2</span><span class="mpunct mtight">,</span><span class="minner mtight">⋯</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，则转移方程为：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>min</mi><mo>⁡</mo><mo>(</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>b</mi><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><mo>(</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mi mathvariant="normal">≠</mi><mi>c</mi><mi>o</mi><mi>l</mi><mo>)</mo><mo>)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>=</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi>min</mi><mo>⁡</mo><mo>(</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>b</mi><mi>i</mi><mi>t</mi></mrow></msub><mo>+</mo><mo>(</mo><msub><mi>a</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mi mathvariant="normal">≠</mi><mi>c</mi><mi>o</mi><mi>l</mi><mo>)</mo><mo>)</mo></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+dp_{i-1,j,0}=&amp;\min(dp_{i-1,j,0},dp_{i,j,bit}+(a_{i-1}\ne col))\\
+dp_{i,j+1,1}=&amp;\min(dp_{i,j+1,1},dp_{i,j,bit}+(a_{j+1}\ne col))
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.0000000000000004em;vertical-align:-1.2500000000000002em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mclose">)</span><span class="mclose">)</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">b</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>最终的结果就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>min</mi><mo>⁡</mo><mo>(</mo><mi>d</mi><msub><mi>p</mi><mrow><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo separator="true">,</mo><mn>0</mn></mrow></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>p</mi><mrow><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\min(dp_{1,n,0},dp_{1,n,1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span><span class="mpunct mtight">,</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight">n</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的值。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
+const int N = 5005, inf = 0x3f3f3f3f;
 
-void print() {
-    ;
+int n, a[N];
+int dp[N][N][2];
+
+void initDP() {
+	for(int i=1;i&lt;=n;i++) {
+		for(int j=1;j&lt;=n;j++) {
+			dp[i][j][0] = dp[i][j][1] = (i == j ? 0 : inf);
+		}
+	}
 }
-template&lt;typename T, typename ... Types&gt;
-void print(T arg, Types ... args) {
-    cout&lt;&lt;arg&lt;&lt;endl;
-    print(args ...);
-}
+void updDP(int &amp;a, int b) {a = min(a, b);}
 
 int main() {
-    int a = 0;
-    print(1, 2, 0.18, &quot;QAQ&quot;, a, &amp;a);
-    return 0;
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1;i&lt;=n;i++) scanf(&quot;%d&quot;, &amp;a[i]);
+	initDP(); 
+	for(int j=1;j&lt;=n;j++) {
+		for(int i=j;i&gt;=1;i--) {
+			for(int bit=0;bit&lt;=1;bit++) {
+				int col = bit ? a[j] : a[i];
+				if(i &gt; 1) updDP(dp[i-1][j][0], dp[i][j][bit] + (col != a[i-1]));
+				if(j &lt; n) updDP(dp[i][j+1][1], dp[i][j][bit] + (col != a[j+1]));
+			}
+		}
+	}
+	printf(&quot;%d\n&quot;, min(dp[1][n][0], dp[1][n][1]));
+	return 0;
 }
 </code></pre>
-<p>输出结果：</p>
-<pre><code class="language-plain">1
-2
-0.18
-QAQ
-0
-0x73fe1c
-</code></pre>
-<p>（注：最后一个输出的是变量 a 的地址，可能因人而异）</p>
-<p>以上就是不定参数的基本用法，大家学会了吗？可以自己写写试试哟~</p>
 
             </div>
             <div class="post-footer">
@@ -489,7 +494,7 @@ QAQ
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/c-han-shu-bu-ding-can-shu-xiang-jie/" title="浅谈 C++ 不定参数">https://blog.ak-ioi.cf/post/c-han-shu-bu-ding-can-shu-xiang-jie/</a>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-cf1114d-codeforces-1114d/" title="题解 CF1114D@洛谷 | 1114D@Codeforces 【Flood Fill】">https://blog.ak-ioi.cf/post/solution-luogu-cf1114d-codeforces-1114d/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -498,19 +503,25 @@ QAQ
   </ul>
   <div class="tags">
     
+      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/"># Codeforces</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/p4MY2Ni7Jp/"># 动态规划/DP</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
+    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="C++ 类的继承基础" href="https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/">C++ 类的继承基础</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="C++ 类的继承基础" href="https://blog.ak-ioi.cf/post/c-lei-de-ji-cheng-ji-chu/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="插头dp——从入门到跳楼" href="https://blog.ak-ioi.cf/post/cha-tou-dp-cong-ru-men-dao-tiao-lou/">插头dp——从入门到跳楼</a>
-        <a class="nav-mobile-next" title="插头dp——从入门到跳楼" href="https://blog.ak-ioi.cf/post/cha-tou-dp-cong-ru-men-dao-tiao-lou/">下一篇</a>
+        <a class="nav-pc-next" title="题解 CF787B@洛谷 | 787B@Codeforces 【Not Afraid】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf787b-codeforces-787b/">题解 CF787B@洛谷 | 787B@Codeforces 【Not Afraid】</a>
+        <a class="nav-mobile-next" title="题解 CF787B@洛谷 | 787B@Codeforces 【Not Afraid】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf787b-codeforces-787b/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
