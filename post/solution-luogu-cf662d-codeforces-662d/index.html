@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>rui_er 的博客</title>
+<title>题解 CF662D@洛谷 | 662D@Codeforces 【International Olympiad】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1599403865522">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,6 +29,8 @@
 
 
 
+  <meta name="description" content="题解 CF662D@洛谷 | 662D@Codeforces 【International Olympiad】" />
+  <meta name="keywords" content="思维题,结论题,数学,Codeforces,题解,OI,洛谷" />
 </head>
 
 <body>
@@ -64,7 +66,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -182,8 +184,23 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -256,30 +273,95 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box gemini">
-          <section class="section  posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/calculating-size-of-circle/">
-      积分法求圆面积
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-cf662d-codeforces-662d/">
+      题解 CF662D@洛谷 | 662D@Codeforces 【International Olympiad】
     </a>
   </h1>
   <div class="post-meta">
@@ -287,7 +369,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-02-14</span>
+      <span>2020-09-06</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -296,146 +378,26 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/A6K5EMTnS/">
-        <span>微积分</span>
+      <a href="https://blog.ak-ioi.cf/tag/kp3p4KSAg/">
+        <span>思维题</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/I1IWdTl4D/">
+        <span>结论题</span>
       </a>、
       
       
       
       <a href="https://blog.ak-ioi.cf/tag/7IKLNdSii/">
         <span>数学</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>360<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/calculating-size-of-circle/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/luogu-admin/">
-      洛谷管理员列表（包括题目管理志愿者，截至2020年2月15日）[TOP]
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-14</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/LsGynlhxT/">
-        <span>置顶</span>
       </a>、
       
       
       
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>405<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/luogu-admin/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at4164-atcoder-4164/">
-      题解 AT4164@洛谷 | 4164@Atcoder 【[ABC102A] Multiple of 2 and N】
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-13</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
-        <span>Atcoder</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
+      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/">
+        <span>Codeforces</span>
       </a>、
       
       
@@ -467,598 +429,163 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>198<span class="pc-show">字数</span></span>
+      <span>427<span class="pc-show">字数</span></span>
     </span>
     
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/solution-luogu-at4164-atcoder-4164/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at5632-atcoder-5632/">
-      题解 AT5632@洛谷 |5632@Atcoder 【Sum of Two Integers】
-    </a>
-  </h1>
-  <div class="post-meta">
     
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-13</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
     
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
-        <span>Atcoder</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
-        <span>题解</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
+    <span id="/post/solution-luogu-cf662d-codeforces-662d/" data-flag-title="题解 CF662D@洛谷 | 662D@Codeforces 【International Olympiad】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>198<span class="pc-show">字数</span></span>
+      <i class="fa fa-eye"></i>
+      <span>浏览量：<span class="leancloud-visitors-count"></span></span>
     </span>
     
   </div>
 </header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/solution-luogu-at5632-atcoder-5632/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+            <div class="post-body next-md-body" id="post_body">
+              <p>题意简述：IAO 比赛从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1989</mn></mrow><annotation encoding="application/x-tex">1989</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">9</span><span class="mord">8</span><span class="mord">9</span></span></span></span> 年开始举办，每一年都有一个数字缩写。前面的年份用过的缩写在后面不能再用，每次的缩写的长度尽量短。问一些缩写是哪些年份的缩写。</p>
+<hr>
+<p>思路：</p>
+<p>我的思路与 CF 官方题解的思路差不多，获取完数字后，每次加上最小的满足缩写的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 的整数次幂（根据数字长度计算），直到与缩写匹配成功。</p>
+<p>于是便有了第一份代码的读入和获取长度部分：</p>
+<pre><code class="language-cpp">while(getchar() != '\'');
+scanf(&quot;%d&quot;, &amp;n);
+int _ = n, len = 0;
+while(_) ++len, _ /= 10;
+</code></pre>
+<p>自豪的说：我想到了一个别人都没想到的方法！（滑稽）</p>
+<p>然后就成功的 Wrong Answer On Test 4 了……</p>
+<p>只好重看代码，仔细检查了一下其他地方都没有错误，最大的可能就是输入这里错了。然后增加一处调试，把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>e</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">len</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span></span></span></span> 的值输出出来，发现遇到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 就可能出问题。对照了一下其他题解，最终找到了一个坑点——<strong>考虑前导零</strong>！</p>
+<p>前导零也会影响缩写，但是按照我的方法，会直接将前导零忽略，给出小得多的答案。</p>
+<p>于是尝试将输入部分改为：</p>
+<pre><code class="language-cpp">while(getchar() != '\'');
+scanf(&quot;%s&quot;, s);
+n = atoi(s);
+int _ = 0, len = strlen(s);
+</code></pre>
+<p>自测正确，提交 Accepted。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at5659-atcoder-5659/">
-      题解 AT5659@洛谷 | 5659@Atcoder 【[AGC040A] &gt;&lt;】
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-12</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
-        <span>Atcoder</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
-        <span>题解</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>400<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/solution-luogu-at5659-atcoder-5659/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+int T, n; 
+char s[11];
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/qzcf-qzjr-about-competition/">
-      青竹计算机学会与青竹骐骥出题组对于团队比赛题目审核标准的公告
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-10</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/qjWIR15w1/">
-        <span>声明/公告</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/FwuHJNNKD/">
-        <span>重要</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>554<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/qzcf-qzjr-about-competition/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+int main() {
+	scanf(&quot;%d&quot;, &amp;T);
+	while(T--) {
+		while(getchar() != '\'');
+		scanf(&quot;%s&quot;, s);
+		n = atoi(s);
+		int _ = 0, len = strlen(s);
+		int _10 = 1;
+		for(int i=1;i&lt;len;i++) _ += (_10 *= 10);
+		_10 *= 10;
+		while(n &lt; 1989 + _) n += _10;
+		printf(&quot;%d\n&quot;, n);
+	}
+	return 0;
+}
+</code></pre>
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/big-sample-qzr01-t117887/">
-      T117887 【【QZR-01】G同学与旅行计划】 大样例
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-02-04</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/ucqMKnWEr/">
-        <span>样例</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>169分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>26902<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/big-sample-qzr01-t117887/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/noip-death-and-rebirth/">
-      关于NOIP的暂停和恢复
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-01-21</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/669fTzmrs/">
-        <span>NOIp/CSP</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>79<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/noip-death-and-rebirth/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-p5876/">
-      题解 P5876@洛谷 【化简单词】
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-01-15</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
-        <span>题解</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/">
-        <span>OI</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/">
-        <span>洛谷</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>295<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/solution-luogu-p5876/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/orz-cqy/">
-      【项目】膜拜rui_er
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span>发布于</span>
-      <span>2020-01-09</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/nZNq1VXdp/">
-        <span>项目</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>5<span class="pc-show">字数</span></span>
-    </span>
-    
-  </div>
-</header>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://blog.ak-ioi.cf/post/orz-cqy/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-  
-            
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-      <li class="pagination-dir">
-        <a href="https://blog.ak-ioi.cf/page/6/">
-          <i class="fa fa-angle-left"></i>
-        </a>
-      </li>
-    
-    
-      <!-- 1 2 3 4 ... N -->
-      
-        <li class="pagination-li">
-          <a href="/">1</a>
-        </li>
-        <li class="pagination-li">
-          …
-        </li>
-        <li class="pagination-li">
-          <a href="/page/6">6</a>
-        </li>
-        <li class="pagination-li pagination-active">
-          <a href="/page/7">7</a>
-        </li>
-        <li class="pagination-li">
-          <a href="/page/8">8</a>
-        </li>
-        <li class="pagination-li">
-          …
-        </li>
-        <li class="pagination-li">
-          <a href="/page/10">10</a>
-        </li>
-      
-    
-    
-      <li class="pagination-dir">
-        <a href="/page/8">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </li>
-    
+            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      rui_er
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-cf662d-codeforces-662d/" title="题解 CF662D@洛谷 | 662D@Codeforces 【International Olympiad】">https://blog.ak-ioi.cf/post/solution-luogu-cf662d-codeforces-662d/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
   </ul>
+  <div class="tags">
+    
+      <a href="https://blog.ak-ioi.cf/tag/kp3p4KSAg/"># 思维题</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/I1IWdTl4D/"># 结论题</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/7IKLNdSii/"># 数学</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/laB4cV8PqW/"># Codeforces</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/GpG87CBmBd/"># 洛谷</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="题解 P5309@洛谷 【[Ynoi2011]初始化】" href="https://blog.ak-ioi.cf/post/solution-luogu-p5309/">题解 P5309@洛谷 【[Ynoi2011]初始化】</a>
+        <a class="nav-mobile-next" title="题解 P5309@洛谷 【[Ynoi2011]初始化】" href="https://blog.ak-ioi.cf/post/solution-luogu-p5309/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
 </div>
-          </section>
+            
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('https://upimage.alexhchu.com/2020/04/21/47eda59424daa.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'usK7he7PDS1S1fO8EIoq5H61-gzGzoHsz',
+    appKey: 'r9ggKDV6XiJcu55AKb04aPvi',
+    avatar: 'custom',
+    placeholder: '',
+    pageSize: '10',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -17247,6 +16774,5 @@ print(a[n-1])  #下标从0开始
 
 
 <script src=" /media/js/cool.js"></script>
-
 
 </html>
