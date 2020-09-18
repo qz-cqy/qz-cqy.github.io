@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-09-17T10:41:00.005Z</updated>
+    <updated>2020-09-18T12:56:32.823Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P3987@洛谷 【我永远喜欢珂朵莉~】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-P3987/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-P3987/">
+        </link>
+        <updated>2020-09-18T12:53:42.000Z</updated>
+        <content type="html"><![CDATA[<p>本题是 P5610 的离线版双倍经验，使用该题做法删除在线的异或即可。</p>
+<hr>
+<p>本题的难点主要在于如何快速找到需要修改的数。</p>
+<p>我们可以使用并查集来维护对于每个质数我们需要修改的数的位置等信息，快速求出需要修改的最左侧，然后通过一种类似于指针的结构依次遍历，即可完成修改。</p>
+<p>我们还需要一个数据结构来维护整串序列，并且因为有修改，需要支持单点改和区间查，可以使用常数小还好写的树状数组。</p>
+<p>至此，我们便得出了一种解法。在此基础上再卡亿点点常数即可。</p>
+<hr>
+<p>总结一下：我们维护并查集和树状数组，并查集用来快速求出所有需要修改的点，树状数组进行修改。</p>
+<p>因为我们在程序最开始需要对所有数进行分解质因数，因此我们的复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msqrt><mi>x</mi></msqrt><mo>+</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>×</mo><mi>α</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\sqrt{x}+n\log{n}\times\alpha(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">x</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>。</p>
+<hr>
+<p>主要代码（已删除调试部分）：</p>
+<pre><code class="language-cpp">namespace BIT {
+	ll s[N];
+	void modify(int u, int x) {for(;u&lt;=n;u+=u&amp;(-u)) s[u] += x;}
+	ll query(ll u) {ll res = 0; for(;u;u-=u&amp;(-u)) res += s[u]; return res;}
+}
+namespace DSU {
+	vector&lt;int&gt; fa[N], fa2[N];
+	int find(int u, int v) {return (v == ll(fa2[u].size()) || v == fa2[u][v]) ? v : fa2[u][v] = find(u, fa2[u][v]);}
+}
+using DSU::fa;
+using DSU::fa2;
+
+void init() {
+	n = read(); m = read();
+	for(int i=1;i&lt;=n;i++) {
+		a[i] = read();
+		int _ = sqrt(a[i]);
+		for(int j=1;j&lt;=_;j++) {
+			if(!(a[i] % j)) {
+				fa[j].push_back(i);
+				fa2[j].push_back(fa2[j].size());
+				if(j * j &lt; a[i]) {
+					fa[a[i]/j].push_back(i);
+					fa2[a[i]/j].push_back(fa2[a[i]/j].size());
+				}
+			}
+		}
+		BIT::modify(i, a[i]);
+	}
+}
+void modify(int l, int r, int x) {
+	int pos = lower_bound(fa[x].begin(), fa[x].end(), l) - fa[x].begin();
+	for(int i=DSU::find(x,pos);i&lt;ll(fa[x].size())&amp;&amp;fa[x][i]&lt;=r;i=DSU::find(x,i+1)) {
+		if(!(a[fa[x][i]] % x)) {
+			int _ = fa[x][i];
+			BIT::modify(_, a[_]/x-a[_]);
+			a[_] /= x;
+		}
+		if(a[fa[x][i]] % x) fa2[x][i] = i + 1;
+	}
+}
+ll query(int l, int r) {return BIT::query(r) - BIT::query(l-1);}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P5610@洛谷 【[Ynoi2013]大学】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-p5610/</id>
@@ -518,70 +586,6 @@ int main() {
 	}
 	for(ll i=1;i&lt;=n;i++) ans = (ans + dp[i]) % mod;
 	printf(&quot;%lld\n&quot;, ans);
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P2652@洛谷 【同花顺】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p2652/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p2652/">
-        </link>
-        <updated>2020-09-01T10:46:51.000Z</updated>
-        <content type="html"><![CDATA[<p>本题是一个有趣（？）的思维题，题意：要替换尽量少的牌，使得整套牌成为一个同花顺。</p>
-<hr>
-<p>思路：容易想到，我们保留现有的最长的一条同花顺，将剩余的牌替换掉即可。</p>
-<p>具体做法：</p>
-<ul>
-<li>读入数据先按照花色、数字进行排序和去重。</li>
-<li>枚举每一个点作为同花顺的右端点。</li>
-<li>找到左侧可以连成同花顺的第一张牌，计算同花顺长度，更新最长的长度。</li>
-<li>计算剩余的牌的数量，输出即可。</li>
-</ul>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int N = 1e5+5;
-
-int n, diff, ans;
-struct Node {
-	int col, val;
-	bool operator &lt; (const Node &amp;a) const {
-		if(this-&gt;col != a.col) return this-&gt;col &lt; a.col;
-		return this-&gt;val &lt; a.val;
-	}
-	bool operator == (const Node &amp;a) const {return (this-&gt;col == a.col) &amp;&amp; (this-&gt;val == a.val);}
-	bool operator != (const Node &amp;a) const {return !(*this == a);}
-	Node() {}
-	Node(int a, int b) : col(a), val(b) {}
-	~Node() {}
-}a[N], b[N];
-int col[N], val[N];
-
-void discretization() {
-	sort(a+1, a+1+n);
-	b[++diff] = a[1];
-	for(int i=2;i&lt;=n;i++) {
-		if(a[i] != a[i-1]) b[++diff] = a[i];
-	}
-	for(int i=1;i&lt;=diff;i++) {
-		col[i] = b[i].col;
-		val[i] = b[i].val;
-	}
-}
-
-int main() {
-	scanf(&quot;%d&quot;, &amp;n);
-	for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;, &amp;a[i].col, &amp;a[i].val);
-	discretization();
-	for(int i=2;i&lt;=diff;i++) {
-		int uPos = lower_bound(val+(lower_bound(col+1, col+1+i, col[i])-col), val+i, val[i]-n+1) - val;
-		ans = max(ans, i-uPos+1);
-	}
-	printf(&quot;%d\n&quot;, n-ans);
 	return 0;
 }
 </code></pre>
