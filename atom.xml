@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-09-18T13:19:54.500Z</updated>
+    <updated>2020-09-23T03:30:04.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,39 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P6832@洛谷 【[Cnoi2020]子弦】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-p6832/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p6832/">
+        </link>
+        <updated>2020-09-23T03:29:04.000Z</updated>
+        <content type="html"><![CDATA[<p>求一个字符串出现次数最多的非空子串。</p>
+<hr>
+<p>思路：</p>
+<p>容易想到，这个子串肯定要尽量短，一个字母是最优的。</p>
+<p>因为假如子串 <code>ab</code> 的出现次数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>，那么在这个字串中，<code>a</code> 和 <code>b</code> 各自分别已经出现了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 次，因此这两个的出现次数一定不小于 <code>ab</code>，甚至可能还要多。</p>
+<p>因此题面转化为，求字符串中出现次数最多的字母。我们考虑使用 <code>map</code> 进行统计，利用迭代器遍历即可。（比赛时没注意到只有小写字母，因此用了迭代器）</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+map&lt;char, int&gt; mp;
+string s;
+
+int main() {
+	cin&gt;&gt;s;
+	int l = s.length(); 
+	for(int i=0;i&lt;l;i++) ++mp[s[i]];
+	int ans = 0;
+	for(map&lt;char,int&gt;::iterator iter=mp.begin();iter!=mp.end();++iter) ans = max(ans, iter-&gt;second);
+	printf(&quot;%d\n&quot;, ans);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P5356@洛谷 【[Ynoi2017]由乃打扑克】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-p5356/</id>
@@ -656,54 +689,6 @@ int main() {
 		else sp = 3 - a;
 	}
 	puts(&quot;YES&quot;);
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF63B@洛谷 | 63B@Codeforces 【Settlers' Training】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf63b-codeforces-63b/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf63b-codeforces-63b/">
-        </link>
-        <updated>2020-09-03T09:06:55.000Z</updated>
-        <content type="html"><![CDATA[<p>思路：数据这么小，根据题意模拟即可。</p>
-<hr>
-<p>具体做法：</p>
-<ul>
-<li>判断第一个数的值，若等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 则进入第四步。</li>
-<li>根据题意对每个数遍历进行修改。</li>
-<li>回到第一步，直到符合题意为止。</li>
-<li>输出统计得到的结果即可。</li>
-</ul>
-<p>但是这个程序的正确性依赖于整个过程中的单调不降性质，需要证明：</p>
-<p>对于相邻两个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>：</p>
-<ul>
-<li>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，不进行修改， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 依然相等。</li>
-<li>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\lt b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 加一，此时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\le b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>。</li>
-</ul>
-<p>由于初始序列单调不降，因此任意时刻，数列满足单调不降。</p>
-<p>程序的正确性得证。</p>
-<hr>
-<p>一个小 trick：C++ 中单独的逗号语句的值为最后一个逗号后的表达式的值，与前面无关，因此可以通过这个简写一些代码。</p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int N = 105;
-
-int n, k, a[N], ans;
-
-int main() {
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
-	for(int i=1;i&lt;=n;i++) scanf(&quot;%d&quot;, &amp;a[i]);
-	do {
-		if(a[1] == k) return printf(&quot;%d\n&quot;, ans), 0;
-		for(int i=1;i&lt;=n;i++) {
-			if(a[i] &lt; k &amp;&amp; a[i] != a[i+1]) ++a[i];
-		}
-	}while(++ans, true);
 	return 0;
 }
 </code></pre>
