@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】 | rui_er 的博客</title>
+<title>题解 P3621@洛谷 【[APIO2007]风铃】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1601644159246">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】" />
-  <meta name="keywords" content="Atcoder,算法,题解,OI,洛谷" />
+  <meta name="description" content="题解 P3621@洛谷 【[APIO2007]风铃】" />
+  <meta name="keywords" content="APIO,题解,动态规划/DP,OI,洛谷" />
 </head>
 
 <body>
@@ -200,8 +200,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -274,192 +273,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E8%AF%BB%E6%87%82%E9%A2%98%E6%84%8F%E6%98%AF%E5%85%B3%E9%94%AE">读懂题意是关键</a></li>
-<li><a href="#%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95">模拟方法</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -547,8 +360,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at2287-atcoder-2287/">
-      题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-p3621/">
+      题解 P3621@洛谷 【[APIO2007]风铃】
     </a>
   </h1>
   <div class="post-meta">
@@ -556,7 +369,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-09-19</span>
+      <span>2020-10-02</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -565,20 +378,20 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
-        <span>Atcoder</span>
-      </a>、
-      
-      
-      
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
-        <span>算法</span>
+      <a href="https://blog.ak-ioi.cf/tag/RUfDOVFTv/">
+        <span>APIO</span>
       </a>、
       
       
       
       <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/">
         <span>题解</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/p4MY2Ni7Jp/">
+        <span>动态规划/DP</span>
       </a>、
       
       
@@ -599,17 +412,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>3分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>185<span class="pc-show">字数</span></span>
+      <span>642<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/solution-luogu-at2287-atcoder-2287/" data-flag-title="题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/solution-luogu-p3621/" data-flag-title="题解 P3621@洛谷 【[APIO2007]风铃】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -618,29 +431,52 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p><s>真心不明白为什么这题是绿题，只是一个模拟。</s></p>
-<h1 id="读懂题意是关键">读懂题意是关键</h1>
-<p>我第一次提交的时候对题面理解有误，加了一句<code>sort(x, x+n);</code>，结果WA了很多测试点。其实这里是需要按照顺序到达每个地点的QAQ。</p>
-<h1 id="模拟方法">模拟方法</h1>
-<p>对于每一个地点，判断两种方案中耗费疲劳值最少的方案，详见代码。</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
+              <p>CSP2020 快到了，感觉自己 dp 太菜了，补了很多 dp &gt;_&lt;</p>
+<hr>
+<p>题意（经过 OI 化魔改）：给定一棵二叉树，每次可以交换一个节点的左右儿子，使这棵二叉树是完全二叉树。</p>
+<p>思路：容易想到如下几种情况。</p>
+<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></strong> ：容易想到，若所有叶子节点中最深的深度和最浅的深度之差大于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，那么无解，因为此时没有办法通过交换左右儿子将深度差减少。</p>
+<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></strong> ：如果所有叶子深度均相同，直接输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。</p>
+<p>以上情况可以通过一遍 dfs 求深度解决。</p>
+<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></strong> ：对于一个节点，如果左子树<strong>全部</strong>为深度浅的节点，且右子树<strong>存在</strong>深度深的节点，此时需要进行一次交换。</p>
+<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span></strong> ：对于一个节点，如果左子树<strong>存在</strong>深度深、浅的两种节点，且右子树<strong>全部</strong>为深度深的节点，此时需要进行一次交换。</p>
+<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></strong> ：对于一个节点，如果左、右子树<strong>均存在</strong>深度深、浅的两种情况，那么无解，因为无论怎么交换，总存在左子树的深度浅的节点比右子树的深度深的节点不符合题意。</p>
+<p>以上情况在第二遍 dfs 时统计。</p>
+<hr>
+<p>实现细节：第一遍 dfs 就是正常的求深度，没什么好说的，主要说说第二遍 dfs。</p>
+<p>第二遍 dfs 的返回值设计为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">0/1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span><span class="mord">/</span><span class="mord">2</span></span></span></span>，分别表示当前结点为根的子树全部为深度浅的节点、深度深的节点，或者二者皆有。在递归返回的时候，我们判断左、右子树返回值进行处理即可。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
 using namespace std;
+const int N = 1e5+5, inf = 0x3f3f3f3f; 
 
-#define ll long long
+int n, son[N][2], mi = inf, ma, ans;
+void dfs(int u, int k) {
+	if(u == -1) return (mi=min(mi, k)), (ma=max(ma, k)), void();
+	dfs(son[u][0], k+1);
+	dfs(son[u][1], k+1);
+}
+int dfs2(int u, int k) {
+	if(u == -1) return (k != mi);
+	int x = dfs2(son[u][0], k+1);
+	int y = dfs2(son[u][1], k+1);
+	ans += ((!x &amp;&amp; y) || (x == 2 &amp;&amp; y == 1));
+	if(x == 2 &amp;&amp; y == 2) exit((puts(&quot;-1&quot;), 0));
+	if(x == 2 || y == 2 || x + y == 1) return 2;
+	if(!(x + y)) return 0;
+	return 1;
+}
 
-int main()
-{
-    ll n, a, b;
-    cin&gt;&gt;n&gt;&gt;a&gt;&gt;b;
-    ll x[100001];
-    for(ll i=1;i&lt;=n;i++) cin&gt;&gt;x[i];
-    ll sum = 0;
-    for(ll i=1;i&lt;n;i++)
-    {
-        ll l = x[i+1] - x[i];
-        sum += min(b, a*l);
-    }
-    cout&lt;&lt;sum&lt;&lt;endl;
+int main() {
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;, &amp;son[i][0], &amp;son[i][1]);
+	dfs(1, 0);
+	if(ma - mi &gt; 1) return puts(&quot;-1&quot;), 0;
+	if(ma == mi) return puts(&quot;0&quot;), 0;
+	int _ = dfs2(1, 0);
+	printf(&quot;%d\n&quot;, ans);
 	return 0;
 }
 </code></pre>
@@ -654,7 +490,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-at2287-atcoder-2287/" title="题解 AT2287@洛谷 | 2287@Atcoder 【Walk and Teleport】">https://blog.ak-ioi.cf/post/solution-luogu-at2287-atcoder-2287/</a>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-p3621/" title="题解 P3621@洛谷 【[APIO2007]风铃】">https://blog.ak-ioi.cf/post/solution-luogu-p3621/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -663,11 +499,11 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/"># Atcoder</a>
-    
-      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
+      <a href="https://blog.ak-ioi.cf/tag/RUfDOVFTv/"># APIO</a>
     
       <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/p4MY2Ni7Jp/"># 动态规划/DP</a>
     
       <a href="https://blog.ak-ioi.cf/tag/JGfUi4Foz/"># OI</a>
     
@@ -677,15 +513,11 @@ int main()
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 AT359@洛谷 | 359@Atcoder 【団子とうさぎ】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at359-atcoder-359/">题解 AT359@洛谷 | 359@Atcoder 【団子とうさぎ】 </a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 AT359@洛谷 | 359@Atcoder 【団子とうさぎ】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at359-atcoder-359/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at2447-atcoder-2447/">题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 </a>
-        <a class="nav-mobile-next" title="题解 AT2447@洛谷 | 2447@Atcoder 【電子レンジ (Microwave) 】 " href="https://blog.ak-ioi.cf/post/solution-luogu-at2447-atcoder-2447/">下一篇</a>
+        <a class="nav-pc-next" title="题解 P2890@洛谷 【[USACO07OPEN]Cheapest Palindrome G】" href="https://blog.ak-ioi.cf/post/solution-luogu-p2890/">题解 P2890@洛谷 【[USACO07OPEN]Cheapest Palindrome G】</a>
+        <a class="nav-mobile-next" title="题解 P2890@洛谷 【[USACO07OPEN]Cheapest Palindrome G】" href="https://blog.ak-ioi.cf/post/solution-luogu-p2890/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
