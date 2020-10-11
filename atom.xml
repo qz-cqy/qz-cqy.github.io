@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-10-05T06:04:49.389Z</updated>
+    <updated>2020-10-11T11:09:14.561Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,129 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P6830@洛谷 【[IOI2020]连接擎天树】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-p6830/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p6830/">
+        </link>
+        <updated>2020-10-11T11:07:42.000Z</updated>
+        <content type="html"><![CDATA[<p>破事水：IOI2020 结束后就想要写这题，但是 spj 当时是锅的，修好后我就<s>秉承鸽子的良好品德</s>一直咕到了现在。</p>
+<p>因为 CSP2020 考的有点自闭，所以来做一道 IOI 真题放松一下。</p>
+<hr>
+<p>题意简述：构造一个无向图，使得任意两个点之间路径个数与题目给出的相同。</p>
+<hr>
+<p>思路：</p>
+<p><strong>注：因为洛谷与其他 oj（包括 IOI 官方）的评测方式不同，本题解代码以洛谷为准，在其他 oj 可能无法直接取的 AC，请额外注意。</strong></p>
+<p>首先，如果一个图中的一个连通块，拥有<strong>多于</strong>一个环，那么这种情况肯定不符合题意。为啥呢？画个图理解一下。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ce80n3m9.png" alt="" loading="lazy"></figure>
+<p>以这张图上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 的路径为例，共有如下情况：</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>0</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 0\rightarrow 1\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>0</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>5</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 0\rightarrow 1\rightarrow 5\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>3</mn><mo>→</mo><mn>2</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 3\rightarrow 2\rightarrow 1\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>3</mn><mo>→</mo><mn>2</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>5</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 3\rightarrow 2\rightarrow 1\rightarrow 5\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
+</ol>
+<p>因为跨过了两个环，路径条数显然多于三个。</p>
+<p>我们得到了构造的初步方向：<strong>原图必须是一个由树或基环树组成的森林</strong>。</p>
+<p>接着找规律：</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/tjnvm6dg.png" alt="" loading="lazy"></figure>
+<p>对于这棵基环树，通过手推，发现：</p>
+<ol>
+<li>对于任意两个点（比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">2,4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span></span></span></span>），它们之间的路径如果全在环外，那么它们之间<strong>有且仅有一条路径</strong>。</li>
+<li>对于任意两个点（比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">6,3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span></span></span></span>），它们之间的路径如果至少有一条边一定在环上，那么它们之间<strong>有两条路径</strong>。</li>
+</ol>
+<p>换句话说，就是把所有环上的边先删掉，如果还在连通块内，就只有一条边。</p>
+<p>可以看到，<strong>如果题目中要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 之间有三条路径，此时无解</strong>。</p>
+<p>我们先 dfs 一遍<strong>求出连通块</strong>，如果连通块内存在要求有三条路径的边，就直接判掉。如果有两个点之间路径要求为零，也可以判掉。剩下的情况就分为两种：树和基环树。</p>
+<p>对于连通块内只要求两两之间有一条路径，将其中一个点和连通块内其他所有点相连即可。对于基环树，我们先不考虑路径数为二的边，在剩下的路径数为一的边里面再次 dfs 求出环外的连通块，按照相同方式连接后，每个环外连通块取一个点，将这些点依次连城环即可。</p>
+<p>至此我们便得到了正解。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 1005;
+
+void build(vector&lt;vector&lt;int&gt; &gt; b);
+
+int n, ma, vis[N];
+vector&lt;int&gt; block, edge, circle; // 分别为连通块、基环树上的树边和基环树上的环 
+vector&lt;vector&lt;int&gt; &gt; graph, res;
+void add(int u, int v) {res[u][v] = res[v][u] = 1;}
+void dfs(int u) {
+//	printf(&quot;DFS %d\n&quot;, u);
+	vis[u] = 1;
+	block.push_back(u);
+	for(int v=0;v&lt;n;v++) {
+		ma = max(ma, graph[u][v]);
+		if(!vis[v] &amp;&amp; graph[u][v]) dfs(v);
+	}
+}
+void dfsCircle(int u) {
+	vis[u] = 2;
+	edge.push_back(u);
+	for(int v=0;v&lt;n;v++) if(vis[v] == 1 &amp;&amp; graph[u][v] == 1) dfsCircle(v);
+}
+int construct(vector&lt;vector&lt;int&gt; &gt; p) {
+//	puts(&quot;CONSTRUCT&quot;);
+	graph = p; n = p.size(); res.resize(n);
+	for(int i=0;i&lt;n;i++) res[i].resize(n);
+	for(int i=0;i&lt;n;i++) {
+		if(vis[i]) continue;
+		ma = 1; block.clear(); dfs(i);
+//		printf(&quot;ROUND %d DFS ENDED WITH MAX=%d\n&quot;, i, ma);
+		if(ma == 3) return 0;
+		int sz = block.size();
+		for(int j=1;j&lt;sz;j++) {
+			for(int k=0;k&lt;j;k++) {
+				if(!graph[block[j]][block[k]]) return 0;
+			}
+		}
+		if(ma == 1) for(int j=1;j&lt;sz;j++) add(block[0], block[j]);
+		else {
+			circle.clear();
+			for(int _=0,j=block[_];_&lt;sz;_++,j=block[_]) {
+				if(vis[j] != 1) continue;
+				edge.clear();
+				dfsCircle(j);
+//				puts(&quot;DFSCIRCLE ENDED&quot;);
+				int sz2 = edge.size();
+				for(int k=1;k&lt;sz2;k++) {
+					for(int l=0;l&lt;k;l++) {
+						if(graph[edge[k]][edge[l]] != 1) return 0;
+					}
+					add(edge[0], edge[k]);
+				}
+				circle.push_back(edge[0]);
+//				printf(&quot;CIRCLE ADDED %d\n&quot;, edge[0]);
+			}
+			if(circle.size() &lt;= 2) return 0;
+			int sz3 = circle.size();
+			for(int j=0;j&lt;sz3;j++) add(circle[j], circle[(j+1)%sz3]);
+		}
+	}
+	build(res);
+	return 1;
+}/*
+
+void build(vector&lt;vector&lt;int&gt; &gt; b) {
+	puts(&quot;BUILD&quot;);
+	for(int i=0;i&lt;b.size();i++) {
+		for(int j=0;j&lt;b[i].size();j++) printf(&quot;%d &quot;, b[i][j]);
+		puts(&quot;&quot;);
+	}
+}
+int main() {
+	vector&lt;vector&lt;int&gt; &gt; a = vector&lt;vector&lt;int&gt; &gt;
+							({vector&lt;int&gt;({1, 1, 2, 2}), vector&lt;int&gt;({1, 1, 2, 2})
+							, vector&lt;int&gt;({2, 2, 1, 2}), vector&lt;int&gt;({2, 2, 2, 1})});
+	build(a);
+	printf(&quot;CONSTRUCT ENDED WITH RETURN VALUE %d\n&quot;, construct(a));
+	return 0;
+}*/
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF441C@洛谷 | 441C@Codeforces 【Valera and Tubes 】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-cf441c-codeforces-441c/</id>
@@ -717,78 +840,6 @@ void modify(int l, int r, int k) {
         <content type="html"><![CDATA[<p>本题是 P5610 的离线版双倍经验，使用该题做法删除在线的异或即可。</p>
 <hr>
 <p>本题的难点主要在于如何快速找到需要修改的数。</p>
-<p>我们可以使用并查集来维护对于每个质数我们需要修改的数的位置等信息，快速求出需要修改的最左侧，然后通过一种类似于指针的结构依次遍历，即可完成修改。</p>
-<p>我们还需要一个数据结构来维护整串序列，并且因为有修改，需要支持单点改和区间查，可以使用常数小还好写的树状数组。</p>
-<p>至此，我们便得出了一种解法。在此基础上再卡亿点点常数即可。</p>
-<hr>
-<p>总结一下：我们维护并查集和树状数组，并查集用来快速求出所有需要修改的点，树状数组进行修改。</p>
-<p>因为我们在程序最开始需要对所有数进行分解质因数，因此我们的复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msqrt><mi>x</mi></msqrt><mo>+</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>×</mo><mi>α</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\sqrt{x}+n\log{n}\times\alpha(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">x</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>。</p>
-<hr>
-<p>主要代码（已删除调试部分）：</p>
-<pre><code class="language-cpp">namespace BIT {
-	ll s[N];
-	void modify(int u, int x) {for(;u&lt;=n;u+=u&amp;(-u)) s[u] += x;}
-	ll query(ll u) {ll res = 0; for(;u;u-=u&amp;(-u)) res += s[u]; return res;}
-}
-namespace DSU {
-	vector&lt;int&gt; fa[N], fa2[N];
-	int find(int u, int v) {return (v == ll(fa2[u].size()) || v == fa2[u][v]) ? v : fa2[u][v] = find(u, fa2[u][v]);}
-}
-using DSU::fa;
-using DSU::fa2;
-
-void init() {
-	n = read(); m = read();
-	for(int i=1;i&lt;=n;i++) {
-		a[i] = read();
-		int _ = sqrt(a[i]);
-		for(int j=1;j&lt;=_;j++) {
-			if(!(a[i] % j)) {
-				fa[j].push_back(i);
-				fa2[j].push_back(fa2[j].size());
-				if(j * j &lt; a[i]) {
-					fa[a[i]/j].push_back(i);
-					fa2[a[i]/j].push_back(fa2[a[i]/j].size());
-				}
-			}
-		}
-		BIT::modify(i, a[i]);
-	}
-}
-void modify(int l, int r, int x) {
-	int pos = lower_bound(fa[x].begin(), fa[x].end(), l) - fa[x].begin();
-	for(int i=DSU::find(x,pos);i&lt;ll(fa[x].size())&amp;&amp;fa[x][i]&lt;=r;i=DSU::find(x,i+1)) {
-		if(!(a[fa[x][i]] % x)) {
-			int _ = fa[x][i];
-			BIT::modify(_, a[_]/x-a[_]);
-			a[_] /= x;
-		}
-		if(a[fa[x][i]] % x) fa2[x][i] = i + 1;
-	}
-}
-ll query(int l, int r) {return BIT::query(r) - BIT::query(l-1);}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P5610@洛谷 【[Ynoi2013]大学】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p5610/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p5610/">
-        </link>
-        <updated>2020-09-17T10:39:41.000Z</updated>
-        <content type="html"><![CDATA[<p>本题的难点主要在于如何快速找到需要修改的数。</p>
-<p>看到这题，容易想到平衡树，用很多平衡树维护每个位置的质因数即可。</p>
-<blockquote>
-<p>很遗憾，被我卡掉了——lxl</p>
-</blockquote>
-<p>听大佬说这东西过不去，就想其他常数小的方法。</p>
-<hr>
 <p>我们可以使用并查集来维护对于每个质数我们需要修改的数的位置等信息，快速求出需要修改的最左侧，然后通过一种类似于指针的结构依次遍历，即可完成修改。</p>
 <p>我们还需要一个数据结构来维护整串序列，并且因为有修改，需要支持单点改和区间查，可以使用常数小还好写的树状数组。</p>
 <p>至此，我们便得出了一种解法。在此基础上再卡亿点点常数即可。</p>
