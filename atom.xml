@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-10-11T11:09:14.561Z</updated>
+    <updated>2020-10-12T09:58:02.680Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,62 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P3812@洛谷 【【模板】线性基】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-p3812/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p3812/">
+        </link>
+        <updated>2020-10-12T09:56:36.000Z</updated>
+        <content type="html"><![CDATA[<p>刚刚口胡并学了线性基，就来写篇题解，记录一下。</p>
+<hr>
+<p>从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个数中选取若干个，使他们的异或和最大。</p>
+<p>既然是异或和，因为异或是位运算，肯定要用到二进制的。</p>
+<p>考虑异或和的性质：对于这一位，有奇数个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 求异或和，结果为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>；有偶数个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 求异或和，结果为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。这一性质告诉我们，当我们对当前位置完成决策的时候，后面所有位的异或和无论怎样也不会影响到现有结果。想到从高位到低位扫一遍，对每一位取最优决策，就是结果。</p>
+<p>但因为每一位二进制位可能有很多 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，不方便进行决策，于是思考能不能<strong>构造一个序列，使得在这个序列中，任取若干个数求异或和的结果组成的集合，与原序列求异或和的结果组成的集合一样，且这个序列的每个数的最高位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 所在位数不一样</strong>呢？这种情况下，我们在新序列上决策和在原数列上决策是等效的。</p>
+<p><s>但是我太菜了发现并不会构造，怎么办呢？上百度搜线性基正解吧。</s></p>
+<p>结果一搜发现我已经口胡出来了，愣是傻傻的不会构造 /jk /jk，那就继续说吧。</p>
+<p>线性基就是由原数列集合构造出的满足下面性质的集合：</p>
+<ol>
+<li>线性基内的元素可以通过求异或和，得到原集合的元素任意求异或和得到的所有值。</li>
+<li>线性基是满足上面性质的最小的集合。</li>
+<li>线性基不存在异或和为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的子集。</li>
+<li>线性基中，任取不同的子集求异或和，得到的答案不同。（即线性基子集的异或和具有唯一性）</li>
+<li>线性基内所有元素的二进制最高位互不相同。</li>
+</ol>
+<p>考虑进行构造：</p>
+<p>在线性基插入元素 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，从高位向低位扫，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 二进制下该位为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，且不存在最高位为该位的线性基元素，将其加入线性基。如果该位为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，但已经存在元素的最高位为该位，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 异或上该元素，继续向后搜。</p>
+<p>要查询最大值，从高位到低位枚举线性基中最高位为该位的元素，如果答案异或上这个数比原来的答案大，更新答案。这样因为更低位的结果无法影响当前位，因此这一方法是最优的。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const ll N = 55, bit = 50;
+ 
+ll n, a, p[N];
+void insert(ll k) {
+	for(ll i=bit;i&gt;=0;i--) {
+		if(!(k&amp;(1LL&lt;&lt;i))) continue;
+		if(!p[i]) return p[i] = k, void();
+		k ^= p[i];
+	}
+}
+ll maxXor() {
+	ll res = 0;
+	for(ll i=bit;i&gt;=0;i--) res = max(res, (res^p[i]));
+	return res;
+}
+
+int main() {
+	scanf(&quot;%lld&quot;, &amp;n);
+	while(n--) {scanf(&quot;%lld&quot;, &amp;a); insert(a);}
+	printf(&quot;%lld\n&quot;, maxXor());
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P6830@洛谷 【[IOI2020]连接擎天树】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-p6830/</id>
@@ -828,74 +884,6 @@ void modify(int l, int r, int k) {
 		for(int i=bL+1;i&lt;bR;i++) tag[i] += k;
 	}
 }
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P3987@洛谷 【我永远喜欢珂朵莉~】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-P3987/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-P3987/">
-        </link>
-        <updated>2020-09-18T12:53:42.000Z</updated>
-        <content type="html"><![CDATA[<p>本题是 P5610 的离线版双倍经验，使用该题做法删除在线的异或即可。</p>
-<hr>
-<p>本题的难点主要在于如何快速找到需要修改的数。</p>
-<p>我们可以使用并查集来维护对于每个质数我们需要修改的数的位置等信息，快速求出需要修改的最左侧，然后通过一种类似于指针的结构依次遍历，即可完成修改。</p>
-<p>我们还需要一个数据结构来维护整串序列，并且因为有修改，需要支持单点改和区间查，可以使用常数小还好写的树状数组。</p>
-<p>至此，我们便得出了一种解法。在此基础上再卡亿点点常数即可。</p>
-<hr>
-<p>总结一下：我们维护并查集和树状数组，并查集用来快速求出所有需要修改的点，树状数组进行修改。</p>
-<p>因为我们在程序最开始需要对所有数进行分解质因数，因此我们的复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msqrt><mi>x</mi></msqrt><mo>+</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo>×</mo><mi>α</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\sqrt{x}+n\log{n}\times\alpha(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.05028em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">x</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
--10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
--50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
-35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
--221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
-s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
-s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">n</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>。</p>
-<hr>
-<p>主要代码（已删除调试部分）：</p>
-<pre><code class="language-cpp">namespace BIT {
-	ll s[N];
-	void modify(int u, int x) {for(;u&lt;=n;u+=u&amp;(-u)) s[u] += x;}
-	ll query(ll u) {ll res = 0; for(;u;u-=u&amp;(-u)) res += s[u]; return res;}
-}
-namespace DSU {
-	vector&lt;int&gt; fa[N], fa2[N];
-	int find(int u, int v) {return (v == ll(fa2[u].size()) || v == fa2[u][v]) ? v : fa2[u][v] = find(u, fa2[u][v]);}
-}
-using DSU::fa;
-using DSU::fa2;
-
-void init() {
-	n = read(); m = read();
-	for(int i=1;i&lt;=n;i++) {
-		a[i] = read();
-		int _ = sqrt(a[i]);
-		for(int j=1;j&lt;=_;j++) {
-			if(!(a[i] % j)) {
-				fa[j].push_back(i);
-				fa2[j].push_back(fa2[j].size());
-				if(j * j &lt; a[i]) {
-					fa[a[i]/j].push_back(i);
-					fa2[a[i]/j].push_back(fa2[a[i]/j].size());
-				}
-			}
-		}
-		BIT::modify(i, a[i]);
-	}
-}
-void modify(int l, int r, int x) {
-	int pos = lower_bound(fa[x].begin(), fa[x].end(), l) - fa[x].begin();
-	for(int i=DSU::find(x,pos);i&lt;ll(fa[x].size())&amp;&amp;fa[x][i]&lt;=r;i=DSU::find(x,i+1)) {
-		if(!(a[fa[x][i]] % x)) {
-			int _ = fa[x][i];
-			BIT::modify(_, a[_]/x-a[_]);
-			a[_] /= x;
-		}
-		if(a[fa[x][i]] % x) fa2[x][i] = i + 1;
-	}
-}
-ll query(int l, int r) {return BIT::query(r) - BIT::query(l-1);}
 </code></pre>
 ]]></content>
     </entry>
