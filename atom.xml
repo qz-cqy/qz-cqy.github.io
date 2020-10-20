@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-10-14T10:35:11.812Z</updated>
+    <updated>2020-10-20T10:37:40.842Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,54 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF1148F@洛谷 | 1148F@Codeforces 【Foo Fighters】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1148f-codeforces-1148f/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1148f-codeforces-1148f/">
+        </link>
+        <updated>2020-10-20T10:35:31.000Z</updated>
+        <content type="html"><![CDATA[<p>有点毒瘤的贪心题，当然也可能是我太菜了。</p>
+<hr>
+<p>翻译的挺清楚的了，直接说思路：</p>
+<p>我们考虑在读入时顺便把每个数的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>a</mi><mi>s</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">mask</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 权值的<strong>二进制最高位</strong>预处理出来，同时统计权值和。由于正数变负数和负数变正数本质上是一样的，为了方便考虑，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">val</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 权值和为负数，将所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">val</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 取相反数。</p>
+<p>随后考虑如何贪心：</p>
+<p>枚举每一位，统计<strong>二进制最高位为该位</strong>的所有数的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">val</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 权值和。如果这个权值和小于或等于零，那么没有修改该位的必要，因为修改不会使总权值增加，反而可能减少。如果最高位为该位的权值和大于零，那么修改该位比不修改更优。在答案变量中将该位置为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，并且枚举所有数修改即可。</p>
+<p>以上为正解，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log{x})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span></span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 为变量范围（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>62</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{62}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>）。</p>
+<p><strong>坑点：贪心时必须从低位到高位枚举每一位进行更新，否则后面的更改可能导致更高位的决策被干扰，得不到正确答案！</strong></p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const ll N = 3e5+5, bit = 62;
+
+ll n, ans;
+struct Node {ll val, mask, bits;}a[N];
+
+int main() {
+	scanf(&quot;%llu&quot;, &amp;n);
+	for(ll i=1;i&lt;=n;i++) {
+		scanf(&quot;%lld%lld&quot;, &amp;a[i].val, &amp;a[i].mask);
+		ans += a[i].val;
+		for(ll _=bit;_+1;_--) if((a[i].mask &gt;&gt; _) &amp; 1) {a[i].bits = _; break;}
+	}
+	if(ans &lt; 0) for(ll i=1;i&lt;=n;i++) a[i].val = -a[i].val;
+	ans = 0;
+	for(ll _=0;_&lt;=bit;_++) {
+		ll s = 0;
+		for(ll i=1;i&lt;=n;i++) s += (a[i].bits == _) * a[i].val;
+		if(s &lt;= 0) continue;
+		ans |= (1LL &lt;&lt; _);
+		for(ll i=1;i&lt;=n;i++) a[i].val *= ((a[i].mask &gt;&gt; _) &amp; 1) ? -1 : 1;
+	}
+	printf(&quot;%lld\n&quot;, ans);
+//	puts(&quot;----------\nDEBUG: &quot;); for(ll i=1;i&lt;=n;i++) printf(&quot;%lld\n&quot;, a[i].val);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 CF1375F@洛谷 | 1375F@Codeforces 【Integer Game】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1375f-codeforces-1375f/</id>
@@ -745,39 +793,6 @@ int main() {
 		int a = (m + 1) / 2 - 1;
 		printf(&quot;%d\n&quot;, f(a, n-m+a));
 	}
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P6832@洛谷 【[Cnoi2020]子弦】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p6832/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p6832/">
-        </link>
-        <updated>2020-09-23T03:29:04.000Z</updated>
-        <content type="html"><![CDATA[<p>求一个字符串出现次数最多的非空子串。</p>
-<hr>
-<p>思路：</p>
-<p>容易想到，这个子串肯定要尽量短，一个字母是最优的。</p>
-<p>因为假如子串 <code>ab</code> 的出现次数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>，那么在这个字串中，<code>a</code> 和 <code>b</code> 各自分别已经出现了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 次，因此这两个的出现次数一定不小于 <code>ab</code>，甚至可能还要多。</p>
-<p>因此题面转化为，求字符串中出现次数最多的字母。我们考虑使用 <code>map</code> 进行统计，利用迭代器遍历即可。（比赛时没注意到只有小写字母，因此用了迭代器）</p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-map&lt;char, int&gt; mp;
-string s;
-
-int main() {
-	cin&gt;&gt;s;
-	int l = s.length(); 
-	for(int i=0;i&lt;l;i++) ++mp[s[i]];
-	int ans = 0;
-	for(map&lt;char,int&gt;::iterator iter=mp.begin();iter!=mp.end();++iter) ans = max(ans, iter-&gt;second);
-	printf(&quot;%d\n&quot;, ans);
 	return 0;
 }
 </code></pre>
