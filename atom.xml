@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-10-23T14:09:05.709Z</updated>
+    <updated>2020-10-27T11:40:41.053Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[bilibili ctf 2020 程序员节网络安全挑战 解题报告]]></title>
+        <id>https://blog.ak-ioi.cf/post/bilibili-ctf-2020/</id>
+        <link href="https://blog.ak-ioi.cf/post/bilibili-ctf-2020/">
+        </link>
+        <updated>2020-10-27T11:39:44.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="bilibili-ctf-2020-程序员节网络安全挑战-解题报告">bilibili ctf 2020 程序员节网络安全挑战 解题报告</h1>
+<p>比赛已经结束，最终得分：80pts。</p>
+<p><a href="https://www.bilibili.com/blackboard/activity-20201024.html">地址</a> 里面的第二个“33的挑战状 —— 首届哔哩哔哩安全挑战赛”</p>
+<p>注：可能有一些题（例如 T5）中每人的 flag 不同，请勿尝试直接输入博客中的 flag 进行解题。</p>
+<h1 id="t1">T1</h1>
+<p>题目地址进不去？没关系，万能的 view-source 大法好！</p>
+<p>进入 <code>view-source:http://45.113.201.36/index.html</code> 发现这几行代码：</p>
+<pre><code class="language-js">&lt;script&gt;
+    $.ajax({
+    url: &quot;api/admin&quot;,
+    type: &quot;get&quot;,
+    success:function (data) {
+        //console.log(data);
+        if (data.code == 200){
+            // 如果有值：前端跳转
+            var input = document.getElementById(&quot;flag1&quot;);
+            input.value = String(data.data);
+        } else {
+            // 如果没值
+            $('#flag1').html(&quot;接口异常，请稍后再试～&quot;);
+        }
+    }
+})
+&lt;/script&gt;
+</code></pre>
+<p>flag1 不就是过关要用的东西吗，手动输网址进入 <code>http://45.113.201.36/api/admin</code> 看到下面这个 xml：</p>
+<pre><code class="language-xml">{&quot;code&quot;:200,&quot;data&quot;:&quot;1b2a3078-01f7b16d-8e620caf-f21f54e0&quot;,&quot;msg&quot;:&quot;&quot;}
+</code></pre>
+<p>回到答题首页，题号为 1，flag 为 <code>1b2a3078-01f7b16d-8e620caf-f21f54e0</code> 即可获得 10pts。</p>
+<h1 id="t2">T2</h1>
+<p>老规矩，view-source 一下，发现下面那个 api 地址进不去了。</p>
+<p>老老实实地回到原来网址，一行大字：<code>需要使用bilibili Security Browser浏览器访问～</code></p>
+<p>这是啥浏览器，百度搜不到？</p>
+<p>果断想到改 userAgent！</p>
+<p>例如我的 fireFox 就在网址栏输入 <code>about:config</code>，搜索 <code>general.useragent.override</code>，就可以改了。</p>
+<p><strong>警告：更改前请务必备份好原来的 userAgent，可以到 <a href="http://www.all-tool.cn/Tools/ua/">这里</a> 查看！否则可能导致一些功能无法正常使用！</strong></p>
+<p>（例如我原来的就是：<code>Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0</code>）</p>
+<p>将 UA 改成 <code>bilibili Security Browser</code>，刷新界面，发现 <code>flag2: 6a4c1f7d-be44b65f-3583423d-9f5a63c9</code>，填入答案即可。</p>
+<h1 id="t3">T3</h1>
+<p>填个密码？按照惯例管理员账号为 <code>admin</code>，随手试一发密码 <code>bilibili</code> 竟然对了 /jk。</p>
+<p>得到 flag：<code>9c91dce9-31eafdca-89be9852-7e1fb730</code>。</p>
+<h1 id="t4">T4</h1>
+<p>超级管理员，想到 <code>Administrator</code>，MD5 32 位加密得到 <code>7b7bc2512ee1fedcd76bdc68926d4f7b</code>，F12 存储里面看到 session，我们发送一个 session 和 role 的请求头到 <code>http://45.113.201.36/api/ctf/4</code>，其中 role 是上面那个 MD5，得到我的 flag：<code>3b889d30-514ddd74-c8264fbb-2b6d25b4</code>。</p>
+<h1 id="t5">T5</h1>
+<p>类似的办法，设置好请求头，获取到 user 后发送请求到 <code>http://45.113.201.36/api/ctf/5?uid={uid}</code> 即可，得到我的 flag：<code>9537ded8-b97fe4dc-008608c8-d69723ed</code>。</p>
+<p>至于怎么获取到 user 嘛，根据源码界面得到：<s>暴力破解大法好（</s></p>
+<h1 id="t10">T10</h1>
+<p>果然就是毒瘤，“结束亦是开始”竟然真的倒着来！</p>
+<p>找到了 <a href="http://45.113.201.36/blog/test.php">这个</a>，jsfuck 解密后“程序员最多的地方”，就是 GitHub，然后发现 <a href="https://github.com/interesting-1024/end/blob/main/end.php">这个</a>，里面有 <code>end.php</code> 源码，进入 <code>http://45.113.201.36/blog/end.php</code>，发现显示的一致，尝试 <code>http://45.113.201.36/blog/end.php?id[0]=1</code>，发现“还差一点点啦~”</p>
+<p>尝试 <code>http://45.113.201.36/blog/end.php?id[]=1&amp;url=./flag.txt</code>，发现一个图片，以文本形式打开，搜索 flag，找到最终答案：<code>2ebd3b08-47ffc478-b49a5f9d-f6099d65</code>。</p>
+<h1 id="t8">T8</h1>
+<p>发现 6379 端口是开放的，用 redis 获取 flag8：<code>d436b982-2b81aa54-49a8d2db-87ab951a</code>。</p>
+<p>此页面的其他 flag 应该是假的。</p>
+<h1 id="t6">T6</h1>
+<p>emm，直接用 python 瞎二分调 API 找 flag（</p>
+<p>结果：<code>a2b0883c-ffbb8d17-9a3bbf1c-ed600c80</code>。</p>
+<h1 id="t7">T7</h1>
+<p>未完成</p>
+<h1 id="t9">T9</h1>
+<p>未完成</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P5072@洛谷 【[Ynoi2015]盼君勿忘】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-p5072/</id>
@@ -814,62 +882,6 @@ int main() {
 	if(ma == mi) return puts(&quot;0&quot;), 0;
 	int _ = dfs2(1, 0);
 	printf(&quot;%d\n&quot;, ans);
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P2890@洛谷 【[USACO07OPEN]Cheapest Palindrome G】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p2890/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p2890/">
-        </link>
-        <updated>2020-10-01T11:43:31.000Z</updated>
-        <content type="html"><![CDATA[<p>小清新 dp 题喜加一。</p>
-<p>题意：我们有一个字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span>，长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>。我们可以在任意位置添加或删除一个字母，共有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个字母可供选择，添加或删除不同字母所需花费不同，求使这个字符串为回文串的最少花费。</p>
-<hr>
-<p>显然区间 dp，设计状态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dp_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 表示使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>∼</mo><msub><mi>s</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">s_i\sim s_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 为回文串所需的最少花费。</p>
-<p>下面考虑状态转移：</p>
-<p>我们枚举区间长度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>∈</mo><mrow><mo fence="true">[</mo><mn>0</mn><mo separator="true">,</mo><mi>m</mi><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">l\in\left[0,m\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span>，然后枚举左端点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，得到右端点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>。</p>
-<p>对于一个回文字符串，在它的左侧加一个字符后要想保持回文性，有两种方法：在右侧添加一个同样的字符，或者将左侧字符删去。可以看出，对于一个字符而言，插入和删除的权值没有区别，可以只存最小值。</p>
-<p>考虑这个字符串，我们可以看做它是由回文串在左侧添加一个字符得到的，也可以看做它是在右侧添加一个字符得到的。我们选择这两者的更小的那个即可：（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">mp</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">p</span></span></span></span> 表示对于一个字符，插入和删除的权值中小的那个）</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>=</mo><mi>min</mi><mo>⁡</mo><mo>(</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>+</mo><mi>m</mi><msub><mi>p</mi><msub><mi>s</mi><mi>i</mi></msub></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mi>m</mi><msub><mi>p</mi><msub><mi>s</mi><mi>j</mi></msub></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">dp_{i,j}=\min(dp_{i+1,j}+mp_{s_i},dp_{i,j-1}+mp_{s_j})
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139199999999997em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.0973199999999999em;vertical-align:-0.34731999999999996em;"></span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2818857142857143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.34731999999999996em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
-<p>当然，有一种情况较为特殊：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>i</mi></msub><mo>=</mo><msub><mi>s</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">s_i=s_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，此时我们需要特判。如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">l\le 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，则该串本身回文， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">dp_{i,j}=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。否则，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo>=</mo><mi>min</mi><mo>⁡</mo><mo>(</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>p</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">dp_{i,j}=\min(dp_{i,j},dp_{i+1,j-1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mop">min</span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
-<p>于是，我们便得到了本题的三个方程。</p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int M = 2005;
-
-int n, m;
-string s;
-map&lt;char, int&gt; mp;
-int dp[M][M];
-
-int main() {
-	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-	cin&gt;&gt;s;
-	memset(dp, 0x3f, sizeof(dp));
-	for(int i=0;i&lt;m;i++) {
-		for(int j=0;j&lt;=i;j++) dp[i][j] = 0;
-	}
-	for(int i=1;i&lt;=n;i++) {
-		char c = getchar();
-		for(;c==' '||c=='\n';c=getchar());
-		int a, b;
-		scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
-		mp[c] = min(a, b);
-	}
-	for(int l=0;l&lt;m;l++) {
-		for(int i=0,j=l;j&lt;m;i++,j++) {
-			dp[i][j] = min(dp[i+1][j]+mp[s[i]], dp[i][j-1]+mp[s[j]]);
-			if(s[i] == s[j]) dp[i][j] = min(dp[i][j], (l &lt;= 1 ? 0 : dp[i+1][j-1]));
-		}
-	}
-	printf(&quot;%d\n&quot;, dp[0][m-1]);
 	return 0;
 }
 </code></pre>
