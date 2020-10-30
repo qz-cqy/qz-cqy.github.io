@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-10-27T11:40:41.053Z</updated>
+    <updated>2020-10-30T10:16:17.821Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,68 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P7041@洛谷 【[NWRRC2016]King’s Heir】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-p7041/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p7041/">
+        </link>
+        <updated>2020-10-30T10:15:08.000Z</updated>
+        <content type="html"><![CDATA[<p>最近 kkk 传了好多题啊，然后就随便挑了一个（也就是目前编号最大的）来做，拿到了首 A <s>（虽然好像没啥用</s> 。</p>
+<hr>
+<p>题意：国王有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个儿子，他想要把王位传给年龄<strong>超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>18</mn></mrow><annotation encoding="application/x-tex">18</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">8</span></span></span></span> 岁的中最小的</strong>儿子。题目保证不存在两个儿子在同一天出生。假设所有年份的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 月均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>28</mn></mrow><annotation encoding="application/x-tex">28</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">8</span></span></span></span> 天。</p>
+<p>考虑先根据生日将所有儿子排序，然后枚举并计算与国王生日的差即可。排序时可以写比较函数，根据年、月、日三个关键字排序。那么怎么计算两个日期之间的间隔呢？</p>
+<p>分两种情况：在同一年或不在同一年。</p>
+<p>对于在同一年的，我们枚举两个月之间的完整月，将结果加上该月的天数，再通过简单推导计算出两侧零散月的天数即可。</p>
+<p>对于不在同一年的，枚举中间年份加上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>365</mn></mrow><annotation encoding="application/x-tex">365</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">6</span><span class="mord">5</span></span></span></span>，然后枚举两侧零散年按照上面类似方法计算即可。</p>
+<p>我写的比较暴力，但也很容易理解，因为数据很小就没卡这里的常数。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 105, mx = 18 * 365;
+const int month[] = {-1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+int n;
+struct Node {
+	int d, m, y, id;
+	Node(int a=0, int b=0, int c=0, int d=0) : d(a), m(b), y(c), id(d) {}
+	~Node() {}
+	void read() {scanf(&quot;%d%d%d&quot;, &amp;this-&gt;d, &amp;this-&gt;m, &amp;this-&gt;y);}
+	friend bool operator &lt; (const Node &amp;a, const Node &amp;b) {
+		if(a.y != b.y) return a.y &lt; b.y;
+		if(a.m != b.m) return a.m &lt; b.m;
+		return a.d &lt; b.d;
+	}
+}king, son[N];
+
+int calc(const Node &amp;a, const Node &amp;b) {
+	int res = 0;
+	if(a.y == b.y) {
+		if(a.m == b.m) return b.d - a.d + 1;
+		for(int i=a.m+1;i&lt;b.m;i++) res += month[i];
+		res += month[a.m] - a.d + 1 + b.d;
+		return res;
+	}
+	for(int i=a.y+1;i&lt;b.y;i++) res += 365;
+	for(int i=a.m+1;i&lt;=12;i++) res += month[i];
+	for(int i=1;i&lt;b.m;i++) res += month[i];
+	res += month[a.m] - a.d + 1 + b.d;
+	return res;
+}
+
+int main() {
+	king.read();
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i=1;i&lt;=n;i++) son[i].read(), son[i].id = i;
+	sort(son+1, son+1+n);
+	for(int i=n;i;i--) if(calc(son[i], king) &gt; mx) return printf(&quot;%d\n&quot;, son[i].id), 0;
+	puts(&quot;-1&quot;);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[bilibili ctf 2020 程序员节网络安全挑战 解题报告]]></title>
         <id>https://blog.ak-ioi.cf/post/bilibili-ctf-2020/</id>
@@ -826,63 +888,6 @@ void solve(ll op) {
 		vis[q[i].id] = 1;
 	}
 	for(ll i=1;i&lt;=op;i++) printf(&quot;%lld\n&quot;, len[i]-3*(ll)cnts[i].count());
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P3621@洛谷 【[APIO2007]风铃】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p3621/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p3621/">
-        </link>
-        <updated>2020-10-02T13:08:35.000Z</updated>
-        <content type="html"><![CDATA[<p>CSP2020 快到了，感觉自己 dp 太菜了，补了很多 dp &gt;_&lt;</p>
-<hr>
-<p>题意（经过 OI 化魔改）：给定一棵二叉树，每次可以交换一个节点的左右儿子，使这棵二叉树是完全二叉树。</p>
-<p>思路：容易想到如下几种情况。</p>
-<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></strong> ：容易想到，若所有叶子节点中最深的深度和最浅的深度之差大于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，那么无解，因为此时没有办法通过交换左右儿子将深度差减少。</p>
-<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></strong> ：如果所有叶子深度均相同，直接输出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。</p>
-<p>以上情况可以通过一遍 dfs 求深度解决。</p>
-<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></strong> ：对于一个节点，如果左子树<strong>全部</strong>为深度浅的节点，且右子树<strong>存在</strong>深度深的节点，此时需要进行一次交换。</p>
-<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span></strong> ：对于一个节点，如果左子树<strong>存在</strong>深度深、浅的两种节点，且右子树<strong>全部</strong>为深度深的节点，此时需要进行一次交换。</p>
-<p><strong>情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></strong> ：对于一个节点，如果左、右子树<strong>均存在</strong>深度深、浅的两种情况，那么无解，因为无论怎么交换，总存在左子树的深度浅的节点比右子树的深度深的节点不符合题意。</p>
-<p>以上情况在第二遍 dfs 时统计。</p>
-<hr>
-<p>实现细节：第一遍 dfs 就是正常的求深度，没什么好说的，主要说说第二遍 dfs。</p>
-<p>第二遍 dfs 的返回值设计为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">/</mi><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">0/1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mord">/</span><span class="mord">1</span><span class="mord">/</span><span class="mord">2</span></span></span></span>，分别表示当前结点为根的子树全部为深度浅的节点、深度深的节点，或者二者皆有。在递归返回的时候，我们判断左、右子树返回值进行处理即可。</p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int N = 1e5+5, inf = 0x3f3f3f3f; 
-
-int n, son[N][2], mi = inf, ma, ans;
-void dfs(int u, int k) {
-	if(u == -1) return (mi=min(mi, k)), (ma=max(ma, k)), void();
-	dfs(son[u][0], k+1);
-	dfs(son[u][1], k+1);
-}
-int dfs2(int u, int k) {
-	if(u == -1) return (k != mi);
-	int x = dfs2(son[u][0], k+1);
-	int y = dfs2(son[u][1], k+1);
-	ans += ((!x &amp;&amp; y) || (x == 2 &amp;&amp; y == 1));
-	if(x == 2 &amp;&amp; y == 2) exit((puts(&quot;-1&quot;), 0));
-	if(x == 2 || y == 2 || x + y == 1) return 2;
-	if(!(x + y)) return 0;
-	return 1;
-}
-
-int main() {
-	scanf(&quot;%d&quot;, &amp;n);
-	for(int i=1;i&lt;=n;i++) scanf(&quot;%d%d&quot;, &amp;son[i][0], &amp;son[i][1]);
-	dfs(1, 0);
-	if(ma - mi &gt; 1) return puts(&quot;-1&quot;), 0;
-	if(ma == mi) return puts(&quot;0&quot;), 0;
-	int _ = dfs2(1, 0);
-	printf(&quot;%d\n&quot;, ans);
-	return 0;
 }
 </code></pre>
 ]]></content>
