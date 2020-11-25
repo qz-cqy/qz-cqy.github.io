@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="三思而后码">
 <meta name="theme-color" content="#000">
-<title>题解 SP3377@洛谷 | BUGLIFE@SPOJ 【BUGLIFE - A Bug&amp;#8217;s Life】 | rui_er 的博客</title>
+<title>题解 AT3577@洛谷 | 3577@AtCoder 【Largest Smallest Cyclic Shift】 | rui_er 的博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1606315574093">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -29,8 +29,8 @@
 
 
 
-  <meta name="description" content="题解 SP3377@洛谷 | BUGLIFE@SPOJ 【BUGLIFE - A Bug&#8217;s Life】" />
-  <meta name="keywords" content="SPOJ,图论,题解,OI,洛谷" />
+  <meta name="description" content="题解 AT3577@洛谷 | 3577@AtCoder 【Largest Smallest Cyclic Shift】" />
+  <meta name="keywords" content="构造题,字符串,思维题,贪心,Atcoder,算法,题解,OI,洛谷" />
 </head>
 
 <body>
@@ -360,8 +360,8 @@
           <div class="section bg-color post post-page">
             <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-sp3377-spoj-buglife/">
-      题解 SP3377@洛谷 | BUGLIFE@SPOJ 【BUGLIFE - A Bug&amp;#8217;s Life】
+    <a class="post-title-link" href="https://blog.ak-ioi.cf/post/solution-luogu-at3577-atcoder-3577/">
+      题解 AT3577@洛谷 | 3577@AtCoder 【Largest Smallest Cyclic Shift】
     </a>
   </h1>
   <div class="post-meta">
@@ -369,7 +369,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-08-24</span>
+      <span>2020-11-25</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -378,14 +378,38 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://blog.ak-ioi.cf/tag/aqkZXLnKs/">
-        <span>SPOJ</span>
+      <a href="https://blog.ak-ioi.cf/tag/OPYRApyQv/">
+        <span>构造题</span>
       </a>、
       
       
       
-      <a href="https://blog.ak-ioi.cf/tag/P33QCO5aCZ/">
-        <span>图论</span>
+      <a href="https://blog.ak-ioi.cf/tag/0iy_MhKwM/">
+        <span>字符串</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/kp3p4KSAg/">
+        <span>思维题</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/XmOlmGG78/">
+        <span>贪心</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/">
+        <span>Atcoder</span>
+      </a>、
+      
+      
+      
+      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/">
+        <span>算法</span>
       </a>、
       
       
@@ -417,12 +441,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>635<span class="pc-show">字数</span></span>
+      <span>575<span class="pc-show">字数</span></span>
     </span>
     
     
     
-    <span id="/post/solution-luogu-sp3377-spoj-buglife/" data-flag-title="题解 SP3377@洛谷 | BUGLIFE@SPOJ 【BUGLIFE - A Bug&amp;#8217;s Life】" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/solution-luogu-at3577-atcoder-3577/" data-flag-title="题解 AT3577@洛谷 | 3577@AtCoder 【Largest Smallest Cyclic Shift】" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span>浏览量：<span class="leancloud-visitors-count"></span></span>
@@ -431,79 +455,47 @@
   </div>
 </header>
             <div class="post-body next-md-body" id="post_body">
-              <p>很久以前 AC 了这题，现在补一个题解。</p>
-<p>题意简述：有若干个虫子，它们之间有一些关♂系，要判断它们之间有没有同性恋。</p>
-<p>那么什么情况会出现同性恋呢？题目中有关系的虫子连成一个无向图，如果有长度为奇数的环，那么一定有同性恋；如果不存在长度为奇数的环，那么也不一定存在同性恋。大家可以画个图理解一下。</p>
-<p>于是原题转换为：给定一个无向图，求图中是否有长度为奇数的环。</p>
-<p>看到其他题解都在写种类并查集，我们来个简单的，新手也可以看懂的方法——<strong>0/1 染色 dfs</strong>。</p>
-<p>我们这里将虫子划分为两类：“颜色”（这里代表性别）为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>，用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 表示还没有搜索到。每一次遍历从当前点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 为起点的所有的边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">e(u,v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">e</span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 颜色相同，意味着有同性恋。如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 没有被染色，那么 dfs 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span>，颜色取反（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>−</mo><mi>c</mi><mi>o</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">3-col</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>）。</p>
-<p>时间复杂度分析：对于每一组数据，每个点最多被遍历（染色）一次，所以时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>；原题有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 组数据，时间复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>T</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(Tn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，可以通过此题。</p>
-<p>代码（有一些注释）：</p>
+              <p>这题在 AtCoder 的评分是 3266，感觉肯定是黑题，但是咋就通过了呢（</p>
+<p>题意翻译的不够清楚，重新解释一遍：（做这题的时候看了好久也没看懂，然后就去原题看英文题面了）</p>
+<p>定义 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>S</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span> 为：对于一个字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>，每次将它最左边的字符放置到字符串末尾生成的字符串集合中，字典序最小的字符串。例如：对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 为 <code>bcbca</code> 的情况，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>S</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span> 即为 <code>babca</code>、<code>abcab</code>、<code>bcaba</code>、<code>cabab</code>、<code>abcbc</code> 中最小的那个，即 <code>abcbc</code>。</p>
+<p>你需要构造一个字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span>，共包含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span></span> 个字符 <code>a</code>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span></span></span></span> 个字符 <code>b</code> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span></span></span></span> 个字符 <code>c</code>，使得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span> 尽可能大，输出这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span>。</p>
+<hr>
+<p>思路：</p>
+<p>要使得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span> 尽可能大，每次循环求一遍显然不现实，最好构造出一种 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 使得它本身就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span>（即：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T=f(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span>）。</p>
+<p>那么怎么构造呢？</p>
+<p>我们可以使用 <code>multiset</code> 来记录所有供选择的字符串，每次合并两个字符串，直到集合中只剩一个为止。合并的方法是取最小的字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 与最大的字符串 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 拼接到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> 后面，重新加入集合。</p>
+<p>这种情况下，这个前缀因为是最小的，所以从任何其它地方开头取字符串均不会更小，保证了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T=f(T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span>。</p>
+<hr>
+<p>代码：</p>
 <pre><code class="language-cpp">//By: Luogu@rui_er(122461)
 #include &lt;bits/stdc++.h&gt;
+#define loop while(true)
+#define rep(x,y,z) for(int (x)=(y);(x)&lt;=(z);(x)++)
+#define per(x,y,z) for(int (x)=(y);(x)&gt;=(z);(x)--)
+#define fil(x,y) memset((x), (y), sizeof(x))
 using namespace std;
-const int N = 2005, M = (int)(1e6+5)&lt;&lt;1;
+typedef long long ll;
 
-int T, n, m, ans;
-int col[N];
-
-struct Edge { // 前向星建图
-	int v, nxt;
-	Edge() {}
-	Edge(int a, int b) : v(a), nxt(b) {}
-}e[M];
-int ne, h[N];
-void add(int u, int v) {
-	e[++ne] = Edge(v, h[u]);
-	h[u] = ne;
-	e[++ne] = Edge(u, h[v]);
-	h[v] = ne;
-} 
-
-void dfs(int u, int c) { // 0/1 染色 dfs，两个参数分别是当前点编号和颜色
-	col[u] = c;
-	for(int i=h[u];i;i=e[i].nxt) {
-		int v = e[i].v;
-		if(col[v] == col[u]) {
-			ans = 0;
-			break;
-		}
-		if(!col[v]) {
-			dfs(v, 3-c);
-		}
-	}
-}
+int x, y, z; multiset&lt;string&gt; qwq;
 
 int main() {
-	scanf(&quot;%d&quot;, &amp;T);
-	for(int _=1;_&lt;=T;_++) {
-		memset(e, 0, sizeof(e));
-		memset(h, 0, sizeof(h));
-		memset(col, 0, sizeof(col));
-		ne = 0;
-		ans = 1;
-		printf(&quot;Scenario #%d:\n&quot;, _);
-		scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
-		for(int i=1;i&lt;=m;i++) {
-			int u, v;
-			scanf(&quot;%d%d&quot;, &amp;u, &amp;v);
-			add(u, v);
-		}
-		for(int i=1;i&lt;=n;i++) { // 对于每一个未被染色的点（新连通块），进行 dfs，与 tarjan 算法类似
-			if(ans &amp;&amp; !col[i]) {
-				dfs(i, 1);
-			}
-		}
-		if(ans) {
-			puts(&quot;No suspicious bugs found!&quot;);
-		}
-		else {
-			puts(&quot;Suspicious bugs found!&quot;);
-		}
+	scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+	rep(i, 1, x) qwq.insert(&quot;a&quot;);
+	rep(i, 1, y) qwq.insert(&quot;b&quot;);
+	rep(i, 1, z) qwq.insert(&quot;c&quot;);
+	while(qwq.size() ^ 1) {
+		multiset&lt;string&gt;::iterator         it1 = qwq.begin();
+		multiset&lt;string&gt;::reverse_iterator it2 = qwq.rbegin();
+		string a = (*it1), b = (*it2), _ = a + b;
+		qwq.erase(qwq.lower_bound(a)); qwq.erase(qwq.lower_bound(b));
+		qwq.insert(_);
 	}
+	multiset&lt;string&gt;::iterator it = qwq.begin();
+	cout&lt;&lt;(*it)&lt;&lt;endl;
 	return 0;
 }
 </code></pre>
+<p>（顺带一提，无意中还抢到了 <a href="https://www.luogu.com.cn/record/42600000">R42600000</a>，虽然有个地方错了 QAQAQ）</p>
 
             </div>
             <div class="post-footer">
@@ -514,7 +506,7 @@ int main() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://blog.ak-ioi.cf/post/solution-luogu-sp3377-spoj-buglife/" title="题解 SP3377@洛谷 | BUGLIFE@SPOJ 【BUGLIFE - A Bug&amp;#8217;s Life】">https://blog.ak-ioi.cf/post/solution-luogu-sp3377-spoj-buglife/</a>
+      <a href="https://blog.ak-ioi.cf/post/solution-luogu-at3577-atcoder-3577/" title="题解 AT3577@洛谷 | 3577@AtCoder 【Largest Smallest Cyclic Shift】">https://blog.ak-ioi.cf/post/solution-luogu-at3577-atcoder-3577/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -523,9 +515,17 @@ int main() {
   </ul>
   <div class="tags">
     
-      <a href="https://blog.ak-ioi.cf/tag/aqkZXLnKs/"># SPOJ</a>
+      <a href="https://blog.ak-ioi.cf/tag/OPYRApyQv/"># 构造题</a>
     
-      <a href="https://blog.ak-ioi.cf/tag/P33QCO5aCZ/"># 图论</a>
+      <a href="https://blog.ak-ioi.cf/tag/0iy_MhKwM/"># 字符串</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/kp3p4KSAg/"># 思维题</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/XmOlmGG78/"># 贪心</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/EF964QqUL/"># Atcoder</a>
+    
+      <a href="https://blog.ak-ioi.cf/tag/l4yUSbyQA/"># 算法</a>
     
       <a href="https://blog.ak-ioi.cf/tag/1yYYfIIPJ/"># 题解</a>
     
@@ -537,15 +537,11 @@ int main() {
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="题解 SP64@洛谷 | PERMUT1@SPOJ 【PERMUT1 - Permutations】" href="https://blog.ak-ioi.cf/post/solution-luogu-sp64-spoj-permut1/">题解 SP64@洛谷 | PERMUT1@SPOJ 【PERMUT1 - Permutations】</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="题解 SP64@洛谷 | PERMUT1@SPOJ 【PERMUT1 - Permutations】" href="https://blog.ak-ioi.cf/post/solution-luogu-sp64-spoj-permut1/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】" href="https://blog.ak-ioi.cf/post/solution-luogu-sp106-spoj-BINSTIRL /">题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】</a>
-        <a class="nav-mobile-next" title="题解 SP106@洛谷 |  BINSTIRL@SPOJ【BINSTIRL - Binary Stirling Numbers】" href="https://blog.ak-ioi.cf/post/solution-luogu-sp106-spoj-BINSTIRL /">下一篇</a>
+        <a class="nav-pc-next" title="题解 CF843B@洛谷 | 843B@Codeforces 【Interactive LowerBound】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf843b-codeforces-843b/">题解 CF843B@洛谷 | 843B@Codeforces 【Interactive LowerBound】</a>
+        <a class="nav-mobile-next" title="题解 CF843B@洛谷 | 843B@Codeforces 【Interactive LowerBound】" href="https://blog.ak-ioi.cf/post/solution-luogu-cf843b-codeforces-843b/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
