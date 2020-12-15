@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2020-11-28T13:49:13.744Z</updated>
+    <updated>2020-12-15T09:57:13.146Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,57 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2020, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[CSP2020-S & NOIP2020 & THUPC2021 游记]]></title>
+        <id>https://blog.ak-ioi.cf/post/i-ak-csp2020-s-noip2020-thupc2021/</id>
+        <link href="https://blog.ak-ioi.cf/post/i-ak-csp2020-s-noip2020-thupc2021/">
+        </link>
+        <updated>2020-12-15T09:55:21.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>https://www.luogu.com.cn/blog/ak-ioi/i-ak-csp2020</li>
+<li>https://www.luogu.com.cn/blog/ak-ioi/i-ak-noip2020-qwq</li>
+<li>https://www.luogu.com.cn/blog/ak-ioi/i-ak-thupc2021</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[题解 CF197B@洛谷 | 197B@Codeforces 【Limit】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf197b-codeforces-197b/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf197b-codeforces-197b/">
+        </link>
+        <updated>2020-12-15T09:53:37.000Z</updated>
+        <content type="html"><![CDATA[<p>题意：给定两个多项式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mi>Q</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(x),Q(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">Q</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span>，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><munder><mi>lim</mi><mo>⁡</mo><mrow><mi>x</mi><mo>→</mo><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></munder><mfrac><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mrow><mi>Q</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\lim_{x\to+\infty}\frac{P(x)}{Q(x)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-2.1em;margin-left:0em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mrel mtight">→</span><span class="mord mtight">+</span><span class="mord mtight">∞</span></span></span></span><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mop">lim</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.758331em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 的值。</p>
+<hr>
+<p>乍一看好像很难，但考虑当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 趋近于无穷大时，多项式除最高次项以外的影响可以忽略。</p>
+<p>经过少许数学推导<s>和大量猜测</s>，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 的次数低于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span></span></span></span> 时，这个极限为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>；当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 的次数高于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span></span></span></span> 时，这个极限为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord">∞</span></span></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">∞</span></span></span></span>；当次数相同时，这个极限为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 最高次项与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span></span></span></span> 最高次项的比值，记得约分。</p>
+<hr>
+<p>代码：</p>
+<p>养成了一个习惯，就是用 <code>veryImportantVariable</code> 来存一些完全没用但要读入的东西（（（</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+#define loop while(true)
+#define rep(x,y,z) for(ll x=y;x&lt;=z;x++)
+#define per(x,y,z) for(ll x=y;x&gt;=z;x--)
+#define fil(x,y) memset(x, y, sizeof(x))
+using namespace std;
+typedef long long ll;
+
+int n, m, a, b, veryImportantVariable;
+
+int main() {
+	scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+	if(n &lt; m) return puts(&quot;0/1&quot;), 0;
+	scanf(&quot;%d&quot;, &amp;a); rep(i, 1, n) scanf(&quot;%d&quot;, &amp;veryImportantVariable);
+	scanf(&quot;%d&quot;, &amp;b); rep(i, 1, m) scanf(&quot;%d&quot;, &amp;veryImportantVariable);
+	if(a * b &lt; 0) a = abs(a), b = abs(b), putchar('-');
+	if(n &gt; m) return puts(&quot;Infinity&quot;), 0;
+	int qwq = __gcd(a, b); a /= qwq; b /= qwq;
+	printf(&quot;%d/%d\n&quot;, a, b);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 AT3577@洛谷 | 3577@AtCoder 【Largest Smallest Cyclic Shift】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-at3577-atcoder-3577/</id>
@@ -646,185 +697,6 @@ int main() {
 	k = interact((*p)-a[_]);
 	return 0;
 }
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P3812@洛谷 【【模板】线性基】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p3812/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p3812/">
-        </link>
-        <updated>2020-10-12T09:56:36.000Z</updated>
-        <content type="html"><![CDATA[<p>刚刚口胡并学了线性基，就来写篇题解，记录一下。</p>
-<hr>
-<p>从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 个数中选取若干个，使他们的异或和最大。</p>
-<p>既然是异或和，因为异或是位运算，肯定要用到二进制的。</p>
-<p>考虑异或和的性质：对于这一位，有奇数个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 求异或和，结果为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>；有偶数个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 求异或和，结果为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。这一性质告诉我们，当我们对当前位置完成决策的时候，后面所有位的异或和无论怎样也不会影响到现有结果。想到从高位到低位扫一遍，对每一位取最优决策，就是结果。</p>
-<p>但因为每一位二进制位可能有很多 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，不方便进行决策，于是思考能不能<strong>构造一个序列，使得在这个序列中，任取若干个数求异或和的结果组成的集合，与原序列求异或和的结果组成的集合一样，且这个序列的每个数的最高位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 所在位数不一样</strong>呢？这种情况下，我们在新序列上决策和在原数列上决策是等效的。</p>
-<p><s>但是我太菜了发现并不会构造，怎么办呢？上百度搜线性基正解吧。</s></p>
-<p>结果一搜发现我已经口胡出来了，愣是傻傻的不会构造 /jk /jk，那就继续说吧。</p>
-<p>线性基就是由原数列集合构造出的满足下面性质的集合：</p>
-<ol>
-<li>线性基内的元素可以通过求异或和，得到原集合的元素任意求异或和得到的所有值。</li>
-<li>线性基是满足上面性质的最小的集合。</li>
-<li>线性基不存在异或和为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的子集。</li>
-<li>线性基中，任取不同的子集求异或和，得到的答案不同。（即线性基子集的异或和具有唯一性）</li>
-<li>线性基内所有元素的二进制最高位互不相同。</li>
-</ol>
-<p>考虑进行构造：</p>
-<p>在线性基插入元素 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，从高位向低位扫，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 二进制下该位为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，且不存在最高位为该位的线性基元素，将其加入线性基。如果该位为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，但已经存在元素的最高位为该位，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 异或上该元素，继续向后搜。</p>
-<p>要查询最大值，从高位到低位枚举线性基中最高位为该位的元素，如果答案异或上这个数比原来的答案大，更新答案。这样因为更低位的结果无法影响当前位，因此这一方法是最优的。</p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const ll N = 55, bit = 50;
- 
-ll n, a, p[N];
-void insert(ll k) {
-	for(ll i=bit;i&gt;=0;i--) {
-		if(!(k&amp;(1LL&lt;&lt;i))) continue;
-		if(!p[i]) return p[i] = k, void();
-		k ^= p[i];
-	}
-}
-ll maxXor() {
-	ll res = 0;
-	for(ll i=bit;i&gt;=0;i--) res = max(res, (res^p[i]));
-	return res;
-}
-
-int main() {
-	scanf(&quot;%lld&quot;, &amp;n);
-	while(n--) {scanf(&quot;%lld&quot;, &amp;a); insert(a);}
-	printf(&quot;%lld\n&quot;, maxXor());
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 P6830@洛谷 【[IOI2020]连接擎天树】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-p6830/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-p6830/">
-        </link>
-        <updated>2020-10-11T11:07:42.000Z</updated>
-        <content type="html"><![CDATA[<p>破事水：IOI2020 结束后就想要写这题，但是 spj 当时是锅的，修好后我就<s>秉承鸽子的良好品德</s>一直咕到了现在。</p>
-<p>因为 CSP2020 考的有点自闭，所以来做一道 IOI 真题放松一下。</p>
-<hr>
-<p>题意简述：构造一个无向图，使得任意两个点之间路径个数与题目给出的相同。</p>
-<hr>
-<p>思路：</p>
-<p><strong>注：因为洛谷与其他 oj（包括 IOI 官方）的评测方式不同，本题解代码以洛谷为准，在其他 oj 可能无法直接取的 AC，请额外注意。</strong></p>
-<p>首先，如果一个图中的一个连通块，拥有<strong>多于</strong>一个环，那么这种情况肯定不符合题意。为啥呢？画个图理解一下。</p>
-<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/ce80n3m9.png" alt="" loading="lazy"></figure>
-<p>以这张图上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 的路径为例，共有如下情况：</p>
-<ol>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>0</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 0\rightarrow 1\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>0</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>5</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 0\rightarrow 1\rightarrow 5\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>3</mn><mo>→</mo><mn>2</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 3\rightarrow 2\rightarrow 1\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><mo>→</mo><mn>3</mn><mo>→</mo><mn>2</mn><mo>→</mo><mn>1</mn><mo>→</mo><mn>5</mn><mo>→</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">4\rightarrow 3\rightarrow 2\rightarrow 1\rightarrow 5\rightarrow 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span></li>
-</ol>
-<p>因为跨过了两个环，路径条数显然多于三个。</p>
-<p>我们得到了构造的初步方向：<strong>原图必须是一个由树或基环树组成的森林</strong>。</p>
-<p>接着找规律：</p>
-<figure data-type="image" tabindex="2"><img src="https://cdn.luogu.com.cn/upload/image_hosting/tjnvm6dg.png" alt="" loading="lazy"></figure>
-<p>对于这棵基环树，通过手推，发现：</p>
-<ol>
-<li>对于任意两个点（比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">2,4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">4</span></span></span></span>），它们之间的路径如果全在环外，那么它们之间<strong>有且仅有一条路径</strong>。</li>
-<li>对于任意两个点（比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">6,3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span></span></span></span>），它们之间的路径如果至少有一条边一定在环上，那么它们之间<strong>有两条路径</strong>。</li>
-</ol>
-<p>换句话说，就是把所有环上的边先删掉，如果还在连通块内，就只有一条边。</p>
-<p>可以看到，<strong>如果题目中要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span></span></span></span> 之间有三条路径，此时无解</strong>。</p>
-<p>我们先 dfs 一遍<strong>求出连通块</strong>，如果连通块内存在要求有三条路径的边，就直接判掉。如果有两个点之间路径要求为零，也可以判掉。剩下的情况就分为两种：树和基环树。</p>
-<p>对于连通块内只要求两两之间有一条路径，将其中一个点和连通块内其他所有点相连即可。对于基环树，我们先不考虑路径数为二的边，在剩下的路径数为一的边里面再次 dfs 求出环外的连通块，按照相同方式连接后，每个环外连通块取一个点，将这些点依次连城环即可。</p>
-<p>至此我们便得到了正解。</p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-const int N = 1005;
-
-void build(vector&lt;vector&lt;int&gt; &gt; b);
-
-int n, ma, vis[N];
-vector&lt;int&gt; block, edge, circle; // 分别为连通块、基环树上的树边和基环树上的环 
-vector&lt;vector&lt;int&gt; &gt; graph, res;
-void add(int u, int v) {res[u][v] = res[v][u] = 1;}
-void dfs(int u) {
-//	printf(&quot;DFS %d\n&quot;, u);
-	vis[u] = 1;
-	block.push_back(u);
-	for(int v=0;v&lt;n;v++) {
-		ma = max(ma, graph[u][v]);
-		if(!vis[v] &amp;&amp; graph[u][v]) dfs(v);
-	}
-}
-void dfsCircle(int u) {
-	vis[u] = 2;
-	edge.push_back(u);
-	for(int v=0;v&lt;n;v++) if(vis[v] == 1 &amp;&amp; graph[u][v] == 1) dfsCircle(v);
-}
-int construct(vector&lt;vector&lt;int&gt; &gt; p) {
-//	puts(&quot;CONSTRUCT&quot;);
-	graph = p; n = p.size(); res.resize(n);
-	for(int i=0;i&lt;n;i++) res[i].resize(n);
-	for(int i=0;i&lt;n;i++) {
-		if(vis[i]) continue;
-		ma = 1; block.clear(); dfs(i);
-//		printf(&quot;ROUND %d DFS ENDED WITH MAX=%d\n&quot;, i, ma);
-		if(ma == 3) return 0;
-		int sz = block.size();
-		for(int j=1;j&lt;sz;j++) {
-			for(int k=0;k&lt;j;k++) {
-				if(!graph[block[j]][block[k]]) return 0;
-			}
-		}
-		if(ma == 1) for(int j=1;j&lt;sz;j++) add(block[0], block[j]);
-		else {
-			circle.clear();
-			for(int _=0,j=block[_];_&lt;sz;_++,j=block[_]) {
-				if(vis[j] != 1) continue;
-				edge.clear();
-				dfsCircle(j);
-//				puts(&quot;DFSCIRCLE ENDED&quot;);
-				int sz2 = edge.size();
-				for(int k=1;k&lt;sz2;k++) {
-					for(int l=0;l&lt;k;l++) {
-						if(graph[edge[k]][edge[l]] != 1) return 0;
-					}
-					add(edge[0], edge[k]);
-				}
-				circle.push_back(edge[0]);
-//				printf(&quot;CIRCLE ADDED %d\n&quot;, edge[0]);
-			}
-			if(circle.size() &lt;= 2) return 0;
-			int sz3 = circle.size();
-			for(int j=0;j&lt;sz3;j++) add(circle[j], circle[(j+1)%sz3]);
-		}
-	}
-	build(res);
-	return 1;
-}/*
-
-void build(vector&lt;vector&lt;int&gt; &gt; b) {
-	puts(&quot;BUILD&quot;);
-	for(int i=0;i&lt;b.size();i++) {
-		for(int j=0;j&lt;b[i].size();j++) printf(&quot;%d &quot;, b[i][j]);
-		puts(&quot;&quot;);
-	}
-}
-int main() {
-	vector&lt;vector&lt;int&gt; &gt; a = vector&lt;vector&lt;int&gt; &gt;
-							({vector&lt;int&gt;({1, 1, 2, 2}), vector&lt;int&gt;({1, 1, 2, 2})
-							, vector&lt;int&gt;({2, 2, 1, 2}), vector&lt;int&gt;({2, 2, 2, 1})});
-	build(a);
-	printf(&quot;CONSTRUCT ENDED WITH RETURN VALUE %d\n&quot;, construct(a));
-	return 0;
-}*/
 </code></pre>
 ]]></content>
     </entry>
