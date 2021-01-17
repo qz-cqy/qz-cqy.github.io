@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2021-01-10T13:46:46.608Z</updated>
+    <updated>2021-01-17T15:03:09.475Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -10,6 +10,43 @@
     <logo>https://blog.ak-ioi.cf/images/avatar.png</logo>
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2021, rui_er 的博客</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 CF1365E@洛谷 | 1365E@Codeforces 【Maximum Subsequence Value】]]></title>
+        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1365e-codeforces-1365e/</id>
+        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1365e-codeforces-1365e/">
+        </link>
+        <updated>2021-01-17T15:01:35.000Z</updated>
+        <content type="html"><![CDATA[<p>思路：</p>
+<p>考虑如何使取出的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 个数价值最大。</p>
+<p>对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>∈</mo><mrow><mo fence="true">{</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo fence="true">}</mo></mrow></mrow><annotation encoding="application/x-tex">k\in\left\{1,2,3\right\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">{</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">3</span><span class="mclose delimcenter" style="top:0em;">}</span></span></span></span></span>，根据定义，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 个数中至少有一个数的二进制位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 上是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，则价值增加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>i</mi></msup></mrow><annotation encoding="application/x-tex">2^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.824664em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.824664em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span></span></span></span></span></span></span>，这个定义十分眼熟，发现就是按位或的结果。对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">k\ge 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 每增加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，就会使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>max</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo>−</mo><mn>2</mn><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\max\left(1,k-2\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span> 增加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，因此每个二进制位的出现次数都需要加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 才能使答案更优，显然不如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">k=3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 的情况。</p>
+<p>因此对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∈</mo><mrow><mo fence="true">{</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo fence="true">}</mo></mrow></mrow><annotation encoding="application/x-tex">n\in\left\{1,2\right\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">{</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mclose delimcenter" style="top:0em;">}</span></span></span></span></span>，答案即为这些数的或；对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n\ge 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>，答案为数列任取三个数能得到的最大的或。可以花费 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><msup><mi>n</mi><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O}(n^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 枚举取的三个数得到答案。</p>
+<p>因为懒得特判前者，我选择牺牲了一定的代码常数，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i,j,k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 都从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 枚举到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，但是对于前者也能得到正确的结果。</p>
+<hr>
+<p>代码：</p>
+<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
+#include &lt;bits/stdc++.h&gt;
+#define loop while(true)
+#define rep(x,y,z) for(ll x=y;x&lt;=z;x++)
+#define per(x,y,z) for(ll x=y;x&gt;=z;x--)
+#define fil(x,y) memset(x, y, sizeof(x))
+#define mulT0 ll T; for(scanf(&quot;%lld&quot;, &amp;T);T;T--)
+#define mulT1 ll T, rnds; for(scanf(&quot;%lld&quot;, &amp;T),rnds=1;rnds&lt;=T;rnds++)
+using namespace std;
+typedef long long ll;
+const ll N = 505;
+
+ll n, a[N], ans;
+
+int main() {
+	scanf(&quot;%lld&quot;, &amp;n);
+	rep(i, 1, n) scanf(&quot;%lld&quot;, &amp;a[i]);
+	rep(i, 1, n) rep(j, 1, n) rep(k, 1, n) ans = max(ans, a[i]|a[j]|a[k]);
+	printf(&quot;%lld\n&quot;, ans);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P7262@洛谷 【Get Your Wish】]]></title>
         <id>https://blog.ak-ioi.cf/post/solution-luogu-p7262/</id>
@@ -632,54 +669,6 @@ int main() {
 		}
 	}
 	for(ll i=1;i&lt;=m;i++) printf(&quot;%lld\n&quot;, ans[i]);
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 CF1148F@洛谷 | 1148F@Codeforces 【Foo Fighters】]]></title>
-        <id>https://blog.ak-ioi.cf/post/solution-luogu-cf1148f-codeforces-1148f/</id>
-        <link href="https://blog.ak-ioi.cf/post/solution-luogu-cf1148f-codeforces-1148f/">
-        </link>
-        <updated>2020-10-20T10:35:31.000Z</updated>
-        <content type="html"><![CDATA[<p>有点毒瘤的贪心题，当然也可能是我太菜了。</p>
-<hr>
-<p>翻译的挺清楚的了，直接说思路：</p>
-<p>我们考虑在读入时顺便把每个数的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>a</mi><mi>s</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">mask</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 权值的<strong>二进制最高位</strong>预处理出来，同时统计权值和。由于正数变负数和负数变正数本质上是一样的，为了方便考虑，如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">val</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 权值和为负数，将所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">val</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 取相反数。</p>
-<p>随后考虑如何贪心：</p>
-<p>枚举每一位，统计<strong>二进制最高位为该位</strong>的所有数的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mi>a</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">val</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 权值和。如果这个权值和小于或等于零，那么没有修改该位的必要，因为修改不会使总权值增加，反而可能减少。如果最高位为该位的权值和大于零，那么修改该位比不修改更优。在答案变量中将该位置为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，并且枚举所有数修改即可。</p>
-<p>以上为正解，复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log{x})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span></span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 为变量范围（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>62</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{62}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>）。</p>
-<p><strong>坑点：贪心时必须从低位到高位枚举每一位进行更新，否则后面的更改可能导致更高位的决策被干扰，得不到正确答案！</strong></p>
-<hr>
-<p>代码：</p>
-<pre><code class="language-cpp">//By: Luogu@rui_er(122461)
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long ll;
-const ll N = 3e5+5, bit = 62;
-
-ll n, ans;
-struct Node {ll val, mask, bits;}a[N];
-
-int main() {
-	scanf(&quot;%llu&quot;, &amp;n);
-	for(ll i=1;i&lt;=n;i++) {
-		scanf(&quot;%lld%lld&quot;, &amp;a[i].val, &amp;a[i].mask);
-		ans += a[i].val;
-		for(ll _=bit;_+1;_--) if((a[i].mask &gt;&gt; _) &amp; 1) {a[i].bits = _; break;}
-	}
-	if(ans &lt; 0) for(ll i=1;i&lt;=n;i++) a[i].val = -a[i].val;
-	ans = 0;
-	for(ll _=0;_&lt;=bit;_++) {
-		ll s = 0;
-		for(ll i=1;i&lt;=n;i++) s += (a[i].bits == _) * a[i].val;
-		if(s &lt;= 0) continue;
-		ans |= (1LL &lt;&lt; _);
-		for(ll i=1;i&lt;=n;i++) a[i].val *= ((a[i].mask &gt;&gt; _) &amp; 1) ? -1 : 1;
-	}
-	printf(&quot;%lld\n&quot;, ans);
-//	puts(&quot;----------\nDEBUG: &quot;); for(ll i=1;i&lt;=n;i++) printf(&quot;%lld\n&quot;, a[i].val);
 	return 0;
 }
 </code></pre>
