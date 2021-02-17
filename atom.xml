@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ak-ioi.cf</id>
     <title>rui_er 的博客</title>
-    <updated>2021-02-17T07:19:22.367Z</updated>
+    <updated>2021-02-17T09:10:12.066Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ak-ioi.cf"/>
     <link rel="self" href="https://blog.ak-ioi.cf/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://blog.ak-ioi.cf/favicon.ico</icon>
     <rights>All rights reserved 2021, rui_er 的博客</rights>
     <entry>
-        <title type="html"><![CDATA[分块入门教程]]></title>
+        <title type="html"><![CDATA[序列分块入门教程]]></title>
         <id>https://blog.ak-ioi.cf/post/sqrt-yyds-awa/</id>
         <link href="https://blog.ak-ioi.cf/post/sqrt-yyds-awa/">
         </link>
@@ -19,8 +19,8 @@
         <content type="html"><![CDATA[<p>学妹让我教她分块，翻了翻以前的一篇博客，发现写的太难、太简略了，所以写了这篇博客 QAQ。</p>
 <p>真的是分块最基础的教程，大佬可以跳过了。</p>
 <p>如果本文有可以改进的地方，可以在评论区提出。</p>
-<h1 id="前言-分块是什么">前言 - 分块是什么</h1>
-<p>顾名思义，分块就是把数列分成若干小块进行处理和维护，我们会把每一块当成整体，维护这些整体的有关信息。</p>
+<h1 id="前言-序列分块是什么">前言 - 序列分块是什么</h1>
+<p>顾名思义，序列分块就是把数列分成若干小块进行处理和维护，我们会把每一块当成整体，维护这些整体的有关信息。</p>
 <p>最基础的分块当取块长为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.23972em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
 -10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
 -50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
